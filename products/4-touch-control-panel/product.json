@@ -1,0 +1,50 @@
+{
+  "sku": "38618602731",
+  "name": "4\" Touch Control Panel",
+  "slug": "4-touch-control-panel",
+  "brand": "Smartify",
+  "category": [
+    "Smart Panels",
+    "Touch Controllers"
+  ],
+  "device_type": "Smart Home Touch Control Panel",
+  "protocol": "Wi-Fi + Zigbee (built-in gateway)",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Your whole home. Four inches of glass.\n\nTouch a scene. Ask Alexa. Check a device. The 4\" panel is a control centre that mounts on your wall and brings your entire home into one place — simple, immediate, and always responsive.",
+    "technical": "A 4-inch wall-mounted smart home touch panel with an integrated Zigbee gateway, Wi-Fi connectivity, and built-in Alexa voice control. Provides centralized control of smart home devices, scenes, and automations.\n\nFeatures automatic screen brightness adjustment and supports remote app-based control alongside local touchscreen interaction.\n\nKey Specifications\n- Display: 4-inch touchscreen\n- OS: Embedded Linux\n- Wireless: Wi-Fi + Zigbee (built-in gateway)\n- Voice: Built-in Alexa\n- Functions: Scenes, devices, automations, status\n- Installation: Wall-mounted\n\n⚠ Does not switch electrical loads. Control interface and Zigbee coordinator only."
+  },
+  "specs": {
+    "summary": "Input: 100–240V AC, 50/60Hz | Rated Current: 74 mA | Wireless Protocol: Wi-Fi, Zigbee | Working Temperature: 0°C to 40°C | Working Humidity: 5%–90% RH (non-condensing) | Size (without base): 86.0 × 86.0 × 10.5 mm | Size (with base): 86.0 × 86.0 × 36.2 mm",
+    "channels": "",
+    "max_switching_capacity": "",
+    "recommended_load": "",
+    "installation": "Wall-mounted",
+    "compatibility": "Zigbee devices, Alexa voice control"
+  },
+  "pricing": {
+    "srp_inr": 33000,
+    "gst_rate": "18",
+    "hsn": "85371000"
+  },
+  "limitations": "Does not switch electrical loads. Control interface and Zigbee gateway only.",
+  "dependencies": "Wi-Fi network",
+  "images": {
+    "hero": "../../images/4 Inch Touch Control Panel.png",
+    "all": [
+      "../../images/4 Inch Touch Control Panel.png"
+    ],
+    "hero_url": "../../images/4%20Inch%20Touch%20Control%20Panel.png",
+    "all_urls": [
+      "../../images/4%20Inch%20Touch%20Control%20Panel.png"
+    ]
+  },
+  "enabled": true
+}
