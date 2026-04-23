@@ -1,0 +1,51 @@
+{
+  "sku": "38632117962",
+  "name": "1 Channel Zigbee Retrofit Relay",
+  "slug": "1-channel-zigbee-retrofit-relay",
+  "brand": "Smartify",
+  "category": [
+    "Retrofit Switches",
+    "Smart Switches"
+  ],
+  "device_type": "Switching Relay",
+  "protocol": "Zigbee 3.0",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Your switch. Smarter.\n\nThe Retrofit Relay fits quietly behind your existing wall switch and gives it a new intelligence \u2014 responding to your schedule, your voice, or your app. Nothing on your wall changes. Everything about how it works does.",
+    "technical": "A single-channel Zigbee switching relay designed to retrofit any standard mechanical switch into a smart switch \u2014 no rewiring, no hardware replacement.\n\nInstalls behind the existing wall switch in a flush box or on DIN rail. Supports direct load switching up to 4A; for loads between 4A and 10A, an external relay, SSR, or contactor is required. Communicates natively over Zigbee 3.0 with full Home Assistant support, and integrates with Matter and Apple HomeKit via a compatible hub.\n\nKey Specifications\n- Channels: 1\n- Max Switching: 10A\n- Direct Load: Up to 4A\n- Protocol: Zigbee 3.0\n- Compatible with: Home Assistant (native), Matter & Apple HomeKit (via hub)\n- Installation: Flush box or DIN rail\n\n\u26a0 For loads above 4A, an external relay, SSR, or contactor is required."
+  },
+  "specs": {
+    "summary": "Voltage: 90\u2013250V AC | Max Current: 10A | Wireless Protocol: Zigbee 3.0 | Operating Temperature: -10\u00b0C to +40\u00b0C | Max Case Temperature (Tc): +80\u00b0C | Wireless Range: \u2264200m (open field) | Dimensions: 52 \u00d7 47 \u00d7 18 mm | IP Rating: IP20 | Installation Type: Behind Switch / DIN Rail",
+    "channels": "1",
+    "max_switching_capacity": "10A",
+    "recommended_load": "Up to 4A",
+    "installation": "Flush box or DIN rail",
+    "compatibility": "Home Assistant (native), Matter & Apple HomeKit (via hub)"
+  },
+  "pricing": {
+    "srp_inr": 3000,
+    "dealer_price_inr": 1200,
+    "gst_rate": "18",
+    "hsn": "85365090"
+  },
+  "limitations": "For loads above 4A use external relay / SSR / contactor",
+  "dependencies": "Zigbee coordinator or hub",
+  "images": {
+    "hero": "../../images/Retrofit Relay.png",
+    "all": [
+      "../../images/Retrofit Relay.png"
+    ],
+    "hero_url": "../../images/Retrofit%20Relay.png",
+    "all_urls": [
+      "../../images/Retrofit%20Relay.png"
+    ]
+  },
+  "enabled": true
+}

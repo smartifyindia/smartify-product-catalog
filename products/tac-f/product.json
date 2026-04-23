@@ -1,0 +1,51 @@
+{
+  "sku": "38688864221",
+  "name": "TAC F",
+  "slug": "tac-f",
+  "brand": "Smartify",
+  "category": [
+    "Smart Switches",
+    "Fan Control"
+  ],
+  "device_type": "Zigbee Fan Control Switch",
+  "protocol": "Zigbee 3.0",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Your fan. Fully in control.\n\nSpeed, on, off \u2014 from the wall or from anywhere. The TAC F gives your ceiling fan the same smart control as every other device in your home.",
+    "technical": "A Zigbee smart fan control panel for ceiling fans up to 150W. Provides on/off and speed control with a dedicated fan control interface.\n\nIntegrates with the Zigbee automation ecosystem. Available in PP or anti-glare glass in black, white, or gold.\n\nKey Specifications\n- Control: Fan on/off + speed\n- Fan Load: Up to 150W\n- Protocol: Zigbee 3.0\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n- Installation: Wall-mounted\n\n\u26a0 For ceiling fans within rated load (150W) only."
+  },
+  "specs": {
+    "summary": "Input Voltage: 110\u2013240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 \u00d7 86 \u00d7 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10\u00b0C to +60\u00b0C | Working Humidity: \u226495% RH (non-condensing)",
+    "channels": "1 fan channel",
+    "max_switching_capacity": "150W",
+    "recommended_load": "Ceiling fans up to 150W",
+    "installation": "Wall-mounted",
+    "compatibility": "Zigbee automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 6250,
+    "dealer_price_inr": 2500,
+    "gst_rate": "18",
+    "hsn": "85369090"
+  },
+  "limitations": "For ceiling fans within rated load capacity (150W) only. Materials: PP or AG glass. Colours: Black, White, Gold.",
+  "dependencies": "Zigbee coordinator or hub",
+  "images": {
+    "hero": "../../images/TAC Fan Speed Controller.png",
+    "all": [
+      "../../images/TAC Fan Speed Controller.png"
+    ],
+    "hero_url": "../../images/TAC%20Fan%20Speed%20Controller.png",
+    "all_urls": [
+      "../../images/TAC%20Fan%20Speed%20Controller.png"
+    ]
+  },
+  "enabled": true
+}

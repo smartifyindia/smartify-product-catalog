@@ -1,0 +1,51 @@
+{
+  "sku": "38619518575",
+  "name": "LED Controller (CV-RGB+CCT)",
+  "slug": "led-controller-cv-rgbpluscct",
+  "brand": "Smartify",
+  "category": [
+    "Smart Lighting",
+    "LED Controllers"
+  ],
+  "device_type": "Constant Voltage LED Controller",
+  "protocol": "Compatible smart ecosystem",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Every colour. Every white. One controller.\n\nFrom vibrant RGB to tunable warm-to-cool white \u2014 the CV RGB+CCT Controller gives your LED strips full range. Set the mood for every moment, every room, automatically.",
+    "technical": "A constant voltage LED controller for RGB+CCT LED strips, providing independent control over color (RGB), white temperature (CCT), and brightness across 5 output channels.\n\nRequires an appropriate constant voltage DC power supply (12V or 24V) matched to the LED strip specification. Designed for panel or concealed installation.\n\nKey Specifications\n- Output: CV (Constant Voltage)\n- LED Support: RGB + CCT (5-channel)\n- Channels: 5 (R, G, B, CW, WW)\n- Installation: Indoor panel or concealed\n\n\u26a0 Requires an appropriate CV DC power supply (12V/24V). Does not power LED strips directly from mains voltage."
+  },
+  "specs": {
+    "summary": "",
+    "channels": "5 (R, G, B, CW, WW)",
+    "max_switching_capacity": "",
+    "recommended_load": "RGB+CCT CV LED strips (12V or 24V)",
+    "installation": "Indoor panel or concealed installation",
+    "compatibility": "Compatible smart lighting ecosystems"
+  },
+  "pricing": {
+    "srp_inr": 9247,
+    "dealer_price_inr": 3699,
+    "gst_rate": "18",
+    "hsn": "85371010"
+  },
+  "limitations": "Requires appropriate CV DC power supply. Does not power LEDs from mains directly.",
+  "dependencies": "Compatible CV DC power supply (12V or 24V) required",
+  "images": {
+    "hero": "../../images/LED Controller (RGBW).png",
+    "all": [
+      "../../images/LED Controller (RGBW).png"
+    ],
+    "hero_url": "../../images/LED%20Controller%20%28RGBW%29.png",
+    "all_urls": [
+      "../../images/LED%20Controller%20%28RGBW%29.png"
+    ]
+  },
+  "enabled": true
+}

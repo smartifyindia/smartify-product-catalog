@@ -1,0 +1,51 @@
+{
+  "sku": "38694583069",
+  "name": "10\" Touch Control Panel",
+  "slug": "10-touch-control-panel",
+  "brand": "Smartify",
+  "category": [
+    "Smart Panels",
+    "Touch Controllers"
+  ],
+  "device_type": "Smart Home Touch Control Panel",
+  "protocol": "Wi-Fi + Zigbee + Bluetooth",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Your home has a face.\n\nThe 10\" panel is the centrepiece of a smart home \u2014 a full control surface that manages every light, every scene, and every device, while also serving as your front door intercom. Proximity-aware. Always on. Always ready.",
+    "technical": "A 10-inch wall-mounted smart home control panel with integrated Zigbee and Bluetooth gateways, supporting 128+ devices per protocol. Features a built-in HD camera, doorbell intercom, proximity wake sensor, and customizable control interface.\n\nSupports Wi-Fi, Zigbee, and Bluetooth. Powerable via live/neutral wiring or USB-C. Manages lighting, scenes, security, and automation from a central touchscreen.\n\nKey Specifications\n- Display: 10-inch touchscreen\n- Wireless: Wi-Fi + Zigbee + Bluetooth\n- Capacity: 128+ Zigbee + 128+ Bluetooth\n- Camera: HD ~5MP (intercom + monitoring)\n- Features: Doorbell intercom, proximity sensor\n- Power: Live/neutral or USB-C\n- Installation: Wall-mounted\n\n\u26a0 Does not switch electrical loads. Central control interface and multi-protocol gateway only."
+  },
+  "specs": {
+    "summary": "Input: 100\u2013240V AC, 50/60Hz | Wireless Protocol: Wi-Fi, Bluetooth, Zigbee | Display: 1920 \u00d7 1200 FHD, 10.1-inch touch screen | Operating Temperature: 0\u00b0C to 40\u00b0C | Working Humidity: 5%\u201390% RH (non-condensing) | Size (without base): 259 \u00d7 161 \u00d7 13 mm | Size (with base): 259 \u00d7 161 \u00d7 37 mm",
+    "channels": "",
+    "max_switching_capacity": "",
+    "recommended_load": "",
+    "installation": "Wall-mounted (live/neutral or USB-C powered)",
+    "compatibility": "Zigbee (128+ devices), Bluetooth/BLE/Sigmesh (128+ devices)"
+  },
+  "pricing": {
+    "srp_inr": 112500,
+    "dealer_price_inr": 45000,
+    "gst_rate": "18",
+    "hsn": "85371000"
+  },
+  "limitations": "Does not switch electrical loads. Central control interface and multi-protocol gateway only.",
+  "dependencies": "Wi-Fi network. Live/neutral wiring or USB-C power.",
+  "images": {
+    "hero": "../../images/10 Inch Touch Control Panel.png",
+    "all": [
+      "../../images/10 Inch Touch Control Panel.png"
+    ],
+    "hero_url": "../../images/10%20Inch%20Touch%20Control%20Panel.png",
+    "all_urls": [
+      "../../images/10%20Inch%20Touch%20Control%20Panel.png"
+    ]
+  },
+  "enabled": true
+}

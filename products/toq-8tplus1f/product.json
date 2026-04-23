@@ -1,0 +1,51 @@
+{
+  "sku": "38648381854",
+  "name": "TOQ 8T+1F",
+  "slug": "toq-8tplus1f",
+  "brand": "Smartify",
+  "category": [
+    "Smart Panels",
+    "Touch Switches"
+  ],
+  "device_type": "Zigbee Touch Control Panel with Fan Control",
+  "protocol": "Zigbee 3.0",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Lights and fans. One elegant panel.\n\nEight touch points for your lighting and scenes, plus a dedicated fan control \u2014 all in one glass panel. The TOQ 8T+1F handles the full room without compromise.",
+    "technical": "An 8-button Zigbee touch panel with a dedicated fan control channel for ceiling fans up to 120W, combining multi-circuit load control with integrated fan management in a single wall panel.\n\nEach of the 8 buttons is independently configurable for toggle or momentary operation. The fan channel operates separately for speed and on/off control. Available in white or black glass with silver, gold, or black bezel.\n\nKey Specifications\n- Buttons: 8 capacitive touch\n- Fan Channels: 1 (up to 120W)\n- Relay: 10A per button channel\n- Direct Load: Up to 4A per button channel\n- Protocol: Zigbee 3.0\n- Installation: Wall-mounted\n\n\u26a0 For loads above 4A on button channels, use an external SSR or contactor."
+  },
+  "specs": {
+    "summary": "",
+    "channels": "8 + 1 fan",
+    "max_switching_capacity": "10A per button channel",
+    "recommended_load": "Up to 4A per button channel; fan up to 120W",
+    "installation": "Wall-mounted",
+    "compatibility": "Zigbee automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 21460,
+    "dealer_price_inr": 8584,
+    "gst_rate": "18",
+    "hsn": "85369090"
+  },
+  "limitations": "For loads above 4A on button channels use external SSR or contactor.",
+  "dependencies": "Zigbee coordinator or hub",
+  "images": {
+    "hero": "../../images/TOQ Dual Fan Control with Socket - Black Gold.png",
+    "all": [
+      "../../images/TOQ Dual Fan Control with Socket - Black Gold.png"
+    ],
+    "hero_url": "../../images/TOQ%20Dual%20Fan%20Control%20with%20Socket%20-%20Black%20Gold.png",
+    "all_urls": [
+      "../../images/TOQ%20Dual%20Fan%20Control%20with%20Socket%20-%20Black%20Gold.png"
+    ]
+  },
+  "enabled": true
+}

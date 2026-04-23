@@ -1,0 +1,55 @@
+{
+  "sku": "38623516280",
+  "name": "4 Gang Scene Switch",
+  "slug": "4-gang-scene-switch",
+  "brand": "Smartify",
+  "category": [
+    "Scene Controllers",
+    "Smart Switches"
+  ],
+  "device_type": "Zigbee Scene Control Switch (Battery)",
+  "protocol": "Zigbee 3.0",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Four buttons. Twelve possibilities. Zero wiring.\n\nPlace it anywhere. Stick it to a wall, put it on a nightstand, keep it in a pocket. The 4 Gang Scene Switch gives you up to 12 scenes from four buttons \u2014 no installation, no electrician, no limits on where it goes.",
+    "technical": "A battery-powered Zigbee scene switch with 4 mechanical buttons, each supporting single press, double press, and long press actions \u2014 enabling up to 12 configurable scenes or automation triggers without wiring.\n\nCR2430 battery with approximately 2-year life. Slim profile (~1.3 cm). Wireless installation via adhesive mount or portable use.\n\nKey Specifications\n- Buttons: 4 mechanical\n- Actions: Single / double / long press per button (12 scenes total)\n- Power: CR2430 (~2 years)\n- Profile: ~1.3 cm slim\n- Protocol: Zigbee 3.0\n- Installation: Wireless, adhesive or portable\n\n\u26a0 No relay \u2014 does not switch loads. Scene and automation triggers only."
+  },
+  "specs": {
+    "summary": "Input Power: CR2430 button battery | Communication: Zigbee | Dimensions: 86 \u00d7 86 \u00d7 13 mm | Standby Power: 10 \u00b5A | Working Temperature: -10\u00b0C to +45\u00b0C | Working Humidity: <90% RH | Button Lifecycle: 50,000 presses | Frequency Band: 2400\u20132484 MHz | Max Radio Transmit Power: <+19 dBm",
+    "channels": "0 (no relay)",
+    "max_switching_capacity": "",
+    "recommended_load": "",
+    "installation": "Wireless (adhesive mount or portable)",
+    "compatibility": "Compatible Zigbee gateways and automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 8747,
+    "dealer_price_inr": 3499,
+    "gst_rate": "18",
+    "hsn": "85365090"
+  },
+  "limitations": "No relay. Does not switch electrical loads. Scene triggers only. Battery: CR2430 (~2 years).",
+  "dependencies": "Zigbee coordinator or hub. CR2430 battery.",
+  "images": {
+    "hero": "../../images/TAC 4 Gang 6 Scene Switch - White.png",
+    "all": [
+      "../../images/TAC 4 Gang 6 Scene Switch - White.png",
+      "../../images/TAC 4 Gang 6 Scene Switch - Grey.png",
+      "../../images/TAC 4 Gang 6 Scene Switch - Gold.png"
+    ],
+    "hero_url": "../../images/TAC%204%20Gang%206%20Scene%20Switch%20-%20White.png",
+    "all_urls": [
+      "../../images/TAC%204%20Gang%206%20Scene%20Switch%20-%20White.png",
+      "../../images/TAC%204%20Gang%206%20Scene%20Switch%20-%20Grey.png",
+      "../../images/TAC%204%20Gang%206%20Scene%20Switch%20-%20Gold.png"
+    ]
+  },
+  "enabled": true
+}

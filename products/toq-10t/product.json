@@ -1,0 +1,53 @@
+{
+  "sku": "38617579105",
+  "name": "TOQ 10T",
+  "slug": "toq-10t",
+  "brand": "Smartify",
+  "category": [
+    "Smart Panels",
+    "Touch Switches"
+  ],
+  "device_type": "Zigbee Touch Control Panel",
+  "protocol": "Zigbee 3.0",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Ten touches. Every light, every scene.\n\nThe TOQ 10T is for rooms and homes that demand complete control from a single point. Ten independent buttons. Finished in glass. Nothing out of reach.",
+    "technical": "A 10-button Zigbee capacitive touch panel for comprehensive load switching and scene control across up to 10 independent channels in residential and commercial installations.\n\nEach button independently controls a load or triggers a scene. Configurable for toggle or momentary operation per button. Available in white or black glass with silver, gold, or black bezel and configurable backlight.\n\nKey Specifications\n- Buttons: 10 capacitive touch\n- Relay: 10A per channel\n- Direct Load: Up to 4A per channel\n- Protocol: Zigbee 3.0\n- Finish: White/Black glass + Silver/Gold/Black bezel\n- Installation: Wall-mounted\n\n\u26a0 For loads above 4A, use an external SSR or contactor."
+  },
+  "specs": {
+    "summary": "",
+    "channels": "10",
+    "max_switching_capacity": "10A per channel",
+    "recommended_load": "Up to 4A per channel",
+    "installation": "Wall-mounted",
+    "compatibility": "Zigbee automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 19557,
+    "dealer_price_inr": 7823,
+    "gst_rate": "18",
+    "hsn": "85369090"
+  },
+  "limitations": "For loads above 4A use external SSR or contactor.",
+  "dependencies": "Zigbee coordinator or hub",
+  "images": {
+    "hero": "../../images/TOQ 10 Button Panel - Black.png",
+    "all": [
+      "../../images/TOQ 10 Button Panel - Black.png",
+      "../../images/TOQ Overview.png"
+    ],
+    "hero_url": "../../images/TOQ%2010%20Button%20Panel%20-%20Black.png",
+    "all_urls": [
+      "../../images/TOQ%2010%20Button%20Panel%20-%20Black.png",
+      "../../images/TOQ%20Overview.png"
+    ]
+  },
+  "enabled": true
+}

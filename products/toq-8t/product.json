@@ -1,0 +1,53 @@
+{
+  "sku": "38687106141",
+  "name": "TOQ 8T",
+  "slug": "toq-8t",
+  "brand": "Smartify",
+  "category": [
+    "Smart Panels",
+    "Touch Switches"
+  ],
+  "device_type": "Zigbee Touch Control Panel",
+  "protocol": "Zigbee 3.0",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Eight circuits. One surface.\n\nA full room \u2014 or an entire floor \u2014 controlled from a single panel. The TOQ 8T gives you eight independent touch points, finished in glass, responding to the lightest touch.",
+    "technical": "An 8-button Zigbee capacitive touch panel for load switching, scene triggering, and dimming control across up to 8 independent channels.\n\nEach button is individually configurable for toggle or momentary operation. Supports dimming via compatible retrofit dimmer modules. Available in white or black glass with silver, gold, or black bezel and configurable backlight colour.\n\nKey Specifications\n- Buttons: 8 capacitive touch\n- Relay: 10A per channel\n- Direct Load: Up to 4A per channel\n- Protocol: Zigbee 3.0\n- Finish: White/Black glass + Silver/Gold/Black bezel\n- Installation: Wall-mounted\n\n\u26a0 For loads above 4A, use an external SSR or contactor."
+  },
+  "specs": {
+    "summary": "",
+    "channels": "8",
+    "max_switching_capacity": "10A per channel",
+    "recommended_load": "Up to 4A per channel",
+    "installation": "Wall-mounted",
+    "compatibility": "Zigbee automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 13805,
+    "dealer_price_inr": 5522,
+    "gst_rate": "18",
+    "hsn": "85369090"
+  },
+  "limitations": "For loads above 4A use external SSR or contactor.",
+  "dependencies": "Zigbee coordinator or hub",
+  "images": {
+    "hero": "../../images/TOQ - Grey.png",
+    "all": [
+      "../../images/TOQ - Grey.png",
+      "../../images/TOQ - Black.png"
+    ],
+    "hero_url": "../../images/TOQ%20-%20Grey.png",
+    "all_urls": [
+      "../../images/TOQ%20-%20Grey.png",
+      "../../images/TOQ%20-%20Black.png"
+    ]
+  },
+  "enabled": true
+}

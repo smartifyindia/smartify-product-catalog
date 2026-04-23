@@ -1,0 +1,51 @@
+{
+  "sku": "38620154019",
+  "name": "Zigbee DALI Gateway",
+  "slug": "zigbee-dali-gateway",
+  "brand": "Smartify",
+  "category": [
+    "Gateways",
+    "Lighting Control"
+  ],
+  "device_type": "Zigbee to DALI Protocol Gateway",
+  "protocol": "Zigbee 3.0 + DALI Bus",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Architectural lighting. Smart precision.\n\nDALI lighting systems were built for professional environments \u2014 precise, flexible, professional-grade. The DALI Gateway brings that precision into your smart ecosystem, giving you scene control, tunable white, and RGBW automation through the same interface as everything else.",
+    "technical": "A Zigbee to DALI protocol gateway that integrates DALI lighting systems into a Zigbee-based smart automation ecosystem. Supports up to 64 DALI nodes with DT8 compatibility for tunable white and RGBW control.\n\nTranslates Zigbee commands into DALI control signals for switching, dimming, grouping, scene control, and tunable white/RGBW operation. DIN rail or panel-mounted installation.\n\nKey Specifications\n- Wireless: Zigbee 3.0\n- Interface: DALI Bus (2-wire)\n- Capacity: Up to 64 DALI nodes\n- DALI Type: DT8 (tunable white / RGBW)\n- Installation: DIN rail / panel\n\n\u26a0 Does not power lighting loads directly. Communicates with DALI drivers over the bus. Existing DALI installation required."
+  },
+  "specs": {
+    "summary": "Input Voltage: 24V DC | DALI Channels: 1 | Built-in DALI PS Output Voltage: 12\u201322.5V DC | Built-in DALI PS Output Current: 250mA max | DALI Current Consumption (PS disabled): Max. 2mA | Max DALI Devices: 64 | Supported Device Types: DT6, DT8 Tc, DT8 XY, DT8 RGBWAF | Connectivity: Ethernet (RJ45) | Control Modes: Broadcast, group, scene, timer & schedule | Built-in Battery & RTC: Yes | Installation: DIN Rail | Dimensions (L \u00d7 W \u00d7 H): 110 \u00d7 53 \u00d7 65 mm",
+    "channels": "Up to 64 DALI nodes",
+    "max_switching_capacity": "",
+    "recommended_load": "DALI DT8 drivers and fixtures",
+    "installation": "DIN rail or panel-mounted",
+    "compatibility": "Zigbee automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 100000,
+    "dealer_price_inr": 40000,
+    "gst_rate": "18",
+    "hsn": "85371010"
+  },
+  "limitations": "Does not power lighting loads directly. Communicates with DALI drivers over the bus only.",
+  "dependencies": "Zigbee coordinator or hub. Existing DALI bus installation.",
+  "images": {
+    "hero": "../../images/Zigbee DALI Gateway.png",
+    "all": [
+      "../../images/Zigbee DALI Gateway.png"
+    ],
+    "hero_url": "../../images/Zigbee%20DALI%20Gateway.png",
+    "all_urls": [
+      "../../images/Zigbee%20DALI%20Gateway.png"
+    ]
+  },
+  "enabled": true
+}

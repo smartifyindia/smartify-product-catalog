@@ -1,0 +1,51 @@
+{
+  "sku": "38678738240",
+  "name": "Zigbee mmWave Sensor (Ceiling Mounted)",
+  "slug": "zigbee-mmwave-sensor-ceiling-mounted",
+  "brand": "Smartify",
+  "category": [
+    "Sensors",
+    "Presence Detection"
+  ],
+  "device_type": "mmWave Motion / Presence Sensor",
+  "protocol": "Zigbee 3.0",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "A room that knows when it's occupied.\n\nThe Ceiling mmWave Sensor watches the whole room \u2014 not a narrow cone. It detects presence, not just motion, so every automation responds to whether someone is actually there. Not whether they waved.",
+    "technical": "A ceiling-mounted, mains-powered Zigbee mmWave presence sensor designed for accurate occupancy detection across a full room. Detects micro-movements for continuous presence sensing \u2014 not just initial motion.\n\nIdeal for lighting control, HVAC triggers, and occupancy-based automation in residential and commercial spaces. Ceiling mount provides optimal coverage.\n\nKey Specifications\n- Protocol: Zigbee 3.0\n- Detection: mmWave radar (motion + presence)\n- Power: Mains powered\n- Mounting: Ceiling mount\n\n\u26a0 Does not control electrical loads. Provides presence/motion data for automation triggers."
+  },
+  "specs": {
+    "summary": "Wireless Connection: Zigbee | Working Voltage: AC 100\u2013250V | Working Current: \u226470mA | Working Temperature: -20\u00b0C to +70\u00b0C | Detection Distance: 0.3\u20139m (default 6m) | Sensitivity: 0\u20139 (default 7) | Target Detection Confirmation Time: 0\u201310s | Target Disappearance Delay Time: 0.5s\u201325 min (min. 15s recommended) | Light Sensing Range: 0\u20132000 Lux | Installation: Ceiling Mounted",
+    "channels": "",
+    "max_switching_capacity": "",
+    "recommended_load": "",
+    "installation": "Ceiling mount (mains powered)",
+    "compatibility": "Compatible Zigbee gateways and automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 10375,
+    "dealer_price_inr": 4150,
+    "gst_rate": "18",
+    "hsn": "85319000"
+  },
+  "limitations": "Does not control electrical loads. Provides presence/motion signals for automation.",
+  "dependencies": "Mains wiring at ceiling mount point. Zigbee coordinator or hub.",
+  "images": {
+    "hero": "../../images/Zigbee mmWave Sensor (Ceiling Mounted).png",
+    "all": [
+      "../../images/Zigbee mmWave Sensor (Ceiling Mounted).png"
+    ],
+    "hero_url": "../../images/Zigbee%20mmWave%20Sensor%20%28Ceiling%20Mounted%29.png",
+    "all_urls": [
+      "../../images/Zigbee%20mmWave%20Sensor%20%28Ceiling%20Mounted%29.png"
+    ]
+  },
+  "enabled": true
+}

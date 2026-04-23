@@ -1,0 +1,62 @@
+{
+  "sku": "38677515791",
+  "name": "TAC 3",
+  "slug": "tac-3",
+  "brand": "Smartify",
+  "category": [
+    "Smart Switches"
+  ],
+  "device_type": "Zigbee Smart Switch",
+  "protocol": "Zigbee 3.0",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Three loads. One clean face.\n\nThe TAC 3 manages three circuits from a single switch \u2014 lighting zones, fans, or scenes \u2014 in a finish that makes the hardware disappear into your interior.",
+    "technical": "A 3-button Zigbee smart switch with independent load control or scene triggering per button. Backlit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.\n\nKey Specifications\n- Buttons: 3 (independent)\n- Relay: 10A total (shared)\n- Direct Load: Up to 3A per load\n- Protocol: Zigbee 3.0\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n\n\u26a0 10A total shared relay capacity. For loads above 3A use an external SSR or contactor."
+  },
+  "specs": {
+    "summary": "Input Voltage: 110\u2013240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 \u00d7 86 \u00d7 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10\u00b0C to +60\u00b0C | Working Humidity: \u226495% RH (non-condensing)",
+    "channels": "3",
+    "max_switching_capacity": "10A total (shared)",
+    "recommended_load": "Up to 3A per load",
+    "installation": "Wall-mounted",
+    "compatibility": "Zigbee automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 19500,
+    "dealer_price_inr": 7800,
+    "gst_rate": "18",
+    "hsn": "85369090"
+  },
+  "limitations": "10A total shared. For loads above 3A use external SSR or contactor. Materials: PP or AG glass. Colours: Black, White, Gold.",
+  "dependencies": "Zigbee coordinator or hub",
+  "images": {
+    "hero": "../../images/TAC 3 Gang - White.png",
+    "all": [
+      "../../images/TAC 3 Gang - White.png",
+      "../../images/TAC 3 Gang - Grey.png",
+      "../../images/TAC 3 Gang - Gold.png",
+      "../../images/TAC Overview - White.png",
+      "../../images/TAC Overview - Grey.png",
+      "../../images/TAC Overview - Gold.png",
+      "../../images/TAC D1 Series Overview.png"
+    ],
+    "hero_url": "../../images/TAC%203%20Gang%20-%20White.png",
+    "all_urls": [
+      "../../images/TAC%203%20Gang%20-%20White.png",
+      "../../images/TAC%203%20Gang%20-%20Grey.png",
+      "../../images/TAC%203%20Gang%20-%20Gold.png",
+      "../../images/TAC%20Overview%20-%20White.png",
+      "../../images/TAC%20Overview%20-%20Grey.png",
+      "../../images/TAC%20Overview%20-%20Gold.png",
+      "../../images/TAC%20D1%20Series%20Overview.png"
+    ]
+  },
+  "enabled": true
+}

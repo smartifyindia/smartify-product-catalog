@@ -1,0 +1,46 @@
+{
+  "sku": "38668925286",
+  "name": "IR Blaster (WiFi)",
+  "slug": "ir-blaster-wifi",
+  "brand": "Smartify",
+  "category": [
+    "IR Controllers"
+  ],
+  "device_type": "Wi-Fi IR Blaster / IR Controller",
+  "protocol": "Wi-Fi 2.4 GHz",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Every remote. One app.\n\nYour AC, TV, and set-top box \u2014 all the devices that came with their own remotes \u2014 now respond to . No rewiring. Just point, configure, and let your home handle the rest.",
+    "technical": "A Wi-Fi IR blaster that sends infrared commands to legacy IR-controlled devices \u2014 TVs, air conditioners, set-top boxes, and other appliances \u2014 through your smart home network.\n\nConnects to your local 2.4 GHz Wi-Fi network and transmits configurable IR codes via mobile apps and automation platforms. Requires line-of-sight to target devices.\n\nKey Specifications\n- Protocol: Wi-Fi 2.4 GHz\n- Control: Infrared (IR)\n- Installation: Indoor, line-of-sight placement\n\n\u26a0 IR line-of-sight to target devices is required. Does not switch electrical loads. RF devices not supported \u2014 see IR+RF Blaster."
+  },
+  "specs": {
+    "summary": "Power Input: 5V DC 1A (Micro USB) | Connection: Wi-Fi 2.4GHz 802.11b/g/n | IR Control Distance: \u22648m | Working Temperature: 0\u00b0C to +50\u00b0C | Working Humidity: \u226485% RH | Dimensions: 68 \u00d7 68 \u00d7 19.5 mm",
+    "channels": "",
+    "max_switching_capacity": "",
+    "recommended_load": "IR-controlled devices (line-of-sight)",
+    "installation": "Indoor, line-of-sight to IR devices",
+    "compatibility": "Compatible smart home apps and automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 2125,
+    "dealer_price_inr": 850,
+    "gst_rate": "18",
+    "hsn": "85437099"
+  },
+  "limitations": "IR line-of-sight required. Does not switch electrical loads. RF devices not supported.",
+  "dependencies": "2.4 GHz Wi-Fi network",
+  "images": {
+    "hero": "",
+    "all": [],
+    "hero_url": "",
+    "all_urls": []
+  },
+  "enabled": true
+}

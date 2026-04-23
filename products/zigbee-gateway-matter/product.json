@@ -1,0 +1,50 @@
+{
+  "sku": "38623861651",
+  "name": "Zigbee Gateway (Matter)",
+  "slug": "zigbee-gateway-matter",
+  "brand": "Smartify",
+  "category": [
+    "Gateways"
+  ],
+  "device_type": "Smart Home Gateway / Bridge",
+  "protocol": "Zigbee 3.0 + Matter (IP / Thread bridge)",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "One home. Every ecosystem.\n\nZigbee devices. Matter devices. Apple HomeKit. The Matter Gateway connects them all \u2014 no friction, no switching between apps. Your home speaks one language, even when your devices don't.",
+    "technical": "A wired smart home gateway that bridges Zigbee 3.0 and Matter protocols, enabling unified control across both ecosystems through a single stable Ethernet connection.\n\nSupports up to 128 devices and provides device pairing, cross-protocol bridging, scene automation, and remote control. Enables integration with Matter-enabled applications and Apple HomeKit via Matter.\n\nKey Specifications\n- Protocols: Zigbee 3.0 + Matter (IP / Thread bridge)\n- Network: Wired Ethernet (LAN)\n- Capacity: Up to 128 devices\n- Compatibility: Matter apps, Apple HomeKit (via Matter)\n- Installation: Indoor, fixed LAN connection\n\n\u26a0 Does not control electrical loads. Acts as a communication and bridging layer only."
+  },
+  "specs": {
+    "summary": "Dimensions: 90 \u00d7 90 \u00d7 22 mm | Power Input: 5V 1A | Power Interface: USB Type-C | Wireless Protocol: Zigbee, Thread | Operating Temperature: -10\u00b0C to +55\u00b0C | Operating Humidity: 10%\u201390% RH (non-condensing) | Storage Temperature: -20\u00b0C to +60\u00b0C | Storage Humidity: 5%\u201390% RH (non-condensing)",
+    "channels": "",
+    "max_switching_capacity": "",
+    "recommended_load": "Up to 128 devices",
+    "installation": "Indoor, fixed wired LAN connection",
+    "compatibility": "Matter-enabled apps, Apple HomeKit (via Matter), supported automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 15250,
+    "dealer_price_inr": 6100,
+    "gst_rate": "18",
+    "hsn": "85176290"
+  },
+  "limitations": "Does not control electrical loads. Cross-protocol bridging requires Matter-compatible ecosystem.",
+  "dependencies": "Wired Ethernet router connection",
+  "images": {
+    "hero": "../../images/Zigbee Gateway (Matter).png",
+    "all": [
+      "../../images/Zigbee Gateway (Matter).png"
+    ],
+    "hero_url": "../../images/Zigbee%20Gateway%20%28Matter%29.png",
+    "all_urls": [
+      "../../images/Zigbee%20Gateway%20%28Matter%29.png"
+    ]
+  },
+  "enabled": true
+}

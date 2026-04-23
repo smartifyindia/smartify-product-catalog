@@ -1,0 +1,51 @@
+{
+  "sku": "38626055855",
+  "name": "Zigbee mmWave Sensor (USB)",
+  "slug": "zigbee-mmwave-sensor-usb",
+  "brand": "Smartify",
+  "category": [
+    "Sensors",
+    "Presence Detection"
+  ],
+  "device_type": "mmWave Motion / Presence Sensor",
+  "protocol": "Zigbee 3.0",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "It knows you're there. Even when you're still.\n\nTraditional motion sensors miss you the moment you stop moving. The mmWave Sensor doesn't. It detects presence \u2014 not just movement \u2014 so your lights stay on, your climate stays comfortable, and your home keeps responding.",
+    "technical": "A USB-powered Zigbee mmWave presence sensor that detects fine motion and human presence using radar technology \u2014 without relying on traditional PIR sensing.\n\nEnables accurate presence-based automations such as lighting control and HVAC triggers even when minimal movement occurs. USB power allows flexible placement where mains wiring is unavailable.\n\nKey Specifications\n- Protocol: Zigbee 3.0\n- Detection: mmWave radar (motion + presence)\n- Power: USB\n- Mounting: Flexible placement\n\n\u26a0 Does not control electrical loads. Provides presence/motion data for automation triggers."
+  },
+  "specs": {
+    "summary": "Power Supply: 5V 1A (USB) | Power Consumption: 0.5W | Communication Protocol: Zigbee | Radar Frequency: 24GHz\u201324.25GHz | Light Sensitivity Range: 0\u201310000 Lux | Operating Temperature: -10\u00b0C to +40\u00b0C | Operating Humidity: 0%\u201395% RH (non-condensing)",
+    "channels": "",
+    "max_switching_capacity": "",
+    "recommended_load": "",
+    "installation": "Flexible (surface, ceiling, or wall)",
+    "compatibility": "Compatible Zigbee gateways and automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 7000,
+    "dealer_price_inr": 2800,
+    "gst_rate": "18",
+    "hsn": "85319000"
+  },
+  "limitations": "Does not control electrical loads. Provides presence/motion signals for automation.",
+  "dependencies": "USB power adapter or USB power source. Zigbee coordinator or hub.",
+  "images": {
+    "hero": "../../images/Zigbee mmWave Sensor (USB).png",
+    "all": [
+      "../../images/Zigbee mmWave Sensor (USB).png"
+    ],
+    "hero_url": "../../images/Zigbee%20mmWave%20Sensor%20%28USB%29.png",
+    "all_urls": [
+      "../../images/Zigbee%20mmWave%20Sensor%20%28USB%29.png"
+    ]
+  },
+  "enabled": true
+}

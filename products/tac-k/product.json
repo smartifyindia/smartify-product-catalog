@@ -1,0 +1,56 @@
+{
+  "sku": "38647971307",
+  "name": "TAC K",
+  "slug": "tac-k",
+  "brand": "Smartify",
+  "category": [
+    "Smart Switches"
+  ],
+  "device_type": "Zigbee Rotary Control Dial",
+  "protocol": "Zigbee 3.0",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Turn to dim. Push to switch. That's it.\n\nThe TAC K makes lighting control physical again \u2014 but smarter. A single rotary dial that adjusts brightness, shifts colour temperature, and switches between rooms or groups. No screen. No menu. Just touch.",
+    "technical": "A Zigbee rotary smart dial for intuitive control of lighting brightness, colour temperature, and device groups. Supports up to 3 individual lights or 3 lighting groups via rotate and push interaction.\n\nRotate to adjust brightness or colour temperature. Push to switch between groups or trigger actions. Designed for wall-mounted installation.\n\nKey Specifications\n- Interface: Rotary + push\n- Control: Brightness, colour temperature, group switching\n- Scope: Up to 3 lights or groups\n- Protocol: Zigbee 3.0\n- Installation: Wall-mounted\n\n\u26a0 Does not switch electrical loads directly. Smart control interface only."
+  },
+  "specs": {
+    "summary": "Input Voltage: 110\u2013240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 \u00d7 86 \u00d7 25.4 mm (knob: 16mm) | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10\u00b0C to +60\u00b0C | Working Humidity: \u226495% RH (non-condensing)",
+    "channels": "Up to 3 lights or 3 lighting groups",
+    "max_switching_capacity": "",
+    "recommended_load": "",
+    "installation": "Wall-mounted",
+    "compatibility": "Zigbee automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 34000,
+    "dealer_price_inr": 17500,
+    "gst_rate": "18",
+    "hsn": "85365090"
+  },
+  "limitations": "Does not switch electrical loads directly. Control interface only.",
+  "dependencies": "Zigbee coordinator or hub",
+  "images": {
+    "hero": "../../images/TAC Remote Control - Grey.png",
+    "all": [
+      "../../images/TAC Remote Control - Grey.png",
+      "../../images/TAC Remote Control - Gold.png",
+      "../../images/TAC Remote Control - Red.png",
+      "../../images/TAC Remote Control - Green.png"
+    ],
+    "hero_url": "../../images/TAC%20Remote%20Control%20-%20Grey.png",
+    "all_urls": [
+      "../../images/TAC%20Remote%20Control%20-%20Grey.png",
+      "../../images/TAC%20Remote%20Control%20-%20Gold.png",
+      "../../images/TAC%20Remote%20Control%20-%20Red.png",
+      "../../images/TAC%20Remote%20Control%20-%20Green.png"
+    ]
+  },
+  "enabled": true
+}

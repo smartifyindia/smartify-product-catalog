@@ -1,0 +1,54 @@
+{
+  "sku": "38649421973",
+  "name": "TAC HL",
+  "slug": "tac-hl",
+  "brand": "Smartify",
+  "category": [
+    "Smart Switches"
+  ],
+  "device_type": "Zigbee Smart Switch (Heavy Load)",
+  "protocol": "Zigbee 3.0",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Your geyser. On your schedule.\n\nThe TAC HL puts your heavy appliances \u2014 water heater, pump, high-power loads \u2014 on a smart switch rated for the job. Set schedules, automate by presence, or control remotely. Same simplicity, for serious loads.",
+    "technical": "A single-button Zigbee smart switch rated for heavy electrical loads up to 20A \u2014 designed for direct control of geysers, water heaters, pumps, and other high-power appliances.\n\nBacklit with customizable icon. Available in PP or anti-glare glass in black, white, or gold.\n\nKey Specifications\n- Buttons: 1\n- Relay: 20A\n- Load: Geysers, heaters, pumps\n- Protocol: Zigbee 3.0\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n- Installation: Wall-mounted\n\n\u26a0 Heavy load application. Proper cable sizing, circuit protection, and qualified installation are required."
+  },
+  "specs": {
+    "summary": "Input Voltage: 110\u2013240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 \u00d7 86 \u00d7 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10\u00b0C to +60\u00b0C | Working Humidity: \u226495% RH (non-condensing)",
+    "channels": "1",
+    "max_switching_capacity": "20A",
+    "recommended_load": "Geysers, heaters, pumps, heavy appliances",
+    "installation": "Wall-mounted",
+    "compatibility": "Zigbee automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 18000,
+    "dealer_price_inr": 7200,
+    "gst_rate": "18",
+    "hsn": "85369090"
+  },
+  "limitations": "Heavy load installation. Qualified installation required. Materials: PP or AG glass. Colours: Black, White, Gold.",
+  "dependencies": "Zigbee coordinator or hub",
+  "images": {
+    "hero": "../../images/TAC Heavy Load Switch - White.png",
+    "all": [
+      "../../images/TAC Heavy Load Switch - White.png",
+      "../../images/TAC Heavy Load Switch - Grey.png",
+      "../../images/TAC Heavy Load Switch - Gold.png"
+    ],
+    "hero_url": "../../images/TAC%20Heavy%20Load%20Switch%20-%20White.png",
+    "all_urls": [
+      "../../images/TAC%20Heavy%20Load%20Switch%20-%20White.png",
+      "../../images/TAC%20Heavy%20Load%20Switch%20-%20Grey.png",
+      "../../images/TAC%20Heavy%20Load%20Switch%20-%20Gold.png"
+    ]
+  },
+  "enabled": true
+}

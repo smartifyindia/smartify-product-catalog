@@ -1,0 +1,51 @@
+{
+  "sku": "38640080710",
+  "name": "Zigbee Contact Sensor",
+  "slug": "zigbee-contact-sensor",
+  "brand": "Smartify",
+  "category": [
+    "Sensors",
+    "Security"
+  ],
+  "device_type": "Door/Window Contact Sensor",
+  "protocol": "Zigbee 3.0",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Open. Closed. Your home knows.\n\nWhen a door opens, the lights turn on. When a window is left open, you get a notification. The Contact Sensor is small, invisible, and always paying attention \u2014 so you don't have to.",
+    "technical": "A Zigbee 3.0 magnetic contact sensor that detects and reports the open/closed state of doors, windows, and other entry points to a Zigbee gateway or compatible hub.\n\nBattery-powered with surface mount installation via adhesive or screws. Used for security monitoring and as an automation trigger.\n\nKey Specifications\n- Protocol: Zigbee 3.0\n- Detection: Magnetic open/close\n- Power: Battery\n- Mounting: Surface mount (adhesive or screws)\n\n\u26a0 Status sensor only \u2014 does not control electrical loads."
+  },
+  "specs": {
+    "summary": "Wireless Connection: Zigbee | Battery: CR2032 (replaceable) | Low Battery Alarm: Yes | Operating Temperature: -10\u00b0C to +50\u00b0C | Dimensions (Host): 40 \u00d7 26 \u00d7 13 mm | Dimensions (Magnet): 26 \u00d7 9.5 \u00d7 11 mm",
+    "channels": "",
+    "max_switching_capacity": "",
+    "recommended_load": "",
+    "installation": "Surface mount (adhesive or screws)",
+    "compatibility": "Compatible Zigbee gateways and automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 2322,
+    "dealer_price_inr": 929,
+    "gst_rate": "18",
+    "hsn": "85319000"
+  },
+  "limitations": "Does not control electrical loads. Status feedback only.",
+  "dependencies": "Zigbee coordinator or hub",
+  "images": {
+    "hero": "../../images/Zigbee Contact Sensor.png",
+    "all": [
+      "../../images/Zigbee Contact Sensor.png"
+    ],
+    "hero_url": "../../images/Zigbee%20Contact%20Sensor.png",
+    "all_urls": [
+      "../../images/Zigbee%20Contact%20Sensor.png"
+    ]
+  },
+  "enabled": true
+}

@@ -1,0 +1,50 @@
+{
+  "sku": "38614020398",
+  "name": "IR Blaster w/ Analog Screen, Temp & Humidity Sensor (WiFi)",
+  "slug": "ir-blaster-w--analog-screen-temp-and-humidity-sensor-wifi",
+  "brand": "Smartify",
+  "category": [
+    "IR Controllers"
+  ],
+  "device_type": "Wi-Fi IR Blaster with Environmental Sensor",
+  "protocol": "Wi-Fi 2.4 GHz",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "It senses. It responds. You don't have to.\n\nWhen the room gets warm, the air conditioner turns on. You didn't schedule it \u2014 read the room. The IR Blaster with sensors watches your environment and acts on it, quietly and precisely.",
+    "technical": "A Wi-Fi IR blaster with integrated temperature and humidity sensors and an analog-style display. Transmits IR commands to legacy devices while simultaneously reporting real-time environmental data for automation logic.\n\nConnects to your 2.4 GHz Wi-Fi network. Sensor data can be used as automation triggers \u2014 for example, activating an air conditioner when temperature exceeds a threshold.\n\nKey Specifications\n- Protocol: Wi-Fi 2.4 GHz\n- Control: Infrared (IR)\n- Sensors: Temperature + Humidity\n- Display: Analog-style (temp/humidity)\n- Installation: Indoor, line-of-sight placement\n\n\u26a0 IR line-of-sight to target devices is required. Does not switch electrical loads."
+  },
+  "specs": {
+    "summary": "Power Input: DC 5V/1A (Micro USB, no adapter included) | Infrared Frequency: 38 kHz | IR Control Distance: \u226410m | LED Indicator: Blue | Connection: Wi-Fi 2.4GHz | Temperature Measurement Range: 0\u00b0C to +60\u00b0C | Temperature Accuracy: \u00b11\u00b0C | Humidity Measurement Range: 0%\u201399% RH | Humidity Accuracy: \u00b15% RH | Dimensions: 65 \u00d7 65 \u00d7 17 mm",
+    "channels": "",
+    "max_switching_capacity": "",
+    "recommended_load": "IR-controlled devices (line-of-sight)",
+    "installation": "Indoor, line-of-sight to IR devices",
+    "compatibility": "Compatible smart home apps and automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 4750,
+    "dealer_price_inr": 1900,
+    "gst_rate": "18",
+    "hsn": "85437099"
+  },
+  "limitations": "IR line-of-sight required. Does not switch electrical loads.",
+  "dependencies": "2.4 GHz Wi-Fi network",
+  "images": {
+    "hero": "../../images/IR Blaster with Analog Screen.png",
+    "all": [
+      "../../images/IR Blaster with Analog Screen.png"
+    ],
+    "hero_url": "../../images/IR%20Blaster%20with%20Analog%20Screen.png",
+    "all_urls": [
+      "../../images/IR%20Blaster%20with%20Analog%20Screen.png"
+    ]
+  },
+  "enabled": true
+}

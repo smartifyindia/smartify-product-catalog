@@ -1,0 +1,51 @@
+{
+  "sku": "38673300629",
+  "name": "LED Controller (CV-DIMMER)",
+  "slug": "led-controller-cv-dimmer",
+  "brand": "Smartify",
+  "category": [
+    "Retrofit Dimmers",
+    "Smart Lighting"
+  ],
+  "device_type": "Constant Voltage LED Dimmer Controller",
+  "protocol": "Compatible smart ecosystem",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Simple. Smooth. Smart.\n\nClean, continuous dimming for single-color LED strips \u2014 from full brightness to a gentle glow. The CV Dimmer handles the detail so your lighting always feels exactly right.",
+    "technical": "A constant voltage LED dimmer controller for single-color low-voltage LED strips, providing smooth 0-100% brightness control through a compatible smart ecosystem.\n\nRequires an appropriate constant voltage DC power supply (12V or 24V) matched to the LED strip specification. Designed for panel or concealed installation.\n\nKey Specifications\n- Output: CV (Constant Voltage)\n- LED Support: Single-color\n- Channels: 1\n- Control: 0-100% dimming\n- Installation: Indoor panel or concealed\n\n\u26a0 Requires an appropriate CV DC power supply (12V/24V). Does not power LED strips directly from mains voltage."
+  },
+  "specs": {
+    "summary": "",
+    "channels": "1",
+    "max_switching_capacity": "",
+    "recommended_load": "Single-color CV LED strips (12V or 24V)",
+    "installation": "Indoor panel or concealed installation",
+    "compatibility": "Compatible smart lighting ecosystems"
+  },
+  "pricing": {
+    "srp_inr": 8247,
+    "dealer_price_inr": 3299,
+    "gst_rate": "18",
+    "hsn": "85371010"
+  },
+  "limitations": "Requires appropriate CV DC power supply. Single-color only. Does not power LEDs from mains directly.",
+  "dependencies": "Compatible CV DC power supply (12V or 24V) required",
+  "images": {
+    "hero": "../../images/LED Controller (CCT).png",
+    "all": [
+      "../../images/LED Controller (CCT).png"
+    ],
+    "hero_url": "../../images/LED%20Controller%20%28CCT%29.png",
+    "all_urls": [
+      "../../images/LED%20Controller%20%28CCT%29.png"
+    ]
+  },
+  "enabled": true
+}

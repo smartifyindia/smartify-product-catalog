@@ -1,0 +1,50 @@
+{
+  "sku": "38616756936",
+  "name": "Convergia",
+  "slug": "convergia",
+  "brand": "Smartify",
+  "category": [
+    "Gateways"
+  ],
+  "device_type": "Local Smart Automation Gateway",
+  "protocol": "",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Your home. Fully understood.\n\nConvergia doesn't automate your home \u2014 it understands it. Every light, every climate system, every scene runs through a single platform that thinks locally, responds instantly, and never depends on a cloud server to keep your life running.",
+    "technical": "Convergia is a locally hosted smart automation gateway that unifies KNX wired systems and wireless ecosystems \u2014 Zigbee, Wi-Fi, Matter, and LAN/IP \u2014 into a single interoperable platform.\n\nBuilt on an Intel NUC-based appliance, it runs all automation logic locally, ensuring reliability independent of cloud connectivity. Advanced rule-based automation supports complex triggers, conditions, and multi-step logic. Integrates AV systems and IP cameras directly into automation workflows.\n\nKey Specifications\n- Architecture: On-premise (locally hosted)\n- Protocols: KNX, Zigbee, Wi-Fi, Matter, LAN/IP\n- AV Integration: Yes\n- Camera Integration: IP cameras\n- Automation: Rule-based, local execution\n- Interface: Web dashboard + mobile access\n- Hardware: Intel NUC-based pre-configured appliance\n\n\u26a0 Does not switch electrical loads. Functions as the central intelligence layer for the entire automation system. Qualified integrator installation recommended."
+  },
+  "specs": {
+    "summary": "",
+    "channels": "",
+    "max_switching_capacity": "",
+    "recommended_load": "",
+    "installation": "Pre-configured Intel NUC-based hardware appliance",
+    "compatibility": "KNX, Zigbee, Wi-Fi, Matter, LAN/IP, AV systems, IP cameras"
+  },
+  "pricing": {
+    "srp_inr": 87500,
+    "dealer_price_inr": 35000,
+    "gst_rate": "18",
+    "hsn": "84713010"
+  },
+  "limitations": "Does not switch electrical loads. Central intelligence layer only.",
+  "dependencies": "Qualified integrator installation recommended",
+  "images": {
+    "hero": "../../images/Convergia.png",
+    "all": [
+      "../../images/Convergia.png"
+    ],
+    "hero_url": "../../images/Convergia.png",
+    "all_urls": [
+      "../../images/Convergia.png"
+    ]
+  },
+  "enabled": true
+}

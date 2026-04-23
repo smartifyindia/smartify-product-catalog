@@ -1,0 +1,51 @@
+{
+  "sku": "38693737333",
+  "name": "Zigbee VRV Gateway",
+  "slug": "zigbee-vrv-gateway",
+  "brand": "Smartify",
+  "category": [
+    "Gateways",
+    "HVAC Control"
+  ],
+  "device_type": "VRV/VRF to Zigbee Integration Gateway",
+  "protocol": "Zigbee 3.0",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Your entire HVAC system. One tap.\n\nCommercial-grade air conditioning, brought into your smart home. The VRV Gateway connects your VRV/VRF system to \u2014 so every unit, every zone, responds to your preferences without requiring a separate app or remote.",
+    "technical": "A dedicated gateway that integrates VRV/VRF HVAC systems into a Zigbee-based smart automation ecosystem. Connects to the VRV/VRF outdoor unit via LAN cable and communicates wirelessly with a Zigbee gateway.\n\nEnables remote control, real-time monitoring, and automation of the entire VRV/VRF air conditioning system through the Zigbee automation platform \u2014 without modifying the HVAC hardware.\n\nKey Specifications\n- Device Type: VRV/VRF to Zigbee Integration Gateway\n- HVAC Connection: Wired LAN to outdoor unit\n- Wireless: Zigbee 3.0 (to Zigbee gateway)\n- Installation: Indoor, wired to outdoor unit\n\n\u26a0 Communication bridge only \u2014 does not switch electrical loads. VRV/VRF system compatibility must be confirmed before installation."
+  },
+  "specs": {
+    "summary": "Communication Protocol: Zigbee | AC Interface: X, Y (VRF communication port) | Additional Ports: RS485 Peripheral (\u00d72), KNS, RS485 | Power: External power adapter (do not connect 220V directly) | Compatible Brands: Daikin, Samsung, TCL, Gree, Toshiba, Panasonic, Hitachi, Hisense, York, Mitsubishi Electric, Mitsubishi Heavy Industries, AUX, LG, Trane, Midea, Carrier, Bosch, Haier, McQuay and more",
+    "channels": "",
+    "max_switching_capacity": "",
+    "recommended_load": "Compatible VRV/VRF systems",
+    "installation": "Indoor, wired LAN connection to outdoor unit",
+    "compatibility": "Zigbee automation platforms"
+  },
+  "pricing": {
+    "srp_inr": 55000,
+    "dealer_price_inr": 22000,
+    "gst_rate": "28",
+    "hsn": "84159000"
+  },
+  "limitations": "Communication bridge only. Does not switch electrical loads. VRV/VRF compatibility must be verified.",
+  "dependencies": "Zigbee coordinator or hub. Compatible VRV/VRF system required.",
+  "images": {
+    "hero": "../../images/Zigbee VRV Gateway.png",
+    "all": [
+      "../../images/Zigbee VRV Gateway.png"
+    ],
+    "hero_url": "../../images/Zigbee%20VRV%20Gateway.png",
+    "all_urls": [
+      "../../images/Zigbee%20VRV%20Gateway.png"
+    ]
+  },
+  "enabled": true
+}

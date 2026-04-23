@@ -1,0 +1,51 @@
+{
+  "sku": "38625458903",
+  "name": "2 Channel Zigbee Retrofit Dimmer",
+  "slug": "2-channel-zigbee-retrofit-dimmer",
+  "brand": "Smartify",
+  "category": [
+    "Retrofit Dimmers",
+    "Smart Lighting"
+  ],
+  "device_type": "Phase-Cut Dimmer",
+  "protocol": "Zigbee 3.0",
+  "technology": [
+    "Wireless"
+  ],
+  "assistants": [
+    "Amazon Alexa",
+    "Google Home",
+    "Siri / Apple HomeKit"
+  ],
+  "description": {
+    "consumer": "Two circuits. One mood.\n\nSet the scene across two lighting circuits from a single module. The 2-Channel Dimmer sits invisibly behind your existing switches, independently managing the brightness of each circuit \u2014 responding to schedules, scenes, or a quiet tap.",
+    "technical": "A dual-channel Zigbee phase-cut dimmer that retrofits two standard wall switches with independent brightness control \u2014 without replacing any existing hardware.\n\nEach channel independently supports phase-cut dimming up to 100W for compatible dimmable lighting fixtures and drivers. Installs behind existing switches in a flush box or on DIN rail. Communicates natively over Zigbee 3.0 with Home Assistant, and integrates with Matter and Apple HomeKit via a compatible hub.\n\nKey Specifications\n- Channels: 2 (independent)\n- Max Load: 100W per channel\n- Dimming Type: Phase-Cut (Trailing/Leading edge)\n- Protocol: Zigbee 3.0\n- Compatible with: Home Assistant (native), Matter & Apple HomeKit (via hub)\n- Installation: Flush box or DIN rail\n\n\u26a0 For use with dimmable fixtures and drivers only. Not a 0-10V controller and cannot function as a plain on/off relay."
+  },
+  "specs": {
+    "summary": "Voltage: 90\u2013250V AC | Max Power: 75W (110V) / 150W (220V) | Wireless Protocol: Zigbee 3.0 | Operating Temperature: 0\u00b0C to +40\u00b0C | Case Temperature (Tc): +80\u00b0C Max | Dimensions: 40 \u00d7 40 \u00d7 18 mm | IP Rating: IP20 | Frequency Band: 2.405\u20132.480 GHz | Max Radio Transmit Power: <+10 dBm | Installation Type: Behind Switch / DIN Rail",
+    "channels": "2 (independent)",
+    "max_switching_capacity": "100W per channel",
+    "recommended_load": "Dimmable fixtures / drivers only",
+    "installation": "Flush box or DIN rail",
+    "compatibility": "Home Assistant (native), Matter & Apple HomeKit (via hub)"
+  },
+  "pricing": {
+    "srp_inr": 3250,
+    "dealer_price_inr": 1300,
+    "gst_rate": "18",
+    "hsn": "85365090"
+  },
+  "limitations": "Compatible with dimmable loads only. Not a 0-10V controller. Does not function as a simple on/off relay.",
+  "dependencies": "Zigbee coordinator or hub. Dimmable fixtures or drivers required.",
+  "images": {
+    "hero": "../../images/Retrofit Dimmer.png",
+    "all": [
+      "../../images/Retrofit Dimmer.png"
+    ],
+    "hero_url": "../../images/Retrofit%20Dimmer.png",
+    "all_urls": [
+      "../../images/Retrofit%20Dimmer.png"
+    ]
+  },
+  "enabled": true
+}
