@@ -290,13 +290,13 @@ def build_catalog():
         all_products.append(data)
 
         # Write product.json
-        (product_dir / "product.json").write_text(json.dumps(data, indent=2) + "\n")
+        (product_dir / "product.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
 
         # Write README.md
         write_product_readme(product_dir, data, row)
 
     # Write combined products.json
-    (OUT / "products.json").write_text(json.dumps(all_products, indent=2) + "\n")
+    (OUT / "products.json").write_text(json.dumps(all_products, indent=2, ensure_ascii=False) + "\n")
 
     return all_products
 
