@@ -30,8 +30,7 @@
     "compatibility": "Home Assistant (native), Matter & Apple HomeKit (via hub)"
   },
   "pricing": {
-    "srp_inr": 3250,
-    "dealer_price_inr": 1300,
+    "srp_inr": 4500,
     "gst_rate": "18",
     "hsn": "85365090"
   },

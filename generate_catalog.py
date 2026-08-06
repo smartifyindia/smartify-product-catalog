@@ -158,7 +158,6 @@ def build_product_json(row: dict) -> dict:
         },
         "pricing": {
             "srp_inr": int(raw_json["SRP"]) if raw_json.get("SRP") else None,
-            "dealer_price_inr": int(raw_json["DP"]) if raw_json.get("DP") else None,
             "gst_rate": row["GST Rate %"],
             "hsn": row["HSN"],
         },
@@ -202,7 +201,6 @@ def write_product_readme(product_dir: Path, data: dict, row: dict):
 
     # Pricing
     srp = data["pricing"].get("srp_inr")
-    dp = data["pricing"].get("dealer_price_inr")
     pricing_section = ""
     if srp:
         pricing_section = f"""## Pricing
@@ -210,7 +208,6 @@ def write_product_readme(product_dir: Path, data: dict, row: dict):
 | | Price (INR) |
 |---|---|
 | Suggested Retail Price | ₹{srp:,} |
-| Dealer Price | ₹{dp:,} |
 | GST Rate | {data["pricing"]["gst_rate"]}% |
 | HSN Code | {data["pricing"]["hsn"]} |
 

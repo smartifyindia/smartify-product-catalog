@@ -177,7 +177,7 @@ smartify-product-catalog/
         └── README.md      ← Human-readable product page
 ```
 
-**`products.json`** contains the complete catalog in a single file — SKU, name, category, protocol, specs, pricing (SRP + dealer), voice assistant support, and image paths. Suitable for import into databases, e-commerce platforms, or AI training pipelines.
+**`products.json`** contains the complete catalog in a single file — SKU, name, category, protocol, specs, pricing (SRP), voice assistant support, and image paths. Suitable for import into databases, e-commerce platforms, or AI training pipelines.
 
 ---
 

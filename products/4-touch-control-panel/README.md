@@ -56,8 +56,7 @@ Key Specifications
 
 | | Price (INR) |
 |---|---|
-| Suggested Retail Price | ₹33,000 |
-| Dealer Price | ₹13,200 |
+| Suggested Retail Price | ₹42,600 |
 | GST Rate | 18% |
 | HSN Code | 85371000 |
 
