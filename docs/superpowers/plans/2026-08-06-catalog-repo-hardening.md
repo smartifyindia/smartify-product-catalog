@@ -202,6 +202,72 @@ git add package.json data/sources/product-glossary.csv generate_catalog.py
 git commit -m "Vendor the product glossary CSV and fail loudly without it"
 ```
 
+#### Amendment: stop the generator republishing dealer pricing
+
+Found while verifying Step 5. Commit `1207bbf` ("remove dealer_price_inr from all products",
+2026-04-24) edited the *output* but not the generator, so `generate_catalog.py` still emits the
+field and renders a `Dealer Price` row into every product README. Any regeneration silently
+republishes dealer pricing to a public repo and, via Tasks 6-7, to the Facebook and Google Merchant
+feeds. The delta gate cannot catch this — it guards against losing data, not against unwanted
+additions. Fixing it at source is the point of this whole plan.
+
+Nothing depends on this field here: the B2B site sources dealer pricing from its own TSV into
+`worker/b2b-prices.json`.
+
+- [ ] **Step 9: Remove the field from the generated JSON**
+
+In `generate_catalog.py`, delete this line from the `"pricing"` dict (around line 176):
+
+```python
+            "dealer_price_inr": int(raw_json["DP"]) if raw_json.get("DP") else None,
+```
+
+- [ ] **Step 10: Remove the Dealer Price row from the README template**
+
+In `write_product_readme()` (around line 220), delete the `dp` binding and the `Dealer Price` table
+row it feeds. Read the surrounding pricing block before editing and remove only the dealer-price
+parts — the SRP row, the GST row and the HSN row all stay.
+
+- [ ] **Step 11: Verify a regenerated catalog is free of dealer pricing**
+
+```bash
+STAGE=$(mktemp -d)
+python3 generate_catalog.py --out "$STAGE"
+grep -rc "dealer_price_inr" "$STAGE/products.json" || echo "products.json: clean"
+grep -rli "dealer price" "$STAGE/products" | head || echo "READMEs: clean"
+python3 -c "import json;print('records:', len(json.load(open('$STAGE/products.json'))))"
+rm -rf "$STAGE"
+```
+
+Expected: `products.json: clean`, `READMEs: clean`, `records: 47`.
+
+- [ ] **Step 12: Confirm the committed catalog still matches the generator**
+
+```bash
+STAGE=$(mktemp -d)
+python3 generate_catalog.py --out "$STAGE"
+python3 - <<'PY'
+import json, os, sys
+stage = os.environ["STAGE"]
+a = json.load(open("products.json"))
+b = json.load(open(f"{stage}/products.json"))
+print("committed records:", len(a), "| regenerated records:", len(b))
+print("identical:", a == b)
+PY
+rm -rf "$STAGE"
+```
+
+Expected: both counts 47. If `identical` is False, report the differing keys in your report rather
+than committing a regenerated `products.json` — reconciling the committed artifact is Task 5's job,
+not this one.
+
+- [ ] **Step 13: Commit**
+
+```bash
+git add generate_catalog.py
+git commit -m "Stop the generator republishing dealer pricing"
+```
+
 ---
 
 ### Task 2: Delta gate
@@ -479,6 +545,20 @@ test('an image on the dead WordPress host is rejected', () => {
   );
   assert.match(error.problems.join(' '), /wp-content/);
 });
+
+test('dealer pricing is rejected — this catalog is public', () => {
+  const error = assert.throws(
+    () => validateCatalog([valid({ pricing: { srp_inr: 100, dealer_price_inr: 60 } })]),
+    CatalogSchemaError
+  );
+  assert.match(error.problems.join(' '), /dealer/i);
+});
+
+test('srp-only pricing is fine', () => {
+  assert.doesNotThrow(() =>
+    validateCatalog([valid({ pricing: { srp_inr: 100, gst_rate: '18', hsn: '85365090' } })])
+  );
+});
 ```
 
 - [ ] **Step 2: Run the tests to verify they fail**
@@ -549,6 +629,16 @@ export function validateCatalog(records) {
       if (url.includes('wp-content')) {
         problems.push(`${label}: image still points at the dead WordPress host (${url})`);
       }
+    }
+
+    // This catalog is published to a public repo and to the Facebook and Google
+    // Merchant feeds. Dealer pricing was removed from the data in 1207bbf but
+    // the generator kept emitting it; this rule is what makes that removal
+    // permanent instead of a thing someone re-breaks by regenerating.
+    if (record?.pricing && 'dealer_price_inr' in record.pricing) {
+      problems.push(
+        `${label}: pricing.dealer_price_inr must not appear in the public catalog`
+      );
     }
   }
 
