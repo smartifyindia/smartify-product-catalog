@@ -56,6 +56,22 @@ test('emptying an images array counts as loss', () => {
   ]);
 });
 
+test('an images container gutted to empty values counts as loss', () => {
+  const full = { hero: 'a.png', all: ['a.png'], hero_url: 'a.png', all_urls: ['a.png'] };
+  const gutted = { hero: '', all: [], hero_url: '', all_urls: [] };
+  const before = [record('one', { images: full })];
+  const after = [record('one', { images: gutted })];
+  assert.deepEqual(diffCatalogs(before, after).emptiedFields, [
+    { slug: 'one', field: 'images' },
+  ]);
+});
+
+test('a populated images container is not a loss', () => {
+  const full = { hero: 'a.png', all: ['a.png'], hero_url: 'a.png', all_urls: ['a.png'] };
+  const before = [record('one', { images: full })];
+  assert.deepEqual(diffCatalogs(before, before).emptiedFields, []);
+});
+
 test('a field that was already empty is not a loss', () => {
   const before = [record('one', { description: '' })];
   const after = [record('one', { description: '' })];

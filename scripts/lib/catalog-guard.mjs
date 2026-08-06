@@ -14,11 +14,18 @@ export class CatalogDataLossError extends Error {
   }
 }
 
+// Emptiness is recursive on purpose. Every real record stores images as
+// { hero, all, hero_url, all_urls }, so a container that still has its keys but
+// has lost all its values is the realistic way image data disappears — a
+// keys-only check would wave that through.
 const isEmpty = (value) => {
   if (value === null || value === undefined) return true;
   if (typeof value === 'string') return value.trim() === '';
-  if (Array.isArray(value)) return value.length === 0;
-  if (typeof value === 'object') return Object.keys(value).length === 0;
+  if (Array.isArray(value)) return value.length === 0 || value.every(isEmpty);
+  if (typeof value === 'object') {
+    const values = Object.values(value);
+    return values.length === 0 || values.every(isEmpty);
+  }
   return false;
 };
 
