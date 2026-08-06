@@ -781,6 +781,31 @@ test('verifyProvenance detects a hand-edited artifact', () => {
   assert.match(error.message, /checksum/i);
 });
 
+test('verifyProvenance detects a stale record count even when the digest matches', () => {
+  // The realistic tampering case: someone edits the artifact and updates the
+  // sidecar's sha256 to match, but leaves `records` stale. The checksum check
+  // passes, so only the record-count check can catch it.
+  const artifact = fixture([record('one')]);
+  writeProvenance({ artifactPath: artifact, generator: 'test', records: 1 });
+  const sidecar = artifact.replace(/\.json$/, '.source.json');
+  writeFileSync(artifact, JSON.stringify([record('one'), record('two')]));
+  const meta = JSON.parse(readFileSync(sidecar, 'utf8'));
+  meta.sha256 = sha256OfFile(artifact);
+  writeFileSync(sidecar, JSON.stringify(meta));
+  assert.throws(() => verifyProvenance(artifact), ProvenanceError);
+});
+
+test('a non-.json artifact path is rejected rather than overwritten', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'catalog-'));
+  const artifact = join(dir, 'products.txt');
+  writeFileSync(artifact, 'not json');
+  assert.throws(
+    () => writeProvenance({ artifactPath: artifact, generator: 'test', records: 0 }),
+    ProvenanceError
+  );
+  assert.equal(readFileSync(artifact, 'utf8'), 'not json');
+});
+
 test('verifyProvenance fails when the sidecar is missing', () => {
   const artifact = fixture([{ slug: 'x' }]);
   assert.throws(() => verifyProvenance(artifact), ProvenanceError);
@@ -806,6 +831,7 @@ Create `scripts/lib/provenance.mjs`:
 
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { basename } from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 export class ProvenanceError extends Error {
@@ -815,7 +841,19 @@ export class ProvenanceError extends Error {
   }
 }
 
-const sidecarPath = (artifactPath) => artifactPath.replace(/\.json$/, '.source.json');
+const sidecarPath = (artifactPath) => {
+  // Without this guard a non-.json path returns unchanged, and writeProvenance
+  // would overwrite the artifact itself with its own metadata — silent
+  // destruction of the very file it exists to protect.
+  if (!artifactPath.endsWith('.json')) {
+    throw new ProvenanceError(
+      `Artifact path must end in .json, got: ${artifactPath}. ` +
+        `The sidecar is derived from this path, so a non-.json artifact would ` +
+        `be overwritten by its own provenance record.`
+    );
+  }
+  return artifactPath.replace(/\.json$/, '.source.json');
+};
 
 export function sha256OfFile(filePath) {
   return createHash('sha256').update(readFileSync(filePath)).digest('hex');
@@ -833,7 +871,7 @@ function currentCommit() {
 
 export function writeProvenance({ artifactPath, generator, records }) {
   const provenance = {
-    artifact: artifactPath.split('/').pop(),
+    artifact: basename(artifactPath),
     generator,
     records,
     sha256: sha256OfFile(artifactPath),
@@ -867,7 +905,8 @@ export function verifyProvenance(artifactPath) {
   if (recorded.records !== actualRecords) {
     throw new ProvenanceError(
       `Record count mismatch for ${artifactPath}: sidecar says ${recorded.records}, ` +
-        `file has ${actualRecords}.`
+        `file has ${actualRecords}.\n` +
+        `Rebuild the artifact rather than updating the sidecar to match.`
     );
   }
 }
