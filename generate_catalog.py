@@ -188,7 +188,7 @@ def build_product_json(row: dict) -> dict:
     }
 
 
-def write_product_readme(product_dir: Path, data: dict, row: dict):
+def write_product_readme(product_dir: Path, data: dict):
     images = data["images"]["all_urls"]
     hero_md = f'![{data["name"]}]({data["images"]["hero_url"]})\n\n' if data["images"]["hero_url"] else ""
 
@@ -275,6 +275,29 @@ def write_product_readme(product_dir: Path, data: dict, row: dict):
     (product_dir / "README.md").write_text(readme.strip() + "\n")
 
 
+def load_products_from_json() -> list[dict]:
+    """Read the per-product JSON files, which are the source of truth.
+
+    The vendored CSV is an archival record of the original import and is now
+    stale — prices have since been maintained by hand in these files. Building
+    from the CSV would silently revert them, so a normal build reads from here.
+    """
+    src = BASE / "products"
+    if not src.exists():
+        raise SystemExit(f"No products/ directory at {src}; nothing to build from.")
+
+    products = []
+    for product_dir in sorted(src.iterdir()):
+        path = product_dir / "product.json"
+        if not path.exists():
+            raise SystemExit(
+                f"{product_dir.name}/ has no product.json. Every product directory must "
+                f"contain one — a missing file would silently drop the product."
+            )
+        products.append(json.loads(path.read_text(encoding="utf-8")))
+    return products
+
+
 def build_catalog():
     rows = parse_csv()
     all_products = []
@@ -293,7 +316,7 @@ def build_catalog():
         (product_dir / "product.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
 
         # Write README.md
-        write_product_readme(product_dir, data, row)
+        write_product_readme(product_dir, data)
 
     # Write combined products.json
     (OUT / "products.json").write_text(json.dumps(all_products, indent=2, ensure_ascii=False) + "\n")
@@ -302,6 +325,11 @@ def build_catalog():
 
 
 def write_main_readme(all_products: list[dict]):
+    target = OUT / "README.md"
+    if target.exists() and "<div align=\"center\">" in target.read_text(encoding="utf-8"):
+        print("  → README.md left alone (hand-written marketing copy)")
+        return
+
     # Group by category
     categories = {}
     for p in all_products:
@@ -359,6 +387,26 @@ smartify-product-catalog/
     (OUT / "README.md").write_text(readme.strip() + "\n")
 
 
+def build_from_json() -> list[dict]:
+    """Regenerate products.json and every README from the per-product JSON."""
+    all_products = load_products_from_json()
+    products_dir = OUT / "products"
+    products_dir.mkdir(parents=True, exist_ok=True)
+
+    for data in all_products:
+        product_dir = products_dir / data["slug"]
+        product_dir.mkdir(parents=True, exist_ok=True)
+        (product_dir / "product.json").write_text(
+            json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+        )
+        write_product_readme(product_dir, data)
+
+    (OUT / "products.json").write_text(
+        json.dumps(all_products, indent=2, ensure_ascii=False) + "\n"
+    )
+    return all_products
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Build the Smartify product catalog.")
     parser.add_argument(
@@ -366,6 +414,12 @@ if __name__ == "__main__":
         type=Path,
         default=BASE,
         help="Directory to write products.json, products/ and README.md into.",
+    )
+    parser.add_argument(
+        "--from-json",
+        action="store_true",
+        help="Build from the per-product JSON files (the source of truth) "
+             "instead of the archival CSV.",
     )
     args = parser.parse_args()
 
@@ -376,7 +430,10 @@ if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
 
     print("Building catalog...")
-    all_products = build_catalog()
+    if args.from_json:
+        all_products = build_from_json()
+    else:
+        all_products = build_catalog()
     write_main_readme(all_products)
     print(f"Done. Generated {len(all_products)} product pages.")
     print(f"  → {OUT}/products/ ({len(all_products)} folders)")
