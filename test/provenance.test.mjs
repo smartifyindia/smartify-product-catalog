@@ -17,6 +17,8 @@ const fixture = (records) => {
   return artifact;
 };
 
+const record = (slug) => ({ slug });
+
 test('sha256OfFile is stable and content-dependent', () => {
   const a = fixture([{ slug: 'x' }]);
   const b = fixture([{ slug: 'x' }]);
@@ -58,6 +60,31 @@ test('verifyProvenance detects a hand-edited artifact', () => {
   }
   assert.ok(error instanceof ProvenanceError);
   assert.match(error.message, /checksum/i);
+});
+
+test('verifyProvenance detects a stale record count even when the digest matches', () => {
+  // The realistic tampering case: someone edits the artifact and updates the
+  // sidecar's sha256 to match, but leaves `records` stale. The checksum check
+  // passes, so only the record-count check can catch it.
+  const artifact = fixture([record('one')]);
+  writeProvenance({ artifactPath: artifact, generator: 'test', records: 1 });
+  const sidecar = artifact.replace(/\.json$/, '.source.json');
+  writeFileSync(artifact, JSON.stringify([record('one'), record('two')]));
+  const meta = JSON.parse(readFileSync(sidecar, 'utf8'));
+  meta.sha256 = sha256OfFile(artifact);
+  writeFileSync(sidecar, JSON.stringify(meta));
+  assert.throws(() => verifyProvenance(artifact), ProvenanceError);
+});
+
+test('a non-.json artifact path is rejected rather than overwritten', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'catalog-'));
+  const artifact = join(dir, 'products.txt');
+  writeFileSync(artifact, 'not json');
+  assert.throws(
+    () => writeProvenance({ artifactPath: artifact, generator: 'test', records: 0 }),
+    ProvenanceError
+  );
+  assert.equal(readFileSync(artifact, 'utf8'), 'not json');
 });
 
 test('verifyProvenance fails when the sidecar is missing', () => {
