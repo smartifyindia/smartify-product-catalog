@@ -5,6 +5,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { assertCatalogHealthy } from '../scripts/verify-catalog.mjs';
 import { writeProvenance } from '../scripts/lib/provenance.mjs';
+import { CatalogSchemaError } from '../scripts/lib/catalog-schema.mjs';
+import { ProvenanceError } from '../scripts/lib/provenance.mjs';
 
 const record = (slug) => ({
   sku: `SKU-${slug}`,
@@ -32,13 +34,16 @@ test('a healthy catalog passes', () => {
 
 test('an invalid record is caught', () => {
   const bad = { ...record('one'), brand: '' };
-  assert.throws(() => assertCatalogHealthy(fixture([bad])));
+  assert.throws(() => assertCatalogHealthy(fixture([bad])), CatalogSchemaError);
 });
 
 test('a missing provenance sidecar is caught', () => {
-  assert.throws(() => assertCatalogHealthy(fixture([record('one')], { withProvenance: false })));
+  assert.throws(
+    () => assertCatalogHealthy(fixture([record('one')], { withProvenance: false })),
+    ProvenanceError
+  );
 });
 
 test('an empty catalog is caught', () => {
-  assert.throws(() => assertCatalogHealthy(fixture([])));
+  assert.throws(() => assertCatalogHealthy(fixture([])), CatalogSchemaError);
 });
