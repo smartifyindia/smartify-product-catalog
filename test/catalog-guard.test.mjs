@@ -77,6 +77,15 @@ test('wiping the catalog reports every slug', () => {
   assert.match(error.message, /3 records? would disappear/);
 });
 
+test('allowRemovals still refuses to empty a field on a surviving record', () => {
+  const before = [record('one'), record('two')];
+  const after = [record('one', { description: '' })];
+  assert.throws(
+    () => assertNoDataLoss(before, after, { allowRemovals: true }),
+    CatalogDataLossError
+  );
+});
+
 test('allowRemovals permits a deliberate removal', () => {
   const before = [record('one'), record('two')];
   const after = [record('one')];
