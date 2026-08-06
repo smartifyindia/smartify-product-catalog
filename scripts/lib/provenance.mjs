@@ -7,6 +7,7 @@
 
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { basename } from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 export class ProvenanceError extends Error {
@@ -16,7 +17,19 @@ export class ProvenanceError extends Error {
   }
 }
 
-const sidecarPath = (artifactPath) => artifactPath.replace(/\.json$/, '.source.json');
+const sidecarPath = (artifactPath) => {
+  // Without this guard a non-.json path returns unchanged, and writeProvenance
+  // would overwrite the artifact itself with its own metadata — silent
+  // destruction of the very file it exists to protect.
+  if (!artifactPath.endsWith('.json')) {
+    throw new ProvenanceError(
+      `Artifact path must end in .json, got: ${artifactPath}. ` +
+        `The sidecar is derived from this path, so a non-.json artifact would ` +
+        `be overwritten by its own provenance record.`
+    );
+  }
+  return artifactPath.replace(/\.json$/, '.source.json');
+};
 
 export function sha256OfFile(filePath) {
   return createHash('sha256').update(readFileSync(filePath)).digest('hex');
@@ -34,7 +47,7 @@ function currentCommit() {
 
 export function writeProvenance({ artifactPath, generator, records }) {
   const provenance = {
-    artifact: artifactPath.split('/').pop(),
+    artifact: basename(artifactPath),
     generator,
     records,
     sha256: sha256OfFile(artifactPath),
@@ -68,7 +81,8 @@ export function verifyProvenance(artifactPath) {
   if (recorded.records !== actualRecords) {
     throw new ProvenanceError(
       `Record count mismatch for ${artifactPath}: sidecar says ${recorded.records}, ` +
-        `file has ${actualRecords}.`
+        `file has ${actualRecords}.\n` +
+        `Rebuild the artifact rather than updating the sidecar to match.`
     );
   }
 }
