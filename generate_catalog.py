@@ -1,12 +1,24 @@
 """
-Generate the Smartify product catalog from CSV data and images.
-Run: python3 generate_catalog.py
+Generate the Smartify product catalog from the per-product JSON files.
+
+The per-product JSON under products/<slug>/product.json is the source of
+truth — prices and content there are maintained by hand and are current.
+
+Normal usage (rebuilds products.json, products/*/README.md, and README.md
+from the per-product JSON):
+    python3 generate_catalog.py
+
+One-off re-import from the vendored archival CSV (data/sources/product-glossary.csv).
+This is NOT the normal path: the CSV is stale on price and this will overwrite
+current hand-maintained values in products/ and products.json.
+    python3 generate_catalog.py --from-csv
 """
 
 import argparse
 import csv
 import json
 import os
+import sys
 from pathlib import Path
 from urllib.parse import quote
 
@@ -294,7 +306,16 @@ def load_products_from_json() -> list[dict]:
                 f"{product_dir.name}/ has no product.json. Every product directory must "
                 f"contain one — a missing file would silently drop the product."
             )
-        products.append(json.loads(path.read_text(encoding="utf-8")))
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if data.get("slug") != product_dir.name:
+            raise SystemExit(
+                f"Slug/directory mismatch: products/{product_dir.name}/product.json "
+                f"has slug {data.get('slug')!r} but lives in directory "
+                f"{product_dir.name!r}. These must match — a divergent slug "
+                "silently creates a second directory on the next build and "
+                "then fails with a confusing duplicate-slug error."
+            )
+        products.append(data)
     return products
 
 
@@ -416,10 +437,12 @@ if __name__ == "__main__":
         help="Directory to write products.json, products/ and README.md into.",
     )
     parser.add_argument(
-        "--from-json",
+        "--from-csv",
         action="store_true",
-        help="Build from the per-product JSON files (the source of truth) "
-             "instead of the archival CSV.",
+        help="One-off re-import from the archival CSV instead of the "
+             "per-product JSON. This overwrites hand-maintained data "
+             "(including prices) with the stale CSV values — not the "
+             "normal build path.",
     )
     args = parser.parse_args()
 
@@ -430,10 +453,16 @@ if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
 
     print("Building catalog...")
-    if args.from_json:
-        all_products = build_from_json()
-    else:
+    if args.from_csv:
+        print(
+            "WARNING: --from-csv rebuilds from the archival CSV "
+            f"({CSV_PATH}), which is stale on price. This will overwrite "
+            "current hand-maintained values in products/ and products.json.",
+            file=sys.stderr,
+        )
         all_products = build_catalog()
+    else:
+        all_products = build_from_json()
     write_main_readme(all_products)
     print(f"Done. Generated {len(all_products)} product pages.")
     print(f"  → {OUT}/products/ ({len(all_products)} folders)")

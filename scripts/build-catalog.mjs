@@ -27,7 +27,7 @@ try {
   console.log('Building catalog into staging from the per-product JSON...');
   execFileSync(
     'python3',
-    [join(ROOT, 'generate_catalog.py'), '--from-json', '--out', staging],
+    [join(ROOT, 'generate_catalog.py'), '--out', staging],
     { stdio: 'inherit' }
   );
 
