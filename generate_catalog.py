@@ -3,6 +3,7 @@ Generate the Smartify product catalog from CSV data and images.
 Run: python3 generate_catalog.py
 """
 
+import argparse
 import csv
 import json
 import os
@@ -10,8 +11,22 @@ from pathlib import Path
 from urllib.parse import quote
 
 BASE = Path(__file__).parent
-CSV_PATH = Path("/Users/abhi/Downloads/Product_Photos/Product Glossary 31dcd4ab78e280899b7fce8d0ff31547_all.csv")
+CSV_PATH = BASE / "data" / "sources" / "product-glossary.csv"
 IMAGES_DIR = BASE / "images"
+
+if not CSV_PATH.exists():
+    raise SystemExit(
+        f"Product glossary CSV not found at {CSV_PATH}.\n"
+        "This file is the source of the entire catalog and is vendored into the repo "
+        "so the catalog can be rebuilt without any external checkout.\n"
+        "Restore it from git history rather than copying it back from Downloads."
+    )
+
+# Where generated artifacts are written. scripts/build-catalog.mjs points this
+# at a staging directory so that a failed validation or a destructive diff never
+# touches the committed catalog. CSV_PATH and IMAGES_DIR stay under BASE — they
+# are inputs, not outputs.
+OUT = BASE
 
 # Brand names to strip and replace with Smartify
 BRAND_REPLACEMENTS = [
@@ -266,7 +281,7 @@ def write_product_readme(product_dir: Path, data: dict, row: dict):
 def build_catalog():
     rows = parse_csv()
     all_products = []
-    products_dir = BASE / "products"
+    products_dir = OUT / "products"
     products_dir.mkdir(exist_ok=True)
 
     for row in rows:
@@ -284,7 +299,7 @@ def build_catalog():
         write_product_readme(product_dir, data, row)
 
     # Write combined products.json
-    (BASE / "products.json").write_text(json.dumps(all_products, indent=2) + "\n")
+    (OUT / "products.json").write_text(json.dumps(all_products, indent=2) + "\n")
 
     return all_products
 
@@ -344,14 +359,32 @@ smartify-product-catalog/
 
 *Generated from Product Glossary · {len(all_products)} products · 60 images*
 """
-    (BASE / "README.md").write_text(readme.strip() + "\n")
+    (OUT / "README.md").write_text(readme.strip() + "\n")
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Build the Smartify product catalog.")
+    parser.add_argument(
+        "--out",
+        type=Path,
+        default=BASE,
+        help="Directory to write products.json, products/ and README.md into.",
+    )
+    args = parser.parse_args()
+
+    # Rebinding the module-level global here is what redirects every writer;
+    # this block runs at module scope, so build_catalog() and write_main_readme()
+    # see the new value when they are called below.
+    OUT = args.out
+    OUT.mkdir(parents=True, exist_ok=True)
+
     print("Building catalog...")
     all_products = build_catalog()
     write_main_readme(all_products)
     print(f"Done. Generated {len(all_products)} product pages.")
+    print(f"  → {OUT}/products/ ({len(all_products)} folders)")
+    print(f"  → {OUT}/products.json")
+    print(f"  → {OUT}/README.md")
     print(f"  → products/ ({len(all_products)} folders)")
     print(f"  → products.json")
     print(f"  → README.md")

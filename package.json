@@ -1,0 +1,11 @@
+{
+  "name": "smartify-product-catalog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/",
+    "build-catalog": "node scripts/build-catalog.mjs",
+    "verify-catalog": "node scripts/verify-catalog.mjs"
+  }
+}
