@@ -1,0 +1,1891 @@
+﻿Product Name,Channels,Compatibility,Consumer Description,Dealer Price,Dependencies,Device Type,GST Rate %,HSN,Image URL,Installation,Item Code,JSON,Limitations / Exclusions,Max Switching Capacity,Protocol,Recommended Load,Suggested Retail Price,Tech Specs,Technical Description (Installer)
+1 Channel Zigbee Retrofit Relay,1,"Home Assistant (native), Matter & Apple HomeKit (via hub)","Your switch. Smarter.
+
+The Retrofit Relay fits quietly behind your existing wall switch and gives it a new intelligence — responding to your schedule, your voice, or your app. Nothing on your wall changes. Everything about how it works does.",1200,Zigbee coordinator or hub,Switching Relay,18,85365090,https://drive.google.com/file/d/1Zuji3Ioj-cSIyDDdRJ2u6tQeTFwqGBRi/view?usp=drive_link,Flush box or DIN rail,38632117962,"{
+  ""product"": {
+    ""SKU"": ""38632117962"",
+    ""ProductName"": ""1 Channel Zigbee Retrofit Relay"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Retrofit Switches"",
+      ""Smart Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Your switch. Smarter.\n\nThe Retrofit Relay fits quietly behind your existing wall switch and gives it a new intelligence — responding to your schedule, your voice, or your app. Nothing on your wall changes. Everything about how it works does."",
+    ""SRP"": 3000,
+    ""DP"": 1200,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",For loads above 4A use external relay / SSR / contactor,10A,Zigbee 3.0,Up to 4A,3000,Voltage: 90–250V AC | Max Current: 10A | Wireless Protocol: Zigbee 3.0 | Operating Temperature: -10°C to +40°C | Max Case Temperature (Tc): +80°C | Wireless Range: ≤200m (open field) | Dimensions: 52 × 47 × 18 mm | IP Rating: IP20 | Installation Type: Behind Switch / DIN Rail,"A single-channel Zigbee switching relay designed to retrofit any standard mechanical switch into a smart switch — no rewiring, no hardware replacement.
+
+Installs behind the existing wall switch in a flush box or on DIN rail. Supports direct load switching up to 4A; for loads between 4A and 10A, an external relay, SSR, or contactor is required. Communicates natively over Zigbee 3.0 with full Home Assistant support, and integrates with Matter and Apple HomeKit via a compatible hub.
+
+Key Specifications
+- Channels: 1
+- Max Switching: 10A
+- Direct Load: Up to 4A
+- Protocol: Zigbee 3.0
+- Compatible with: Home Assistant (native), Matter & Apple HomeKit (via hub)
+- Installation: Flush box or DIN rail
+
+⚠ For loads above 4A, an external relay, SSR, or contactor is required."
+1 Channel Zigbee Retrofit Relay (40A),1,"Home Assistant (native), Matter & Apple HomeKit (via hub)","Heavy loads. Light control.
+
+The 40A Relay brings your high-power appliances — water heaters, pumps, heavy equipment — into your smart home without compromise. Schedule them, automate them, monitor them. The same effortless control, built for serious loads.",2000,Zigbee coordinator or hub,Heavy-Duty Switching Relay,18,85365090,,Flush box or DIN rail,38632117965,"{
+  ""product"": {
+    ""SKU"": ""38632117965"",
+    ""ProductName"": ""1 Channel Zigbee Retrofit Relay (40A)"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Retrofit Switches"",
+      ""Smart Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Heavy loads. Light control.\n\nThe 40A Relay brings your high-power appliances — water heaters, pumps, heavy equipment — into your smart home without compromise. Schedule them, automate them, monitor them. The same effortless control, built for serious loads."",
+    ""SRP"": 5000,
+    ""DP"": 2000,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Proper cable sizing and protection devices mandatory. Qualified installation required.,40A,Zigbee 3.0,High-power appliances and heavy electrical loads,5000,,"A heavy-duty single-channel Zigbee relay rated for direct switching of high-current loads up to 40A. Designed for high-power appliances such as water heaters, pumps, HVAC loads, and industrial equipment.
+
+Installs behind an existing wall switch in a flush box or on DIN rail. Proper cable sizing, circuit protection, and installation practices are mandatory for safe operation at rated current. Communicates natively over Zigbee 3.0 with Home Assistant, and integrates with Matter and Apple HomeKit via a compatible hub.
+
+Key Specifications
+- Channels: 1
+- Max Switching: 40A
+- Protocol: Zigbee 3.0
+- Compatible with: Home Assistant (native), Matter & Apple HomeKit (via hub)
+- Installation: Flush box or DIN rail
+
+⚠ High-current installation. Proper cable sizing, circuit protection, and qualified installation are required."
+2 Channel Zigbee Retrofit Relay,2 (independent),"Home Assistant (native), Matter & Apple HomeKit (via hub)","Two switches. One module. Zero effort.
+
+Control two circuits from a single module hidden behind your existing switches. Lights in two rooms, a fan and a light — whatever the combination, each channel responds independently. Your walls stay the same. Your home gets smarter.",1300,Zigbee coordinator or hub,Switching Relay,18,85365090,https://drive.google.com/file/d/1Zuji3Ioj-cSIyDDdRJ2u6tQeTFwqGBRi/view?usp=drive_link,Flush box or DIN rail,38659529195,"{
+  ""product"": {
+    ""SKU"": ""38659529195"",
+    ""ProductName"": ""2 Channel Zigbee Retrofit Relay"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Retrofit Switches"",
+      ""Smart Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Two switches. One module. Zero effort.\n\nControl two circuits from a single module hidden behind your existing switches. Lights in two rooms, a fan and a light — whatever the combination, each channel responds independently. Your walls stay the same. Your home gets smarter."",
+    ""SRP"": 3250,
+    ""DP"": 1300,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",For loads above 4A per channel use external relay / SSR / contactor. Not a dimmer. Not dry contact.,5A per channel,Zigbee 3.0,Up to 4A per channel,3250,"Voltage: 90–250V AC, 50/60Hz | Current: Total 10A | Wireless Protocol: Zigbee 3.0 | Operating Temperature: -10°C to +65°C | Case Temperature (Tc): +80°C Max | Operating Range: ≤70m | Dimensions: 40 × 40 × 18 mm | IP Rating: IP20 | Frequency Band: 2.405–2.480 GHz | Max Radio Transmit Power: <+10 dBm | Installation Type: Behind Switch / DIN Rail","A dual-channel Zigbee switching relay that converts two standard mechanical switches into smart switches simultaneously — without replacing any existing hardware.
+
+Each channel operates independently with direct load switching up to 4A. For loads above 4A per channel, an external relay, SSR, or contactor is required. Installs behind existing switches in a flush box or on DIN rail. Communicates natively over Zigbee 3.0 with Home Assistant, and integrates with Matter and Apple HomeKit via a compatible hub.
+
+Key Specifications
+- Channels: 2 (independent)
+- Max Switching: 5A per channel
+- Direct Load: Up to 4A per channel
+- Protocol: Zigbee 3.0
+- Compatible with: Home Assistant (native), Matter & Apple HomeKit (via hub)
+- Installation: Flush box or DIN rail
+
+⚠ Direct load switching only — not a dry contact output and not a dimmer."
+1 Channel Zigbee Retrofit Dimmer,1,"Home Assistant (native), Matter & Apple HomeKit (via hub)","The right light. Always.
+
+Bright for the morning. Warm for the evening. The Dimmer learns when you want a room to feel different — and adjusts without you asking. Fits behind your existing switch. Works with your existing lights.",1200,Zigbee coordinator or hub. Dimmable fixtures or drivers required.,Phase-Cut Dimmer,18,85365090,https://drive.google.com/file/d/1NyhF4UDxVbpkvQxP6_MgzKRawuNwdWDh/view?usp=sharing,Flush box or DIN rail,38632957173,"{
+  ""product"": {
+    ""SKU"": ""38632957173"",
+    ""ProductName"": ""1 Channel Zigbee Retrofit Dimmer"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Retrofit Dimmers"",
+      ""Smart Lighting""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""The right light. Always.\n\nBright for the morning. Warm for the evening. The Dimmer learns when you want a room to feel different — and adjusts without you asking. Fits behind your existing switch. Works with your existing lights."",
+    ""SRP"": 3000,
+    ""DP"": 1200,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Compatible with dimmable loads only. Not a 0-10V controller. Does not function as a simple on/off relay.,200W,Zigbee 3.0,Dimmable fixtures / drivers only,3000,Voltage: 90–250V AC | Max Power: 100W × 2CH (220V) | Wireless Protocol: Zigbee 3.0 | Operating Temperature: 0°C to +40°C | Case Temperature (Tc): +80°C Max | Dimensions: 40 × 40 × 18 mm | IP Rating: IP20 | Frequency Band: 2.405–2.480 GHz | Max Radio Transmit Power: <+10 dBm | Installation Type: Behind Switch / DIN Rail,"A single-channel Zigbee phase-cut dimmer module designed to retrofit any standard wall switch with intelligent brightness control — no switch replacement required.
+
+Supports trailing and leading edge phase-cut dimming up to 200W for compatible dimmable lighting fixtures and drivers. Installs behind the existing switch in a flush box or on DIN rail. Communicates natively over Zigbee 3.0 with Home Assistant, and integrates with Matter and Apple HomeKit via a compatible hub.
+
+Key Specifications
+- Channels: 1
+- Max Load: 200W
+- Dimming Type: Phase-Cut (Trailing/Leading edge)
+- Protocol: Zigbee 3.0
+- Compatible with: Home Assistant (native), Matter & Apple HomeKit (via hub)
+- Installation: Flush box or DIN rail
+
+⚠ For use with dimmable fixtures and drivers only. Not a 0-10V controller and cannot function as a plain on/off relay."
+2 Channel Zigbee Retrofit Dimmer,2 (independent),"Home Assistant (native), Matter & Apple HomeKit (via hub)","Two circuits. One mood.
+
+Set the scene across two lighting circuits from a single module. The 2-Channel Dimmer sits invisibly behind your existing switches, independently managing the brightness of each circuit — responding to schedules, scenes, or a quiet tap.",1300,Zigbee coordinator or hub. Dimmable fixtures or drivers required.,Phase-Cut Dimmer,18,85365090,https://drive.google.com/file/d/1NyhF4UDxVbpkvQxP6_MgzKRawuNwdWDh/view?usp=sharing,Flush box or DIN rail,38625458903,"{
+  ""product"": {
+    ""SKU"": ""38625458903"",
+    ""ProductName"": ""2 Channel Zigbee Retrofit Dimmer"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Retrofit Dimmers"",
+      ""Smart Lighting""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Two circuits. One mood.\n\nSet the scene across two lighting circuits from a single module. The 2-Channel Dimmer sits invisibly behind your existing switches, independently managing the brightness of each circuit — responding to schedules, scenes, or a quiet tap."",
+    ""SRP"": 3250,
+    ""DP"": 1300,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Compatible with dimmable loads only. Not a 0-10V controller. Does not function as a simple on/off relay.,100W per channel,Zigbee 3.0,Dimmable fixtures / drivers only,3250,Voltage: 90–250V AC | Max Power: 75W (110V) / 150W (220V) | Wireless Protocol: Zigbee 3.0 | Operating Temperature: 0°C to +40°C | Case Temperature (Tc): +80°C Max | Dimensions: 40 × 40 × 18 mm | IP Rating: IP20 | Frequency Band: 2.405–2.480 GHz | Max Radio Transmit Power: <+10 dBm | Installation Type: Behind Switch / DIN Rail,"A dual-channel Zigbee phase-cut dimmer that retrofits two standard wall switches with independent brightness control — without replacing any existing hardware.
+
+Each channel independently supports phase-cut dimming up to 100W for compatible dimmable lighting fixtures and drivers. Installs behind existing switches in a flush box or on DIN rail. Communicates natively over Zigbee 3.0 with Home Assistant, and integrates with Matter and Apple HomeKit via a compatible hub.
+
+Key Specifications
+- Channels: 2 (independent)
+- Max Load: 100W per channel
+- Dimming Type: Phase-Cut (Trailing/Leading edge)
+- Protocol: Zigbee 3.0
+- Compatible with: Home Assistant (native), Matter & Apple HomeKit (via hub)
+- Installation: Flush box or DIN rail
+
+⚠ For use with dimmable fixtures and drivers only. Not a 0-10V controller and cannot function as a plain on/off relay."
+Zigbee Shutter Module,1 motor channel,"Home Assistant (native), Matter & Apple HomeKit (via hub)","Your blinds open with the morning. They close before the afternoon heat sets in. You didn't touch them.
+
+The Shutter Controller brings your motorized curtains, roller blinds, and shutters into your smart home — responding to schedules, conditions, or a single tap. One device, quietly managing the light and privacy of your space. Fits behind your current wall switch. Disappears into your home.",1200,Zigbee coordinator or hub,Shutter / Curtain Motor Controller,18,85365090,,Flush box or DIN rail,38684154573,"{
+  ""product"": {
+    ""SKU"": ""38684154573"",
+    ""ProductName"": ""Zigbee Shutter Module"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Curtain & Shutter Control""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Your blinds open with the morning. They close before the afternoon heat sets in. You didn't touch them.\n\nThe Shutter Controller brings your motorized curtains, roller blinds, and shutters into your smart home — responding to schedules, conditions, or a single tap. One device, quietly managing the light and privacy of your space. Fits behind your current wall switch. Disappears into your home."",
+    ""SRP"": 3000,
+    ""DP"": 1200,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",AC motor loads only. Not for DC motors. Must not be used as a lighting relay.,2A,Zigbee 3.0,AC motor loads only,3000,"Voltage: 90–250V AC, 50/60Hz | Current: 2A | Max Power: 500W (250V) | Wireless Protocol: Zigbee 3.0 | Operating Temperature: -10°C to +40°C | Case Temperature (Tc): +80°C Max | Operating Range: ≤200m | Dimensions: 52 × 47 × 18 mm | IP Rating: IP20 | Installation Type: Behind Switch / DIN Rail","A single-channel Zigbee shutter controller designed for AC motorized curtains, roller blinds, and shutters. Provides interlocked directional outputs — Up, Down, and Stop — eliminating any possibility of simultaneous conflicting signals to the motor.
+
+Installs behind the existing wall switch in a flush box or on DIN rail. Communicates natively over Zigbee 3.0 with full Home Assistant support, and integrates with Matter and Apple HomeKit via a compatible hub.
+
+Key Specifications
+- Channels: 1 motor channel
+- Control Type: Interlocked directional (Up / Down / Stop)
+- Max Load: 2A
+- Protocol: Zigbee 3.0
+- Compatible with: Home Assistant (native), Matter & Apple HomeKit (via hub)
+- Installation: Flush box or DIN rail
+
+⚠ Designed exclusively for AC motor loads. Not suitable for DC motors or use as a lighting relay."
+Analog 0-10V Zigbee Dimmer,1,"Home Assistant (native), Matter & Apple HomeKit (via hub)","Professional lighting. Smart control.
+
+The 0-10V Dimmer bridges commercial-grade LED lighting systems with your smart home — giving you smooth, precise brightness control through the same interface as every other device. Simple to automate. Invisible once installed.",1700,Zigbee coordinator or hub. Compatible 0-10V LED drivers required.,0-10V Analog Dimmer Controller,18,85365090,,DIN rail / electrical panel,38637323117,"{
+  ""product"": {
+    ""SKU"": ""38637323117"",
+    ""ProductName"": ""Analog 0-10V Zigbee Dimmer"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Retrofit Dimmers"",
+      ""Smart Lighting""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Professional lighting. Smart control.\n\nThe 0-10V Dimmer bridges commercial-grade LED lighting systems with your smart home — giving you smooth, precise brightness control through the same interface as every other device. Simple to automate. Invisible once installed."",
+    ""SRP"": 4250,
+    ""DP"": 1700,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Does not switch or dim high-voltage loads directly. Control signal output only.,0-10V control signal,Zigbee 3.0,Compatible 0-10V LED drivers,4250,Input Voltage: AC100–240V 50Hz/60Hz | Output Voltage: 0–10V DC Max. 20mA | Dimming Type: 0–10V | Operation Frequency: 2.412GHz–2.484GHz | Operation Temperature: -10°C to +40°C | Protocol: Zigbee 3.0 | Dimensions (W × D × H): 39 × 39 × 18 mm | IP Rating: IP20,"A single-channel Zigbee 0-10V analog dimming controller designed to integrate with LED drivers and lighting systems that accept a 0-10V dimming input signal.
+
+Outputs a low-voltage 0-10V control signal — it does not switch or dim mains voltage directly. Designed for DIN rail or panel installation. Communicates natively over Zigbee 3.0 with Home Assistant, and integrates with Matter and Apple HomeKit via a compatible hub.
+
+Key Specifications
+- Channels: 1
+- Output: 0-10V analog control signal
+- Protocol: Zigbee 3.0
+- Compatible with: Home Assistant (native), Matter & Apple HomeKit (via hub)
+- Installation: DIN rail / electrical panel
+
+⚠ Control signal output only — does not switch or dim high-voltage loads directly. Compatible 0-10V LED drivers required."
+Zigbee Gateway (Wired),,Home Assistant and compatible Zigbee automation platforms,"The hub your home thinks through.
+
+Everything connects to this. The Zigbee Gateway sits quietly on your network — wired for stability — and gives your entire smart home a reliable brain. Pair it once. Trust it always.",2500,Wired Ethernet router connection,Zigbee Coordinator / Gateway,18,85176290,https://drive.google.com/file/d/13MQNeRxxL-p_wDpVL-M71GUnyfEIT2Tf/view?usp=drive_link,"Indoor, fixed wired LAN connection",38678840105,"{
+  ""product"": {
+    ""SKU"": ""38678840105"",
+    ""ProductName"": ""Zigbee Gateway (Wired)"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Gateways""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wired""
+    ],
+    ""Description"": ""The hub your home thinks through.\n\nEverything connects to this. The Zigbee Gateway sits quietly on your network — wired for stability — and gives your entire smart home a reliable brain. Pair it once. Trust it always."",
+    ""SRP"": 6250,
+    ""DP"": 2500,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Does not control electrical loads. Requires stable LAN connection for operation.,,Zigbee 3.0,Up to 128 Zigbee devices,6250,Wireless Connection: Zigbee | Max Connected Devices: 300 (wired) | Working Temperature: -10°C to +55°C | Power Input: USB-C 5V 2A | Connectivity: RJ45 Ethernet | Working Humidity: 10%–90% RH (non-condensing),"A wired Zigbee 3.0 gateway that acts as the central coordinator for all Zigbee devices in the system. Connects via Ethernet for a stable, low-latency network backbone.
+
+Supports up to 128 Zigbee devices and enables device pairing, scene automation, remote control, and unified device management through compatible mobile applications and automation platforms.
+
+Key Specifications
+- Device Type: Zigbee Coordinator / Gateway
+- Protocol: Zigbee 3.0
+- Network: Wired Ethernet (LAN)
+- Capacity: Up to 128 Zigbee devices
+- Installation: Indoor, fixed LAN connection
+
+⚠ Does not control electrical loads. A stable wired Ethernet connection is required for reliable operation."
+Zigbee Gateway (Matter),,"Matter-enabled apps, Apple HomeKit (via Matter), supported automation platforms","One home. Every ecosystem.
+
+Zigbee devices. Matter devices. Apple HomeKit. The Matter Gateway connects them all — no friction, no switching between apps. Your home speaks one language, even when your devices don't.",6100,Wired Ethernet router connection,Smart Home Gateway / Bridge,18,85176290,https://drive.google.com/file/d/17hIUCm7c5LlklenolZj9id97cxkfs_5y/view?usp=drive_link,"Indoor, fixed wired LAN connection",38623861651,"{
+  ""product"": {
+    ""SKU"": ""38623861651"",
+    ""ProductName"": ""Zigbee Gateway (Matter)"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Gateways""
+    ],
+    ""Protocol"": [
+      ""Zigbee"",
+      ""Matter"",
+      ""Thread""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""One home. Every ecosystem.\n\nZigbee devices. Matter devices. Apple HomeKit. The Matter Gateway connects them all — no friction, no switching between apps. Your home speaks one language, even when your devices don't."",
+    ""SRP"": 15250,
+    ""DP"": 6100,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Does not control electrical loads. Cross-protocol bridging requires Matter-compatible ecosystem.,,Zigbee 3.0 + Matter (IP / Thread bridge),Up to 128 devices,15250,"Dimensions: 90 × 90 × 22 mm | Power Input: 5V 1A | Power Interface: USB Type-C | Wireless Protocol: Zigbee, Thread | Operating Temperature: -10°C to +55°C | Operating Humidity: 10%–90% RH (non-condensing) | Storage Temperature: -20°C to +60°C | Storage Humidity: 5%–90% RH (non-condensing)","A wired smart home gateway that bridges Zigbee 3.0 and Matter protocols, enabling unified control across both ecosystems through a single stable Ethernet connection.
+
+Supports up to 128 devices and provides device pairing, cross-protocol bridging, scene automation, and remote control. Enables integration with Matter-enabled applications and Apple HomeKit via Matter.
+
+Key Specifications
+- Protocols: Zigbee 3.0 + Matter (IP / Thread bridge)
+- Network: Wired Ethernet (LAN)
+- Capacity: Up to 128 devices
+- Compatibility: Matter apps, Apple HomeKit (via Matter)
+- Installation: Indoor, fixed LAN connection
+
+⚠ Does not control electrical loads. Acts as a communication and bridging layer only."
+Convergia,,"KNX, Zigbee, Wi-Fi, Matter, LAN/IP, AV systems, IP cameras","Your home. Fully understood.
+
+Convergia doesn't automate your home — it understands it. Every light, every climate system, every scene runs through a single platform that thinks locally, responds instantly, and never depends on a cloud server to keep your life running.",35000,Qualified integrator installation recommended,Local Smart Automation Gateway,18,84713010,https://drive.google.com/file/d/13V5QZjSY4jw20KzVq7TDwl63i1r6WqeJ/view?usp=drive_link,Pre-configured Intel NUC-based hardware appliance,38616756936,"{
+  ""product"": {
+    ""SKU"": ""38616756936"",
+    ""ProductName"": ""Convergia"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Gateways""
+    ],
+    ""Protocol"": [
+      ""Zigbee"",
+      ""Matter"",
+      ""Wi-Fi"",
+      ""KNX""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Your home. Fully understood.\n\nConvergia doesn't automate your home — it understands it. Every light, every climate system, every scene runs through a single platform that thinks locally, responds instantly, and never depends on a cloud server to keep your life running."",
+    ""SRP"": 87500,
+    ""DP"": 35000,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Does not switch electrical loads. Central intelligence layer only.,,,,87500,,"Convergia is a locally hosted smart automation gateway that unifies KNX wired systems and wireless ecosystems — Zigbee, Wi-Fi, Matter, and LAN/IP — into a single interoperable platform.
+
+Built on an Intel NUC-based appliance, it runs all automation logic locally, ensuring reliability independent of cloud connectivity. Advanced rule-based automation supports complex triggers, conditions, and multi-step logic. Integrates AV systems and IP cameras directly into automation workflows.
+
+Key Specifications
+- Architecture: On-premise (locally hosted)
+- Protocols: KNX, Zigbee, Wi-Fi, Matter, LAN/IP
+- AV Integration: Yes
+- Camera Integration: IP cameras
+- Automation: Rule-based, local execution
+- Interface: Web dashboard + mobile access
+- Hardware: Intel NUC-based pre-configured appliance
+
+⚠ Does not switch electrical loads. Functions as the central intelligence layer for the entire automation system. Qualified integrator installation recommended."
+IR Blaster (WiFi),,Compatible smart home apps and automation platforms,"Every remote. One app.
+
+Your AC, TV, and set-top box — all the devices that came with their own remotes — now respond to . No rewiring. Just point, configure, and let your home handle the rest.",850,2.4 GHz Wi-Fi network,Wi-Fi IR Blaster / IR Controller,18,85437099,,"Indoor, line-of-sight to IR devices",38668925286,"{
+  ""product"": {
+    ""SKU"": ""38668925286"",
+    ""ProductName"": ""IR Blaster (WiFi)"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""IR Controllers""
+    ],
+    ""Protocol"": [
+      ""Wi-Fi""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Every remote. One app.\n\nYour AC, TV, and set-top box — all the devices that came with their own remotes — now respond to . No rewiring. Just point, configure, and let your home handle the rest."",
+    ""SRP"": 2125,
+    ""DP"": 850,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",IR line-of-sight required. Does not switch electrical loads. RF devices not supported.,,Wi-Fi 2.4 GHz,IR-controlled devices (line-of-sight),2125,Power Input: 5V DC 1A (Micro USB) | Connection: Wi-Fi 2.4GHz 802.11b/g/n | IR Control Distance: ≤8m | Working Temperature: 0°C to +50°C | Working Humidity: ≤85% RH | Dimensions: 68 × 68 × 19.5 mm,"A Wi-Fi IR blaster that sends infrared commands to legacy IR-controlled devices — TVs, air conditioners, set-top boxes, and other appliances — through your smart home network.
+
+Connects to your local 2.4 GHz Wi-Fi network and transmits configurable IR codes via mobile apps and automation platforms. Requires line-of-sight to target devices.
+
+Key Specifications
+- Protocol: Wi-Fi 2.4 GHz
+- Control: Infrared (IR)
+- Installation: Indoor, line-of-sight placement
+
+⚠ IR line-of-sight to target devices is required. Does not switch electrical loads. RF devices not supported — see IR+RF Blaster."
+IR+RF Blaster (WiFi),,Compatible smart home apps and automation platforms,"IR and RF. Nothing left out.
+
+Some devices use IR. Some use RF. The IR+RF Blaster covers both — motorized curtains, fans, projectors, air conditioners, and more — unified in a single device and a single app.",1200,2.4 GHz Wi-Fi network,Wi-Fi IR + RF Blaster / Universal Remote Controller,18,85437099,,"Indoor, within signal range of target devices",38635939814,"{
+  ""product"": {
+    ""SKU"": ""38635939814"",
+    ""ProductName"": ""IR+RF Blaster (WiFi)"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""IR & RF Controllers""
+    ],
+    ""Protocol"": [
+      ""Wi-Fi""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""IR and RF. Nothing left out.\n\nSome devices use IR. Some use RF. The IR+RF Blaster covers both — motorized curtains, fans, projectors, air conditioners, and more — unified in a single device and a single app."",
+    ""SRP"": 3000,
+    ""DP"": 1200,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Does not switch electrical loads. IR requires line-of-sight; RF does not.,,Wi-Fi 2.4 GHz,IR and RF-controlled devices,3000,"Power Input: DC 5V/1A (Micro USB 2.0) | Standby Power: ≤0.5W | IR Control Distance: ≤8m (horizontal), ≤15m (opposite direction, environment dependent) | IR Control Direction: Multi-directional | RF Frequency: 433/315 MHz | Carrier Frequency: 38 kHz | Connection: Wi-Fi 2.4GHz 802.11b/g/n | Operating Temperature: 0°C to +50°C | Operating Humidity: ≤85% RH | Dimensions: 68 × 68 × 27 mm","A Wi-Fi IR and RF blaster that transmits both infrared and radio frequency commands to legacy remote-controlled devices — TVs, air conditioners, projectors, RF motorized curtains, fans, and RF switches.
+
+Connects to your local 2.4 GHz Wi-Fi network and sends programmable IR and RF codes via mobile apps and automation platforms. IR requires line-of-sight; RF does not.
+
+Key Specifications
+- Protocol: Wi-Fi 2.4 GHz
+- Control: IR + RF
+- Installation: Indoor, within signal range
+
+⚠ Does not switch electrical loads. IR requires line-of-sight to target devices; RF does not."
+"IR Blaster w/ Analog Screen, Temp & Humidity Sensor (WiFi)",,Compatible smart home apps and automation platforms,"It senses. It responds. You don't have to.
+
+When the room gets warm, the air conditioner turns on. You didn't schedule it — read the room. The IR Blaster with sensors watches your environment and acts on it, quietly and precisely.",1900,2.4 GHz Wi-Fi network,Wi-Fi IR Blaster with Environmental Sensor,18,85437099,https://drive.google.com/file/d/1n0WiprtRizhf-ZaUTOsbJD-AMRzoVsJn/view?usp=drive_link,"Indoor, line-of-sight to IR devices",38614020398,"{
+  ""product"": {
+    ""SKU"": ""38614020398"",
+    ""ProductName"": ""IR Blaster w/ Analog Screen, Temp & Humidity Sensor (WiFi)"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""IR Controllers""
+    ],
+    ""Protocol"": [
+      ""Wi-Fi""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""It senses. It responds. You don't have to.\n\nWhen the room gets warm, the air conditioner turns on. You didn't schedule it — read the room. The IR Blaster with sensors watches your environment and acts on it, quietly and precisely."",
+    ""SRP"": 4750,
+    ""DP"": 1900,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",IR line-of-sight required. Does not switch electrical loads.,,Wi-Fi 2.4 GHz,IR-controlled devices (line-of-sight),4750,"Power Input: DC 5V/1A (Micro USB, no adapter included) | Infrared Frequency: 38 kHz | IR Control Distance: ≤10m | LED Indicator: Blue | Connection: Wi-Fi 2.4GHz | Temperature Measurement Range: 0°C to +60°C | Temperature Accuracy: ±1°C | Humidity Measurement Range: 0%–99% RH | Humidity Accuracy: ±5% RH | Dimensions: 65 × 65 × 17 mm","A Wi-Fi IR blaster with integrated temperature and humidity sensors and an analog-style display. Transmits IR commands to legacy devices while simultaneously reporting real-time environmental data for automation logic.
+
+Connects to your 2.4 GHz Wi-Fi network. Sensor data can be used as automation triggers — for example, activating an air conditioner when temperature exceeds a threshold.
+
+Key Specifications
+- Protocol: Wi-Fi 2.4 GHz
+- Control: Infrared (IR)
+- Sensors: Temperature + Humidity
+- Display: Analog-style (temp/humidity)
+- Installation: Indoor, line-of-sight placement
+
+⚠ IR line-of-sight to target devices is required. Does not switch electrical loads."
+Zigbee VRV Gateway,,Zigbee automation platforms,"Your entire HVAC system. One tap.
+
+Commercial-grade air conditioning, brought into your smart home. The VRV Gateway connects your VRV/VRF system to — so every unit, every zone, responds to your preferences without requiring a separate app or remote.",22000,Zigbee coordinator or hub. Compatible VRV/VRF system required.,VRV/VRF to Zigbee Integration Gateway,28,84159000,https://drive.google.com/file/d/15LuBc_OSoLCsmOPDDH0mluoHsOnA_oX2/view?usp=drive_link,"Indoor, wired LAN connection to outdoor unit",38693737333,"{
+  ""product"": {
+    ""SKU"": ""38693737333"",
+    ""ProductName"": ""Zigbee VRV Gateway"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Gateways"",
+      ""HVAC Control""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Your entire HVAC system. One tap.\n\nCommercial-grade air conditioning, brought into your smart home. The VRV Gateway connects your VRV/VRF system to — so every unit, every zone, responds to your preferences without requiring a separate app or remote."",
+    ""SRP"": 55000,
+    ""DP"": 22000,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 28,
+    ""enabled"": true
+  }
+}",Communication bridge only. Does not switch electrical loads. VRV/VRF compatibility must be verified.,,Zigbee 3.0,Compatible VRV/VRF systems,55000,"Communication Protocol: Zigbee | AC Interface: X, Y (VRF communication port) | Additional Ports: RS485 Peripheral (×2), KNS, RS485 | Power: External power adapter (do not connect 220V directly) | Compatible Brands: Daikin, Samsung, TCL, Gree, Toshiba, Panasonic, Hitachi, Hisense, York, Mitsubishi Electric, Mitsubishi Heavy Industries, AUX, LG, Trane, Midea, Carrier, Bosch, Haier, McQuay and more","A dedicated gateway that integrates VRV/VRF HVAC systems into a Zigbee-based smart automation ecosystem. Connects to the VRV/VRF outdoor unit via LAN cable and communicates wirelessly with a Zigbee gateway.
+
+Enables remote control, real-time monitoring, and automation of the entire VRV/VRF air conditioning system through the Zigbee automation platform — without modifying the HVAC hardware.
+
+Key Specifications
+- Device Type: VRV/VRF to Zigbee Integration Gateway
+- HVAC Connection: Wired LAN to outdoor unit
+- Wireless: Zigbee 3.0 (to Zigbee gateway)
+- Installation: Indoor, wired to outdoor unit
+
+⚠ Communication bridge only — does not switch electrical loads. VRV/VRF system compatibility must be confirmed before installation."
+Zigbee DALI Gateway,Up to 64 DALI nodes,Zigbee automation platforms,"Architectural lighting. Smart precision.
+
+DALI lighting systems were built for professional environments — precise, flexible, professional-grade. The DALI Gateway brings that precision into your smart ecosystem, giving you scene control, tunable white, and RGBW automation through the same interface as everything else.",40000,Zigbee coordinator or hub. Existing DALI bus installation.,Zigbee to DALI Protocol Gateway,18,85371010,https://drive.google.com/drive/folders/1MulX_KctIFXJcBVC5U0hjCabwTNFVe0e?usp=drive_link,DIN rail or panel-mounted,38620154019,"{
+  ""product"": {
+    ""SKU"": ""38620154019"",
+    ""ProductName"": ""Zigbee DALI Gateway"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Gateways"",
+      ""Lighting Control""
+    ],
+    ""Protocol"": [
+      ""Zigbee"",
+      ""DALI""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Architectural lighting. Smart precision.\n\nDALI lighting systems were built for professional environments — precise, flexible, professional-grade. The DALI Gateway brings that precision into your smart ecosystem, giving you scene control, tunable white, and RGBW automation through the same interface as everything else."",
+    ""SRP"": 100000,
+    ""DP"": 40000,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Does not power lighting loads directly. Communicates with DALI drivers over the bus only.,,Zigbee 3.0 + DALI Bus,DALI DT8 drivers and fixtures,100000,"Input Voltage: 24V DC | DALI Channels: 1 | Built-in DALI PS Output Voltage: 12–22.5V DC | Built-in DALI PS Output Current: 250mA max | DALI Current Consumption (PS disabled): Max. 2mA | Max DALI Devices: 64 | Supported Device Types: DT6, DT8 Tc, DT8 XY, DT8 RGBWAF | Connectivity: Ethernet (RJ45) | Control Modes: Broadcast, group, scene, timer & schedule | Built-in Battery & RTC: Yes | Installation: DIN Rail | Dimensions (L × W × H): 110 × 53 × 65 mm","A Zigbee to DALI protocol gateway that integrates DALI lighting systems into a Zigbee-based smart automation ecosystem. Supports up to 64 DALI nodes with DT8 compatibility for tunable white and RGBW control.
+
+Translates Zigbee commands into DALI control signals for switching, dimming, grouping, scene control, and tunable white/RGBW operation. DIN rail or panel-mounted installation.
+
+Key Specifications
+- Wireless: Zigbee 3.0
+- Interface: DALI Bus (2-wire)
+- Capacity: Up to 64 DALI nodes
+- DALI Type: DT8 (tunable white / RGBW)
+- Installation: DIN rail / panel
+
+⚠ Does not power lighting loads directly. Communicates with DALI drivers over the bus. Existing DALI installation required."
+LED Controller (CV-RGB+CCT),"5 (R, G, B, CW, WW)",Compatible smart lighting ecosystems,"Every colour. Every white. One controller.
+
+From vibrant RGB to tunable warm-to-cool white — the CV RGB+CCT Controller gives your LED strips full range. Set the mood for every moment, every room, automatically.",3699,Compatible CV DC power supply (12V or 24V) required,Constant Voltage LED Controller,18,85371010,https://drive.google.com/file/d/1zgl2_aMFqy91JYvudjwMLSgL21dFsPyE/view?usp=drive_link,Indoor panel or concealed installation,38619518575,"{
+  ""product"": {
+    ""SKU"": ""38619518575"",
+    ""ProductName"": ""LED Controller (CV-RGB+CCT)"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Lighting"",
+      ""LED Controllers""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Every colour. Every white. One controller.\n\nFrom vibrant RGB to tunable warm-to-cool white — the CV RGB+CCT Controller gives your LED strips full range. Set the mood for every moment, every room, automatically."",
+    ""SRP"": 9247,
+    ""DP"": 3699,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Requires appropriate CV DC power supply. Does not power LEDs from mains directly.,,Compatible smart ecosystem,RGB+CCT CV LED strips (12V or 24V),9247.5,,"A constant voltage LED controller for RGB+CCT LED strips, providing independent control over color (RGB), white temperature (CCT), and brightness across 5 output channels.
+
+Requires an appropriate constant voltage DC power supply (12V or 24V) matched to the LED strip specification. Designed for panel or concealed installation.
+
+Key Specifications
+- Output: CV (Constant Voltage)
+- LED Support: RGB + CCT (5-channel)
+- Channels: 5 (R, G, B, CW, WW)
+- Installation: Indoor panel or concealed
+
+⚠ Requires an appropriate CV DC power supply (12V/24V). Does not power LED strips directly from mains voltage."
+LED Controller (CV-DIMMER),1,Compatible smart lighting ecosystems,"Simple. Smooth. Smart.
+
+Clean, continuous dimming for single-color LED strips — from full brightness to a gentle glow. The CV Dimmer handles the detail so your lighting always feels exactly right.",3299,Compatible CV DC power supply (12V or 24V) required,Constant Voltage LED Dimmer Controller,18,85371010,,Indoor panel or concealed installation,38673300629,"{
+  ""product"": {
+    ""SKU"": ""38673300629"",
+    ""ProductName"": ""LED Controller (CV-DIMMER)"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Retrofit Dimmers"",
+      ""Smart Lighting""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Simple. Smooth. Smart.\n\nClean, continuous dimming for single-color LED strips — from full brightness to a gentle glow. The CV Dimmer handles the detail so your lighting always feels exactly right."",
+    ""SRP"": 8247,
+    ""DP"": 3299,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Requires appropriate CV DC power supply. Single-color only. Does not power LEDs from mains directly.,,Compatible smart ecosystem,Single-color CV LED strips (12V or 24V),8247.5,,"A constant voltage LED dimmer controller for single-color low-voltage LED strips, providing smooth 0-100% brightness control through a compatible smart ecosystem.
+
+Requires an appropriate constant voltage DC power supply (12V or 24V) matched to the LED strip specification. Designed for panel or concealed installation.
+
+Key Specifications
+- Output: CV (Constant Voltage)
+- LED Support: Single-color
+- Channels: 1
+- Control: 0-100% dimming
+- Installation: Indoor panel or concealed
+
+⚠ Requires an appropriate CV DC power supply (12V/24V). Does not power LED strips directly from mains voltage."
+LED Controller (CC-CCT),2 (WW + CW),Compatible smart lighting ecosystems,"Warm in the evening. Crisp in the morning.
+
+Tunable white lighting that adjusts to the time of day — and to you. The CC-CCT Controller manages both warmth and brightness automatically, making every room feel right without you thinking about it.",3299,Constant current LED loads matched to controller rated output current,Constant Current LED Controller,18,85371010,,Indoor panel or fixture-integrated,38671782652,"{
+  ""product"": {
+    ""SKU"": ""38671782652"",
+    ""ProductName"": ""LED Controller (CC-CCT)"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Lighting"",
+      ""LED Controllers""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Warm in the evening. Crisp in the morning.\n\nTunable white lighting that adjusts to the time of day — and to you. The CC-CCT Controller manages both warmth and brightness automatically, making every room feel right without you thinking about it."",
+    ""SRP"": 8247,
+    ""DP"": 3299,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Not compatible with constant voltage LED strips. Constant current loads only.,,Compatible smart ecosystem,CCT constant current LED loads,8247.5,,"A constant current LED controller for CCT (tunable white) lighting fixtures, providing independent control of brightness and colour temperature across warm white and cool white channels.
+
+Designed specifically for constant current LED loads. Not compatible with constant voltage LED strips. Suitable for panel or fixture-integrated installation.
+
+Key Specifications
+- Output: CC (Constant Current)
+- LED Support: CCT (WW + CW)
+- Channels: 2 (WW + CW)
+- Control: Brightness + colour temperature
+- Installation: Indoor panel or fixture-integrated
+
+⚠ For constant current LED loads only. Not compatible with constant voltage LED strips."
+Zigbee Contact Sensor,,Compatible Zigbee gateways and automation platforms,"Open. Closed. Your home knows.
+
+When a door opens, the lights turn on. When a window is left open, you get a notification. The Contact Sensor is small, invisible, and always paying attention — so you don't have to.",929,Zigbee coordinator or hub,Door/Window Contact Sensor,18,85319000,https://drive.google.com/file/d/10XmZou7gK6XvDoacBVoxbBOz485kd_nq/view?usp=drive_link,Surface mount (adhesive or screws),38640080710,"{
+  ""product"": {
+    ""SKU"": ""38640080710"",
+    ""ProductName"": ""Zigbee Contact Sensor"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Sensors"",
+      ""Security""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Open. Closed. Your home knows.\n\nWhen a door opens, the lights turn on. When a window is left open, you get a notification. The Contact Sensor is small, invisible, and always paying attention — so you don't have to."",
+    ""SRP"": 2322,
+    ""DP"": 929,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Does not control electrical loads. Status feedback only.,,Zigbee 3.0,,2322.5,Wireless Connection: Zigbee | Battery: CR2032 (replaceable) | Low Battery Alarm: Yes | Operating Temperature: -10°C to +50°C | Dimensions (Host): 40 × 26 × 13 mm | Dimensions (Magnet): 26 × 9.5 × 11 mm,"A Zigbee 3.0 magnetic contact sensor that detects and reports the open/closed state of doors, windows, and other entry points to a Zigbee gateway or compatible hub.
+
+Battery-powered with surface mount installation via adhesive or screws. Used for security monitoring and as an automation trigger.
+
+Key Specifications
+- Protocol: Zigbee 3.0
+- Detection: Magnetic open/close
+- Power: Battery
+- Mounting: Surface mount (adhesive or screws)
+
+⚠ Status sensor only — does not control electrical loads."
+Zigbee Motion Sensor + LUX Sensor,,Compatible Zigbee gateways and automation platforms,"The lights come on when you enter. Not when the sun is still up.
+
+The Motion + LUX Sensor reads both movement and light — so automations happen only when they should. It's the difference between a smart home that reacts and one that actually understands.",1700,Zigbee coordinator or hub,Motion + Ambient Light (LUX) Sensor,18,85319000,https://drive.google.com/file/d/1i-PAkP3oC8F3HYBE_fI3UB3XT8cP-RZr/view?usp=drive_link,Wall or ceiling (adhesive or screws),38687599521,"{
+  ""product"": {
+    ""SKU"": ""38687599521"",
+    ""ProductName"": ""Zigbee Motion Sensor + LUX Sensor"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Sensors"",
+      ""Smart Lighting""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""The lights come on when you enter. Not when the sun is still up.\n\nThe Motion + LUX Sensor reads both movement and light — so automations happen only when they should. It's the difference between a smart home that reacts and one that actually understands."",
+    ""SRP"": 4250,
+    ""DP"": 1700,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Does not control electrical loads. Provides motion and LUX data for automation logic.,,Zigbee 3.0,,4250,"Input Voltage: 3V | Battery: CR2450 (replaceable) | Low Battery Warning: Yes | Communication Protocol: Zigbee (IEEE 802.15.4) | Operating Frequency: 2.405–2.480 GHz | Max RF Power: +10 dBm | Data Transmission Rate: 250 Kbps | Antenna: PCB antenna, gain 1.08 dBi | Detection Range: 8m | Detection Angle: 120° | LED Indicator: Single white lamp | Operating Temperature: -10°C to +50°C | Dimensions: ø52 × 46 mm (±1mm)","A Zigbee 3.0 combined motion and ambient light sensor that reports both occupancy and LUX readings to a Zigbee gateway or compatible hub for automation and control logic.
+
+Enables intelligent automations based on both presence and light conditions — for example, activating lights only when motion is detected and ambient light is below a set threshold. Battery-powered with wall or ceiling mount.
+
+Key Specifications
+- Protocol: Zigbee 3.0
+- Detection: PIR motion + ambient light (LUX)
+- Power: Battery
+- Mounting: Wall or ceiling
+
+⚠ Does not control electrical loads. Provides sensor data for automation triggers."
+Zigbee Vibration Sensor,,Compatible Zigbee gateways and automation platforms,"If something moves, you'll know.
+
+A knock on the safe. A window forced open. A cabinet disturbed. The Vibration Sensor catches what cameras miss — and tells you instantly, before anything else happens.",1500,Zigbee coordinator or hub,Vibration Detection Sensor,18,85319000,https://drive.google.com/file/d/13lLHbScqz8mtf0b9SfjaL3g43ALC4MG-/view?usp=drive_link,Surface mount (adhesive or screws),3864587193,"{
+  ""product"": {
+    ""SKU"": ""3864587193"",
+    ""ProductName"": ""Zigbee Vibration Sensor"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Sensors"",
+      ""Security""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""If something moves, you'll know.\n\nA knock on the safe. A window forced open. A cabinet disturbed. The Vibration Sensor catches what cameras miss — and tells you instantly, before anything else happens."",
+    ""SRP"": 3750,
+    ""DP"": 1500,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Does not control electrical loads. Event notification only.,,Zigbee 3.0,,3750,"Working Voltage: DC 3V | Battery: 1.5V AAA × 2 | Standby Current: ≤10 µA | Alarm Current: ≤20 mA | Communication Protocol: Zigbee | Transmission Distance: 10–30m (indoor, unobstructed) | Data Update Frequency: Every 30 minutes | LED Indicator: Yes | Installation: 3M adhesive tape or screw | Working Temperature: -10°C to +50°C | Working Humidity: ≤95% RH (non-condensing)","A Zigbee 3.0 vibration sensor that detects movement, vibration, and tampering on doors, windows, safes, cabinets, and other surfaces, reporting events to a Zigbee gateway or compatible hub.
+
+Used for security monitoring, tamper alerts, and automation triggers. Battery-powered with surface mount installation.
+
+Key Specifications
+- Protocol: Zigbee 3.0
+- Detection: Vibration and motion
+- Power: Battery
+- Mounting: Surface mount (adhesive or screws)
+
+⚠ Event notification only — does not control electrical loads."
+Zigbee mmWave Sensor (USB),,Compatible Zigbee gateways and automation platforms,"It knows you're there. Even when you're still.
+
+Traditional motion sensors miss you the moment you stop moving. The mmWave Sensor doesn't. It detects presence — not just movement — so your lights stay on, your climate stays comfortable, and your home keeps responding.",2800,USB power adapter or USB power source. Zigbee coordinator or hub.,mmWave Motion / Presence Sensor,18,85319000,https://drive.google.com/drive/folders/1HJCabIqemu4phpd-Ekups704d0dAahCT?usp=drive_link,"Flexible (surface, ceiling, or wall)",38626055855,"{
+  ""product"": {
+    ""SKU"": ""38626055855"",
+    ""ProductName"": ""Zigbee mmWave Sensor (USB)"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Sensors"",
+      ""Presence Detection""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""It knows you're there. Even when you're still.\n\nTraditional motion sensors miss you the moment you stop moving. The mmWave Sensor doesn't. It detects presence — not just movement — so your lights stay on, your climate stays comfortable, and your home keeps responding."",
+    ""SRP"": 7000,
+    ""DP"": 2800,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Does not control electrical loads. Provides presence/motion signals for automation.,,Zigbee 3.0,,7000,Power Supply: 5V 1A (USB) | Power Consumption: 0.5W | Communication Protocol: Zigbee | Radar Frequency: 24GHz–24.25GHz | Light Sensitivity Range: 0–10000 Lux | Operating Temperature: -10°C to +40°C | Operating Humidity: 0%–95% RH (non-condensing),"A USB-powered Zigbee mmWave presence sensor that detects fine motion and human presence using radar technology — without relying on traditional PIR sensing.
+
+Enables accurate presence-based automations such as lighting control and HVAC triggers even when minimal movement occurs. USB power allows flexible placement where mains wiring is unavailable.
+
+Key Specifications
+- Protocol: Zigbee 3.0
+- Detection: mmWave radar (motion + presence)
+- Power: USB
+- Mounting: Flexible placement
+
+⚠ Does not control electrical loads. Provides presence/motion data for automation triggers."
+Zigbee mmWave Sensor (Ceiling Mounted),,Compatible Zigbee gateways and automation platforms,"A room that knows when it's occupied.
+
+The Ceiling mmWave Sensor watches the whole room — not a narrow cone. It detects presence, not just motion, so every automation responds to whether someone is actually there. Not whether they waved.",4150,Mains wiring at ceiling mount point. Zigbee coordinator or hub.,mmWave Motion / Presence Sensor,18,85319000,https://drive.google.com/file/d/1rlLGtV2vJ4EBOdk3x0zdh1rLqqVF5x6e/view?usp=drive_link,Ceiling mount (mains powered),38678738240,"{
+  ""product"": {
+    ""SKU"": ""38678738240"",
+    ""ProductName"": ""Zigbee mmWave Sensor (Ceiling Mounted)"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Sensors"",
+      ""Presence Detection""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""A room that knows when it's occupied.\n\nThe Ceiling mmWave Sensor watches the whole room — not a narrow cone. It detects presence, not just motion, so every automation responds to whether someone is actually there. Not whether they waved."",
+    ""SRP"": 10375,
+    ""DP"": 4150,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Does not control electrical loads. Provides presence/motion signals for automation.,,Zigbee 3.0,,10375,Wireless Connection: Zigbee | Working Voltage: AC 100–250V | Working Current: ≤70mA | Working Temperature: -20°C to +70°C | Detection Distance: 0.3–9m (default 6m) | Sensitivity: 0–9 (default 7) | Target Detection Confirmation Time: 0–10s | Target Disappearance Delay Time: 0.5s–25 min (min. 15s recommended) | Light Sensing Range: 0–2000 Lux | Installation: Ceiling Mounted,"A ceiling-mounted, mains-powered Zigbee mmWave presence sensor designed for accurate occupancy detection across a full room. Detects micro-movements for continuous presence sensing — not just initial motion.
+
+Ideal for lighting control, HVAC triggers, and occupancy-based automation in residential and commercial spaces. Ceiling mount provides optimal coverage.
+
+Key Specifications
+- Protocol: Zigbee 3.0
+- Detection: mmWave radar (motion + presence)
+- Power: Mains powered
+- Mounting: Ceiling mount
+
+⚠ Does not control electrical loads. Provides presence/motion data for automation triggers."
+TOQ 4T,4,Zigbee automation platforms,"Four touches. Your whole room.
+
+The TOQ 4T is a panel that disappears into your wall and lets your home respond at a touch. Four buttons. Any scene. Any load. Finished in glass, in the colour that suits your space.",4372,Zigbee coordinator or hub,Zigbee Touch Control Panel,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38676610441,"{
+  ""product"": {
+    ""SKU"": ""38676610441"",
+    ""ProductName"": ""TOQ 4T"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Panels"",
+      ""Touch Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Four touches. Your whole room.\n\nThe TOQ 4T is a panel that disappears into your wall and lets your home respond at a touch. Four buttons. Any scene. Any load. Finished in glass, in the colour that suits your space."",
+    ""SRP"": 10930,
+    ""DP"": 4372,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",For loads above 4A use external SSR or contactor.,10A per channel,Zigbee 3.0,Up to 4A per channel,10930,,"A 4-button Zigbee capacitive touch panel for load switching, scene triggering, and dimming control in smart automation systems.
+
+Each button operates independently and is configurable for toggle (bistable) or momentary (monostable) operation. Supports brightness control via compatible retrofit dimmer modules. Available in white or black glass with silver, gold, or black bezel options and configurable backlight colour.
+
+Key Specifications
+- Buttons: 4 capacitive touch
+- Relay: 10A per channel
+- Direct Load: Up to 4A per channel
+- Dimming: Via external retrofit dimmer
+- Finish: White/Black glass + Silver/Gold/Black bezel
+- Protocol: Zigbee 3.0
+- Installation: Wall-mounted
+
+⚠ For loads above 4A, use an external SSR or contactor for safe operation and longer relay life."
+TOQ 4T+1S,4,Zigbee automation platforms,"Control your room. Charge your devices. One panel.
+
+The TOQ 4T+1S combines smart control with everyday utility — four touch buttons for your home automation, a power socket, and USB charging, all in a single elegant wall panel.",5753,Zigbee coordinator or hub,Zigbee Touch Control Panel with Integrated Socket,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38639614871,"{
+  ""product"": {
+    ""SKU"": ""38639614871"",
+    ""ProductName"": ""TOQ 4T+1S"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Panels"",
+      ""Touch Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Control your room. Charge your devices. One panel.\n\nThe TOQ 4T+1S combines smart control with everyday utility — four touch buttons for your home automation, a power socket, and USB charging, all in a single elegant wall panel."",
+    ""SRP"": 14382,
+    ""DP"": 5753,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",For loads above 4A use external SSR or contactor. Socket rated 6A.,10A per channel,Zigbee 3.0,Up to 4A per channel,14382.5,,"A 4-button Zigbee capacitive touch panel with an integrated 6A power socket and USB-C/USB-A charging ports, combining smart load control with utility power access in a single wall panel.
+
+Each button is independently configurable for toggle or momentary operation, supporting load switching, scene triggering, and dimmer control. Available in white or black glass with silver, gold, or black bezel options.
+
+Key Specifications
+- Buttons: 4 capacitive touch
+- Socket: 1 integrated (6A)
+- USB: 1x USB-C + 1x USB-A
+- Relay: 10A per channel
+- Direct Load: Up to 4A per channel
+- Protocol: Zigbee 3.0
+- Installation: Wall-mounted
+
+⚠ For loads above 4A use an external SSR or contactor. Socket rated at 6A maximum."
+TOQ 8T,8,Zigbee automation platforms,"Eight circuits. One surface.
+
+A full room — or an entire floor — controlled from a single panel. The TOQ 8T gives you eight independent touch points, finished in glass, responding to the lightest touch.",5522,Zigbee coordinator or hub,Zigbee Touch Control Panel,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38687106141,"{
+  ""product"": {
+    ""SKU"": ""38687106141"",
+    ""ProductName"": ""TOQ 8T"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Panels"",
+      ""Touch Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Eight circuits. One surface.\n\nA full room — or an entire floor — controlled from a single panel. The TOQ 8T gives you eight independent touch points, finished in glass, responding to the lightest touch."",
+    ""SRP"": 13805,
+    ""DP"": 5522,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",For loads above 4A use external SSR or contactor.,10A per channel,Zigbee 3.0,Up to 4A per channel,13805,,"An 8-button Zigbee capacitive touch panel for load switching, scene triggering, and dimming control across up to 8 independent channels.
+
+Each button is individually configurable for toggle or momentary operation. Supports dimming via compatible retrofit dimmer modules. Available in white or black glass with silver, gold, or black bezel and configurable backlight colour.
+
+Key Specifications
+- Buttons: 8 capacitive touch
+- Relay: 10A per channel
+- Direct Load: Up to 4A per channel
+- Protocol: Zigbee 3.0
+- Finish: White/Black glass + Silver/Gold/Black bezel
+- Installation: Wall-mounted
+
+⚠ For loads above 4A, use an external SSR or contactor."
+TOQ 10T,10,Zigbee automation platforms,"Ten touches. Every light, every scene.
+
+The TOQ 10T is for rooms and homes that demand complete control from a single point. Ten independent buttons. Finished in glass. Nothing out of reach.",7823,Zigbee coordinator or hub,Zigbee Touch Control Panel,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38617579105,"{
+  ""product"": {
+    ""SKU"": ""38617579105"",
+    ""ProductName"": ""TOQ 10T"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Panels"",
+      ""Touch Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Ten touches. Every light, every scene.\n\nThe TOQ 10T is for rooms and homes that demand complete control from a single point. Ten independent buttons. Finished in glass. Nothing out of reach."",
+    ""SRP"": 19557,
+    ""DP"": 7823,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",For loads above 4A use external SSR or contactor.,10A per channel,Zigbee 3.0,Up to 4A per channel,19557.5,,"A 10-button Zigbee capacitive touch panel for comprehensive load switching and scene control across up to 10 independent channels in residential and commercial installations.
+
+Each button independently controls a load or triggers a scene. Configurable for toggle or momentary operation per button. Available in white or black glass with silver, gold, or black bezel and configurable backlight.
+
+Key Specifications
+- Buttons: 10 capacitive touch
+- Relay: 10A per channel
+- Direct Load: Up to 4A per channel
+- Protocol: Zigbee 3.0
+- Finish: White/Black glass + Silver/Gold/Black bezel
+- Installation: Wall-mounted
+
+⚠ For loads above 4A, use an external SSR or contactor."
+TOQ 8T+1F,8 + 1 fan,Zigbee automation platforms,"Lights and fans. One elegant panel.
+
+Eight touch points for your lighting and scenes, plus a dedicated fan control — all in one glass panel. The TOQ 8T+1F handles the full room without compromise.",8584,Zigbee coordinator or hub,Zigbee Touch Control Panel with Fan Control,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38648381854,"{
+  ""product"": {
+    ""SKU"": ""38648381854"",
+    ""ProductName"": ""TOQ 8T+1F"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Panels"",
+      ""Touch Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Lights and fans. One elegant panel.\n\nEight touch points for your lighting and scenes, plus a dedicated fan control — all in one glass panel. The TOQ 8T+1F handles the full room without compromise."",
+    ""SRP"": 21460,
+    ""DP"": 8584,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",For loads above 4A on button channels use external SSR or contactor.,10A per button channel,Zigbee 3.0,Up to 4A per button channel; fan up to 120W,21460,,"An 8-button Zigbee touch panel with a dedicated fan control channel for ceiling fans up to 120W, combining multi-circuit load control with integrated fan management in a single wall panel.
+
+Each of the 8 buttons is independently configurable for toggle or momentary operation. The fan channel operates separately for speed and on/off control. Available in white or black glass with silver, gold, or black bezel.
+
+Key Specifications
+- Buttons: 8 capacitive touch
+- Fan Channels: 1 (up to 120W)
+- Relay: 10A per button channel
+- Direct Load: Up to 4A per button channel
+- Protocol: Zigbee 3.0
+- Installation: Wall-mounted
+
+⚠ For loads above 4A on button channels, use an external SSR or contactor."
+TOQ 4T+2F,4 + 2 fan,Zigbee automation platforms,"Four circuits, two fans. One surface.
+
+Perfect for bedrooms, living spaces, or any room that needs both lighting control and ceiling fan management. The TOQ 4T+2F covers it all from a single glass panel.",5983,Zigbee coordinator or hub,Zigbee Touch Control Panel with Fan Control,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38638793830,"{
+  ""product"": {
+    ""SKU"": ""38638793830"",
+    ""ProductName"": ""TOQ 4T+2F"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Panels"",
+      ""Touch Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Four circuits, two fans. One surface.\n\nPerfect for bedrooms, living spaces, or any room that needs both lighting control and ceiling fan management. The TOQ 4T+2F covers it all from a single glass panel."",
+    ""SRP"": 14957,
+    ""DP"": 5983,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",For loads above 4A on button channels use external SSR or contactor.,10A per button channel,Zigbee 3.0,Up to 4A per button channel; fans up to 120W each,14957.5,,"A 4-button Zigbee touch panel with two dedicated fan control channels for ceiling fans up to 120W each, providing load switching, scene control, and dual fan management from a single wall panel.
+
+Button channels are independently configurable for toggle or momentary operation. Available in white or black glass with silver, gold, or black bezel.
+
+Key Specifications
+- Buttons: 4 capacitive touch
+- Fan Channels: 2 (up to 120W each)
+- Relay: 10A per button channel
+- Direct Load: Up to 4A per button channel
+- Protocol: Zigbee 3.0
+- Installation: Wall-mounted
+
+⚠ For loads above 4A on button channels, use an external SSR or contactor."
+TOQ 8T+1S,8,Zigbee automation platforms,"Eight circuits, a power outlet. Nothing missing.
+
+The TOQ 8T+1S gives you full room control plus a socket for everyday use — all in a single, clean glass panel.",7593,Zigbee coordinator or hub,Zigbee Touch Control Panel with Integrated Socket,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,3863826889,"{
+  ""product"": {
+    ""SKU"": ""3863826889"",
+    ""ProductName"": ""TOQ 8T+1S"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Panels"",
+      ""Touch Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Eight circuits, a power outlet. Nothing missing.\n\nThe TOQ 8T+1S gives you full room control plus a socket for everyday use — all in a single, clean glass panel."",
+    ""SRP"": 18982,
+    ""DP"": 7593,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",For loads above 4A use external SSR or contactor. Socket rated 6A.,10A per button channel,Zigbee 3.0,Up to 4A per button channel,18982.5,,"An 8-button Zigbee capacitive touch panel with an integrated 6A utility socket, combining comprehensive load control and scene triggering with convenient power access in a single wall panel.
+
+Each button is independently configurable for toggle or momentary operation with dimmer support via retrofit modules. Available in white or black glass with silver, gold, or black bezel.
+
+Key Specifications
+- Buttons: 8 capacitive touch
+- Socket: 1 integrated (6A)
+- Relay: 10A per button channel
+- Direct Load: Up to 4A per button channel
+- Protocol: Zigbee 3.0
+- Installation: Wall-mounted
+
+⚠ For loads above 4A, use an external SSR or contactor. Socket rated at 6A."
+TOQ 4T+2F+1S,4 + 2 fan,Zigbee automation platforms,"Everything a room needs. One panel.
+
+Lighting control, two ceiling fans, and a power socket — all from a single wall panel. The TOQ 4T+2F+1S is built for the rooms where you need it all.",8054,Zigbee coordinator or hub,Zigbee Touch Control Panel with Fan and Socket,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38612926801,"{
+  ""product"": {
+    ""SKU"": ""38612926801"",
+    ""ProductName"": ""TOQ 4T+2F+1S"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Panels"",
+      ""Touch Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Everything a room needs. One panel.\n\nLighting control, two ceiling fans, and a power socket — all from a single wall panel. The TOQ 4T+2F+1S is built for the rooms where you need it all."",
+    ""SRP"": 20135,
+    ""DP"": 8054,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",For loads above 4A use external SSR or contactor. Socket rated 6A.,10A per button channel,Zigbee 3.0,Up to 4A per button channel; fans up to 120W each,20135,,"A multi-function Zigbee wall panel combining 4 load control buttons, 2 dedicated fan channels, and an integrated 6A utility socket in a single glass panel.
+
+Ideal for rooms requiring lighting, fan, and power access control from one location. Each button configurable independently. Available in white or black glass with silver, gold, or black bezel.
+
+Key Specifications
+- Buttons: 4 capacitive touch
+- Fan Channels: 2 (up to 120W each)
+- Socket: 1 integrated (6A)
+- Relay: 10A per button channel
+- Protocol: Zigbee 3.0
+- Installation: Wall-mounted
+
+⚠ For loads above 4A, use an external SSR or contactor. Socket rated at 6A."
+TOQ 10T+2S,10,Zigbee automation platforms,"Ten circuits, two sockets. Total control.
+
+The TOQ 10T+2S is the most complete single-panel solution in the range — ten touch points, two power outlets, and a finish that belongs on any wall.",11275,Zigbee coordinator or hub,Zigbee Touch Control Panel with Integrated Sockets,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38676065011,"{
+  ""product"": {
+    ""SKU"": ""38676065011"",
+    ""ProductName"": ""TOQ 10T+2S"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Panels"",
+      ""Touch Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Ten circuits, two sockets. Total control.\n\nThe TOQ 10T+2S is the most complete single-panel solution in the range — ten touch points, two power outlets, and a finish that belongs on any wall."",
+    ""SRP"": 28187,
+    ""DP"": 11275,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",For loads above 4A use external SSR or contactor. Each socket rated 6A.,10A per button channel,Zigbee 3.0,Up to 4A per button channel,28187.5,,"A 10-button Zigbee capacitive touch panel with two integrated 6A utility sockets, providing comprehensive smart control across 10 channels alongside dual power outlet access.
+
+Each button independently controls a load or triggers a scene. Available in white or black glass with silver, gold, or black bezel.
+
+Key Specifications
+- Buttons: 10 capacitive touch
+- Sockets: 2 integrated (6A each)
+- Relay: 10A per button channel
+- Direct Load: Up to 4A per button channel
+- Protocol: Zigbee 3.0
+- Installation: Wall-mounted
+
+⚠ For loads above 4A, use an external SSR or contactor. Each socket rated at 6A."
+TAC 1,1,Zigbee automation platforms,"One touch. The right response.
+
+The TAC 1 is a single button with complete intention. Load control or scene trigger — available in glass or polypropylene, in the finish that suits your space.",7000,Zigbee coordinator or hub,Zigbee Smart Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38627276917,"{
+  ""product"": {
+    ""SKU"": ""38627276917"",
+    ""ProductName"": ""TAC 1"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""One touch. The right response.\n\nThe TAC 1 is a single button with complete intention. Load control or scene trigger — available in glass or polypropylene, in the finish that suits your space."",
+    ""SRP"": 17500,
+    ""DP"": 7000,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}","For loads above 4A use external SSR or contactor. Materials: PP or AG glass. Colours: Black, White, Gold.",10A,Zigbee 3.0,Up to 4A,17500,Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing),"A single-button Zigbee smart switch for direct load control or scene triggering. Features a backlit button with customizable icon and is available in polypropylene (PP) or anti-glare glass (AG) in black, white, or gold.
+
+Dimming can be achieved via compatible retrofit dimmer modules. Operates as a direct load switch or scene trigger within the Zigbee ecosystem.
+
+Key Specifications
+- Buttons: 1
+- Relay: 10A
+- Direct Load: Up to 4A
+- Protocol: Zigbee 3.0
+- Materials: PP or AG glass
+- Colours: Black, White, Gold
+- Installation: Wall-mounted
+
+⚠ For loads above 4A, use an external SSR or contactor."
+TAC 2,2,Zigbee automation platforms,"Two circuits. One switch.
+
+The TAC 2 controls two loads from a single elegant switch face — light and fan, two rooms, or two scenes. Available in glass or polypropylene in the finish you prefer.",7100,Zigbee coordinator or hub,Zigbee Smart Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38698147296,"{
+  ""product"": {
+    ""SKU"": ""38698147296"",
+    ""ProductName"": ""TAC 2"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Two circuits. One switch.\n\nThe TAC 2 controls two loads from a single elegant switch face — light and fan, two rooms, or two scenes. Available in glass or polypropylene in the finish you prefer."",
+    ""SRP"": 17750,
+    ""DP"": 7100,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}","10A total shared capacity. For loads above 4A use external SSR or contactor. Materials: PP or AG glass. Colours: Black, White, Gold.",10A total (shared),Zigbee 3.0,Up to 4A per load,17750,Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing),"A 2-button Zigbee smart switch with independent load control or scene triggering per button. Backlit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.
+
+Key Specifications
+- Buttons: 2 (independent)
+- Relay: 10A total (shared)
+- Direct Load: Up to 4A per load
+- Protocol: Zigbee 3.0
+- Materials: PP or AG glass
+- Colours: Black, White, Gold
+
+⚠ 10A total shared relay capacity. For loads above 4A use an external SSR or contactor."
+TAC 3,3,Zigbee automation platforms,"Three loads. One clean face.
+
+The TAC 3 manages three circuits from a single switch — lighting zones, fans, or scenes — in a finish that makes the hardware disappear into your interior.",7800,Zigbee coordinator or hub,Zigbee Smart Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38677515791,"{
+  ""product"": {
+    ""SKU"": ""38677515791"",
+    ""ProductName"": ""TAC 3"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Three loads. One clean face.\n\nThe TAC 3 manages three circuits from a single switch — lighting zones, fans, or scenes — in a finish that makes the hardware disappear into your interior."",
+    ""SRP"": 19500,
+    ""DP"": 7800,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}","10A total shared. For loads above 3A use external SSR or contactor. Materials: PP or AG glass. Colours: Black, White, Gold.",10A total (shared),Zigbee 3.0,Up to 3A per load,19500,Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing),"A 3-button Zigbee smart switch with independent load control or scene triggering per button. Backlit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.
+
+Key Specifications
+- Buttons: 3 (independent)
+- Relay: 10A total (shared)
+- Direct Load: Up to 3A per load
+- Protocol: Zigbee 3.0
+- Materials: PP or AG glass
+- Colours: Black, White, Gold
+
+⚠ 10A total shared relay capacity. For loads above 3A use an external SSR or contactor."
+TAC 4,4,Zigbee automation platforms,"Four circuits. Seamless control.
+
+The TAC 4 gives you four independent control points on a single switch face — for rooms where every circuit matters and every detail is considered.",8000,Zigbee coordinator or hub,Zigbee Smart Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38697240638,"{
+  ""product"": {
+    ""SKU"": ""38697240638"",
+    ""ProductName"": ""TAC 4"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Four circuits. Seamless control.\n\nThe TAC 4 gives you four independent control points on a single switch face — for rooms where every circuit matters and every detail is considered."",
+    ""SRP"": 20000,
+    ""DP"": 8000,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}","10A total shared. For loads above 2A use external SSR or contactor. Materials: PP or AG glass. Colours: Black, White, Gold.",10A total (shared),Zigbee 3.0,Up to 2A per load,20000,Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing),"A 4-button Zigbee smart switch with independent load control or scene triggering per button. Backlit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.
+
+Key Specifications
+- Buttons: 4 (independent)
+- Relay: 10A total (shared)
+- Direct Load: Up to 2A per load
+- Protocol: Zigbee 3.0
+- Materials: PP or AG glass
+- Colours: Black, White, Gold
+
+⚠ 10A total shared relay capacity. For loads above 2A use an external SSR or contactor."
+TAC 6,0 (no relay),Zigbee automation platforms,"Six scenes. One wall.
+
+The TAC 6 is a scene controller — not a switch. Press once and an entire room responds. Morning scene, evening scene, away, welcome. Six possibilities on a single, elegant surface.",8500,Zigbee coordinator or hub,Zigbee Scene Control Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38683759132,"{
+  ""product"": {
+    ""SKU"": ""38683759132"",
+    ""ProductName"": ""TAC 6"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Switches"",
+      ""Scene Controllers""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Six scenes. One wall.\n\nThe TAC 6 is a scene controller — not a switch. Press once and an entire room responds. Morning scene, evening scene, away, welcome. Six possibilities on a single, elegant surface."",
+    ""SRP"": 21250,
+    ""DP"": 8500,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",No relays. Does not switch electrical loads directly. Scene and automation control only.,,Zigbee 3.0,,21250,Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing),"A 6-button Zigbee scene control switch for triggering scenes and automations within a Zigbee ecosystem. Contains no relays and does not switch electrical loads directly.
+
+Each button is independently configurable for scene or automation triggers. Backlit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.
+
+Key Specifications
+- Buttons: 6
+- Function: Scene / automation triggers only
+- Protocol: Zigbee 3.0
+- Materials: PP or AG glass
+- Colours: Black, White, Gold
+- Installation: Wall-mounted
+
+⚠ No relay — does not switch electrical loads. Scene control only."
+TAC HL,1,Zigbee automation platforms,"Your geyser. On your schedule.
+
+The TAC HL puts your heavy appliances — water heater, pump, high-power loads — on a smart switch rated for the job. Set schedules, automate by presence, or control remotely. Same simplicity, for serious loads.",7200,Zigbee coordinator or hub,Zigbee Smart Switch (Heavy Load),18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38649421973,"{
+  ""product"": {
+    ""SKU"": ""38649421973"",
+    ""ProductName"": ""TAC HL"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Your geyser. On your schedule.\n\nThe TAC HL puts your heavy appliances — water heater, pump, high-power loads — on a smart switch rated for the job. Set schedules, automate by presence, or control remotely. Same simplicity, for serious loads."",
+    ""SRP"": 18000,
+    ""DP"": 7200,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}","Heavy load installation. Qualified installation required. Materials: PP or AG glass. Colours: Black, White, Gold.",20A,Zigbee 3.0,"Geysers, heaters, pumps, heavy appliances",18000,Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing),"A single-button Zigbee smart switch rated for heavy electrical loads up to 20A — designed for direct control of geysers, water heaters, pumps, and other high-power appliances.
+
+Backlit with customizable icon. Available in PP or anti-glare glass in black, white, or gold.
+
+Key Specifications
+- Buttons: 1
+- Relay: 20A
+- Load: Geysers, heaters, pumps
+- Protocol: Zigbee 3.0
+- Materials: PP or AG glass
+- Colours: Black, White, Gold
+- Installation: Wall-mounted
+
+⚠ Heavy load application. Proper cable sizing, circuit protection, and qualified installation are required."
+TAC SH,1 (Open / Close / Stop),Zigbee automation platforms,"Open. Close. Stop. That's all you need.
+
+The TAC SH gives your motorized blinds and curtains a dedicated, physical control — three buttons, completely intuitive, available in the finish that suits your space.",7100,Zigbee coordinator or hub,Zigbee Shutter / Curtain Control Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38622224396,"{
+  ""product"": {
+    ""SKU"": ""38622224396"",
+    ""ProductName"": ""TAC SH"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Curtain & Shutter Control""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Open. Close. Stop. That's all you need.\n\nThe TAC SH gives your motorized blinds and curtains a dedicated, physical control — three buttons, completely intuitive, available in the finish that suits your space."",
+    ""SRP"": 17750,
+    ""DP"": 7100,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}","AC motor loads only. Not suitable for use as a standard lighting switch. Materials: PP or AG glass. Colours: Black, White, Gold.",150W motor,Zigbee 3.0,AC curtain/blind motor up to 150W,17750,Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing),"A 3-button Zigbee shutter and curtain control switch with dedicated Open, Close, and Stop functions for AC motorized blinds and curtains up to 150W.
+
+Backlit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.
+
+Key Specifications
+- Buttons: 3 (Open / Close / Stop)
+- Motor: AC curtain/blind, up to 150W
+- Protocol: Zigbee 3.0
+- Materials: PP or AG glass
+- Colours: Black, White, Gold
+- Installation: Wall-mounted
+
+⚠ AC motor loads only. Not suitable for use as a standard lighting switch."
+TAC 6+,4 load + 2 scene,Zigbee automation platforms,"Load control and scenes. One switch.
+
+The TAC 6+ combines the practical with the experiential — four buttons that control circuits, two that set the scene. Everything your room needs, on a single surface.",8500,Zigbee coordinator or hub,Zigbee Smart Switch with Scene Control,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,3861317782,"{
+  ""product"": {
+    ""SKU"": ""3861317782"",
+    ""ProductName"": ""TAC 6+"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Switches"",
+      ""Scene Controllers""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Load control and scenes. One switch.\n\nThe TAC 6+ combines the practical with the experiential — four buttons that control circuits, two that set the scene. Everything your room needs, on a single surface."",
+    ""SRP"": 21250,
+    ""DP"": 8500,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}","10A total shared across load buttons. Scene buttons have no relay. For loads above 2A use external SSR. Materials: PP or AG glass. Colours: Black, White, Gold.",10A total (shared across 4 load buttons),Zigbee 3.0,Up to 2A per load,21250,Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing),"A 6-button Zigbee smart switch with 4 load control buttons and 2 dedicated scene trigger buttons. Combines direct load switching with scene control on a single switch face.
+
+The 4 load buttons share a 10A relay capacity; the 2 scene buttons contain no relay and trigger automations only. Available in PP or anti-glare glass in black, white, or gold.
+
+Key Specifications
+- Buttons: 4 load + 2 scene
+- Relay: 10A total (4 load buttons, shared)
+- Direct Load: Up to 2A per load
+- Scene Buttons: Trigger only (no relay)
+- Protocol: Zigbee 3.0
+- Materials: PP or AG glass
+- Colours: Black, White, Gold
+
+⚠ 10A total shared relay capacity across load buttons. For loads above 2A use external SSR or contactor."
+TAC SS,0 (no relay),Zigbee automation platforms,"Any wall. Any location. No wiring.
+
+The TAC SS goes anywhere — no electrician required. Stick it by the bed, at the entrance, on a kitchen island. Six scenes at your fingertips, wherever it makes sense.",8500,Zigbee coordinator or hub,Zigbee Scene Control Switch (Battery),18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,"Wall-mounted or surface-mounted (wireless, no wiring required)",38686106442,"{
+  ""product"": {
+    ""SKU"": ""38686106442"",
+    ""ProductName"": ""TAC SS"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Switches"",
+      ""Scene Controllers""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Any wall. Any location. No wiring.\n\nThe TAC SS goes anywhere — no electrician required. Stick it by the bed, at the entrance, on a kitchen island. Six scenes at your fingertips, wherever it makes sense."",
+    ""SRP"": 21250,
+    ""DP"": 8500,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}","No relay. Battery-powered scene control only. Does not switch electrical loads. Materials: PP or AG glass. Colours: Black, White, Gold.",,Zigbee 3.0,,21250,Input: 3V (2 × CR2032 batteries) | Communication Protocol: Zigbee | Product Size: 86 × 86 × 12 mm | Installation: Magnetic / Portable | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing),"A battery-powered Zigbee scene switch with 6 configurable buttons for wireless scene and automation triggering — no wiring required.
+
+Can be wall-mounted or surface-mounted at any location without electrical installation. Backlit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.
+
+Key Specifications
+- Buttons: 6
+- Power: Battery
+- Function: Scene triggers only (no relay)
+- Protocol: Zigbee 3.0
+- Materials: PP or AG glass
+- Colours: Black, White, Gold
+- Installation: Wireless, wall or surface mount
+
+⚠ No relay — does not switch electrical loads. Battery-powered scene control only."
+TAC S,,TAC smart switch system or retrofit relay module,"A socket that fits the system.
+
+The TAC S is a power socket built for the TAC ecosystem — matching your switches in finish and material, and smart when it needs to be.",6100,TAC load channel or compatible retrofit relay for smart control,Modular Power Socket,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted modular,38676256320,"{
+  ""product"": {
+    ""SKU"": ""38676256320"",
+    ""ProductName"": ""TAC S"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Sockets""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""A socket that fits the system.\n\nThe TAC S is a power socket built for the TAC ecosystem — matching your switches in finish and material, and smart when it needs to be."",
+    ""SRP"": 15250,
+    ""DP"": 6100,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}","Not a smart socket by itself. Smart control requires a TAC load channel or compatible retrofit relay module. Materials: PP or AG glass. Colours: Black, White, Gold.",6A,,6A,15250,Type: Non-smart 3-pin Universal Socket with Switch | Input Voltage: 110–240V AC 50/60Hz | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing),"A modular 6A power socket designed for integration within the TAC Tile system. Not a standalone smart socket — smart control requires connection to a TAC load button channel or a compatible retrofit relay module.
+
+Key Specifications
+- Rating: 6A
+- Materials: PP or AG glass
+- Colours: Black, White, Gold
+- Installation: Wall-mounted modular
+
+⚠ Not smart by itself. Smart control requires a TAC load channel or compatible retrofit relay module."
+TAC F,1 fan channel,Zigbee automation platforms,"Your fan. Fully in control.
+
+Speed, on, off — from the wall or from anywhere. The TAC F gives your ceiling fan the same smart control as every other device in your home.",2500,Zigbee coordinator or hub,Zigbee Fan Control Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38688864221,"{
+  ""product"": {
+    ""SKU"": ""38688864221"",
+    ""ProductName"": ""TAC F"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Switches"",
+      ""Fan Control""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Your fan. Fully in control.\n\nSpeed, on, off — from the wall or from anywhere. The TAC F gives your ceiling fan the same smart control as every other device in your home."",
+    ""SRP"": 6250,
+    ""DP"": 2500,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}","For ceiling fans within rated load capacity (150W) only. Materials: PP or AG glass. Colours: Black, White, Gold.",150W,Zigbee 3.0,Ceiling fans up to 150W,6250,Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing),"A Zigbee smart fan control panel for ceiling fans up to 150W. Provides on/off and speed control with a dedicated fan control interface.
+
+Integrates with the Zigbee automation ecosystem. Available in PP or anti-glare glass in black, white, or gold.
+
+Key Specifications
+- Control: Fan on/off + speed
+- Fan Load: Up to 150W
+- Protocol: Zigbee 3.0
+- Materials: PP or AG glass
+- Colours: Black, White, Gold
+- Installation: Wall-mounted
+
+⚠ For ceiling fans within rated load (150W) only."
+TAC K,Up to 3 lights or 3 lighting groups,Zigbee automation platforms,"Turn to dim. Push to switch. That's it.
+
+The TAC K makes lighting control physical again — but smarter. A single rotary dial that adjusts brightness, shifts colour temperature, and switches between rooms or groups. No screen. No menu. Just touch.",17500,Zigbee coordinator or hub,Zigbee Rotary Control Dial,18,85365090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38647971307,"{
+  ""product"": {
+    ""SKU"": ""38647971307"",
+    ""ProductName"": ""TAC K"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Turn to dim. Push to switch. That's it.\n\nThe TAC K makes lighting control physical again — but smarter. A single rotary dial that adjusts brightness, shifts colour temperature, and switches between rooms or groups. No screen. No menu. Just touch."",
+    ""SRP"": 34000,
+    ""DP"": 17500,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Does not switch electrical loads directly. Control interface only.,,Zigbee 3.0,,34000,Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 25.4 mm (knob: 16mm) | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing),"A Zigbee rotary smart dial for intuitive control of lighting brightness, colour temperature, and device groups. Supports up to 3 individual lights or 3 lighting groups via rotate and push interaction.
+
+Rotate to adjust brightness or colour temperature. Push to switch between groups or trigger actions. Designed for wall-mounted installation.
+
+Key Specifications
+- Interface: Rotary + push
+- Control: Brightness, colour temperature, group switching
+- Scope: Up to 3 lights or groups
+- Protocol: Zigbee 3.0
+- Installation: Wall-mounted
+
+⚠ Does not switch electrical loads directly. Smart control interface only."
+"4"" Touch Control Panel",,"Zigbee devices, Alexa voice control","Your whole home. Four inches of glass.
+
+Touch a scene. Ask Alexa. Check a device. The 4"" panel is a control centre that mounts on your wall and brings your entire home into one place — simple, immediate, and always responsive.",13200,Wi-Fi network,Smart Home Touch Control Panel,18,85371000,https://drive.google.com/file/d/1oGopgFNufr1OqQM7IKtwfmKmh0w9MyUz/view?usp=drive_link,Wall-mounted,38618602731,"{
+  ""product"": {
+    ""SKU"": ""38618602731"",
+    ""ProductName"": ""4\"" Touch Control Panel"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Panels"",
+      ""Touch Controllers""
+    ],
+    ""Protocol"": [
+      ""Zigbee"",
+      ""Wi-Fi""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Your whole home. Four inches of glass.\n\nTouch a scene. Ask Alexa. Check a device. The 4\"" panel is a control centre that mounts on your wall and brings your entire home into one place — simple, immediate, and always responsive."",
+    ""SRP"": 33000,
+    ""DP"": 13200,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Does not switch electrical loads. Control interface and Zigbee gateway only.,,Wi-Fi + Zigbee (built-in gateway),,33000,"Input: 100–240V AC, 50/60Hz | Rated Current: 74 mA | Wireless Protocol: Wi-Fi, Zigbee | Working Temperature: 0°C to 40°C | Working Humidity: 5%–90% RH (non-condensing) | Size (without base): 86.0 × 86.0 × 10.5 mm | Size (with base): 86.0 × 86.0 × 36.2 mm","A 4-inch wall-mounted smart home touch panel with an integrated Zigbee gateway, Wi-Fi connectivity, and built-in Alexa voice control. Provides centralized control of smart home devices, scenes, and automations.
+
+Features automatic screen brightness adjustment and supports remote app-based control alongside local touchscreen interaction.
+
+Key Specifications
+- Display: 4-inch touchscreen
+- OS: Embedded Linux
+- Wireless: Wi-Fi + Zigbee (built-in gateway)
+- Voice: Built-in Alexa
+- Functions: Scenes, devices, automations, status
+- Installation: Wall-mounted
+
+⚠ Does not switch electrical loads. Control interface and Zigbee coordinator only."
+4 Gang Scene Switch,0 (no relay),Compatible Zigbee gateways and automation platforms,"Four buttons. Twelve possibilities. Zero wiring.
+
+Place it anywhere. Stick it to a wall, put it on a nightstand, keep it in a pocket. The 4 Gang Scene Switch gives you up to 12 scenes from four buttons — no installation, no electrician, no limits on where it goes.",3499,Zigbee coordinator or hub. CR2430 battery.,Zigbee Scene Control Switch (Battery),18,85365090,,Wireless (adhesive mount or portable),38623516280,"{
+  ""product"": {
+    ""SKU"": ""38623516280"",
+    ""ProductName"": ""4 Gang Scene Switch"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Scene Controllers"",
+      ""Smart Switches""
+    ],
+    ""Protocol"": [
+      ""Zigbee""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Four buttons. Twelve possibilities. Zero wiring.\n\nPlace it anywhere. Stick it to a wall, put it on a nightstand, keep it in a pocket. The 4 Gang Scene Switch gives you up to 12 scenes from four buttons — no installation, no electrician, no limits on where it goes."",
+    ""SRP"": 8747,
+    ""DP"": 3499,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",No relay. Does not switch electrical loads. Scene triggers only. Battery: CR2430 (~2 years).,,Zigbee 3.0,,8747.5,"Input Power: CR2430 button battery | Communication: Zigbee | Dimensions: 86 × 86 × 13 mm | Standby Power: 10 µA | Working Temperature: -10°C to +45°C | Working Humidity: <90% RH | Button Lifecycle: 50,000 presses | Frequency Band: 2400–2484 MHz | Max Radio Transmit Power: <+19 dBm","A battery-powered Zigbee scene switch with 4 mechanical buttons, each supporting single press, double press, and long press actions — enabling up to 12 configurable scenes or automation triggers without wiring.
+
+CR2430 battery with approximately 2-year life. Slim profile (~1.3 cm). Wireless installation via adhesive mount or portable use.
+
+Key Specifications
+- Buttons: 4 mechanical
+- Actions: Single / double / long press per button (12 scenes total)
+- Power: CR2430 (~2 years)
+- Profile: ~1.3 cm slim
+- Protocol: Zigbee 3.0
+- Installation: Wireless, adhesive or portable
+
+⚠ No relay — does not switch loads. Scene and automation triggers only."
+"10"" Touch Control Panel",,"Zigbee (128+ devices), Bluetooth/BLE/Sigmesh (128+ devices)","Your home has a face.
+
+The 10"" panel is the centrepiece of a smart home — a full control surface that manages every light, every scene, and every device, while also serving as your front door intercom. Proximity-aware. Always on. Always ready.",45000,Wi-Fi network. Live/neutral wiring or USB-C power.,Smart Home Touch Control Panel,18,85371000,https://drive.google.com/drive/folders/1pVAJ0nz7aS39hoMXSDOskOrrgnrc_xJv?usp=drive_link,Wall-mounted (live/neutral or USB-C powered),38694583069,"{
+  ""product"": {
+    ""SKU"": ""38694583069"",
+    ""ProductName"": ""10\"" Touch Control Panel"",
+    ""BrandName"": """",
+    ""CategoryName"": [
+      ""Smart Panels"",
+      ""Touch Controllers""
+    ],
+    ""Protocol"": [
+      ""Zigbee"",
+      ""Wi-Fi"",
+      ""Bluetooth""
+    ],
+    ""Technology"": [
+      ""Wireless""
+    ],
+    ""Description"": ""Your home has a face.\n\nThe 10\"" panel is the centrepiece of a smart home — a full control surface that manages every light, every scene, and every device, while also serving as your front door intercom. Proximity-aware. Always on. Always ready."",
+    ""SRP"": 112500,
+    ""DP"": 45000,
+    ""Assistants"": [
+      ""Amazon Alexa"",
+      ""Google Home"",
+      ""Siri / Apple HomeKit""
+    ],
+    ""GSTRate"": 18,
+    ""enabled"": true
+  }
+}",Does not switch electrical loads. Central control interface and multi-protocol gateway only.,,Wi-Fi + Zigbee + Bluetooth,,112500,"Input: 100–240V AC, 50/60Hz | Wireless Protocol: Wi-Fi, Bluetooth, Zigbee | Display: 1920 × 1200 FHD, 10.1-inch touch screen | Operating Temperature: 0°C to 40°C | Working Humidity: 5%–90% RH (non-condensing) | Size (without base): 259 × 161 × 13 mm | Size (with base): 259 × 161 × 37 mm","A 10-inch wall-mounted smart home control panel with integrated Zigbee and Bluetooth gateways, supporting 128+ devices per protocol. Features a built-in HD camera, doorbell intercom, proximity wake sensor, and customizable control interface.
+
+Supports Wi-Fi, Zigbee, and Bluetooth. Powerable via live/neutral wiring or USB-C. Manages lighting, scenes, security, and automation from a central touchscreen.
+
+Key Specifications
+- Display: 10-inch touchscreen
+- Wireless: Wi-Fi + Zigbee + Bluetooth
+- Capacity: 128+ Zigbee + 128+ Bluetooth
+- Camera: HD ~5MP (intercom + monitoring)
+- Features: Doorbell intercom, proximity sensor
+- Power: Live/neutral or USB-C
+- Installation: Wall-mounted
+
+⚠ Does not switch electrical loads. Central control interface and multi-protocol gateway only."
