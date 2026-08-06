@@ -1,0 +1,7 @@
+node_modules/
+
+# Isolated worktrees created for plan execution
+.claude/worktrees/
+
+# Subagent-driven-development scratch: ledgers, briefs, review packages
+.superpowers/
