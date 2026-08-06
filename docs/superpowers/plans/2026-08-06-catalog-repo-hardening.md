@@ -34,7 +34,7 @@
 | `facebook-catalog-push.js:95` | Modify — verify before pushing. |
 | `google-merchant-feed.js:136` | Modify — verify before writing the feed. |
 | `.github/workflows/release-catalog.yml` | Create — publish release assets on tag. |
-| `test/*.test.mjs` | Create — one test file per lib module. |
+| `test/*.test.mjs` | Create — one test file per lib module. Note: `node --test test/` resolves the directory as a module path on Node 22 and fails with MODULE_NOT_FOUND; the glob form is required. |
 
 ---
 
@@ -80,7 +80,7 @@ auto-detects module syntax; this makes it explicit.
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test test/",
+    "test": "node --test test/*.test.mjs",
     "build-catalog": "node scripts/build-catalog.mjs",
     "verify-catalog": "node scripts/verify-catalog.mjs"
   }
