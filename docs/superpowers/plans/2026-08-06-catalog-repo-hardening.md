@@ -363,6 +363,15 @@ test('wiping the catalog reports every slug', () => {
   assert.match(error.message, /3 records? would disappear/);
 });
 
+test('allowRemovals still refuses to empty a field on a surviving record', () => {
+  const before = [record('one'), record('two')];
+  const after = [record('one', { description: '' })];
+  assert.throws(
+    () => assertNoDataLoss(before, after, { allowRemovals: true }),
+    CatalogDataLossError
+  );
+});
+
 test('allowRemovals permits a deliberate removal', () => {
   const before = [record('one'), record('two')];
   const after = [record('one')];
@@ -431,16 +440,18 @@ export function diffCatalogs(previous, next) {
 
 export function assertNoDataLoss(previous, next, { allowRemovals = false } = {}) {
   const details = diffCatalogs(previous, next);
-  if (allowRemovals) return;
-
   const problems = [];
-  if (details.removedSlugs.length > 0) {
+
+  // --allow-removals is for retiring a product on purpose. It is NOT a licence
+  // to wipe a field on a product that stays, so the emptiedFields check below
+  // runs either way.
+  if (!allowRemovals && details.removedSlugs.length > 0) {
     problems.push(
       `${details.removedSlugs.length} record(s) would disappear: ` +
         details.removedSlugs.join(', ')
     );
   }
-  if (details.countDelta < 0) {
+  if (!allowRemovals && details.countDelta < 0) {
     problems.push(
       `record count would drop by ${Math.abs(details.countDelta)} ` +
         `(${previous.length} → ${next.length})`
