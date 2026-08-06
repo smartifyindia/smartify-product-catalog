@@ -4,7 +4,7 @@
 
 **Goal:** Make `smartify-product-catalog` self-contained and incapable of silently losing product data, and have it publish a checksummed release that other repos can pull without ever needing a sibling checkout.
 
-**Architecture:** The Python generator keeps building the catalog, but it now writes to a staging directory. A Node orchestrator validates the staged output against a schema, diffs it against the committed catalog through a delta gate that refuses destructive writes, and only then promotes it. The same validation protects the two ad-platform feeds, which are the highest-stakes consumers in this repo.
+**Architecture:** `products/<slug>/product.json` is the source of truth. The Python generator rebuilds `products.json` and the per-product READMEs from those files into a staging directory. A Node orchestrator validates the staged output against a schema, diffs it against the committed catalog through a delta gate that refuses destructive writes, and only then promotes it. The same validation protects the two ad-platform feeds, which are the highest-stakes consumers in this repo. The vendored CSV remains as archival provenance for the original import — it is stale on price and is no longer what a build reads.
 
 **Tech Stack:** Python 3.11 (existing generator), Node 22 with the built-in `node:test` runner (no new dependencies), GitHub Actions for releases.
 
@@ -866,24 +866,179 @@ git commit -m "Add checksum provenance sidecars for catalog artifacts"
 
 ### Task 5: Build orchestrator
 
-Ties the three libraries together. This is the command that replaces running `generate_catalog.py` directly.
+Ties the three libraries together. This is the command that replaces running `generate_catalog.py`
+directly.
+
+**Source of truth changed after this plan was written.** The original design regenerated everything
+from `data/sources/product-glossary.csv`. That CSV turned out to be stale: all 47 SRPs in it predate
+a repricing done by hand in the committed JSON (e.g. `convergia` is ₹87,500 in the CSV, ₹114,000 in
+the repo). Rebuilding from it would silently revert every price — and the delta gate would not catch
+it, because the gate guards removed records and emptied fields, not changed values.
+
+So `products/<slug>/product.json` is now canonical. The CSV stays vendored as archival provenance
+for the original import, and `generate_catalog.py`'s CSV path stays available for a fresh re-import,
+but it is no longer what a build runs.
+
+This is tractable because `write_product_readme(product_dir, data, row)` already reads **only**
+`data` — the `row` parameter is vestigial. README generation needs no CSV at all.
 
 **Files:**
+- Modify: `generate_catalog.py` — add a `--from-json` mode and drop the vestigial `row` parameter
 - Create: `scripts/build-catalog.mjs`
-- Modify: `package.json` (already wired in Task 1)
 
 **Interfaces:**
-- Consumes: `assertNoDataLoss` (Task 2), `validateCatalog` (Task 3), `writeProvenance` (Task 4), `python3 generate_catalog.py --out <dir>` (Task 1)
-- Produces: `npm run build-catalog [-- --allow-removals]`; writes `products.json` and `products.source.json` at the repo root only after all gates pass.
+- Consumes: `assertNoDataLoss` (Task 2), `validateCatalog` (Task 3), `writeProvenance` (Task 4)
+- Produces:
+  - `python3 generate_catalog.py --from-json --out <dir>` — reads every `products/<slug>/product.json`
+    from the repo, writes `products.json`, `products/<slug>/README.md` and `README.md` into `<dir>`
+  - `npm run build-catalog [-- --allow-removals]` — writes `products.json` and `products.source.json`
+    at the repo root only after all gates pass
 
-- [ ] **Step 1: Implement the orchestrator**
+- [ ] **Step 1: Add a `--from-json` mode to the generator**
+
+Add this function to `generate_catalog.py`, above `build_catalog()`:
+
+```python
+def load_products_from_json() -> list[dict]:
+    """Read the per-product JSON files, which are the source of truth.
+
+    The vendored CSV is an archival record of the original import and is now
+    stale — prices have since been maintained by hand in these files. Building
+    from the CSV would silently revert them, so a normal build reads from here.
+    """
+    src = BASE / "products"
+    if not src.exists():
+        raise SystemExit(f"No products/ directory at {src}; nothing to build from.")
+
+    products = []
+    for product_dir in sorted(src.iterdir()):
+        path = product_dir / "product.json"
+        if not path.exists():
+            raise SystemExit(
+                f"{product_dir.name}/ has no product.json. Every product directory must "
+                f"contain one — a missing file would silently drop the product."
+            )
+        products.append(json.loads(path.read_text(encoding="utf-8")))
+    return products
+```
+
+- [ ] **Step 2: Make `write_product_readme` stop taking the unused `row`**
+
+`write_product_readme(product_dir, data, row)` never reads `row`. Change its signature to
+`write_product_readme(product_dir, data)` and update its one call site inside `build_catalog()`.
+Removing it is what lets READMEs be generated without any CSV.
+
+- [ ] **Step 3: Add a `build_from_json()` entry point**
+
+Add above the `__main__` block:
+
+```python
+def build_from_json() -> list[dict]:
+    """Regenerate products.json and every README from the per-product JSON."""
+    all_products = load_products_from_json()
+    products_dir = OUT / "products"
+    products_dir.mkdir(parents=True, exist_ok=True)
+
+    for data in all_products:
+        product_dir = products_dir / data["slug"]
+        product_dir.mkdir(parents=True, exist_ok=True)
+        (product_dir / "product.json").write_text(
+            json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+        )
+        write_product_readme(product_dir, data)
+
+    (OUT / "products.json").write_text(
+        json.dumps(all_products, indent=2, ensure_ascii=False) + "\n"
+    )
+    return all_products
+```
+
+- [ ] **Step 4: Wire `--from-json` into `__main__`**
+
+Add the flag to the argument parser and branch on it:
+
+```python
+    parser.add_argument(
+        "--from-json",
+        action="store_true",
+        help="Build from the per-product JSON files (the source of truth) "
+             "instead of the archival CSV.",
+    )
+```
+
+and replace the two build calls with:
+
+```python
+    print("Building catalog...")
+    if args.from_json:
+        all_products = build_from_json()
+    else:
+        all_products = build_catalog()
+    write_main_readme(all_products)
+```
+
+- [ ] **Step 5: Verify `--from-json` round-trips the committed catalog exactly**
+
+The committed catalog must survive a rebuild byte-for-byte apart from the root README, which is
+hand-written and is dealt with in Step 6.
+
+```bash
+STAGE=$(mktemp -d)
+python3 generate_catalog.py --from-json --out "$STAGE"
+python3 - <<PY
+import json
+a = json.load(open("products.json"))
+b = json.load(open("$STAGE/products.json"))
+print("committed:", len(a), "rebuilt:", len(b))
+print("identical:", a == b)
+PY
+diff -q products/convergia/README.md "$STAGE/products/convergia/README.md" && echo "README identical"
+grep -c "114000" "$STAGE/products.json"
+rm -rf "$STAGE"
+```
+
+Expected: `committed: 47 rebuilt: 47`, `identical: True`, `README identical`, and a non-zero count
+for `114000` — proving the repriced values survived rather than reverting to the CSV's ₹87,500.
+
+If `identical` is False, report the differing keys in your report and STOP. Do not adjust the
+committed catalog to match the generator; the committed data is authoritative now.
+
+- [ ] **Step 6: Protect the hand-written root README**
+
+`write_main_readme()` overwrites `README.md`, but the committed root README is hand-written
+marketing copy (commit `b5b709c`) that the generator would destroy — this already happened once
+during Task 1. Guard it:
+
+```python
+def write_main_readme(all_products: list[dict]):
+    target = OUT / "README.md"
+    if target.exists() and "<div align=\"center\">" in target.read_text(encoding="utf-8"):
+        print("  → README.md left alone (hand-written marketing copy)")
+        return
+```
+
+Insert those lines at the top of the existing `write_main_readme()`, leaving the rest of the
+function unchanged so a fresh checkout without the marketing README still gets a generated one.
+
+- [ ] **Step 7: Verify the root README is no longer clobbered**
+
+```bash
+sha256sum README.md > /tmp/readme.sha
+python3 generate_catalog.py --from-json
+sha256sum -c /tmp/readme.sha && echo "ROOT README INTACT"
+git status --porcelain | wc -l
+```
+
+Expected: `ROOT README INTACT` and `0` changed files — a build from canonical data is a no-op.
+
+- [ ] **Step 8: Implement the orchestrator**
 
 Create `scripts/build-catalog.mjs`:
 
 ```javascript
 #!/usr/bin/env node
 /**
- * generate → validate → gate → promote.
+ * aggregate → validate → gate → promote.
  *
  * The generator writes to a staging directory so that a failed validation or a
  * destructive diff leaves the committed catalog untouched. Nothing is promoted
@@ -907,10 +1062,12 @@ const readJson = (path) => JSON.parse(readFileSync(path, 'utf8'));
 
 const staging = mkdtempSync(join(tmpdir(), 'catalog-build-'));
 try {
-  console.log('Generating catalog into staging...');
-  execFileSync('python3', [join(ROOT, 'generate_catalog.py'), '--out', staging], {
-    stdio: 'inherit',
-  });
+  console.log('Building catalog into staging from the per-product JSON...');
+  execFileSync(
+    'python3',
+    [join(ROOT, 'generate_catalog.py'), '--from-json', '--out', staging],
+    { stdio: 'inherit' }
+  );
 
   const next = readJson(join(staging, 'products.json'));
   console.log(`Staged ${next.length} records. Validating...`);
@@ -925,7 +1082,6 @@ try {
   }
 
   copyFileSync(join(staging, 'products.json'), COMMITTED);
-  copyFileSync(join(staging, 'README.md'), join(ROOT, 'README.md'));
   cpSync(join(staging, 'products'), join(ROOT, 'products'), { recursive: true });
 
   const provenance = writeProvenance({
@@ -946,44 +1102,61 @@ try {
 }
 ```
 
-- [ ] **Step 2: Verify a normal build succeeds and is non-destructive**
+Note this does **not** copy the staged `README.md` over the committed one — Step 6 already stops the
+generator writing it, and the root README is not a build artifact.
+
+- [ ] **Step 9: Verify a normal build is a clean no-op**
 
 ```bash
-npm run build-catalog && cat products.source.json
+npm run build-catalog && cat products.source.json && git status --porcelain | wc -l
 ```
 
-Expected: `Delta gate passed (47 → 47 records).`, `Promoted. 47 records, sha256 …`, and a sidecar showing `"records": 47`.
+Expected: `Delta gate passed (47 → 47 records).`, `Promoted. 47 records, sha256 …`, a sidecar
+showing `"records": 47`, and `1` changed file — only the new `products.source.json`.
 
-- [ ] **Step 3: Verify the gate blocks a destructive build**
+- [ ] **Step 10: Verify the gate blocks a destructive build**
 
-Simulate upstream data loss by truncating the vendored CSV, then confirm the committed catalog survives:
+Delete a product directory and confirm the committed catalog survives:
 
 ```bash
 cp products.json /tmp/products.guard-check.json
-head -3 data/sources/product-glossary.csv > /tmp/truncated.csv
-cp data/sources/product-glossary.csv /tmp/csv-full.csv
-cp /tmp/truncated.csv data/sources/product-glossary.csv
+mv products/convergia /tmp/convergia-backup
 npm run build-catalog; echo "exit=$?"
-cp /tmp/csv-full.csv data/sources/product-glossary.csv
+mv /tmp/convergia-backup products/convergia
 diff -q products.json /tmp/products.guard-check.json && echo "COMMITTED CATALOG INTACT"
 ```
 
-Expected: the build fails with `Refusing to write: this would lose data.` listing the disappearing slugs, `exit=1`, and `COMMITTED CATALOG INTACT`.
+Expected: the build fails with `Refusing to write: this would lose data.` naming `convergia`,
+`exit=1`, and `COMMITTED CATALOG INTACT`.
 
-- [ ] **Step 4: Restore and rebuild**
-
-```bash
-npm run build-catalog && python3 -c "import json;print('records:', len(json.load(open('products.json'))))"
-```
-
-Expected: `records: 47`.
-
-- [ ] **Step 5: Commit**
+- [ ] **Step 11: Verify dealer pricing cannot be reintroduced**
 
 ```bash
-git add scripts/build-catalog.mjs products.source.json
-git commit -m "Add build orchestrator that stages, validates and gates catalog writes"
+cp products/convergia/product.json /tmp/convergia.json
+python3 - <<'PY'
+import json
+p = "products/convergia/product.json"
+d = json.load(open(p))
+d["pricing"]["dealer_price_inr"] = 35000
+json.dump(d, open(p, "w"), indent=2, ensure_ascii=False)
+PY
+npm run build-catalog; echo "exit=$?"
+cp /tmp/convergia.json products/convergia/product.json
 ```
+
+Expected: the build fails with `pricing.dealer_price_inr must not appear in the public catalog` and
+`exit=1`. This is the regression test for today's exposure.
+
+- [ ] **Step 12: Restore and commit**
+
+```bash
+npm run build-catalog
+npm test
+git add generate_catalog.py scripts/build-catalog.mjs products.source.json
+git commit -m "Build the catalog from the per-product JSON behind validation and a delta gate"
+```
+
+Expected: build succeeds, all tests pass.
 
 ---
 
