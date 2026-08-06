@@ -41,6 +41,41 @@ function collectImageUrls(images) {
   return urls;
 }
 
+// Same walker shape as collectImageUrls above, but collecting object keys
+// instead of string leaves: pricing has been restructured before (nesting,
+// renaming), and a flat 'dealer_price_inr' in record.pricing check would
+// miss it if it ever moves under a nested object like pricing.tiers.
+function collectKeys(value) {
+  const keys = [];
+  const visit = (v) => {
+    if (Array.isArray(v)) {
+      for (const item of v) visit(item);
+    } else if (v && typeof v === 'object') {
+      for (const [key, item] of Object.entries(v)) {
+        keys.push(key);
+        visit(item);
+      }
+    }
+  };
+  visit(value);
+  return keys;
+}
+
+// Recursive emptiness, mirrored from scripts/lib/catalog-guard.mjs's isEmpty:
+// a required field that is present but reduced to an empty container (e.g.
+// images: {} or description: {}) is not meaningfully present, and the
+// simple undefined/''/[] checks below don't catch that shape.
+function isEmpty(value) {
+  if (value === null || value === undefined) return true;
+  if (typeof value === 'string') return value.trim() === '';
+  if (Array.isArray(value)) return value.length === 0 || value.every(isEmpty);
+  if (typeof value === 'object') {
+    const values = Object.values(value);
+    return values.length === 0 || values.every(isEmpty);
+  }
+  return false;
+}
+
 export function validateCatalog(records) {
   const problems = [];
 
@@ -57,12 +92,7 @@ export function validateCatalog(records) {
 
     for (const field of REQUIRED_FIELDS) {
       const value = record?.[field];
-      const missing =
-        value === undefined ||
-        value === null ||
-        (typeof value === 'string' && value.trim() === '') ||
-        (Array.isArray(value) && value.length === 0);
-      if (missing) problems.push(`${label}: missing required field "${field}"`);
+      if (isEmpty(value)) problems.push(`${label}: missing required field "${field}"`);
     }
 
     if (record?.slug) {
@@ -79,8 +109,11 @@ export function validateCatalog(records) {
     // This catalog is published to a public repo and to the Facebook and Google
     // Merchant feeds. Dealer pricing was removed from the data in 1207bbf but
     // the generator kept emitting it; this rule is what makes that removal
-    // permanent instead of a thing someone re-breaks by regenerating.
-    if (record?.pricing && 'dealer_price_inr' in record.pricing) {
+    // permanent instead of a thing someone re-breaks by regenerating. Walk the
+    // whole pricing value (mirroring collectImageUrls above) rather than
+    // checking only the top level, so a nested or restructured pricing object
+    // (e.g. pricing.tiers.dealer_price_inr) can't smuggle it through.
+    if (record?.pricing && collectKeys(record.pricing).includes('dealer_price_inr')) {
       problems.push(
         `${label}: pricing.dealer_price_inr must not appear in the public catalog`
       );

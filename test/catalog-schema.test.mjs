@@ -69,3 +69,23 @@ test('srp-only pricing is fine', () => {
     validateCatalog([valid({ pricing: { srp_inr: 100, gst_rate: '18', hsn: '85365090' } })])
   );
 });
+
+test('nested dealer pricing is rejected', () => {
+  const error = captureThrow(() =>
+    validateCatalog([valid({ pricing: { tiers: { dealer_price_inr: 100 } } })])
+  );
+  assert.ok(error instanceof CatalogSchemaError);
+  assert.match(error.problems.join(' '), /dealer/i);
+});
+
+test('an empty images object counts as a missing required field', () => {
+  const error = captureThrow(() => validateCatalog([valid({ images: {} })]));
+  assert.ok(error instanceof CatalogSchemaError);
+  assert.match(error.problems.join(' '), /zigbee-relay.*images/);
+});
+
+test('an empty description object counts as a missing required field', () => {
+  const error = captureThrow(() => validateCatalog([valid({ description: {} })]));
+  assert.ok(error instanceof CatalogSchemaError);
+  assert.match(error.problems.join(' '), /zigbee-relay.*description/);
+});
