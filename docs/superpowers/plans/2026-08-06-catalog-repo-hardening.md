@@ -1226,6 +1226,21 @@ Expected: build succeeds, all tests pass.
 
 `facebook-catalog-push.js` and `google-merchant-feed.js` push to live ad platforms. A silently truncated catalog here pulls products out of running campaigns, which makes these the highest-stakes consumers in the repo.
 
+**BLOCKED, and split.** Neither feed script is in git. Both exist only as untracked files in the
+main checkout's working directory, so they are absent from this branch and cannot be modified here.
+They were scanned and contain no hardcoded secrets — credentials come from `FB_ACCESS_TOKEN` and
+`FB_CATALOG_ID` env vars — so committing them is safe, but publishing a user's untracked files to a
+public repo is the user's decision, not the implementer's.
+
+Therefore:
+- **Task 6 (this task)** delivers `scripts/verify-catalog.mjs` and its tests only. That is the
+  reusable health check, and it is what the feeds will call.
+- **Task 6b (follow-up, blocked)** wires the two feeds, once they are committed. Its steps are
+  recorded at the end of this task.
+
+That these scripts are unversioned is itself worth naming: they push to live ad campaigns, have no
+history, no review trail, and are one `rm` away from gone.
+
 The spec calls for "the delta gate" on the feeds. The delta gate compares a *proposed write* against
 a committed file, and the feeds never write the catalog — they only read it. The equivalent
 protection for a reader is a health check: the provenance sidecar already records the expected
@@ -1235,8 +1250,8 @@ smaller set. That is the intended behaviour, not a gap.
 
 **Files:**
 - Create: `scripts/verify-catalog.mjs`
-- Modify: `facebook-catalog-push.js:95`, `google-merchant-feed.js:136`
 - Test: `test/verify-catalog.test.mjs`
+- Deferred to Task 6b: `facebook-catalog-push.js:95`, `google-merchant-feed.js:136` (not in git)
 
 **Interfaces:**
 - Consumes: `validateCatalog` (Task 3), `verifyProvenance` (Task 4)
@@ -1341,7 +1356,11 @@ if (isMain) {
 Run: `npm test`
 Expected: PASS — 23 tests total.
 
-- [ ] **Step 5: Gate the Facebook feed**
+#### Task 6b — blocked on the feed scripts being committed
+
+Do not attempt these steps in Task 6. They are recorded so the work is not lost.
+
+- [ ] **Step 5 (6b): Gate the Facebook feed**
 
 Both feed scripts are ESM, so use a static import. Add alongside the existing imports at the top of
 `facebook-catalog-push.js`:
@@ -1385,8 +1404,8 @@ Expected: the merchant feed exits non-zero complaining about the checksum or the
 - [ ] **Step 8: Commit**
 
 ```bash
-git add scripts/verify-catalog.mjs test/verify-catalog.test.mjs facebook-catalog-push.js google-merchant-feed.js
-git commit -m "Verify catalog health before pushing to Facebook and Google feeds"
+git add scripts/verify-catalog.mjs test/verify-catalog.test.mjs
+git commit -m "Add catalog health check for feed consumers and CI"
 ```
 
 ---
