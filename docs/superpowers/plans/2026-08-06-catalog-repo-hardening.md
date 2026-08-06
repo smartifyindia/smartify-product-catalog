@@ -45,11 +45,16 @@ Right now `generate_catalog.py` reads `/Users/abhi/Downloads/Product_Photos/Prod
 **Files:**
 - Create: `package.json`
 - Create: `data/sources/product-glossary.csv` (copied, not authored)
-- Modify: `generate_catalog.py:12-14`, `generate_catalog.py:263` (`build_catalog`), `generate_catalog.py:347` (`__main__`)
+- Modify: `generate_catalog.py:12-14` (paths), `:266` (`products_dir`), `:284` (`products.json` write), `:344` (`README.md` write), `:347` (`__main__`)
 
 **Interfaces:**
 - Consumes: nothing
-- Produces: `python3 generate_catalog.py --out <dir>` writes `products.json`, `products/`, `README.md` into `<dir>`; defaults to the repo root. Exits non-zero with a clear message if the CSV is missing.
+- Produces: `python3 generate_catalog.py --out <dir>` writes `products.json`, `products/`, `README.md` into `<dir>` **and nowhere else**; defaults to the repo root. Exits non-zero with a clear message if the CSV is missing.
+
+**Critical:** `--out` must be threaded through the writers, not implemented as
+build-in-place-then-copy. Task 5 stages the build so that a failed validation or a destructive diff
+leaves the committed catalog byte-identical; if the generator writes to `BASE` first, the committed
+catalog is already overwritten before any gate runs and that guarantee is void.
 
 - [ ] **Step 1: Vendor the CSV**
 
@@ -100,13 +105,31 @@ if not CSV_PATH.exists():
     )
 ```
 
-- [ ] **Step 4: Add the `--out` flag**
+- [ ] **Step 4: Thread the output directory through the writers**
 
-Add to the imports at the top of `generate_catalog.py`:
+Add `import argparse` to the imports at the top of `generate_catalog.py`.
+
+Add an `OUT` global immediately after `IMAGES_DIR` (the block edited in Step 3):
 
 ```python
-import argparse
-import shutil
+# Where generated artifacts are written. scripts/build-catalog.mjs points this
+# at a staging directory so that a failed validation or a destructive diff never
+# touches the committed catalog. CSV_PATH and IMAGES_DIR stay under BASE — they
+# are inputs, not outputs.
+OUT = BASE
+```
+
+Change the three write sites from `BASE` to `OUT`:
+
+```python
+# line 266, in build_catalog()
+    products_dir = OUT / "products"
+
+# line 284, in build_catalog()
+    (OUT / "products.json").write_text(json.dumps(all_products, indent=2) + "\n")
+
+# line 344, in write_main_readme()
+    (OUT / "README.md").write_text(readme.strip() + "\n")
 ```
 
 Replace the `if __name__ == "__main__":` block at line 347 with:
@@ -122,36 +145,47 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    if args.out != BASE:
-        args.out.mkdir(parents=True, exist_ok=True)
-        # build_catalog() and write_main_readme() write relative to BASE, so build
-        # in place and copy the three outputs to the staging directory.
+    # Rebinding the module-level global here is what redirects every writer;
+    # this block runs at module scope, so build_catalog() and write_main_readme()
+    # see the new value when they are called below.
+    OUT = args.out
+    OUT.mkdir(parents=True, exist_ok=True)
+
     print("Building catalog...")
     all_products = build_catalog()
     write_main_readme(all_products)
-
-    if args.out != BASE:
-        shutil.copy2(BASE / "products.json", args.out / "products.json")
-        shutil.copy2(BASE / "README.md", args.out / "README.md")
-        if (args.out / "products").exists():
-            shutil.rmtree(args.out / "products")
-        shutil.copytree(BASE / "products", args.out / "products")
-
     print(f"Done. Generated {len(all_products)} product pages.")
-    print(f"  → {args.out}/products/ ({len(all_products)} folders)")
-    print(f"  → {args.out}/products.json")
-    print(f"  → {args.out}/README.md")
+    print(f"  → {OUT}/products/ ({len(all_products)} folders)")
+    print(f"  → {OUT}/products.json")
+    print(f"  → {OUT}/README.md")
 ```
 
 - [ ] **Step 5: Verify the generator still produces 47 products**
 
 ```bash
-python3 generate_catalog.py && node -e "console.log('records:', require('./products.json').length)"
+python3 generate_catalog.py && python3 -c "import json;print('records:', len(json.load(open('products.json'))))"
 ```
 
 Expected: `Done. Generated 47 product pages.` and `records: 47`.
 
-- [ ] **Step 6: Verify it fails loudly without the CSV**
+- [ ] **Step 6: Verify `--out` writes nowhere but the staging directory**
+
+This is the check that Task 5's whole guarantee rests on.
+
+```bash
+sha256sum products.json README.md > /tmp/before.sha
+STAGE=$(mktemp -d)
+python3 generate_catalog.py --out "$STAGE"
+sha256sum -c /tmp/before.sha && echo "COMMITTED FILES UNTOUCHED"
+python3 -c "import json;print('staged records:', len(json.load(open('$STAGE/products.json'))))"
+ls "$STAGE/products" | wc -l
+```
+
+Expected: `products.json: OK`, `README.md: OK`, `COMMITTED FILES UNTOUCHED`, `staged records: 47`,
+and `47` staged product folders. If either committed file changed, `--out` is still writing to
+`BASE` — fix that before continuing, as every later gate depends on it.
+
+- [ ] **Step 7: Verify it fails loudly without the CSV**
 
 ```bash
 mv data/sources/product-glossary.csv /tmp/csv-backup.csv
@@ -161,7 +195,7 @@ mv /tmp/csv-backup.csv data/sources/product-glossary.csv
 
 Expected: the "Product glossary CSV not found" message and `exit=1`.
 
-- [ ] **Step 7: Commit**
+- [ ] **Step 8: Commit**
 
 ```bash
 git add package.json data/sources/product-glossary.csv generate_catalog.py
@@ -838,9 +872,7 @@ Expected: the build fails with `Refusing to write: this would lose data.` listin
 - [ ] **Step 4: Restore and rebuild**
 
 ```bash
-npm run build-catalog && node -e "
-const {readFileSync}=require('fs');
-console.log('records:', JSON.parse(readFileSync('products.json','utf8')).length);"
+npm run build-catalog && python3 -c "import json;print('records:', len(json.load(open('products.json'))))"
 ```
 
 Expected: `records: 47`.
@@ -1006,7 +1038,7 @@ Then immediately before line 136's `readFileSync`:
 
 ```bash
 cp products.json /tmp/products.ok.json
-node -e "require('fs').writeFileSync('products.json','[]')"
+python3 -c "open('products.json','w').write('[]')"
 node google-merchant-feed.js; echo "merchant exit=$?"
 cp /tmp/products.ok.json products.json
 npm run verify-catalog
