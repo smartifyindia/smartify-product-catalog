@@ -17,11 +17,11 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "Every remote. One app.\n\nYour AC, TV, and set-top box \u2014 all the devices that came with their own remotes \u2014 now respond to . No rewiring. Just point, configure, and let your home handle the rest.",
-    "technical": "A Wi-Fi IR blaster that sends infrared commands to legacy IR-controlled devices \u2014 TVs, air conditioners, set-top boxes, and other appliances \u2014 through your smart home network.\n\nConnects to your local 2.4 GHz Wi-Fi network and transmits configurable IR codes via mobile apps and automation platforms. Requires line-of-sight to target devices.\n\nKey Specifications\n- Protocol: Wi-Fi 2.4 GHz\n- Control: Infrared (IR)\n- Installation: Indoor, line-of-sight placement\n\n\u26a0 IR line-of-sight to target devices is required. Does not switch electrical loads. RF devices not supported \u2014 see IR+RF Blaster."
+    "consumer": "Every remote. One app.\n\nYour AC, TV, and set-top box — all the devices that came with their own remotes — now respond to . No rewiring. Just point, configure, and let your home handle the rest.",
+    "technical": "A Wi-Fi IR blaster that sends infrared commands to legacy IR-controlled devices — TVs, air conditioners, set-top boxes, and other appliances — through your smart home network.\n\nConnects to your local 2.4 GHz Wi-Fi network and transmits configurable IR codes via mobile apps and automation platforms. Requires line-of-sight to target devices.\n\nKey Specifications\n- Protocol: Wi-Fi 2.4 GHz\n- Control: Infrared (IR)\n- Installation: Indoor, line-of-sight placement\n\n⚠ IR line-of-sight to target devices is required. Does not switch electrical loads. RF devices not supported — see IR+RF Blaster."
   },
   "specs": {
-    "summary": "Power Input: 5V DC 1A (Micro USB) | Connection: Wi-Fi 2.4GHz 802.11b/g/n | IR Control Distance: \u22648m | Working Temperature: 0\u00b0C to +50\u00b0C | Working Humidity: \u226485% RH | Dimensions: 68 \u00d7 68 \u00d7 19.5 mm",
+    "summary": "Power Input: 5V DC 1A (Micro USB) | Connection: Wi-Fi 2.4GHz 802.11b/g/n | IR Control Distance: ≤8m | Working Temperature: 0°C to +50°C | Working Humidity: ≤85% RH | Dimensions: 68 × 68 × 19.5 mm",
     "channels": "",
     "max_switching_capacity": "",
     "recommended_load": "IR-controlled devices (line-of-sight)",
@@ -30,7 +30,6 @@
   },
   "pricing": {
     "srp_inr": 2125,
-    "dealer_price_inr": 850,
     "gst_rate": "18",
     "hsn": "85437099"
   },

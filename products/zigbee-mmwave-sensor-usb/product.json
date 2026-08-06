@@ -18,11 +18,11 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "It knows you're there. Even when you're still.\n\nTraditional motion sensors miss you the moment you stop moving. The mmWave Sensor doesn't. It detects presence \u2014 not just movement \u2014 so your lights stay on, your climate stays comfortable, and your home keeps responding.",
-    "technical": "A USB-powered Zigbee mmWave presence sensor that detects fine motion and human presence using radar technology \u2014 without relying on traditional PIR sensing.\n\nEnables accurate presence-based automations such as lighting control and HVAC triggers even when minimal movement occurs. USB power allows flexible placement where mains wiring is unavailable.\n\nKey Specifications\n- Protocol: Zigbee 3.0\n- Detection: mmWave radar (motion + presence)\n- Power: USB\n- Mounting: Flexible placement\n\n\u26a0 Does not control electrical loads. Provides presence/motion data for automation triggers."
+    "consumer": "It knows you're there. Even when you're still.\n\nTraditional motion sensors miss you the moment you stop moving. The mmWave Sensor doesn't. It detects presence — not just movement — so your lights stay on, your climate stays comfortable, and your home keeps responding.",
+    "technical": "A USB-powered Zigbee mmWave presence sensor that detects fine motion and human presence using radar technology — without relying on traditional PIR sensing.\n\nEnables accurate presence-based automations such as lighting control and HVAC triggers even when minimal movement occurs. USB power allows flexible placement where mains wiring is unavailable.\n\nKey Specifications\n- Protocol: Zigbee 3.0\n- Detection: mmWave radar (motion + presence)\n- Power: USB\n- Mounting: Flexible placement\n\n⚠ Does not control electrical loads. Provides presence/motion data for automation triggers."
   },
   "specs": {
-    "summary": "Power Supply: 5V 1A (USB) | Power Consumption: 0.5W | Communication Protocol: Zigbee | Radar Frequency: 24GHz\u201324.25GHz | Light Sensitivity Range: 0\u201310000 Lux | Operating Temperature: -10\u00b0C to +40\u00b0C | Operating Humidity: 0%\u201395% RH (non-condensing)",
+    "summary": "Power Supply: 5V 1A (USB) | Power Consumption: 0.5W | Communication Protocol: Zigbee | Radar Frequency: 24GHz–24.25GHz | Light Sensitivity Range: 0–10000 Lux | Operating Temperature: -10°C to +40°C | Operating Humidity: 0%–95% RH (non-condensing)",
     "channels": "",
     "max_switching_capacity": "",
     "recommended_load": "",
@@ -31,7 +31,6 @@
   },
   "pricing": {
     "srp_inr": 7000,
-    "dealer_price_inr": 2800,
     "gst_rate": "18",
     "hsn": "85319000"
   },

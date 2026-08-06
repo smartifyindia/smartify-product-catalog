@@ -17,11 +17,11 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "Four circuits. Seamless control.\n\nThe TAC 4 gives you four independent control points on a single switch face \u2014 for rooms where every circuit matters and every detail is considered.",
-    "technical": "A 4-button Zigbee smart switch with independent load control or scene triggering per button. Backlit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.\n\nKey Specifications\n- Buttons: 4 (independent)\n- Relay: 10A total (shared)\n- Direct Load: Up to 2A per load\n- Protocol: Zigbee 3.0\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n\n\u26a0 10A total shared relay capacity. For loads above 2A use an external SSR or contactor."
+    "consumer": "Four circuits. Seamless control.\n\nThe TAC 4 gives you four independent control points on a single switch face — for rooms where every circuit matters and every detail is considered.",
+    "technical": "A 4-button Zigbee smart switch with independent load control or scene triggering per button. Backlit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.\n\nKey Specifications\n- Buttons: 4 (independent)\n- Relay: 10A total (shared)\n- Direct Load: Up to 2A per load\n- Protocol: Zigbee 3.0\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n\n⚠ 10A total shared relay capacity. For loads above 2A use an external SSR or contactor."
   },
   "specs": {
-    "summary": "Input Voltage: 110\u2013240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 \u00d7 86 \u00d7 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10\u00b0C to +60\u00b0C | Working Humidity: \u226495% RH (non-condensing)",
+    "summary": "Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing)",
     "channels": "4",
     "max_switching_capacity": "10A total (shared)",
     "recommended_load": "Up to 2A per load",
@@ -30,7 +30,6 @@
   },
   "pricing": {
     "srp_inr": 20000,
-    "dealer_price_inr": 8000,
     "gst_rate": "18",
     "hsn": "85369090"
   },

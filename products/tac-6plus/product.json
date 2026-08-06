@@ -18,11 +18,11 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "Load control and scenes. One switch.\n\nThe TAC 6+ combines the practical with the experiential \u2014 four buttons that control circuits, two that set the scene. Everything your room needs, on a single surface.",
-    "technical": "A 6-button Zigbee smart switch with 4 load control buttons and 2 dedicated scene trigger buttons. Combines direct load switching with scene control on a single switch face.\n\nThe 4 load buttons share a 10A relay capacity; the 2 scene buttons contain no relay and trigger automations only. Available in PP or anti-glare glass in black, white, or gold.\n\nKey Specifications\n- Buttons: 4 load + 2 scene\n- Relay: 10A total (4 load buttons, shared)\n- Direct Load: Up to 2A per load\n- Scene Buttons: Trigger only (no relay)\n- Protocol: Zigbee 3.0\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n\n\u26a0 10A total shared relay capacity across load buttons. For loads above 2A use external SSR or contactor."
+    "consumer": "Load control and scenes. One switch.\n\nThe TAC 6+ combines the practical with the experiential — four buttons that control circuits, two that set the scene. Everything your room needs, on a single surface.",
+    "technical": "A 6-button Zigbee smart switch with 4 load control buttons and 2 dedicated scene trigger buttons. Combines direct load switching with scene control on a single switch face.\n\nThe 4 load buttons share a 10A relay capacity; the 2 scene buttons contain no relay and trigger automations only. Available in PP or anti-glare glass in black, white, or gold.\n\nKey Specifications\n- Buttons: 4 load + 2 scene\n- Relay: 10A total (4 load buttons, shared)\n- Direct Load: Up to 2A per load\n- Scene Buttons: Trigger only (no relay)\n- Protocol: Zigbee 3.0\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n\n⚠ 10A total shared relay capacity across load buttons. For loads above 2A use external SSR or contactor."
   },
   "specs": {
-    "summary": "Input Voltage: 110\u2013240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 \u00d7 86 \u00d7 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10\u00b0C to +60\u00b0C | Working Humidity: \u226495% RH (non-condensing)",
+    "summary": "Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing)",
     "channels": "4 load + 2 scene",
     "max_switching_capacity": "10A total (shared across 4 load buttons)",
     "recommended_load": "Up to 2A per load",
@@ -31,7 +31,6 @@
   },
   "pricing": {
     "srp_inr": 21250,
-    "dealer_price_inr": 8500,
     "gst_rate": "18",
     "hsn": "85369090"
   },

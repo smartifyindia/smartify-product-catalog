@@ -18,8 +18,8 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "Everything a room needs. One panel.\n\nLighting control, two ceiling fans, and a power socket \u2014 all from a single wall panel. The TOQ 4T+2F+1S is built for the rooms where you need it all.",
-    "technical": "A multi-function Zigbee wall panel combining 4 load control buttons, 2 dedicated fan channels, and an integrated 6A utility socket in a single glass panel.\n\nIdeal for rooms requiring lighting, fan, and power access control from one location. Each button configurable independently. Available in white or black glass with silver, gold, or black bezel.\n\nKey Specifications\n- Buttons: 4 capacitive touch\n- Fan Channels: 2 (up to 120W each)\n- Socket: 1 integrated (6A)\n- Relay: 10A per button channel\n- Protocol: Zigbee 3.0\n- Installation: Wall-mounted\n\n\u26a0 For loads above 4A, use an external SSR or contactor. Socket rated at 6A."
+    "consumer": "Everything a room needs. One panel.\n\nLighting control, two ceiling fans, and a power socket — all from a single wall panel. The TOQ 4T+2F+1S is built for the rooms where you need it all.",
+    "technical": "A multi-function Zigbee wall panel combining 4 load control buttons, 2 dedicated fan channels, and an integrated 6A utility socket in a single glass panel.\n\nIdeal for rooms requiring lighting, fan, and power access control from one location. Each button configurable independently. Available in white or black glass with silver, gold, or black bezel.\n\nKey Specifications\n- Buttons: 4 capacitive touch\n- Fan Channels: 2 (up to 120W each)\n- Socket: 1 integrated (6A)\n- Relay: 10A per button channel\n- Protocol: Zigbee 3.0\n- Installation: Wall-mounted\n\n⚠ For loads above 4A, use an external SSR or contactor. Socket rated at 6A."
   },
   "specs": {
     "summary": "",
@@ -31,7 +31,6 @@
   },
   "pricing": {
     "srp_inr": 20135,
-    "dealer_price_inr": 8054,
     "gst_rate": "18",
     "hsn": "85369090"
   },

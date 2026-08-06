@@ -17,11 +17,11 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "A socket that fits the system.\n\nThe TAC S is a power socket built for the TAC ecosystem \u2014 matching your switches in finish and material, and smart when it needs to be.",
-    "technical": "A modular 6A power socket designed for integration within the TAC Tile system. Not a standalone smart socket \u2014 smart control requires connection to a TAC load button channel or a compatible retrofit relay module.\n\nKey Specifications\n- Rating: 6A\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n- Installation: Wall-mounted modular\n\n\u26a0 Not smart by itself. Smart control requires a TAC load channel or compatible retrofit relay module."
+    "consumer": "A socket that fits the system.\n\nThe TAC S is a power socket built for the TAC ecosystem — matching your switches in finish and material, and smart when it needs to be.",
+    "technical": "A modular 6A power socket designed for integration within the TAC Tile system. Not a standalone smart socket — smart control requires connection to a TAC load button channel or a compatible retrofit relay module.\n\nKey Specifications\n- Rating: 6A\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n- Installation: Wall-mounted modular\n\n⚠ Not smart by itself. Smart control requires a TAC load channel or compatible retrofit relay module."
   },
   "specs": {
-    "summary": "Type: Non-smart 3-pin Universal Socket with Switch | Input Voltage: 110\u2013240V AC 50/60Hz | Product Size: 86 \u00d7 86 \u00d7 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10\u00b0C to +60\u00b0C | Working Humidity: \u226495% RH (non-condensing)",
+    "summary": "Type: Non-smart 3-pin Universal Socket with Switch | Input Voltage: 110–240V AC 50/60Hz | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing)",
     "channels": "",
     "max_switching_capacity": "6A",
     "recommended_load": "6A",
@@ -30,7 +30,6 @@
   },
   "pricing": {
     "srp_inr": 15250,
-    "dealer_price_inr": 6100,
     "gst_rate": "18",
     "hsn": "85369090"
   },

@@ -17,11 +17,11 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "Open. Close. Stop. That's all you need.\n\nThe TAC SH gives your motorized blinds and curtains a dedicated, physical control \u2014 three buttons, completely intuitive, available in the finish that suits your space.",
-    "technical": "A 3-button Zigbee shutter and curtain control switch with dedicated Open, Close, and Stop functions for AC motorized blinds and curtains up to 150W.\n\nBacklit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.\n\nKey Specifications\n- Buttons: 3 (Open / Close / Stop)\n- Motor: AC curtain/blind, up to 150W\n- Protocol: Zigbee 3.0\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n- Installation: Wall-mounted\n\n\u26a0 AC motor loads only. Not suitable for use as a standard lighting switch."
+    "consumer": "Open. Close. Stop. That's all you need.\n\nThe TAC SH gives your motorized blinds and curtains a dedicated, physical control — three buttons, completely intuitive, available in the finish that suits your space.",
+    "technical": "A 3-button Zigbee shutter and curtain control switch with dedicated Open, Close, and Stop functions for AC motorized blinds and curtains up to 150W.\n\nBacklit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.\n\nKey Specifications\n- Buttons: 3 (Open / Close / Stop)\n- Motor: AC curtain/blind, up to 150W\n- Protocol: Zigbee 3.0\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n- Installation: Wall-mounted\n\n⚠ AC motor loads only. Not suitable for use as a standard lighting switch."
   },
   "specs": {
-    "summary": "Input Voltage: 110\u2013240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 \u00d7 86 \u00d7 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10\u00b0C to +60\u00b0C | Working Humidity: \u226495% RH (non-condensing)",
+    "summary": "Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing)",
     "channels": "1 (Open / Close / Stop)",
     "max_switching_capacity": "150W motor",
     "recommended_load": "AC curtain/blind motor up to 150W",
@@ -30,7 +30,6 @@
   },
   "pricing": {
     "srp_inr": 17750,
-    "dealer_price_inr": 7100,
     "gst_rate": "18",
     "hsn": "85369090"
   },

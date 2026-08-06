@@ -18,11 +18,11 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "Professional lighting. Smart control.\n\nThe 0-10V Dimmer bridges commercial-grade LED lighting systems with your smart home \u2014 giving you smooth, precise brightness control through the same interface as every other device. Simple to automate. Invisible once installed.",
-    "technical": "A single-channel Zigbee 0-10V analog dimming controller designed to integrate with LED drivers and lighting systems that accept a 0-10V dimming input signal.\n\nOutputs a low-voltage 0-10V control signal \u2014 it does not switch or dim mains voltage directly. Designed for DIN rail or panel installation. Communicates natively over Zigbee 3.0 with Home Assistant, and integrates with Matter and Apple HomeKit via a compatible hub.\n\nKey Specifications\n- Channels: 1\n- Output: 0-10V analog control signal\n- Protocol: Zigbee 3.0\n- Compatible with: Home Assistant (native), Matter & Apple HomeKit (via hub)\n- Installation: DIN rail / electrical panel\n\n\u26a0 Control signal output only \u2014 does not switch or dim high-voltage loads directly. Compatible 0-10V LED drivers required."
+    "consumer": "Professional lighting. Smart control.\n\nThe 0-10V Dimmer bridges commercial-grade LED lighting systems with your smart home — giving you smooth, precise brightness control through the same interface as every other device. Simple to automate. Invisible once installed.",
+    "technical": "A single-channel Zigbee 0-10V analog dimming controller designed to integrate with LED drivers and lighting systems that accept a 0-10V dimming input signal.\n\nOutputs a low-voltage 0-10V control signal — it does not switch or dim mains voltage directly. Designed for DIN rail or panel installation. Communicates natively over Zigbee 3.0 with Home Assistant, and integrates with Matter and Apple HomeKit via a compatible hub.\n\nKey Specifications\n- Channels: 1\n- Output: 0-10V analog control signal\n- Protocol: Zigbee 3.0\n- Compatible with: Home Assistant (native), Matter & Apple HomeKit (via hub)\n- Installation: DIN rail / electrical panel\n\n⚠ Control signal output only — does not switch or dim high-voltage loads directly. Compatible 0-10V LED drivers required."
   },
   "specs": {
-    "summary": "Input Voltage: AC100\u2013240V 50Hz/60Hz | Output Voltage: 0\u201310V DC Max. 20mA | Dimming Type: 0\u201310V | Operation Frequency: 2.412GHz\u20132.484GHz | Operation Temperature: -10\u00b0C to +40\u00b0C | Protocol: Zigbee 3.0 | Dimensions (W \u00d7 D \u00d7 H): 39 \u00d7 39 \u00d7 18 mm | IP Rating: IP20",
+    "summary": "Input Voltage: AC100–240V 50Hz/60Hz | Output Voltage: 0–10V DC Max. 20mA | Dimming Type: 0–10V | Operation Frequency: 2.412GHz–2.484GHz | Operation Temperature: -10°C to +40°C | Protocol: Zigbee 3.0 | Dimensions (W × D × H): 39 × 39 × 18 mm | IP Rating: IP20",
     "channels": "1",
     "max_switching_capacity": "0-10V control signal",
     "recommended_load": "Compatible 0-10V LED drivers",
@@ -31,7 +31,6 @@
   },
   "pricing": {
     "srp_inr": 4250,
-    "dealer_price_inr": 1700,
     "gst_rate": "18",
     "hsn": "85365090"
   },

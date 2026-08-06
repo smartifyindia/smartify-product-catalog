@@ -18,8 +18,8 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "Eight circuits. One surface.\n\nA full room \u2014 or an entire floor \u2014 controlled from a single panel. The TOQ 8T gives you eight independent touch points, finished in glass, responding to the lightest touch.",
-    "technical": "An 8-button Zigbee capacitive touch panel for load switching, scene triggering, and dimming control across up to 8 independent channels.\n\nEach button is individually configurable for toggle or momentary operation. Supports dimming via compatible retrofit dimmer modules. Available in white or black glass with silver, gold, or black bezel and configurable backlight colour.\n\nKey Specifications\n- Buttons: 8 capacitive touch\n- Relay: 10A per channel\n- Direct Load: Up to 4A per channel\n- Protocol: Zigbee 3.0\n- Finish: White/Black glass + Silver/Gold/Black bezel\n- Installation: Wall-mounted\n\n\u26a0 For loads above 4A, use an external SSR or contactor."
+    "consumer": "Eight circuits. One surface.\n\nA full room — or an entire floor — controlled from a single panel. The TOQ 8T gives you eight independent touch points, finished in glass, responding to the lightest touch.",
+    "technical": "An 8-button Zigbee capacitive touch panel for load switching, scene triggering, and dimming control across up to 8 independent channels.\n\nEach button is individually configurable for toggle or momentary operation. Supports dimming via compatible retrofit dimmer modules. Available in white or black glass with silver, gold, or black bezel and configurable backlight colour.\n\nKey Specifications\n- Buttons: 8 capacitive touch\n- Relay: 10A per channel\n- Direct Load: Up to 4A per channel\n- Protocol: Zigbee 3.0\n- Finish: White/Black glass + Silver/Gold/Black bezel\n- Installation: Wall-mounted\n\n⚠ For loads above 4A, use an external SSR or contactor."
   },
   "specs": {
     "summary": "",
@@ -31,7 +31,6 @@
   },
   "pricing": {
     "srp_inr": 13805,
-    "dealer_price_inr": 5522,
     "gst_rate": "18",
     "hsn": "85369090"
   },

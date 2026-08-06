@@ -49,7 +49,6 @@ Key Specifications
 | | Price (INR) |
 |---|---|
 | Suggested Retail Price | ₹9,247 |
-| Dealer Price | ₹3,699 |
 | GST Rate | 18% |
 | HSN Code | 85371010 |
 

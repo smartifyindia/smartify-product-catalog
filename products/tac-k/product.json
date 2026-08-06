@@ -17,11 +17,11 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "Turn to dim. Push to switch. That's it.\n\nThe TAC K makes lighting control physical again \u2014 but smarter. A single rotary dial that adjusts brightness, shifts colour temperature, and switches between rooms or groups. No screen. No menu. Just touch.",
-    "technical": "A Zigbee rotary smart dial for intuitive control of lighting brightness, colour temperature, and device groups. Supports up to 3 individual lights or 3 lighting groups via rotate and push interaction.\n\nRotate to adjust brightness or colour temperature. Push to switch between groups or trigger actions. Designed for wall-mounted installation.\n\nKey Specifications\n- Interface: Rotary + push\n- Control: Brightness, colour temperature, group switching\n- Scope: Up to 3 lights or groups\n- Protocol: Zigbee 3.0\n- Installation: Wall-mounted\n\n\u26a0 Does not switch electrical loads directly. Smart control interface only."
+    "consumer": "Turn to dim. Push to switch. That's it.\n\nThe TAC K makes lighting control physical again — but smarter. A single rotary dial that adjusts brightness, shifts colour temperature, and switches between rooms or groups. No screen. No menu. Just touch.",
+    "technical": "A Zigbee rotary smart dial for intuitive control of lighting brightness, colour temperature, and device groups. Supports up to 3 individual lights or 3 lighting groups via rotate and push interaction.\n\nRotate to adjust brightness or colour temperature. Push to switch between groups or trigger actions. Designed for wall-mounted installation.\n\nKey Specifications\n- Interface: Rotary + push\n- Control: Brightness, colour temperature, group switching\n- Scope: Up to 3 lights or groups\n- Protocol: Zigbee 3.0\n- Installation: Wall-mounted\n\n⚠ Does not switch electrical loads directly. Smart control interface only."
   },
   "specs": {
-    "summary": "Input Voltage: 110\u2013240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 \u00d7 86 \u00d7 25.4 mm (knob: 16mm) | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10\u00b0C to +60\u00b0C | Working Humidity: \u226495% RH (non-condensing)",
+    "summary": "Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 25.4 mm (knob: 16mm) | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing)",
     "channels": "Up to 3 lights or 3 lighting groups",
     "max_switching_capacity": "",
     "recommended_load": "",
@@ -30,7 +30,6 @@
   },
   "pricing": {
     "srp_inr": 34000,
-    "dealer_price_inr": 17500,
     "gst_rate": "18",
     "hsn": "85365090"
   },

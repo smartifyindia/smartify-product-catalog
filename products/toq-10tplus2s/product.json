@@ -18,8 +18,8 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "Ten circuits, two sockets. Total control.\n\nThe TOQ 10T+2S is the most complete single-panel solution in the range \u2014 ten touch points, two power outlets, and a finish that belongs on any wall.",
-    "technical": "A 10-button Zigbee capacitive touch panel with two integrated 6A utility sockets, providing comprehensive smart control across 10 channels alongside dual power outlet access.\n\nEach button independently controls a load or triggers a scene. Available in white or black glass with silver, gold, or black bezel.\n\nKey Specifications\n- Buttons: 10 capacitive touch\n- Sockets: 2 integrated (6A each)\n- Relay: 10A per button channel\n- Direct Load: Up to 4A per button channel\n- Protocol: Zigbee 3.0\n- Installation: Wall-mounted\n\n\u26a0 For loads above 4A, use an external SSR or contactor. Each socket rated at 6A."
+    "consumer": "Ten circuits, two sockets. Total control.\n\nThe TOQ 10T+2S is the most complete single-panel solution in the range — ten touch points, two power outlets, and a finish that belongs on any wall.",
+    "technical": "A 10-button Zigbee capacitive touch panel with two integrated 6A utility sockets, providing comprehensive smart control across 10 channels alongside dual power outlet access.\n\nEach button independently controls a load or triggers a scene. Available in white or black glass with silver, gold, or black bezel.\n\nKey Specifications\n- Buttons: 10 capacitive touch\n- Sockets: 2 integrated (6A each)\n- Relay: 10A per button channel\n- Direct Load: Up to 4A per button channel\n- Protocol: Zigbee 3.0\n- Installation: Wall-mounted\n\n⚠ For loads above 4A, use an external SSR or contactor. Each socket rated at 6A."
   },
   "specs": {
     "summary": "",
@@ -31,7 +31,6 @@
   },
   "pricing": {
     "srp_inr": 28187,
-    "dealer_price_inr": 11275,
     "gst_rate": "18",
     "hsn": "85369090"
   },

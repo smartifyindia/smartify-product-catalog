@@ -18,11 +18,11 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "Six scenes. One wall.\n\nThe TAC 6 is a scene controller \u2014 not a switch. Press once and an entire room responds. Morning scene, evening scene, away, welcome. Six possibilities on a single, elegant surface.",
-    "technical": "A 6-button Zigbee scene control switch for triggering scenes and automations within a Zigbee ecosystem. Contains no relays and does not switch electrical loads directly.\n\nEach button is independently configurable for scene or automation triggers. Backlit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.\n\nKey Specifications\n- Buttons: 6\n- Function: Scene / automation triggers only\n- Protocol: Zigbee 3.0\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n- Installation: Wall-mounted\n\n\u26a0 No relay \u2014 does not switch electrical loads. Scene control only."
+    "consumer": "Six scenes. One wall.\n\nThe TAC 6 is a scene controller — not a switch. Press once and an entire room responds. Morning scene, evening scene, away, welcome. Six possibilities on a single, elegant surface.",
+    "technical": "A 6-button Zigbee scene control switch for triggering scenes and automations within a Zigbee ecosystem. Contains no relays and does not switch electrical loads directly.\n\nEach button is independently configurable for scene or automation triggers. Backlit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.\n\nKey Specifications\n- Buttons: 6\n- Function: Scene / automation triggers only\n- Protocol: Zigbee 3.0\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n- Installation: Wall-mounted\n\n⚠ No relay — does not switch electrical loads. Scene control only."
   },
   "specs": {
-    "summary": "Input Voltage: 110\u2013240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 \u00d7 86 \u00d7 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10\u00b0C to +60\u00b0C | Working Humidity: \u226495% RH (non-condensing)",
+    "summary": "Input Voltage: 110–240V AC 50/60Hz | Communication Protocol: Zigbee | Product Size: 86 × 86 × 10.5 mm | Bottom Shell Depth: 28mm | Installation: 86 mounting box (depth >50mm) | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing)",
     "channels": "0 (no relay)",
     "max_switching_capacity": "",
     "recommended_load": "",
@@ -31,7 +31,6 @@
   },
   "pricing": {
     "srp_inr": 21250,
-    "dealer_price_inr": 8500,
     "gst_rate": "18",
     "hsn": "85369090"
   },
