@@ -19,7 +19,7 @@
   ],
   "description": {
     "consumer": "Four circuits, two fans. One surface.\n\nPerfect for bedrooms, living spaces, or any room that needs both lighting control and ceiling fan management. The TOQ 4T+2F covers it all from a single glass panel.",
-    "technical": "A 4-button Zigbee touch panel with two dedicated fan control channels for ceiling fans up to 120W each, providing load switching, scene control, and dual fan management from a single wall panel.\n\nButton channels are independently configurable for toggle or momentary operation. Available in white or black glass with silver, gold, or black bezel.\n\nKey Specifications\n- Buttons: 4 capacitive touch\n- Fan Channels: 2 (up to 120W each)\n- Relay: 10A per button channel\n- Direct Load: Up to 4A per button channel\n- Protocol: Zigbee 3.0\n- Installation: Wall-mounted\n\n\u26a0 For loads above 4A on button channels, use an external SSR or contactor."
+    "technical": "A 4-button Zigbee touch panel with two dedicated fan control channels for ceiling fans up to 120W each, providing load switching, scene control, and dual fan management from a single wall panel.\n\nButton channels are independently configurable for toggle or momentary operation. Available in white or black glass with silver, gold, or black bezel.\n\nKey Specifications\n- Buttons: 4 capacitive touch\n- Fan Channels: 2 (up to 120W each)\n- Relay: 10A per button channel\n- Direct Load: Up to 4A per button channel\n- Protocol: Zigbee 3.0\n- Installation: Wall-mounted\n\n⚠ For loads above 4A on button channels, use an external SSR or contactor."
   },
   "specs": {
     "summary": "",

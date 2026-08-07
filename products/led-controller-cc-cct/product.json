@@ -18,8 +18,8 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "Warm in the evening. Crisp in the morning.\n\nTunable white lighting that adjusts to the time of day \u2014 and to you. The CC-CCT Controller manages both warmth and brightness automatically, making every room feel right without you thinking about it.",
-    "technical": "A constant current LED controller for CCT (tunable white) lighting fixtures, providing independent control of brightness and colour temperature across warm white and cool white channels.\n\nDesigned specifically for constant current LED loads. Not compatible with constant voltage LED strips. Suitable for panel or fixture-integrated installation.\n\nKey Specifications\n- Output: CC (Constant Current)\n- LED Support: CCT (WW + CW)\n- Channels: 2 (WW + CW)\n- Control: Brightness + colour temperature\n- Installation: Indoor panel or fixture-integrated\n\n\u26a0 For constant current LED loads only. Not compatible with constant voltage LED strips."
+    "consumer": "Warm in the evening. Crisp in the morning.\n\nTunable white lighting that adjusts to the time of day — and to you. The CC-CCT Controller manages both warmth and brightness automatically, making every room feel right without you thinking about it.",
+    "technical": "A constant current LED controller for CCT (tunable white) lighting fixtures, providing independent control of brightness and colour temperature across warm white and cool white channels.\n\nDesigned specifically for constant current LED loads. Not compatible with constant voltage LED strips. Suitable for panel or fixture-integrated installation.\n\nKey Specifications\n- Output: CC (Constant Current)\n- LED Support: CCT (WW + CW)\n- Channels: 2 (WW + CW)\n- Control: Brightness + colour temperature\n- Installation: Indoor panel or fixture-integrated\n\n⚠ For constant current LED loads only. Not compatible with constant voltage LED strips."
   },
   "specs": {
     "summary": "",

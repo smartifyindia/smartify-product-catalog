@@ -17,11 +17,11 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "IR and RF. Nothing left out.\n\nSome devices use IR. Some use RF. The IR+RF Blaster covers both \u2014 motorized curtains, fans, projectors, air conditioners, and more \u2014 unified in a single device and a single app.",
-    "technical": "A Wi-Fi IR and RF blaster that transmits both infrared and radio frequency commands to legacy remote-controlled devices \u2014 TVs, air conditioners, projectors, RF motorized curtains, fans, and RF switches.\n\nConnects to your local 2.4 GHz Wi-Fi network and sends programmable IR and RF codes via mobile apps and automation platforms. IR requires line-of-sight; RF does not.\n\nKey Specifications\n- Protocol: Wi-Fi 2.4 GHz\n- Control: IR + RF\n- Installation: Indoor, within signal range\n\n\u26a0 Does not switch electrical loads. IR requires line-of-sight to target devices; RF does not."
+    "consumer": "IR and RF. Nothing left out.\n\nSome devices use IR. Some use RF. The IR+RF Blaster covers both — motorized curtains, fans, projectors, air conditioners, and more — unified in a single device and a single app.",
+    "technical": "A Wi-Fi IR and RF blaster that transmits both infrared and radio frequency commands to legacy remote-controlled devices — TVs, air conditioners, projectors, RF motorized curtains, fans, and RF switches.\n\nConnects to your local 2.4 GHz Wi-Fi network and sends programmable IR and RF codes via mobile apps and automation platforms. IR requires line-of-sight; RF does not.\n\nKey Specifications\n- Protocol: Wi-Fi 2.4 GHz\n- Control: IR + RF\n- Installation: Indoor, within signal range\n\n⚠ Does not switch electrical loads. IR requires line-of-sight to target devices; RF does not."
   },
   "specs": {
-    "summary": "Power Input: DC 5V/1A (Micro USB 2.0) | Standby Power: \u22640.5W | IR Control Distance: \u22648m (horizontal), \u226415m (opposite direction, environment dependent) | IR Control Direction: Multi-directional | RF Frequency: 433/315 MHz | Carrier Frequency: 38 kHz | Connection: Wi-Fi 2.4GHz 802.11b/g/n | Operating Temperature: 0\u00b0C to +50\u00b0C | Operating Humidity: \u226485% RH | Dimensions: 68 \u00d7 68 \u00d7 27 mm",
+    "summary": "Power Input: DC 5V/1A (Micro USB 2.0) | Standby Power: ≤0.5W | IR Control Distance: ≤8m (horizontal), ≤15m (opposite direction, environment dependent) | IR Control Direction: Multi-directional | RF Frequency: 433/315 MHz | Carrier Frequency: 38 kHz | Connection: Wi-Fi 2.4GHz 802.11b/g/n | Operating Temperature: 0°C to +50°C | Operating Humidity: ≤85% RH | Dimensions: 68 × 68 × 27 mm",
     "channels": "",
     "max_switching_capacity": "",
     "recommended_load": "IR and RF-controlled devices",
@@ -36,10 +36,15 @@
   "limitations": "Does not switch electrical loads. IR requires line-of-sight; RF does not.",
   "dependencies": "2.4 GHz Wi-Fi network",
   "images": {
-    "hero": "",
-    "all": [],
-    "hero_url": "",
-    "all_urls": []
+    "hero": "../../images/placeholder-photography-pending.png",
+    "all": [
+      "../../images/placeholder-photography-pending.png"
+    ],
+    "hero_url": "../../images/placeholder-photography-pending.png",
+    "all_urls": [
+      "../../images/placeholder-photography-pending.png"
+    ],
+    "placeholder": true
   },
   "enabled": true
 }

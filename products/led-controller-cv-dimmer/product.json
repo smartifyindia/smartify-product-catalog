@@ -18,8 +18,8 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "Simple. Smooth. Smart.\n\nClean, continuous dimming for single-color LED strips \u2014 from full brightness to a gentle glow. The CV Dimmer handles the detail so your lighting always feels exactly right.",
-    "technical": "A constant voltage LED dimmer controller for single-color low-voltage LED strips, providing smooth 0-100% brightness control through a compatible smart ecosystem.\n\nRequires an appropriate constant voltage DC power supply (12V or 24V) matched to the LED strip specification. Designed for panel or concealed installation.\n\nKey Specifications\n- Output: CV (Constant Voltage)\n- LED Support: Single-color\n- Channels: 1\n- Control: 0-100% dimming\n- Installation: Indoor panel or concealed\n\n\u26a0 Requires an appropriate CV DC power supply (12V/24V). Does not power LED strips directly from mains voltage."
+    "consumer": "Simple. Smooth. Smart.\n\nClean, continuous dimming for single-color LED strips — from full brightness to a gentle glow. The CV Dimmer handles the detail so your lighting always feels exactly right.",
+    "technical": "A constant voltage LED dimmer controller for single-color low-voltage LED strips, providing smooth 0-100% brightness control through a compatible smart ecosystem.\n\nRequires an appropriate constant voltage DC power supply (12V or 24V) matched to the LED strip specification. Designed for panel or concealed installation.\n\nKey Specifications\n- Output: CV (Constant Voltage)\n- LED Support: Single-color\n- Channels: 1\n- Control: 0-100% dimming\n- Installation: Indoor panel or concealed\n\n⚠ Requires an appropriate CV DC power supply (12V/24V). Does not power LED strips directly from mains voltage."
   },
   "specs": {
     "summary": "",
