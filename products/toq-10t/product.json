@@ -19,7 +19,7 @@
   ],
   "description": {
     "consumer": "Ten touches. Every light, every scene.\n\nThe TOQ 10T is for rooms and homes that demand complete control from a single point. Ten independent buttons. Finished in glass. Nothing out of reach.",
-    "technical": "A 10-button Zigbee capacitive touch panel for comprehensive load switching and scene control across up to 10 independent channels in residential and commercial installations.\n\nEach button independently controls a load or triggers a scene. Configurable for toggle or momentary operation per button. Available in white or black glass with silver, gold, or black bezel and configurable backlight.\n\nKey Specifications\n- Buttons: 10 capacitive touch\n- Relay: 10A per channel\n- Direct Load: Up to 4A per channel\n- Protocol: Zigbee 3.0\n- Finish: White/Black glass + Silver/Gold/Black bezel\n- Installation: Wall-mounted\n\n\u26a0 For loads above 4A, use an external SSR or contactor."
+    "technical": "A 10-button Zigbee capacitive touch panel for comprehensive load switching and scene control across up to 10 independent channels in residential and commercial installations.\n\nEach button independently controls a load or triggers a scene. Configurable for toggle or momentary operation per button. Available in white or black glass with silver, gold, or black bezel and configurable backlight.\n\nKey Specifications\n- Buttons: 10 capacitive touch\n- Relay: 10A per channel\n- Direct Load: Up to 4A per channel\n- Protocol: Zigbee 3.0\n- Finish: White/Black glass + Silver/Gold/Black bezel\n- Installation: Wall-mounted\n\n⚠ For loads above 4A, use an external SSR or contactor."
   },
   "specs": {
     "summary": "",

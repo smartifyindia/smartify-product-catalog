@@ -18,11 +18,11 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "Any wall. Any location. No wiring.\n\nThe TAC SS goes anywhere \u2014 no electrician required. Stick it by the bed, at the entrance, on a kitchen island. Six scenes at your fingertips, wherever it makes sense.",
-    "technical": "A battery-powered Zigbee scene switch with 6 configurable buttons for wireless scene and automation triggering \u2014 no wiring required.\n\nCan be wall-mounted or surface-mounted at any location without electrical installation. Backlit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.\n\nKey Specifications\n- Buttons: 6\n- Power: Battery\n- Function: Scene triggers only (no relay)\n- Protocol: Zigbee 3.0\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n- Installation: Wireless, wall or surface mount\n\n\u26a0 No relay \u2014 does not switch electrical loads. Battery-powered scene control only."
+    "consumer": "Any wall. Any location. No wiring.\n\nThe TAC SS goes anywhere — no electrician required. Stick it by the bed, at the entrance, on a kitchen island. Six scenes at your fingertips, wherever it makes sense.",
+    "technical": "A battery-powered Zigbee scene switch with 6 configurable buttons for wireless scene and automation triggering — no wiring required.\n\nCan be wall-mounted or surface-mounted at any location without electrical installation. Backlit with customizable icons. Available in PP or anti-glare glass in black, white, or gold.\n\nKey Specifications\n- Buttons: 6\n- Power: Battery\n- Function: Scene triggers only (no relay)\n- Protocol: Zigbee 3.0\n- Materials: PP or AG glass\n- Colours: Black, White, Gold\n- Installation: Wireless, wall or surface mount\n\n⚠ No relay — does not switch electrical loads. Battery-powered scene control only."
   },
   "specs": {
-    "summary": "Input: 3V (2 \u00d7 CR2032 batteries) | Communication Protocol: Zigbee | Product Size: 86 \u00d7 86 \u00d7 12 mm | Installation: Magnetic / Portable | Working Temperature: -10\u00b0C to +60\u00b0C | Working Humidity: \u226495% RH (non-condensing)",
+    "summary": "Input: 3V (2 × CR2032 batteries) | Communication Protocol: Zigbee | Product Size: 86 × 86 × 12 mm | Installation: Magnetic / Portable | Working Temperature: -10°C to +60°C | Working Humidity: ≤95% RH (non-condensing)",
     "channels": "0 (no relay)",
     "max_switching_capacity": "",
     "recommended_load": "",

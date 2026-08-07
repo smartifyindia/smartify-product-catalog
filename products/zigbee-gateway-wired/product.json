@@ -17,11 +17,11 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "The hub your home thinks through.\n\nEverything connects to this. The Zigbee Gateway sits quietly on your network \u2014 wired for stability \u2014 and gives your entire smart home a reliable brain. Pair it once. Trust it always.",
-    "technical": "A wired Zigbee 3.0 gateway that acts as the central coordinator for all Zigbee devices in the system. Connects via Ethernet for a stable, low-latency network backbone.\n\nSupports up to 128 Zigbee devices and enables device pairing, scene automation, remote control, and unified device management through compatible mobile applications and automation platforms.\n\nKey Specifications\n- Device Type: Zigbee Coordinator / Gateway\n- Protocol: Zigbee 3.0\n- Network: Wired Ethernet (LAN)\n- Capacity: Up to 128 Zigbee devices\n- Installation: Indoor, fixed LAN connection\n\n\u26a0 Does not control electrical loads. A stable wired Ethernet connection is required for reliable operation."
+    "consumer": "The hub your home thinks through.\n\nEverything connects to this. The Zigbee Gateway sits quietly on your network — wired for stability — and gives your entire smart home a reliable brain. Pair it once. Trust it always.",
+    "technical": "A wired Zigbee 3.0 gateway that acts as the central coordinator for all Zigbee devices in the system. Connects via Ethernet for a stable, low-latency network backbone.\n\nSupports up to 128 Zigbee devices and enables device pairing, scene automation, remote control, and unified device management through compatible mobile applications and automation platforms.\n\nKey Specifications\n- Device Type: Zigbee Coordinator / Gateway\n- Protocol: Zigbee 3.0\n- Network: Wired Ethernet (LAN)\n- Capacity: Up to 128 Zigbee devices\n- Installation: Indoor, fixed LAN connection\n\n⚠ Does not control electrical loads. A stable wired Ethernet connection is required for reliable operation."
   },
   "specs": {
-    "summary": "Wireless Connection: Zigbee | Max Connected Devices: 300 (wired) | Working Temperature: -10\u00b0C to +55\u00b0C | Power Input: USB-C 5V 2A | Connectivity: RJ45 Ethernet | Working Humidity: 10%\u201390% RH (non-condensing)",
+    "summary": "Wireless Connection: Zigbee | Max Connected Devices: 300 (wired) | Working Temperature: -10°C to +55°C | Power Input: USB-C 5V 2A | Connectivity: RJ45 Ethernet | Working Humidity: 10%–90% RH (non-condensing)",
     "channels": "",
     "max_switching_capacity": "",
     "recommended_load": "Up to 128 Zigbee devices",

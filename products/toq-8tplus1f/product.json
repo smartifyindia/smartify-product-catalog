@@ -18,8 +18,8 @@
     "Siri / Apple HomeKit"
   ],
   "description": {
-    "consumer": "Lights and fans. One elegant panel.\n\nEight touch points for your lighting and scenes, plus a dedicated fan control \u2014 all in one glass panel. The TOQ 8T+1F handles the full room without compromise.",
-    "technical": "An 8-button Zigbee touch panel with a dedicated fan control channel for ceiling fans up to 120W, combining multi-circuit load control with integrated fan management in a single wall panel.\n\nEach of the 8 buttons is independently configurable for toggle or momentary operation. The fan channel operates separately for speed and on/off control. Available in white or black glass with silver, gold, or black bezel.\n\nKey Specifications\n- Buttons: 8 capacitive touch\n- Fan Channels: 1 (up to 120W)\n- Relay: 10A per button channel\n- Direct Load: Up to 4A per button channel\n- Protocol: Zigbee 3.0\n- Installation: Wall-mounted\n\n\u26a0 For loads above 4A on button channels, use an external SSR or contactor."
+    "consumer": "Lights and fans. One elegant panel.\n\nEight touch points for your lighting and scenes, plus a dedicated fan control — all in one glass panel. The TOQ 8T+1F handles the full room without compromise.",
+    "technical": "An 8-button Zigbee touch panel with a dedicated fan control channel for ceiling fans up to 120W, combining multi-circuit load control with integrated fan management in a single wall panel.\n\nEach of the 8 buttons is independently configurable for toggle or momentary operation. The fan channel operates separately for speed and on/off control. Available in white or black glass with silver, gold, or black bezel.\n\nKey Specifications\n- Buttons: 8 capacitive touch\n- Fan Channels: 1 (up to 120W)\n- Relay: 10A per button channel\n- Direct Load: Up to 4A per button channel\n- Protocol: Zigbee 3.0\n- Installation: Wall-mounted\n\n⚠ For loads above 4A on button channels, use an external SSR or contactor."
   },
   "specs": {
     "summary": "",

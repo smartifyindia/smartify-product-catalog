@@ -1,5 +1,7 @@
 # IR+RF Blaster (WiFi)
 
+![IR+RF Blaster (WiFi)](../../images/placeholder-photography-pending.png)
+
 > IR and RF. Nothing left out.
 
 **SKU:** `38635939814` · **Protocol:** Wi-Fi 2.4 GHz · **Device Type:** Wi-Fi IR + RF Blaster / Universal Remote Controller

@@ -1,5 +1,7 @@
 # IR Blaster (WiFi)
 
+![IR Blaster (WiFi)](../../images/placeholder-photography-pending.png)
+
 > Every remote. One app.
 
 **SKU:** `38668925286` · **Protocol:** Wi-Fi 2.4 GHz · **Device Type:** Wi-Fi IR Blaster / IR Controller
