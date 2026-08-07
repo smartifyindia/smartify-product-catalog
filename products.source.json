@@ -1,0 +1,8 @@
+{
+  "artifact": "products.json",
+  "generator": "scripts/build-catalog.mjs",
+  "records": 47,
+  "sha256": "ab8c36371e1426f39b21dfa9b64d325893524422e97fcf06e4dbc081334b6a15",
+  "commit": "2784ebf2f4b242365a84b8b237059816160d5c09",
+  "generatedAt": "2026-08-06"
+}

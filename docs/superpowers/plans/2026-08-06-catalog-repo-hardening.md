@@ -4,7 +4,7 @@
 
 **Goal:** Make `smartify-product-catalog` self-contained and incapable of silently losing product data, and have it publish a checksummed release that other repos can pull without ever needing a sibling checkout.
 
-**Architecture:** The Python generator keeps building the catalog, but it now writes to a staging directory. A Node orchestrator validates the staged output against a schema, diffs it against the committed catalog through a delta gate that refuses destructive writes, and only then promotes it. The same validation protects the two ad-platform feeds, which are the highest-stakes consumers in this repo.
+**Architecture:** `products/<slug>/product.json` is the source of truth. The Python generator rebuilds `products.json` and the per-product READMEs from those files into a staging directory. A Node orchestrator validates the staged output against a schema, diffs it against the committed catalog through a delta gate that refuses destructive writes, and only then promotes it. The same validation protects the two ad-platform feeds, which are the highest-stakes consumers in this repo. The vendored CSV remains as archival provenance for the original import — it is stale on price and is no longer what a build reads.
 
 **Tech Stack:** Python 3.11 (existing generator), Node 22 with the built-in `node:test` runner (no new dependencies), GitHub Actions for releases.
 
@@ -34,7 +34,7 @@
 | `facebook-catalog-push.js:95` | Modify — verify before pushing. |
 | `google-merchant-feed.js:136` | Modify — verify before writing the feed. |
 | `.github/workflows/release-catalog.yml` | Create — publish release assets on tag. |
-| `test/*.test.mjs` | Create — one test file per lib module. |
+| `test/*.test.mjs` | Create — one test file per lib module. Note: `node --test test/` resolves the directory as a module path on Node 22 and fails with MODULE_NOT_FOUND; the glob form is required. |
 
 ---
 
@@ -45,11 +45,16 @@ Right now `generate_catalog.py` reads `/Users/abhi/Downloads/Product_Photos/Prod
 **Files:**
 - Create: `package.json`
 - Create: `data/sources/product-glossary.csv` (copied, not authored)
-- Modify: `generate_catalog.py:12-14`, `generate_catalog.py:263` (`build_catalog`), `generate_catalog.py:347` (`__main__`)
+- Modify: `generate_catalog.py:12-14` (paths), `:266` (`products_dir`), `:284` (`products.json` write), `:344` (`README.md` write), `:347` (`__main__`)
 
 **Interfaces:**
 - Consumes: nothing
-- Produces: `python3 generate_catalog.py --out <dir>` writes `products.json`, `products/`, `README.md` into `<dir>`; defaults to the repo root. Exits non-zero with a clear message if the CSV is missing.
+- Produces: `python3 generate_catalog.py --out <dir>` writes `products.json`, `products/`, `README.md` into `<dir>` **and nowhere else**; defaults to the repo root. Exits non-zero with a clear message if the CSV is missing.
+
+**Critical:** `--out` must be threaded through the writers, not implemented as
+build-in-place-then-copy. Task 5 stages the build so that a failed validation or a destructive diff
+leaves the committed catalog byte-identical; if the generator writes to `BASE` first, the committed
+catalog is already overwritten before any gate runs and that guarantee is void.
 
 - [ ] **Step 1: Vendor the CSV**
 
@@ -75,7 +80,7 @@ auto-detects module syntax; this makes it explicit.
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test test/",
+    "test": "node --test test/*.test.mjs",
     "build-catalog": "node scripts/build-catalog.mjs",
     "verify-catalog": "node scripts/verify-catalog.mjs"
   }
@@ -100,13 +105,31 @@ if not CSV_PATH.exists():
     )
 ```
 
-- [ ] **Step 4: Add the `--out` flag**
+- [ ] **Step 4: Thread the output directory through the writers**
 
-Add to the imports at the top of `generate_catalog.py`:
+Add `import argparse` to the imports at the top of `generate_catalog.py`.
+
+Add an `OUT` global immediately after `IMAGES_DIR` (the block edited in Step 3):
 
 ```python
-import argparse
-import shutil
+# Where generated artifacts are written. scripts/build-catalog.mjs points this
+# at a staging directory so that a failed validation or a destructive diff never
+# touches the committed catalog. CSV_PATH and IMAGES_DIR stay under BASE — they
+# are inputs, not outputs.
+OUT = BASE
+```
+
+Change the three write sites from `BASE` to `OUT`:
+
+```python
+# line 266, in build_catalog()
+    products_dir = OUT / "products"
+
+# line 284, in build_catalog()
+    (OUT / "products.json").write_text(json.dumps(all_products, indent=2) + "\n")
+
+# line 344, in write_main_readme()
+    (OUT / "README.md").write_text(readme.strip() + "\n")
 ```
 
 Replace the `if __name__ == "__main__":` block at line 347 with:
@@ -122,36 +145,47 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    if args.out != BASE:
-        args.out.mkdir(parents=True, exist_ok=True)
-        # build_catalog() and write_main_readme() write relative to BASE, so build
-        # in place and copy the three outputs to the staging directory.
+    # Rebinding the module-level global here is what redirects every writer;
+    # this block runs at module scope, so build_catalog() and write_main_readme()
+    # see the new value when they are called below.
+    OUT = args.out
+    OUT.mkdir(parents=True, exist_ok=True)
+
     print("Building catalog...")
     all_products = build_catalog()
     write_main_readme(all_products)
-
-    if args.out != BASE:
-        shutil.copy2(BASE / "products.json", args.out / "products.json")
-        shutil.copy2(BASE / "README.md", args.out / "README.md")
-        if (args.out / "products").exists():
-            shutil.rmtree(args.out / "products")
-        shutil.copytree(BASE / "products", args.out / "products")
-
     print(f"Done. Generated {len(all_products)} product pages.")
-    print(f"  → {args.out}/products/ ({len(all_products)} folders)")
-    print(f"  → {args.out}/products.json")
-    print(f"  → {args.out}/README.md")
+    print(f"  → {OUT}/products/ ({len(all_products)} folders)")
+    print(f"  → {OUT}/products.json")
+    print(f"  → {OUT}/README.md")
 ```
 
 - [ ] **Step 5: Verify the generator still produces 47 products**
 
 ```bash
-python3 generate_catalog.py && node -e "console.log('records:', require('./products.json').length)"
+python3 generate_catalog.py && python3 -c "import json;print('records:', len(json.load(open('products.json'))))"
 ```
 
 Expected: `Done. Generated 47 product pages.` and `records: 47`.
 
-- [ ] **Step 6: Verify it fails loudly without the CSV**
+- [ ] **Step 6: Verify `--out` writes nowhere but the staging directory**
+
+This is the check that Task 5's whole guarantee rests on.
+
+```bash
+sha256sum products.json README.md > /tmp/before.sha
+STAGE=$(mktemp -d)
+python3 generate_catalog.py --out "$STAGE"
+sha256sum -c /tmp/before.sha && echo "COMMITTED FILES UNTOUCHED"
+python3 -c "import json;print('staged records:', len(json.load(open('$STAGE/products.json'))))"
+ls "$STAGE/products" | wc -l
+```
+
+Expected: `products.json: OK`, `README.md: OK`, `COMMITTED FILES UNTOUCHED`, `staged records: 47`,
+and `47` staged product folders. If either committed file changed, `--out` is still writing to
+`BASE` — fix that before continuing, as every later gate depends on it.
+
+- [ ] **Step 7: Verify it fails loudly without the CSV**
 
 ```bash
 mv data/sources/product-glossary.csv /tmp/csv-backup.csv
@@ -161,11 +195,77 @@ mv /tmp/csv-backup.csv data/sources/product-glossary.csv
 
 Expected: the "Product glossary CSV not found" message and `exit=1`.
 
-- [ ] **Step 7: Commit**
+- [ ] **Step 8: Commit**
 
 ```bash
 git add package.json data/sources/product-glossary.csv generate_catalog.py
 git commit -m "Vendor the product glossary CSV and fail loudly without it"
+```
+
+#### Amendment: stop the generator republishing dealer pricing
+
+Found while verifying Step 5. Commit `1207bbf` ("remove dealer_price_inr from all products",
+2026-04-24) edited the *output* but not the generator, so `generate_catalog.py` still emits the
+field and renders a `Dealer Price` row into every product README. Any regeneration silently
+republishes dealer pricing to a public repo and, via Tasks 6-7, to the Facebook and Google Merchant
+feeds. The delta gate cannot catch this — it guards against losing data, not against unwanted
+additions. Fixing it at source is the point of this whole plan.
+
+Nothing depends on this field here: the B2B site sources dealer pricing from its own TSV into
+`worker/b2b-prices.json`.
+
+- [ ] **Step 9: Remove the field from the generated JSON**
+
+In `generate_catalog.py`, delete this line from the `"pricing"` dict (around line 176):
+
+```python
+            "dealer_price_inr": int(raw_json["DP"]) if raw_json.get("DP") else None,
+```
+
+- [ ] **Step 10: Remove the Dealer Price row from the README template**
+
+In `write_product_readme()` (around line 220), delete the `dp` binding and the `Dealer Price` table
+row it feeds. Read the surrounding pricing block before editing and remove only the dealer-price
+parts — the SRP row, the GST row and the HSN row all stay.
+
+- [ ] **Step 11: Verify a regenerated catalog is free of dealer pricing**
+
+```bash
+STAGE=$(mktemp -d)
+python3 generate_catalog.py --out "$STAGE"
+grep -rc "dealer_price_inr" "$STAGE/products.json" || echo "products.json: clean"
+grep -rli "dealer price" "$STAGE/products" | head || echo "READMEs: clean"
+python3 -c "import json;print('records:', len(json.load(open('$STAGE/products.json'))))"
+rm -rf "$STAGE"
+```
+
+Expected: `products.json: clean`, `READMEs: clean`, `records: 47`.
+
+- [ ] **Step 12: Confirm the committed catalog still matches the generator**
+
+```bash
+STAGE=$(mktemp -d)
+python3 generate_catalog.py --out "$STAGE"
+python3 - <<'PY'
+import json, os, sys
+stage = os.environ["STAGE"]
+a = json.load(open("products.json"))
+b = json.load(open(f"{stage}/products.json"))
+print("committed records:", len(a), "| regenerated records:", len(b))
+print("identical:", a == b)
+PY
+rm -rf "$STAGE"
+```
+
+Expected: both counts 47. If `identical` is False, report the differing keys in your report rather
+than committing a regenerated `products.json` — reconciling the committed artifact is Task 5's job,
+not this one.
+
+- [ ] **Step 13: Commit**
+
+```bash
+git add generate_catalog.py
+git commit -m "Stop the generator republishing dealer pricing"
 ```
 
 ---
@@ -249,6 +349,22 @@ test('emptying an images array counts as loss', () => {
   ]);
 });
 
+test('an images container gutted to empty values counts as loss', () => {
+  const full = { hero: 'a.png', all: ['a.png'], hero_url: 'a.png', all_urls: ['a.png'] };
+  const gutted = { hero: '', all: [], hero_url: '', all_urls: [] };
+  const before = [record('one', { images: full })];
+  const after = [record('one', { images: gutted })];
+  assert.deepEqual(diffCatalogs(before, after).emptiedFields, [
+    { slug: 'one', field: 'images' },
+  ]);
+});
+
+test('a populated images container is not a loss', () => {
+  const full = { hero: 'a.png', all: ['a.png'], hero_url: 'a.png', all_urls: ['a.png'] };
+  const before = [record('one', { images: full })];
+  assert.deepEqual(diffCatalogs(before, before).emptiedFields, []);
+});
+
 test('a field that was already empty is not a loss', () => {
   const before = [record('one', { description: '' })];
   const after = [record('one', { description: '' })];
@@ -261,6 +377,15 @@ test('wiping the catalog reports every slug', () => {
   assert.equal(error.details.removedSlugs.length, 3);
   assert.equal(error.details.countDelta, -3);
   assert.match(error.message, /3 records? would disappear/);
+});
+
+test('allowRemovals still refuses to empty a field on a surviving record', () => {
+  const before = [record('one'), record('two')];
+  const after = [record('one', { description: '' })];
+  assert.throws(
+    () => assertNoDataLoss(before, after, { allowRemovals: true }),
+    CatalogDataLossError
+  );
 });
 
 test('allowRemovals permits a deliberate removal', () => {
@@ -296,11 +421,18 @@ export class CatalogDataLossError extends Error {
   }
 }
 
+// Emptiness is recursive on purpose. Every real record stores images as
+// { hero, all, hero_url, all_urls }, so a container that still has its keys but
+// has lost all its values is the realistic way image data disappears — a
+// keys-only check would wave that through.
 const isEmpty = (value) => {
   if (value === null || value === undefined) return true;
   if (typeof value === 'string') return value.trim() === '';
-  if (Array.isArray(value)) return value.length === 0;
-  if (typeof value === 'object') return Object.keys(value).length === 0;
+  if (Array.isArray(value)) return value.length === 0 || value.every(isEmpty);
+  if (typeof value === 'object') {
+    const values = Object.values(value);
+    return values.length === 0 || values.every(isEmpty);
+  }
   return false;
 };
 
@@ -331,16 +463,18 @@ export function diffCatalogs(previous, next) {
 
 export function assertNoDataLoss(previous, next, { allowRemovals = false } = {}) {
   const details = diffCatalogs(previous, next);
-  if (allowRemovals) return;
-
   const problems = [];
-  if (details.removedSlugs.length > 0) {
+
+  // --allow-removals is for retiring a product on purpose. It is NOT a licence
+  // to wipe a field on a product that stays, so the emptiedFields check below
+  // runs either way.
+  if (!allowRemovals && details.removedSlugs.length > 0) {
     problems.push(
       `${details.removedSlugs.length} record(s) would disappear: ` +
         details.removedSlugs.join(', ')
     );
   }
-  if (details.countDelta < 0) {
+  if (!allowRemovals && details.countDelta < 0) {
     problems.push(
       `record count would drop by ${Math.abs(details.countDelta)} ` +
         `(${previous.length} → ${next.length})`
@@ -445,6 +579,20 @@ test('an image on the dead WordPress host is rejected', () => {
   );
   assert.match(error.problems.join(' '), /wp-content/);
 });
+
+test('dealer pricing is rejected — this catalog is public', () => {
+  const error = assert.throws(
+    () => validateCatalog([valid({ pricing: { srp_inr: 100, dealer_price_inr: 60 } })]),
+    CatalogSchemaError
+  );
+  assert.match(error.problems.join(' '), /dealer/i);
+});
+
+test('srp-only pricing is fine', () => {
+  assert.doesNotThrow(() =>
+    validateCatalog([valid({ pricing: { srp_inr: 100, gst_rate: '18', hsn: '85365090' } })])
+  );
+});
 ```
 
 - [ ] **Step 2: Run the tests to verify they fail**
@@ -515,6 +663,16 @@ export function validateCatalog(records) {
       if (url.includes('wp-content')) {
         problems.push(`${label}: image still points at the dead WordPress host (${url})`);
       }
+    }
+
+    // This catalog is published to a public repo and to the Facebook and Google
+    // Merchant feeds. Dealer pricing was removed from the data in 1207bbf but
+    // the generator kept emitting it; this rule is what makes that removal
+    // permanent instead of a thing someone re-breaks by regenerating.
+    if (record?.pricing && 'dealer_price_inr' in record.pricing) {
+      problems.push(
+        `${label}: pricing.dealer_price_inr must not appear in the public catalog`
+      );
     }
   }
 
@@ -623,6 +781,31 @@ test('verifyProvenance detects a hand-edited artifact', () => {
   assert.match(error.message, /checksum/i);
 });
 
+test('verifyProvenance detects a stale record count even when the digest matches', () => {
+  // The realistic tampering case: someone edits the artifact and updates the
+  // sidecar's sha256 to match, but leaves `records` stale. The checksum check
+  // passes, so only the record-count check can catch it.
+  const artifact = fixture([record('one')]);
+  writeProvenance({ artifactPath: artifact, generator: 'test', records: 1 });
+  const sidecar = artifact.replace(/\.json$/, '.source.json');
+  writeFileSync(artifact, JSON.stringify([record('one'), record('two')]));
+  const meta = JSON.parse(readFileSync(sidecar, 'utf8'));
+  meta.sha256 = sha256OfFile(artifact);
+  writeFileSync(sidecar, JSON.stringify(meta));
+  assert.throws(() => verifyProvenance(artifact), ProvenanceError);
+});
+
+test('a non-.json artifact path is rejected rather than overwritten', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'catalog-'));
+  const artifact = join(dir, 'products.txt');
+  writeFileSync(artifact, 'not json');
+  assert.throws(
+    () => writeProvenance({ artifactPath: artifact, generator: 'test', records: 0 }),
+    ProvenanceError
+  );
+  assert.equal(readFileSync(artifact, 'utf8'), 'not json');
+});
+
 test('verifyProvenance fails when the sidecar is missing', () => {
   const artifact = fixture([{ slug: 'x' }]);
   assert.throws(() => verifyProvenance(artifact), ProvenanceError);
@@ -648,6 +831,7 @@ Create `scripts/lib/provenance.mjs`:
 
 import { createHash } from 'node:crypto';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { basename } from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 export class ProvenanceError extends Error {
@@ -657,7 +841,19 @@ export class ProvenanceError extends Error {
   }
 }
 
-const sidecarPath = (artifactPath) => artifactPath.replace(/\.json$/, '.source.json');
+const sidecarPath = (artifactPath) => {
+  // Without this guard a non-.json path returns unchanged, and writeProvenance
+  // would overwrite the artifact itself with its own metadata — silent
+  // destruction of the very file it exists to protect.
+  if (!artifactPath.endsWith('.json')) {
+    throw new ProvenanceError(
+      `Artifact path must end in .json, got: ${artifactPath}. ` +
+        `The sidecar is derived from this path, so a non-.json artifact would ` +
+        `be overwritten by its own provenance record.`
+    );
+  }
+  return artifactPath.replace(/\.json$/, '.source.json');
+};
 
 export function sha256OfFile(filePath) {
   return createHash('sha256').update(readFileSync(filePath)).digest('hex');
@@ -675,7 +871,7 @@ function currentCommit() {
 
 export function writeProvenance({ artifactPath, generator, records }) {
   const provenance = {
-    artifact: artifactPath.split('/').pop(),
+    artifact: basename(artifactPath),
     generator,
     records,
     sha256: sha256OfFile(artifactPath),
@@ -709,7 +905,8 @@ export function verifyProvenance(artifactPath) {
   if (recorded.records !== actualRecords) {
     throw new ProvenanceError(
       `Record count mismatch for ${artifactPath}: sidecar says ${recorded.records}, ` +
-        `file has ${actualRecords}.`
+        `file has ${actualRecords}.\n` +
+        `Rebuild the artifact rather than updating the sidecar to match.`
     );
   }
 }
@@ -731,24 +928,179 @@ git commit -m "Add checksum provenance sidecars for catalog artifacts"
 
 ### Task 5: Build orchestrator
 
-Ties the three libraries together. This is the command that replaces running `generate_catalog.py` directly.
+Ties the three libraries together. This is the command that replaces running `generate_catalog.py`
+directly.
+
+**Source of truth changed after this plan was written.** The original design regenerated everything
+from `data/sources/product-glossary.csv`. That CSV turned out to be stale: all 47 SRPs in it predate
+a repricing done by hand in the committed JSON (e.g. `convergia` is ₹87,500 in the CSV, ₹114,000 in
+the repo). Rebuilding from it would silently revert every price — and the delta gate would not catch
+it, because the gate guards removed records and emptied fields, not changed values.
+
+So `products/<slug>/product.json` is now canonical. The CSV stays vendored as archival provenance
+for the original import, and `generate_catalog.py`'s CSV path stays available for a fresh re-import,
+but it is no longer what a build runs.
+
+This is tractable because `write_product_readme(product_dir, data, row)` already reads **only**
+`data` — the `row` parameter is vestigial. README generation needs no CSV at all.
 
 **Files:**
+- Modify: `generate_catalog.py` — add a `--from-json` mode and drop the vestigial `row` parameter
 - Create: `scripts/build-catalog.mjs`
-- Modify: `package.json` (already wired in Task 1)
 
 **Interfaces:**
-- Consumes: `assertNoDataLoss` (Task 2), `validateCatalog` (Task 3), `writeProvenance` (Task 4), `python3 generate_catalog.py --out <dir>` (Task 1)
-- Produces: `npm run build-catalog [-- --allow-removals]`; writes `products.json` and `products.source.json` at the repo root only after all gates pass.
+- Consumes: `assertNoDataLoss` (Task 2), `validateCatalog` (Task 3), `writeProvenance` (Task 4)
+- Produces:
+  - `python3 generate_catalog.py --from-json --out <dir>` — reads every `products/<slug>/product.json`
+    from the repo, writes `products.json`, `products/<slug>/README.md` and `README.md` into `<dir>`
+  - `npm run build-catalog [-- --allow-removals]` — writes `products.json` and `products.source.json`
+    at the repo root only after all gates pass
 
-- [ ] **Step 1: Implement the orchestrator**
+- [ ] **Step 1: Add a `--from-json` mode to the generator**
+
+Add this function to `generate_catalog.py`, above `build_catalog()`:
+
+```python
+def load_products_from_json() -> list[dict]:
+    """Read the per-product JSON files, which are the source of truth.
+
+    The vendored CSV is an archival record of the original import and is now
+    stale — prices have since been maintained by hand in these files. Building
+    from the CSV would silently revert them, so a normal build reads from here.
+    """
+    src = BASE / "products"
+    if not src.exists():
+        raise SystemExit(f"No products/ directory at {src}; nothing to build from.")
+
+    products = []
+    for product_dir in sorted(src.iterdir()):
+        path = product_dir / "product.json"
+        if not path.exists():
+            raise SystemExit(
+                f"{product_dir.name}/ has no product.json. Every product directory must "
+                f"contain one — a missing file would silently drop the product."
+            )
+        products.append(json.loads(path.read_text(encoding="utf-8")))
+    return products
+```
+
+- [ ] **Step 2: Make `write_product_readme` stop taking the unused `row`**
+
+`write_product_readme(product_dir, data, row)` never reads `row`. Change its signature to
+`write_product_readme(product_dir, data)` and update its one call site inside `build_catalog()`.
+Removing it is what lets READMEs be generated without any CSV.
+
+- [ ] **Step 3: Add a `build_from_json()` entry point**
+
+Add above the `__main__` block:
+
+```python
+def build_from_json() -> list[dict]:
+    """Regenerate products.json and every README from the per-product JSON."""
+    all_products = load_products_from_json()
+    products_dir = OUT / "products"
+    products_dir.mkdir(parents=True, exist_ok=True)
+
+    for data in all_products:
+        product_dir = products_dir / data["slug"]
+        product_dir.mkdir(parents=True, exist_ok=True)
+        (product_dir / "product.json").write_text(
+            json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+        )
+        write_product_readme(product_dir, data)
+
+    (OUT / "products.json").write_text(
+        json.dumps(all_products, indent=2, ensure_ascii=False) + "\n"
+    )
+    return all_products
+```
+
+- [ ] **Step 4: Wire `--from-json` into `__main__`**
+
+Add the flag to the argument parser and branch on it:
+
+```python
+    parser.add_argument(
+        "--from-json",
+        action="store_true",
+        help="Build from the per-product JSON files (the source of truth) "
+             "instead of the archival CSV.",
+    )
+```
+
+and replace the two build calls with:
+
+```python
+    print("Building catalog...")
+    if args.from_json:
+        all_products = build_from_json()
+    else:
+        all_products = build_catalog()
+    write_main_readme(all_products)
+```
+
+- [ ] **Step 5: Verify `--from-json` round-trips the committed catalog exactly**
+
+The committed catalog must survive a rebuild byte-for-byte apart from the root README, which is
+hand-written and is dealt with in Step 6.
+
+```bash
+STAGE=$(mktemp -d)
+python3 generate_catalog.py --from-json --out "$STAGE"
+python3 - <<PY
+import json
+a = json.load(open("products.json"))
+b = json.load(open("$STAGE/products.json"))
+print("committed:", len(a), "rebuilt:", len(b))
+print("identical:", a == b)
+PY
+diff -q products/convergia/README.md "$STAGE/products/convergia/README.md" && echo "README identical"
+grep -c "114000" "$STAGE/products.json"
+rm -rf "$STAGE"
+```
+
+Expected: `committed: 47 rebuilt: 47`, `identical: True`, `README identical`, and a non-zero count
+for `114000` — proving the repriced values survived rather than reverting to the CSV's ₹87,500.
+
+If `identical` is False, report the differing keys in your report and STOP. Do not adjust the
+committed catalog to match the generator; the committed data is authoritative now.
+
+- [ ] **Step 6: Protect the hand-written root README**
+
+`write_main_readme()` overwrites `README.md`, but the committed root README is hand-written
+marketing copy (commit `b5b709c`) that the generator would destroy — this already happened once
+during Task 1. Guard it:
+
+```python
+def write_main_readme(all_products: list[dict]):
+    target = OUT / "README.md"
+    if target.exists() and "<div align=\"center\">" in target.read_text(encoding="utf-8"):
+        print("  → README.md left alone (hand-written marketing copy)")
+        return
+```
+
+Insert those lines at the top of the existing `write_main_readme()`, leaving the rest of the
+function unchanged so a fresh checkout without the marketing README still gets a generated one.
+
+- [ ] **Step 7: Verify the root README is no longer clobbered**
+
+```bash
+sha256sum README.md > /tmp/readme.sha
+python3 generate_catalog.py --from-json
+sha256sum -c /tmp/readme.sha && echo "ROOT README INTACT"
+git status --porcelain | wc -l
+```
+
+Expected: `ROOT README INTACT` and `0` changed files — a build from canonical data is a no-op.
+
+- [ ] **Step 8: Implement the orchestrator**
 
 Create `scripts/build-catalog.mjs`:
 
 ```javascript
 #!/usr/bin/env node
 /**
- * generate → validate → gate → promote.
+ * aggregate → validate → gate → promote.
  *
  * The generator writes to a staging directory so that a failed validation or a
  * destructive diff leaves the committed catalog untouched. Nothing is promoted
@@ -772,10 +1124,12 @@ const readJson = (path) => JSON.parse(readFileSync(path, 'utf8'));
 
 const staging = mkdtempSync(join(tmpdir(), 'catalog-build-'));
 try {
-  console.log('Generating catalog into staging...');
-  execFileSync('python3', [join(ROOT, 'generate_catalog.py'), '--out', staging], {
-    stdio: 'inherit',
-  });
+  console.log('Building catalog into staging from the per-product JSON...');
+  execFileSync(
+    'python3',
+    [join(ROOT, 'generate_catalog.py'), '--from-json', '--out', staging],
+    { stdio: 'inherit' }
+  );
 
   const next = readJson(join(staging, 'products.json'));
   console.log(`Staged ${next.length} records. Validating...`);
@@ -790,7 +1144,6 @@ try {
   }
 
   copyFileSync(join(staging, 'products.json'), COMMITTED);
-  copyFileSync(join(staging, 'README.md'), join(ROOT, 'README.md'));
   cpSync(join(staging, 'products'), join(ROOT, 'products'), { recursive: true });
 
   const provenance = writeProvenance({
@@ -811,52 +1164,82 @@ try {
 }
 ```
 
-- [ ] **Step 2: Verify a normal build succeeds and is non-destructive**
+Note this does **not** copy the staged `README.md` over the committed one — Step 6 already stops the
+generator writing it, and the root README is not a build artifact.
+
+- [ ] **Step 9: Verify a normal build is a clean no-op**
 
 ```bash
-npm run build-catalog && cat products.source.json
+npm run build-catalog && cat products.source.json && git status --porcelain | wc -l
 ```
 
-Expected: `Delta gate passed (47 → 47 records).`, `Promoted. 47 records, sha256 …`, and a sidecar showing `"records": 47`.
+Expected: `Delta gate passed (47 → 47 records).`, `Promoted. 47 records, sha256 …`, a sidecar
+showing `"records": 47`, and `1` changed file — only the new `products.source.json`.
 
-- [ ] **Step 3: Verify the gate blocks a destructive build**
+- [ ] **Step 10: Verify the gate blocks a destructive build**
 
-Simulate upstream data loss by truncating the vendored CSV, then confirm the committed catalog survives:
+Delete a product directory and confirm the committed catalog survives:
 
 ```bash
 cp products.json /tmp/products.guard-check.json
-head -3 data/sources/product-glossary.csv > /tmp/truncated.csv
-cp data/sources/product-glossary.csv /tmp/csv-full.csv
-cp /tmp/truncated.csv data/sources/product-glossary.csv
+mv products/convergia /tmp/convergia-backup
 npm run build-catalog; echo "exit=$?"
-cp /tmp/csv-full.csv data/sources/product-glossary.csv
+mv /tmp/convergia-backup products/convergia
 diff -q products.json /tmp/products.guard-check.json && echo "COMMITTED CATALOG INTACT"
 ```
 
-Expected: the build fails with `Refusing to write: this would lose data.` listing the disappearing slugs, `exit=1`, and `COMMITTED CATALOG INTACT`.
+Expected: the build fails with `Refusing to write: this would lose data.` naming `convergia`,
+`exit=1`, and `COMMITTED CATALOG INTACT`.
 
-- [ ] **Step 4: Restore and rebuild**
-
-```bash
-npm run build-catalog && node -e "
-const {readFileSync}=require('fs');
-console.log('records:', JSON.parse(readFileSync('products.json','utf8')).length);"
-```
-
-Expected: `records: 47`.
-
-- [ ] **Step 5: Commit**
+- [ ] **Step 11: Verify dealer pricing cannot be reintroduced**
 
 ```bash
-git add scripts/build-catalog.mjs products.source.json
-git commit -m "Add build orchestrator that stages, validates and gates catalog writes"
+cp products/convergia/product.json /tmp/convergia.json
+python3 - <<'PY'
+import json
+p = "products/convergia/product.json"
+d = json.load(open(p))
+d["pricing"]["dealer_price_inr"] = 35000
+json.dump(d, open(p, "w"), indent=2, ensure_ascii=False)
+PY
+npm run build-catalog; echo "exit=$?"
+cp /tmp/convergia.json products/convergia/product.json
 ```
+
+Expected: the build fails with `pricing.dealer_price_inr must not appear in the public catalog` and
+`exit=1`. This is the regression test for today's exposure.
+
+- [ ] **Step 12: Restore and commit**
+
+```bash
+npm run build-catalog
+npm test
+git add generate_catalog.py scripts/build-catalog.mjs products.source.json
+git commit -m "Build the catalog from the per-product JSON behind validation and a delta gate"
+```
+
+Expected: build succeeds, all tests pass.
 
 ---
 
 ### Task 6: Protect the ad feeds
 
 `facebook-catalog-push.js` and `google-merchant-feed.js` push to live ad platforms. A silently truncated catalog here pulls products out of running campaigns, which makes these the highest-stakes consumers in the repo.
+
+**BLOCKED, and split.** Neither feed script is in git. Both exist only as untracked files in the
+main checkout's working directory, so they are absent from this branch and cannot be modified here.
+They were scanned and contain no hardcoded secrets — credentials come from `FB_ACCESS_TOKEN` and
+`FB_CATALOG_ID` env vars — so committing them is safe, but publishing a user's untracked files to a
+public repo is the user's decision, not the implementer's.
+
+Therefore:
+- **Task 6 (this task)** delivers `scripts/verify-catalog.mjs` and its tests only. That is the
+  reusable health check, and it is what the feeds will call.
+- **Task 6b (follow-up, blocked)** wires the two feeds, once they are committed. Its steps are
+  recorded at the end of this task.
+
+That these scripts are unversioned is itself worth naming: they push to live ad campaigns, have no
+history, no review trail, and are one `rm` away from gone.
 
 The spec calls for "the delta gate" on the feeds. The delta gate compares a *proposed write* against
 a committed file, and the feeds never write the catalog — they only read it. The equivalent
@@ -867,8 +1250,8 @@ smaller set. That is the intended behaviour, not a gap.
 
 **Files:**
 - Create: `scripts/verify-catalog.mjs`
-- Modify: `facebook-catalog-push.js:95`, `google-merchant-feed.js:136`
 - Test: `test/verify-catalog.test.mjs`
+- Deferred to Task 6b: `facebook-catalog-push.js:95`, `google-merchant-feed.js:136` (not in git)
 
 **Interfaces:**
 - Consumes: `validateCatalog` (Task 3), `verifyProvenance` (Task 4)
@@ -973,7 +1356,11 @@ if (isMain) {
 Run: `npm test`
 Expected: PASS — 23 tests total.
 
-- [ ] **Step 5: Gate the Facebook feed**
+#### Task 6b — blocked on the feed scripts being committed
+
+Do not attempt these steps in Task 6. They are recorded so the work is not lost.
+
+- [ ] **Step 5 (6b): Gate the Facebook feed**
 
 Both feed scripts are ESM, so use a static import. Add alongside the existing imports at the top of
 `facebook-catalog-push.js`:
@@ -1006,7 +1393,7 @@ Then immediately before line 136's `readFileSync`:
 
 ```bash
 cp products.json /tmp/products.ok.json
-node -e "require('fs').writeFileSync('products.json','[]')"
+python3 -c "open('products.json','w').write('[]')"
 node google-merchant-feed.js; echo "merchant exit=$?"
 cp /tmp/products.ok.json products.json
 npm run verify-catalog
@@ -1017,8 +1404,8 @@ Expected: the merchant feed exits non-zero complaining about the checksum or the
 - [ ] **Step 8: Commit**
 
 ```bash
-git add scripts/verify-catalog.mjs test/verify-catalog.test.mjs facebook-catalog-push.js google-merchant-feed.js
-git commit -m "Verify catalog health before pushing to Facebook and Google feeds"
+git add scripts/verify-catalog.mjs test/verify-catalog.test.mjs
+git commit -m "Add catalog health check for feed consumers and CI"
 ```
 
 ---

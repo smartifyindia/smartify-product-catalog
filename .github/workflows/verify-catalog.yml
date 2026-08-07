@@ -1,0 +1,23 @@
+name: Verify catalog
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Run tests
+        run: npm test
+
+      - name: Verify the committed catalog
+        run: npm run verify-catalog
+
+      - name: Check products.json is in sync with products/
+        run: npm run check-catalog

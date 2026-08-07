@@ -1,17 +1,44 @@
 """
-Generate the Smartify product catalog from CSV data and images.
-Run: python3 generate_catalog.py
+Generate the Smartify product catalog from the per-product JSON files.
+
+The per-product JSON under products/<slug>/product.json is the source of
+truth — prices and content there are maintained by hand and are current.
+
+Normal usage (rebuilds products.json, products/*/README.md, and README.md
+from the per-product JSON):
+    python3 generate_catalog.py
+
+One-off re-import from the vendored archival CSV (data/sources/product-glossary.csv).
+This is NOT the normal path: the CSV is stale on price and this will overwrite
+current hand-maintained values in products/ and products.json.
+    python3 generate_catalog.py --from-csv
 """
 
+import argparse
 import csv
 import json
 import os
+import sys
 from pathlib import Path
 from urllib.parse import quote
 
 BASE = Path(__file__).parent
-CSV_PATH = Path("/Users/abhi/Downloads/Product_Photos/Product Glossary 31dcd4ab78e280899b7fce8d0ff31547_all.csv")
+CSV_PATH = BASE / "data" / "sources" / "product-glossary.csv"
 IMAGES_DIR = BASE / "images"
+
+if not CSV_PATH.exists():
+    raise SystemExit(
+        f"Product glossary CSV not found at {CSV_PATH}.\n"
+        "This file is the source of the entire catalog and is vendored into the repo "
+        "so the catalog can be rebuilt without any external checkout.\n"
+        "Restore it from git history rather than copying it back from Downloads."
+    )
+
+# Where generated artifacts are written. scripts/build-catalog.mjs points this
+# at a staging directory so that a failed validation or a destructive diff never
+# touches the committed catalog. CSV_PATH and IMAGES_DIR stay under BASE — they
+# are inputs, not outputs.
+OUT = BASE
 
 # Brand names to strip and replace with Smartify
 BRAND_REPLACEMENTS = [
@@ -173,7 +200,7 @@ def build_product_json(row: dict) -> dict:
     }
 
 
-def write_product_readme(product_dir: Path, data: dict, row: dict):
+def write_product_readme(product_dir: Path, data: dict):
     images = data["images"]["all_urls"]
     hero_md = f'![{data["name"]}]({data["images"]["hero_url"]})\n\n' if data["images"]["hero_url"] else ""
 
@@ -260,10 +287,42 @@ def write_product_readme(product_dir: Path, data: dict, row: dict):
     (product_dir / "README.md").write_text(readme.strip() + "\n")
 
 
+def load_products_from_json() -> list[dict]:
+    """Read the per-product JSON files, which are the source of truth.
+
+    The vendored CSV is an archival record of the original import and is now
+    stale — prices have since been maintained by hand in these files. Building
+    from the CSV would silently revert them, so a normal build reads from here.
+    """
+    src = BASE / "products"
+    if not src.exists():
+        raise SystemExit(f"No products/ directory at {src}; nothing to build from.")
+
+    products = []
+    for product_dir in sorted(src.iterdir()):
+        path = product_dir / "product.json"
+        if not path.exists():
+            raise SystemExit(
+                f"{product_dir.name}/ has no product.json. Every product directory must "
+                f"contain one — a missing file would silently drop the product."
+            )
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if data.get("slug") != product_dir.name:
+            raise SystemExit(
+                f"Slug/directory mismatch: products/{product_dir.name}/product.json "
+                f"has slug {data.get('slug')!r} but lives in directory "
+                f"{product_dir.name!r}. These must match — a divergent slug "
+                "silently creates a second directory on the next build and "
+                "then fails with a confusing duplicate-slug error."
+            )
+        products.append(data)
+    return products
+
+
 def build_catalog():
     rows = parse_csv()
     all_products = []
-    products_dir = BASE / "products"
+    products_dir = OUT / "products"
     products_dir.mkdir(exist_ok=True)
 
     for row in rows:
@@ -275,18 +334,23 @@ def build_catalog():
         all_products.append(data)
 
         # Write product.json
-        (product_dir / "product.json").write_text(json.dumps(data, indent=2) + "\n")
+        (product_dir / "product.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
 
         # Write README.md
-        write_product_readme(product_dir, data, row)
+        write_product_readme(product_dir, data)
 
     # Write combined products.json
-    (BASE / "products.json").write_text(json.dumps(all_products, indent=2) + "\n")
+    (OUT / "products.json").write_text(json.dumps(all_products, indent=2, ensure_ascii=False) + "\n")
 
     return all_products
 
 
 def write_main_readme(all_products: list[dict]):
+    target = OUT / "README.md"
+    if target.exists() and "<div align=\"center\">" in target.read_text(encoding="utf-8"):
+        print("  → README.md left alone (hand-written marketing copy)")
+        return
+
     # Group by category
     categories = {}
     for p in all_products:
@@ -341,14 +405,69 @@ smartify-product-catalog/
 
 *Generated from Product Glossary · {len(all_products)} products · 60 images*
 """
-    (BASE / "README.md").write_text(readme.strip() + "\n")
+    (OUT / "README.md").write_text(readme.strip() + "\n")
+
+
+def build_from_json() -> list[dict]:
+    """Regenerate products.json and every README from the per-product JSON."""
+    all_products = load_products_from_json()
+    products_dir = OUT / "products"
+    products_dir.mkdir(parents=True, exist_ok=True)
+
+    for data in all_products:
+        product_dir = products_dir / data["slug"]
+        product_dir.mkdir(parents=True, exist_ok=True)
+        (product_dir / "product.json").write_text(
+            json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+        )
+        write_product_readme(product_dir, data)
+
+    (OUT / "products.json").write_text(
+        json.dumps(all_products, indent=2, ensure_ascii=False) + "\n"
+    )
+    return all_products
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Build the Smartify product catalog.")
+    parser.add_argument(
+        "--out",
+        type=Path,
+        default=BASE,
+        help="Directory to write products.json, products/ and README.md into.",
+    )
+    parser.add_argument(
+        "--from-csv",
+        action="store_true",
+        help="One-off re-import from the archival CSV instead of the "
+             "per-product JSON. This overwrites hand-maintained data "
+             "(including prices) with the stale CSV values — not the "
+             "normal build path.",
+    )
+    args = parser.parse_args()
+
+    # Rebinding the module-level global here is what redirects every writer;
+    # this block runs at module scope, so build_catalog() and write_main_readme()
+    # see the new value when they are called below.
+    OUT = args.out
+    OUT.mkdir(parents=True, exist_ok=True)
+
     print("Building catalog...")
-    all_products = build_catalog()
+    if args.from_csv:
+        print(
+            "WARNING: --from-csv rebuilds from the archival CSV "
+            f"({CSV_PATH}), which is stale on price. This will overwrite "
+            "current hand-maintained values in products/ and products.json.",
+            file=sys.stderr,
+        )
+        all_products = build_catalog()
+    else:
+        all_products = build_from_json()
     write_main_readme(all_products)
     print(f"Done. Generated {len(all_products)} product pages.")
+    print(f"  → {OUT}/products/ ({len(all_products)} folders)")
+    print(f"  → {OUT}/products.json")
+    print(f"  → {OUT}/README.md")
     print(f"  → products/ ({len(all_products)} folders)")
     print(f"  → products.json")
     print(f"  → README.md")
