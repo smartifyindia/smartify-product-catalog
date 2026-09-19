@@ -49,5 +49,25 @@
       "../../images/TAC%20Heavy%20Load%20Switch%20-%20Gold.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "tac hl",
+      "Zigbee Smart Switch (Heavy Load)"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.summary",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }

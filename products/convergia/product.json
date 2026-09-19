@@ -45,5 +45,23 @@
       "../../images/Convergia.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "convergia",
+      "Local Smart Automation Gateway"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "technology",
+      "assistants",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }

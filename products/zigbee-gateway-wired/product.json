@@ -45,5 +45,25 @@
       "../../images/Zigbee%20Gateway%20%28Wired%29.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "zigbee gateway wired",
+      "Zigbee Coordinator / Gateway"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.summary",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }

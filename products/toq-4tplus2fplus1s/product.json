@@ -46,5 +46,24 @@
       "../../images/TOQ%20Fan%20Light%20Control%20with%20Socket%20-%20Black%20Gold.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "toq 4tplus2fplus1s",
+      "Zigbee Touch Control Panel with Fan and Socket"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }

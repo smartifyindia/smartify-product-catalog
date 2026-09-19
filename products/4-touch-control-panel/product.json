@@ -46,5 +46,25 @@
       "../../images/4%20Inch%20Touch%20Control%20Panel.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "4 touch control panel",
+      "Smart Home Touch Control Panel"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.summary",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }

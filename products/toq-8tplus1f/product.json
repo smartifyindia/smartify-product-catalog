@@ -46,5 +46,24 @@
       "../../images/TOQ%20Dual%20Fan%20Control%20with%20Socket%20-%20Black%20Gold.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "toq 8tplus1f",
+      "Zigbee Touch Control Panel with Fan Control"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }

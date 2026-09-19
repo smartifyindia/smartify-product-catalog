@@ -51,5 +51,25 @@
       "../../images/TAC%20Remote%20Control%20-%20Green.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "tac k",
+      "Zigbee Rotary Control Dial"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.summary",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }

@@ -46,5 +46,25 @@
       "../../images/Zigbee%20mmWave%20Sensor%20%28USB%29.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "zigbee mmwave sensor usb",
+      "mmWave Motion / Presence Sensor"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.summary",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }

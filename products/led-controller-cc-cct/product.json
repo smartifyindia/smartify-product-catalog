@@ -46,5 +46,24 @@
       "../../images/LED%20Controller%20%28CCT%29.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "led controller cc cct",
+      "Constant Current LED Controller"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }
