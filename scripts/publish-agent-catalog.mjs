@@ -24,7 +24,7 @@ function buildStore(target, root) {
   if (target === 'local') {
     // createLocalStore's keys already carry the "agent-catalog/" prefix, so
     // rootDir must be the *repo* root here — this lands files at
-    // <root>/agent-catalog/..., matching build-agent-catalog.mjs's layout.
+    // <root>/agent-catalog/....
     return createLocalStore(root);
   }
 

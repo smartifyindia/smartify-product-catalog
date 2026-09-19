@@ -81,22 +81,24 @@ test('buildAgentCatalog refuses sensitive pricing paths even when source metadat
   assert.throws(() => buildAgentCatalog([invalid]), /dealer_price_inr.*not allowed/i);
 });
 
-test('build-agent-catalog writes an immutable object and a minimal current pointer', () => {
+test('publish-agent-catalog --target local writes an immutable object and a versioned current pointer', () => {
   const root = mkdtempSync(join(tmpdir(), 'agent-catalog-fixture-'));
   const sourceDir = join(root, 'products', 'tac-1');
   mkdirSync(sourceDir, { recursive: true });
   writeFileSync(join(sourceDir, 'product.json'), `${JSON.stringify(product(), null, 2)}\n`);
 
   execFileSync('node', [
-    new URL('../scripts/build-agent-catalog.mjs', import.meta.url).pathname,
+    new URL('../scripts/publish-agent-catalog.mjs', import.meta.url).pathname,
+    '--target', 'local',
     '--root', root,
     '--created-at', '2026-09-18T12:00:00.000Z',
   ]);
 
   const pointer = JSON.parse(readFileSync(join(root, 'agent-catalog', 'current.json'), 'utf8'));
   assert.deepEqual(Object.keys(pointer).sort(), [
-    'catalog_hash', 'created_at', 'object_key', 'schema_version',
+    'catalog_hash', 'catalog_version', 'created_at', 'object_key', 'schema_version',
   ]);
+  assert.equal(pointer.catalog_version, 1);
   assert.equal(pointer.created_at, '2026-09-18T12:00:00.000Z');
   assert.equal(pointer.object_key, `agent-catalog/${pointer.catalog_hash}.json`);
 

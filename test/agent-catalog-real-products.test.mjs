@@ -5,7 +5,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { buildAgentCatalog, serializeAgentCatalog } from '../scripts/lib/agent-catalog.mjs';
 
-// Mirrors the read pattern in scripts/build-agent-catalog.mjs: read every
+// Mirrors the read pattern in scripts/publish-agent-catalog.mjs: read every
 // products/<slug>/product.json from disk, exactly as the real build does.
 function loadRealProducts() {
   const productsDir = new URL('../products', import.meta.url).pathname;
