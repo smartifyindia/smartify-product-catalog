@@ -167,6 +167,23 @@ test('publishAgentCatalog: pointer created_at is exactly the injected string, ne
   assert.equal(result.pointer.created_at, '2020-01-01T00:00:00.000Z');
 });
 
+test('publishAgentCatalog: current pointer carries the release source revision when provided', async () => {
+  const { publishAgentCatalog } = await loadPublish();
+  const store = createFakeStore();
+
+  const result = publishAgentCatalog(store, [product()], {
+    createdAt: CREATED_AT,
+    producer: {
+      repository: 'smartifyindia/smartify-product-catalog',
+      commit: 'a'.repeat(40),
+    },
+  });
+
+  assert.equal(result.pointer.producer_repository, 'smartifyindia/smartify-product-catalog');
+  assert.equal(result.pointer.producer_commit, 'a'.repeat(40));
+  assert.deepEqual(JSON.parse(store.get('agent-catalog/current.json')), result.pointer);
+});
+
 test('verifyPublishedAgentCatalog accepts a pointer and immutable object rebuilt from the same products', async () => {
   const { publishAgentCatalog, verifyPublishedAgentCatalog } = await loadPublish();
   const store = createFakeStore();
