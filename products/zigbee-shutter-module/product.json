@@ -45,5 +45,25 @@
       "../../images/Zigbee%20Shutter%20Module.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "zigbee shutter module",
+      "Shutter / Curtain Motor Controller"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.summary",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }

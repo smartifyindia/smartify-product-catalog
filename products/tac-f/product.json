@@ -46,5 +46,25 @@
       "../../images/TAC%20Fan%20Speed%20Controller.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "tac f",
+      "Zigbee Fan Control Switch"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.summary",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }

@@ -50,5 +50,25 @@
       "../../images/TAC%204%20Gang%206%20Scene%20Switch%20-%20Gold.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "tac 6plus",
+      "Zigbee Smart Switch with Scene Control"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.summary",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }

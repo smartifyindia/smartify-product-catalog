@@ -46,5 +46,25 @@
       "../../images/Retrofit%20Relay.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "2 channel zigbee retrofit relay",
+      "Switching Relay"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.summary",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }

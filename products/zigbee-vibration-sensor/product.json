@@ -46,5 +46,25 @@
       "../../images/Zigbee%20Vibration%20Sensor.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "zigbee vibration sensor",
+      "Vibration Detection Sensor"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.summary",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }

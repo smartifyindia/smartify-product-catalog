@@ -46,5 +46,25 @@
       "../../images/Zigbee%20DALI%20Gateway.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "zigbee dali gateway",
+      "Zigbee to DALI Protocol Gateway"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.summary",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }

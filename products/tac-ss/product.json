@@ -50,5 +50,25 @@
       "../../images/TAC%20Scene%20Switch%20with%20Remote%20-%20Gold.png"
     ]
   },
+  "agent": {
+    "aliases": [
+      "tac ss",
+      "Zigbee Scene Control Switch (Battery)"
+    ],
+    "approved_fact_paths": [
+      "name",
+      "brand",
+      "category",
+      "device_type",
+      "protocol",
+      "technology",
+      "assistants",
+      "specs.summary",
+      "specs.installation",
+      "specs.compatibility",
+      "limitations",
+      "dependencies"
+    ]
+  },
   "enabled": true
 }
