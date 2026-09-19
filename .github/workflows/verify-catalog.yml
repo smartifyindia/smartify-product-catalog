@@ -16,7 +16,7 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Build the agent catalog artifact
+      - name: Build and verify the agent catalog artifact
         run: npm run build:agent-catalog
 
       - name: Verify the committed catalog

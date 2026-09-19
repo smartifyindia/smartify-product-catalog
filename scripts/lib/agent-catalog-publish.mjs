@@ -55,3 +55,40 @@ export function publishAgentCatalog(store, products, { createdAt } = {}) {
 
   return { published: true, pointer };
 }
+
+/**
+ * Rebuilds the artifact from the authoritative product inputs and verifies
+ * that both the active pointer and its content-addressed object are exact.
+ * The same check works after a local CI build and after an R2 publish.
+ */
+export function verifyPublishedAgentCatalog(store, products) {
+  const artifact = buildAgentCatalog(products);
+  const expectedBytes = serializeAgentCatalog(artifact);
+  const expectedHash = createHash('sha256').update(expectedBytes).digest('hex');
+
+  const pointerRaw = store.get(CURRENT_POINTER_KEY);
+  if (pointerRaw === null) throw new Error('published current pointer is missing');
+
+  let pointer;
+  try {
+    pointer = JSON.parse(String(pointerRaw));
+  } catch {
+    throw new Error('published current pointer is not valid JSON');
+  }
+  if (pointer.catalog_hash !== expectedHash) {
+    throw new Error('published pointer hash does not match rebuilt catalog');
+  }
+  const expectedKey = `agent-catalog/${expectedHash}.json`;
+  if (pointer.object_key !== expectedKey) {
+    throw new Error('published pointer object key does not match rebuilt catalog');
+  }
+
+  const objectRaw = store.get(expectedKey);
+  if (objectRaw === null) throw new Error('published immutable object is missing');
+  const objectBytes = Buffer.isBuffer(objectRaw) ? objectRaw : Buffer.from(objectRaw);
+  if (!objectBytes.equals(Buffer.from(expectedBytes))) {
+    throw new Error('published immutable object bytes do not match rebuilt catalog');
+  }
+
+  return { catalog_hash: expectedHash, product_count: artifact.products.length };
+}
