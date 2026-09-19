@@ -2,7 +2,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { join, resolve } from 'node:path';
 import { createLocalStore, createR2Store } from './lib/agent-catalog-store.mjs';
-import { publishAgentCatalog } from './lib/agent-catalog-publish.mjs';
+import { publishAgentCatalog, verifyPublishedAgentCatalog } from './lib/agent-catalog-publish.mjs';
 
 function option(name, fallback = null) {
   const index = process.argv.indexOf(name);
@@ -50,6 +50,7 @@ function main() {
   const products = loadProducts(root);
   const store = buildStore(target, root);
   const { published, pointer } = publishAgentCatalog(store, products, { createdAt });
+  verifyPublishedAgentCatalog(store, products);
 
   process.stdout.write(`${JSON.stringify({ published, pointer }, null, 2)}\n`);
 }

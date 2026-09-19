@@ -166,3 +166,39 @@ test('publishAgentCatalog: pointer created_at is exactly the injected string, ne
 
   assert.equal(result.pointer.created_at, '2020-01-01T00:00:00.000Z');
 });
+
+test('verifyPublishedAgentCatalog accepts a pointer and immutable object rebuilt from the same products', async () => {
+  const { publishAgentCatalog, verifyPublishedAgentCatalog } = await loadPublish();
+  const store = createFakeStore();
+  const products = [product(), product2()];
+  const published = publishAgentCatalog(store, products, { createdAt: CREATED_AT });
+
+  const result = verifyPublishedAgentCatalog(store, products);
+
+  assert.equal(result.catalog_hash, published.pointer.catalog_hash);
+  assert.equal(result.product_count, 2);
+});
+
+test('verifyPublishedAgentCatalog rejects a deliberately stale current pointer', async () => {
+  const { publishAgentCatalog, verifyPublishedAgentCatalog } = await loadPublish();
+  const store = createFakeStore();
+  publishAgentCatalog(store, [product(), product2()], { createdAt: CREATED_AT });
+
+  assert.throws(
+    () => verifyPublishedAgentCatalog(store, [product({ name: 'TAC 1 renamed' }), product2()]),
+    /published pointer hash does not match rebuilt catalog/i,
+  );
+});
+
+test('verifyPublishedAgentCatalog rejects corrupt bytes at the content-addressed object key', async () => {
+  const { publishAgentCatalog, verifyPublishedAgentCatalog } = await loadPublish();
+  const store = createFakeStore();
+  const products = [product(), product2()];
+  const published = publishAgentCatalog(store, products, { createdAt: CREATED_AT });
+  store.put(published.pointer.object_key, '{"products":"corrupt"}\n');
+
+  assert.throws(
+    () => verifyPublishedAgentCatalog(store, products),
+    /immutable object bytes do not match rebuilt catalog/i,
+  );
+});
