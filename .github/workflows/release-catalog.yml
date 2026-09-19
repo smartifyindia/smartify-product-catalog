@@ -22,6 +22,19 @@ jobs:
       - name: Verify the committed catalog
         run: npm run verify-catalog
 
+      - name: Publish the verified immutable agent catalog to R2
+        env:
+          # This token must be limited to object read/write for this bucket;
+          # it needs no Worker, DNS, or account-administration permissions.
+          CLOUDFLARE_API_TOKEN: ${{ secrets.SMARTIFY_CATALOG_R2_PUBLISH_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: b9f8db8151b55e4e33b0190fd0805f38
+          AGENT_CATALOG_R2_BUCKET: smartify-images
+        run: >-
+          npm run publish:agent-catalog --
+          --bucket "$AGENT_CATALOG_R2_BUCKET"
+          --producer-repository "$GITHUB_REPOSITORY"
+          --producer-commit "$GITHUB_SHA"
+
       - name: Write checksums
         run: node scripts/write-checksums.mjs
 

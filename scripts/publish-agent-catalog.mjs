@@ -46,10 +46,20 @@ function main() {
   const createdAt = option('--created-at', new Date().toISOString());
   if (!Number.isFinite(Date.parse(createdAt))) throw new Error('--created-at must be an ISO timestamp');
   const target = option('--target', 'local');
+  const producerRepository = option('--producer-repository');
+  const producerCommit = option('--producer-commit');
+  if (Boolean(producerRepository) !== Boolean(producerCommit)) {
+    throw new Error('--producer-repository and --producer-commit must be provided together');
+  }
 
   const products = loadProducts(root);
   const store = buildStore(target, root);
-  const { published, pointer } = publishAgentCatalog(store, products, { createdAt });
+  const { published, pointer } = publishAgentCatalog(store, products, {
+    createdAt,
+    ...(producerRepository ? {
+      producer: { repository: producerRepository, commit: producerCommit },
+    } : {}),
+  });
   verifyPublishedAgentCatalog(store, products);
 
   process.stdout.write(`${JSON.stringify({ published, pointer }, null, 2)}\n`);

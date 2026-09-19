@@ -15,9 +15,14 @@ const CURRENT_POINTER_KEY = 'agent-catalog/current.json';
  * `store` if (and only if) its content differs from what's already
  * published. Returns `{ published, pointer }`.
  */
-export function publishAgentCatalog(store, products, { createdAt } = {}) {
+export function publishAgentCatalog(store, products, { createdAt, producer } = {}) {
   if (typeof createdAt !== 'string' || createdAt.length === 0) {
     throw new Error('publishAgentCatalog: createdAt is required');
+  }
+  if (producer !== undefined
+    && (typeof producer?.repository !== 'string' || producer.repository.length === 0
+      || typeof producer?.commit !== 'string' || producer.commit.length === 0)) {
+    throw new Error('publishAgentCatalog: producer repository and commit are required together');
   }
 
   const artifact = buildAgentCatalog(products);
@@ -50,6 +55,10 @@ export function publishAgentCatalog(store, products, { createdAt } = {}) {
     catalog_version: catalogVersion,
     created_at: createdAt,
     object_key: objectKey,
+    ...(producer ? {
+      producer_repository: producer.repository,
+      producer_commit: producer.commit,
+    } : {}),
   };
   store.put(CURRENT_POINTER_KEY, `${JSON.stringify(pointer, null, 2)}\n`);
 
