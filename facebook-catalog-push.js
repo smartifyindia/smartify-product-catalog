@@ -32,9 +32,10 @@ function imageUrl(heroPath) {
   return `${R2_BASE}/${encodeURIComponent(filename)}`;
 }
 
-// Facebook requires price as integer paise (INR paise = INR * 100)
+// items_batch takes the displayed major-unit price and ISO currency together.
 function priceStr(srp_inr) {
-  return `${srp_inr * 100} INR`;
+  if (!Number.isFinite(srp_inr) || srp_inr < 0) throw new Error('Invalid catalog price');
+  return `${srp_inr} INR`;
 }
 
 // Truncate to FB's 5000-char description limit
@@ -50,17 +51,15 @@ export function mapProduct(p, availability) {
   }
   return {
     retailer_id: p.sku,
-    name: p.name,
+    title: p.name,
     description: truncate(p.description?.consumer || p.description?.technical || p.name),
     price: priceStr(p.pricing.srp_inr),
-    currency: 'INR',
     availability: availability.quantity > 0 && availability.purchasable ? 'in stock' : 'out of stock',
     condition: 'new',
-    url: `${SITE_BASE}/${p.slug}`,
-    image_url: imageUrl(p.images.hero),
+    link: `${SITE_BASE}/${p.slug}`,
+    image_link: imageUrl(p.images.hero),
     brand: p.brand || 'Smartify',
-    category: Array.isArray(p.category) ? p.category[0] : p.category,
-    google_product_category: 'Electronics > Home Automation',
+    product_type: Array.isArray(p.category) ? p.category[0] : p.category,
   };
 }
 
@@ -111,36 +110,64 @@ export function assertNoRejections(body) {
   const rejected = Array.isArray(validation) && validation.some(item =>
     ['error', 'rejected'].includes(String(item?.status).toLowerCase()) ||
     (Array.isArray(item?.errors) && item.errors.length > 0));
-  if (body?.status && ['finished', 'completed'].includes(String(body.status).toLowerCase()) &&
-      (!Number.isSafeInteger(Number(body.errors_total_count)) || body.errors_total_count == null)) {
-    throw new Error('Meta catalog batch did not report a rejection count');
-  }
-  if (rejected || Number(body?.errors_total_count) > 0) {
+  if (rejected) {
     throw new Error('Meta catalog rejected one or more items; inspect Commerce Manager');
   }
 }
 
-async function push(products) {
-  const items = products.map(p => ({
-    method: 'UPDATE',   // UPDATE = create-or-update (idempotent)
-    retailer_id: p.retailer_id,
-    data: p,
-  }));
+export function parseBatchStatus(body) {
+  if (!Array.isArray(body?.data) || body.data.length !== 1 || !body.data[0] ||
+      typeof body.data[0] !== 'object') {
+    throw new Error('Meta catalog batch status response lacks one status row');
+  }
+  const row = body.data[0];
+  const status = String(row.status || '').toLowerCase().replace(/[ _-]+/g, '');
+  if (Array.isArray(row.errors) && row.errors.length > 0) {
+    throw new Error('Meta catalog rejected one or more items; inspect Commerce Manager');
+  }
+  if (status === 'failed' || status === 'error') throw new Error('Meta catalog batch failed');
+  if (status === 'finished' || status === 'completed') {
+    if (row.errors_total_count == null || !Number.isSafeInteger(Number(row.errors_total_count)) ||
+        Number(row.errors_total_count) < 0) {
+      throw new Error('Meta catalog batch did not report a rejection count');
+    }
+    if (Number(row.errors_total_count) > 0) {
+      throw new Error('Meta catalog rejected one or more items; inspect Commerce Manager');
+    }
+    return 'finished';
+  }
+  if (['pending', 'processing', 'inprogress', 'started', 'running'].includes(status)) return 'pending';
+  throw new Error('Meta catalog returned an unknown batch status');
+}
 
-  const url = `https://graph.facebook.com/${GRAPH_VERSION}/${encodeURIComponent(CATALOG_ID)}/items_batch`;
-  const body = {
+export function buildMetaRequest(products) {
+  return {
     allow_upsert: true,
-    requests: items,
+    item_type: 'PRODUCT_ITEM',
+    requests: products.map(({ retailer_id, ...data }) => ({
+      method: 'UPDATE',
+      data: { id: retailer_id, ...data },
+    })),
   };
+}
 
-  console.log(`\nPOSTing ${items.length} products to catalog ${CATALOG_ID}...`);
+export function encodeMetaRequest(body) {
+  return new URLSearchParams({
+    allow_upsert: String(body.allow_upsert),
+    item_type: body.item_type,
+    requests: JSON.stringify(body.requests),
+  });
+}
+
+async function push(products) {
+  const url = `https://graph.facebook.com/${GRAPH_VERSION}/${encodeURIComponent(CATALOG_ID)}/items_batch`;
+  const body = buildMetaRequest(products);
+
+  console.log(`\nPOSTing ${body.requests.length} products to catalog ${CATALOG_ID}...`);
 
   const result = await graphRequest(url, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(body),
+    body: encodeMetaRequest(body),
   });
   assertNoRejections(result);
   const handles = result.handles;
@@ -155,16 +182,14 @@ async function push(products) {
       statusUrl.searchParams.set('handle', handle);
       statusUrl.searchParams.set('fields', 'status,errors_total_count');
       const status = await graphRequest(statusUrl);
-      assertNoRejections(status);
-      if (['finished', 'completed'].includes(String(status.status).toLowerCase())) {
+      if (parseBatchStatus(status) === 'finished') {
         finished = true;
         break;
       }
-      if (String(status.status).toLowerCase() === 'failed') throw new Error('Meta catalog batch failed');
     }
     if (!finished) throw new Error('Meta catalog batch status did not finish in time');
   }
-  return { handles, itemCount: items.length };
+  return { handles, itemCount: body.requests.length };
 }
 
 async function main() {
