@@ -1,0 +1,57 @@
+name: Sync Meta catalog
+
+on:
+  schedule:
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Test catalog and Meta mapping
+        run: npm test && node --test facebook-catalog-push.test.mjs
+
+      - name: Verify catalog artifact
+        run: npm run verify-catalog && npm run check-catalog
+
+      - name: Validate live Commerce availability without Meta credentials
+        run: node facebook-catalog-push.js --dry-run
+
+      - name: Push and verify Meta batch
+        env:
+          FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }}
+          FB_CATALOG_ID: ${{ secrets.FB_CATALOG_ID }}
+        run: node facebook-catalog-push.js
+
+  alert:
+    needs: sync
+    if: ${{ always() && needs.sync.result == 'failure' }}
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Open or update sync failure issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'Meta catalog sync failed';
+            const body = `Catalog sync failed on ${new Date().toISOString()}. Inspect the [workflow run](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}) for the validation, Commerce availability, or rejected Meta batch error.`;
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              ...context.repo, state: 'open', per_page: 100
+            });
+            const existing = issues.find(issue => !issue.pull_request && issue.title === title);
+            if (existing) {
+              await github.rest.issues.createComment({ ...context.repo, issue_number: existing.number, body });
+            } else {
+              await github.rest.issues.create({ ...context.repo, title, body });
+            }
