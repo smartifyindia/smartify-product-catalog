@@ -2,7 +2,7 @@
   "artifact": "products.json",
   "generator": "scripts/build-catalog.mjs",
   "records": 47,
-  "sha256": "baf716dc03788cbed5b46f4809a9a6a1539373ed1c406dcb22d03572739ff8ce",
-  "commit": "189a498dcfd340e72990e2592208abda60805188",
-  "generatedAt": "2026-08-07"
+  "sha256": "8487fbc88f985f9d500006d876a6009c452a5fdceb367221b5923af12e3e6e95",
+  "commit": "7d25ac7eab4e5ac7a9e8b5d7978c122bb18a6f09",
+  "generatedAt": "2026-10-10"
 }

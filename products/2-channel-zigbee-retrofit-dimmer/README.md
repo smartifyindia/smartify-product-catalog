@@ -1,6 +1,6 @@
-# 2 Channel Zigbee Retrofit Dimmer
+# Layer Dimmer 2
 
-![2 Channel Zigbee Retrofit Dimmer](../../images/Retrofit%20Dimmer.png)
+![Layer Dimmer 2](../../images/Retrofit%20Dimmer.png)
 
 > Two circuits. One mood.
 

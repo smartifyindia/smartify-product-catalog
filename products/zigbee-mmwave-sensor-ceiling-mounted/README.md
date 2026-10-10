@@ -1,6 +1,6 @@
-# Zigbee mmWave Sensor (Ceiling Mounted)
+# Aware Wave Pro
 
-![Zigbee mmWave Sensor (Ceiling Mounted)](../../images/Zigbee%20mmWave%20Sensor%20%28Ceiling%20Mounted%29.png)
+![Aware Wave Pro](../../images/Zigbee%20mmWave%20Sensor%20%28Ceiling%20Mounted%29.png)
 
 > A room that knows when it's occupied.
 

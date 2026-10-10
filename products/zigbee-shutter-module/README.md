@@ -1,6 +1,6 @@
-# Zigbee Shutter Module
+# Layer Shutter
 
-![Zigbee Shutter Module](../../images/Zigbee%20Shutter%20Module.png)
+![Layer Shutter](../../images/Zigbee%20Shutter%20Module.png)
 
 > Your blinds open with the morning. They close before the afternoon heat sets in. You didn't touch them.
 

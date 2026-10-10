@@ -1,6 +1,6 @@
-# Zigbee Contact Sensor
+# Aware Contact
 
-![Zigbee Contact Sensor](../../images/Zigbee%20Contact%20Sensor.png)
+![Aware Contact](../../images/Zigbee%20Contact%20Sensor.png)
 
 > Open. Closed. Your home knows.
 

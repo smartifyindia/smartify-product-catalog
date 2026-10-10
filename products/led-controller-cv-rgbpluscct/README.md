@@ -1,6 +1,6 @@
-# LED Controller (CV-RGB+CCT)
+# Lume CV RGB+
 
-![LED Controller (CV-RGB+CCT)](../../images/LED%20Controller%20%28RGBW%29.png)
+![Lume CV RGB+](../../images/LED%20Controller%20%28RGBW%29.png)
 
 > Every colour. Every white. One controller.
 

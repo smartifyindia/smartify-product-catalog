@@ -1,6 +1,6 @@
-# 1 Channel Zigbee Retrofit Dimmer
+# Layer Dimmer 1
 
-![1 Channel Zigbee Retrofit Dimmer](../../images/Retrofit%20Dimmer.png)
+![Layer Dimmer 1](../../images/Retrofit%20Dimmer.png)
 
 > The right light. Always.
 

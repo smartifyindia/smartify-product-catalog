@@ -1,6 +1,6 @@
-# 1 Channel Zigbee Retrofit Relay (40A)
+# Layer Relay 1 HL
 
-![1 Channel Zigbee Retrofit Relay (40A)](../../images/1%20Channel%20Zigbee%20Retrofit%20Relay%20%2840A%29.png)
+![Layer Relay 1 HL](../../images/1%20Channel%20Zigbee%20Retrofit%20Relay%20%2840A%29.png)
 
 > Heavy loads. Light control.
 

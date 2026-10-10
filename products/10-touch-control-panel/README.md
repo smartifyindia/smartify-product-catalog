@@ -1,6 +1,6 @@
-# 10" Touch Control Panel
+# Interface 10
 
-![10" Touch Control Panel](../../images/10%20Inch%20Touch%20Control%20Panel.png)
+![Interface 10](../../images/10%20Inch%20Touch%20Control%20Panel.png)
 
 > Your home has a face.
 

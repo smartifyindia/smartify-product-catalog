@@ -1,6 +1,6 @@
-# Zigbee Gateway (Matter)
+# Core Matter
 
-![Zigbee Gateway (Matter)](../../images/Zigbee%20Gateway%20%28Matter%29.png)
+![Core Matter](../../images/Zigbee%20Gateway%20%28Matter%29.png)
 
 > One home. Every ecosystem.
 

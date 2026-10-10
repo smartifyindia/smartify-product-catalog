@@ -1,6 +1,6 @@
-# Zigbee VRV Gateway
+# Core VRV
 
-![Zigbee VRV Gateway](../../images/Zigbee%20VRV%20Gateway.png)
+![Core VRV](../../images/Zigbee%20VRV%20Gateway.png)
 
 > Your entire HVAC system. One tap.
 

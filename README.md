@@ -75,8 +75,8 @@ Fully integrated smart home controllers with built-in Zigbee gateway. Control yo
 
 | | Product | Description |
 |---|---|---|
-| <img src="images/4%20Inch%20Touch%20Control%20Panel.png" width="70" /> | [4" Touch Control Panel](products/4-touch-control-panel/README.md) | Full home control in a 4-inch glass panel with built-in gateway |
-| <img src="images/10%20Inch%20Touch%20Control%20Panel.png" width="70" /> | [10" Touch Control Panel](products/10-touch-control-panel/README.md) | Premium 10-inch display — your home, beautifully visualised |
+| <img src="images/4%20Inch%20Touch%20Control%20Panel.png" width="70" /> | [Interface 4](products/4-touch-control-panel/README.md) | Full home control in a 4-inch glass panel with built-in gateway |
+| <img src="images/10%20Inch%20Touch%20Control%20Panel.png" width="70" /> | [Interface 10](products/10-touch-control-panel/README.md) | Premium 10-inch display — your home, beautifully visualised |
 
 ---
 
@@ -86,13 +86,13 @@ Install behind your existing switches. Keep your walls exactly as they are. Add 
 
 | | Product | Description |
 |---|---|---|
-| <img src="images/Retrofit%20Relay.png" width="70" /> | [1 Channel Retrofit Relay](products/1-channel-zigbee-retrofit-relay/README.md) | Single-circuit smart switching behind any switch |
-| <img src="images/1%20Channel%20Zigbee%20Retrofit%20Relay%20%2840A%29.png" width="70" /> | [1 Channel Retrofit Relay (40A)](products/1-channel-zigbee-retrofit-relay-40a/README.md) | High-load switching for motors and heavy appliances |
-| <img src="images/Retrofit%20Relay.png" width="70" /> | [2 Channel Retrofit Relay](products/2-channel-zigbee-retrofit-relay/README.md) | Two independent circuits, one module |
-| <img src="images/Retrofit%20Dimmer.png" width="70" /> | [1 Channel Retrofit Dimmer](products/1-channel-zigbee-retrofit-dimmer/README.md) | Smooth dimming behind any existing switch |
-| <img src="images/Retrofit%20Dimmer.png" width="70" /> | [2 Channel Retrofit Dimmer](products/2-channel-zigbee-retrofit-dimmer/README.md) | Two dimmable circuits, one flush module |
-| <img src="images/Zigbee%20Shutter%20Module.png" width="70" /> | [Zigbee Shutter Module](products/zigbee-shutter-module/README.md) | Retrofit smart control for any motorised curtain or blind |
-| <img src="images/Analog%200-10V%20Zigbee%20Dimmer.png" width="70" /> | [Analog 0-10V Zigbee Dimmer](products/analog-0-10v-zigbee-dimmer/README.md) | Professional-grade dimming for commercial LED drivers |
+| <img src="images/Retrofit%20Relay.png" width="70" /> | [Layer Relay 1](products/1-channel-zigbee-retrofit-relay/README.md) | Single-circuit smart switching behind any switch |
+| <img src="images/1%20Channel%20Zigbee%20Retrofit%20Relay%20%2840A%29.png" width="70" /> | [Layer Relay 1 HL](products/1-channel-zigbee-retrofit-relay-40a/README.md) | High-load switching for motors and heavy appliances |
+| <img src="images/Retrofit%20Relay.png" width="70" /> | [Layer Relay 2](products/2-channel-zigbee-retrofit-relay/README.md) | Two independent circuits, one module |
+| <img src="images/Retrofit%20Dimmer.png" width="70" /> | [Layer Dimmer 1](products/1-channel-zigbee-retrofit-dimmer/README.md) | Smooth dimming behind any existing switch |
+| <img src="images/Retrofit%20Dimmer.png" width="70" /> | [Layer Dimmer 2](products/2-channel-zigbee-retrofit-dimmer/README.md) | Two dimmable circuits, one flush module |
+| <img src="images/Zigbee%20Shutter%20Module.png" width="70" /> | [Layer Shutter](products/zigbee-shutter-module/README.md) | Retrofit smart control for any motorised curtain or blind |
+| <img src="images/Analog%200-10V%20Zigbee%20Dimmer.png" width="70" /> | [Layer Dimmer Analog](products/analog-0-10v-zigbee-dimmer/README.md) | Professional-grade dimming for commercial LED drivers |
 
 ---
 
@@ -102,11 +102,11 @@ Know what's happening in every room — presence, motion, light levels, vibratio
 
 | | Product | Detects |
 |---|---|---|
-| <img src="images/Zigbee%20Motion%20Sensor.png" width="70" /> | [Motion Sensor + LUX](products/zigbee-motion-sensor-plus-lux-sensor/README.md) | Motion · Ambient light level |
-| <img src="images/Zigbee%20mmWave%20Sensor%20%28USB%29.png" width="70" /> | [mmWave Sensor (USB)](products/zigbee-mmwave-sensor-usb/README.md) | Presence · Stillness — even when you're not moving |
-| <img src="images/Zigbee%20mmWave%20Sensor%20%28Ceiling%20Mounted%29.png" width="70" /> | [mmWave Sensor (Ceiling)](products/zigbee-mmwave-sensor-ceiling-mounted/README.md) | Room-level presence detection, ceiling mounted |
-| <img src="images/Zigbee%20Contact%20Sensor.png" width="70" /> | [Contact Sensor](products/zigbee-contact-sensor/README.md) | Door/window open · Closed |
-| <img src="images/Zigbee%20Vibration%20Sensor.png" width="70" /> | [Vibration Sensor](products/zigbee-vibration-sensor/README.md) | Vibration · Tamper · Tilt |
+| <img src="images/Zigbee%20Motion%20Sensor.png" width="70" /> | [Aware Motion](products/zigbee-motion-sensor-plus-lux-sensor/README.md) | Motion · Ambient light level |
+| <img src="images/Zigbee%20mmWave%20Sensor%20%28USB%29.png" width="70" /> | [Aware Wave](products/zigbee-mmwave-sensor-usb/README.md) | Presence · Stillness — even when you're not moving |
+| <img src="images/Zigbee%20mmWave%20Sensor%20%28Ceiling%20Mounted%29.png" width="70" /> | [Aware Wave Pro](products/zigbee-mmwave-sensor-ceiling-mounted/README.md) | Room-level presence detection, ceiling mounted |
+| <img src="images/Zigbee%20Contact%20Sensor.png" width="70" /> | [Aware Contact](products/zigbee-contact-sensor/README.md) | Door/window open · Closed |
+| <img src="images/Zigbee%20Vibration%20Sensor.png" width="70" /> | [Aware Vibration](products/zigbee-vibration-sensor/README.md) | Vibration · Tamper · Tilt |
 
 ---
 
@@ -116,10 +116,10 @@ The infrastructure layer. Connect Zigbee devices to every major ecosystem, integ
 
 | | Product | Description |
 |---|---|---|
-| <img src="images/Zigbee%20Gateway%20%28Wired%29.png" width="70" /> | [Zigbee Gateway (Wired)](products/zigbee-gateway-wired/README.md) | Wired Zigbee coordinator for reliable, low-latency control |
-| <img src="images/Zigbee%20Gateway%20%28Matter%29.png" width="70" /> | [Zigbee Gateway (Matter)](products/zigbee-gateway-matter/README.md) | Bridges Zigbee devices to Matter — works with HomeKit, Google, Alexa |
-| <img src="images/Zigbee%20VRV%20Gateway.png" width="70" /> | [VRV Gateway](products/zigbee-vrv-gateway/README.md) | Integrates VRV/VRF HVAC systems into your smart home |
-| <img src="images/Zigbee%20DALI%20Gateway.png" width="70" /> | [DALI Gateway](products/zigbee-dali-gateway/README.md) | Bridges DALI architectural lighting to Zigbee control |
+| <img src="images/Zigbee%20Gateway%20%28Wired%29.png" width="70" /> | [Core LAN](products/zigbee-gateway-wired/README.md) | Wired Zigbee coordinator for reliable, low-latency control |
+| <img src="images/Zigbee%20Gateway%20%28Matter%29.png" width="70" /> | [Core Matter](products/zigbee-gateway-matter/README.md) | Bridges Zigbee devices to Matter — works with HomeKit, Google, Alexa |
+| <img src="images/Zigbee%20VRV%20Gateway.png" width="70" /> | [Core VRV](products/zigbee-vrv-gateway/README.md) | Integrates VRV/VRF HVAC systems into your smart home |
+| <img src="images/Zigbee%20DALI%20Gateway.png" width="70" /> | [Core DALI](products/zigbee-dali-gateway/README.md) | Bridges DALI architectural lighting to Zigbee control |
 | <img src="images/Convergia.png" width="70" /> | [Convergia](products/convergia/README.md) | Universal protocol bridge and home automation controller |
 
 ---
@@ -130,9 +130,9 @@ Give every IR or RF remote control — your AC, TV, set-top box, curtain motor �
 
 | | Product | Description |
 |---|---|---|
-| <img src="images/IR%20Blaster%20with%20Analog%20Screen.png" width="70" /> | [IR Blaster with Screen, Temp & Humidity](products/ir-blaster-w--analog-screen-temp-and-humidity-sensor-wifi/README.md) | IR control + live temperature and humidity display |
-| — | [IR Blaster (WiFi)](products/ir-blaster-wifi/README.md) | Universal IR remote — every appliance, one app |
-| — | [IR+RF Blaster (WiFi)](products/irplusrf-blaster-wifi/README.md) | IR and 433MHz RF — controls AC, curtains, fans, and more |
+| <img src="images/IR%20Blaster%20with%20Analog%20Screen.png" width="70" /> | [Reach IR Pro](products/ir-blaster-w--analog-screen-temp-and-humidity-sensor-wifi/README.md) | IR control + live temperature and humidity display |
+| — | [Reach IR](products/ir-blaster-wifi/README.md) | Universal IR remote — every appliance, one app |
+| — | [Reach IR+](products/irplusrf-blaster-wifi/README.md) | IR and 433MHz RF — controls AC, curtains, fans, and more |
 
 ---
 
@@ -142,9 +142,9 @@ Precise control over LED lighting — RGB, tunable white, dimmable — from a si
 
 | | Product | Type |
 |---|---|---|
-| <img src="images/LED%20Controller%20%28RGBW%29.png" width="70" /> | [LED Controller (RGB+CCT)](products/led-controller-cv-rgbpluscct/README.md) | Full colour + tunable white (constant voltage) |
-| <img src="images/LED%20Controller%20%28CCT%29.png" width="70" /> | [LED Controller (Dimmer)](products/led-controller-cv-dimmer/README.md) | Single-channel dimmer (constant voltage) |
-| <img src="images/LED%20Controller%20%28CCT%29.png" width="70" /> | [LED Controller (CCT)](products/led-controller-cc-cct/README.md) | Tunable white — warm to cool (constant current) |
+| <img src="images/LED%20Controller%20%28RGBW%29.png" width="70" /> | [Lume CV RGB+](products/led-controller-cv-rgbpluscct/README.md) | Full colour + tunable white (constant voltage) |
+| <img src="images/LED%20Controller%20%28CCT%29.png" width="70" /> | [Lume CV Dim](products/led-controller-cv-dimmer/README.md) | Single-channel dimmer (constant voltage) |
+| <img src="images/LED%20Controller%20%28CCT%29.png" width="70" /> | [Lume CC-CCT](products/led-controller-cc-cct/README.md) | Tunable white — warm to cool (constant current) |
 
 ---
 
@@ -157,7 +157,7 @@ Every Smartify device is built on open, interoperable standards.
 | **Apple HomeKit** | ✓ Native via Matter gateway |
 | **Google Home** | ✓ Native via Matter gateway |
 | **Amazon Alexa** | ✓ Native via Matter gateway |
-| **Matter** | ✓ Via Zigbee Gateway (Matter) |
+| **Matter** | ✓ Via Core Matter |
 | **Home Assistant** | ✓ Native Zigbee (ZHA / Z2M) |
 | **Zigbee 3.0** | ✓ All wireless products |
 

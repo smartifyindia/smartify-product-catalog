@@ -1,6 +1,6 @@
-# Zigbee Gateway (Wired)
+# Core LAN
 
-![Zigbee Gateway (Wired)](../../images/Zigbee%20Gateway%20%28Wired%29.png)
+![Core LAN](../../images/Zigbee%20Gateway%20%28Wired%29.png)
 
 > The hub your home thinks through.
 

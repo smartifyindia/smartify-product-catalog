@@ -1,6 +1,6 @@
-# Zigbee DALI Gateway
+# Core DALI
 
-![Zigbee DALI Gateway](../../images/Zigbee%20DALI%20Gateway.png)
+![Core DALI](../../images/Zigbee%20DALI%20Gateway.png)
 
 > Architectural lighting. Smart precision.
 

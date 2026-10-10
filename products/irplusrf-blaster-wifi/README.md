@@ -1,6 +1,6 @@
-# IR+RF Blaster (WiFi)
+# Reach IR+
 
-![IR+RF Blaster (WiFi)](../../images/placeholder-photography-pending.png)
+![Reach IR+](../../images/placeholder-photography-pending.png)
 
 > IR and RF. Nothing left out.
 

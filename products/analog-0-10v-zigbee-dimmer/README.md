@@ -1,6 +1,6 @@
-# Analog 0-10V Zigbee Dimmer
+# Layer Dimmer Analog
 
-![Analog 0-10V Zigbee Dimmer](../../images/Analog%200-10V%20Zigbee%20Dimmer.png)
+![Layer Dimmer Analog](../../images/Analog%200-10V%20Zigbee%20Dimmer.png)
 
 > Professional lighting. Smart control.
 

@@ -1,6 +1,6 @@
-# Zigbee Motion Sensor + LUX Sensor
+# Aware Motion
 
-![Zigbee Motion Sensor + LUX Sensor](../../images/Zigbee%20Motion%20Sensor.png)
+![Aware Motion](../../images/Zigbee%20Motion%20Sensor.png)
 
 > The lights come on when you enter. Not when the sun is still up.
 
