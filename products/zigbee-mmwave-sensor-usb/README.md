@@ -1,6 +1,6 @@
-# Zigbee mmWave Sensor (USB)
+# Aware Wave
 
-![Zigbee mmWave Sensor (USB)](../../images/Zigbee%20mmWave%20Sensor%20%28USB%29.png)
+![Aware Wave](../../images/Zigbee%20mmWave%20Sensor%20%28USB%29.png)
 
 > It knows you're there. Even when you're still.
 

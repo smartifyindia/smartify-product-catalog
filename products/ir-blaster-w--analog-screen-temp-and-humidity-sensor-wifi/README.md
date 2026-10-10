@@ -1,6 +1,6 @@
-# IR Blaster w/ Analog Screen, Temp & Humidity Sensor (WiFi)
+# Reach IR Pro
 
-![IR Blaster w/ Analog Screen, Temp & Humidity Sensor (WiFi)](../../images/IR%20Blaster%20with%20Analog%20Screen.png)
+![Reach IR Pro](../../images/IR%20Blaster%20with%20Analog%20Screen.png)
 
 > It senses. It responds. You don't have to.
 

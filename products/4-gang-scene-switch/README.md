@@ -1,6 +1,6 @@
-# 4 Gang Scene Switch
+# Interface Scene
 
-![4 Gang Scene Switch](../../images/TAC%204%20Gang%206%20Scene%20Switch%20-%20White.png)
+![Interface Scene](../../images/TAC%204%20Gang%206%20Scene%20Switch%20-%20White.png)
 
 ### Gallery
 

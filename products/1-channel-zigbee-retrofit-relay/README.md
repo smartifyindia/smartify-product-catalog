@@ -1,6 +1,6 @@
-# 1 Channel Zigbee Retrofit Relay
+# Layer Relay 1
 
-![1 Channel Zigbee Retrofit Relay](../../images/Retrofit%20Relay.png)
+![Layer Relay 1](../../images/Retrofit%20Relay.png)
 
 > Your switch. Smarter.
 

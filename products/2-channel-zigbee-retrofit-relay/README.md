@@ -1,6 +1,6 @@
-# 2 Channel Zigbee Retrofit Relay
+# Layer Relay 2
 
-![2 Channel Zigbee Retrofit Relay](../../images/Retrofit%20Relay.png)
+![Layer Relay 2](../../images/Retrofit%20Relay.png)
 
 > Two switches. One module. Zero effort.
 

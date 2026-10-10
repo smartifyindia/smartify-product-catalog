@@ -1,7 +1,7 @@
 [
   {
     "sku": "38632957173",
-    "name": "1 Channel Zigbee Retrofit Dimmer",
+    "name": "Layer Dimmer 1",
     "slug": "1-channel-zigbee-retrofit-dimmer",
     "brand": "Smartify",
     "category": [
@@ -51,7 +51,7 @@
   },
   {
     "sku": "38632117962",
-    "name": "1 Channel Zigbee Retrofit Relay",
+    "name": "Layer Relay 1",
     "slug": "1-channel-zigbee-retrofit-relay",
     "brand": "Smartify",
     "category": [
@@ -101,7 +101,7 @@
   },
   {
     "sku": "38632117965",
-    "name": "1 Channel Zigbee Retrofit Relay (40A)",
+    "name": "Layer Relay 1 HL",
     "slug": "1-channel-zigbee-retrofit-relay-40a",
     "brand": "Smartify",
     "category": [
@@ -151,7 +151,7 @@
   },
   {
     "sku": "38694583069",
-    "name": "10\" Touch Control Panel",
+    "name": "Interface 10",
     "slug": "10-touch-control-panel",
     "brand": "Smartify",
     "category": [
@@ -201,7 +201,7 @@
   },
   {
     "sku": "38625458903",
-    "name": "2 Channel Zigbee Retrofit Dimmer",
+    "name": "Layer Dimmer 2",
     "slug": "2-channel-zigbee-retrofit-dimmer",
     "brand": "Smartify",
     "category": [
@@ -251,7 +251,7 @@
   },
   {
     "sku": "38659529195",
-    "name": "2 Channel Zigbee Retrofit Relay",
+    "name": "Layer Relay 2",
     "slug": "2-channel-zigbee-retrofit-relay",
     "brand": "Smartify",
     "category": [
@@ -301,7 +301,7 @@
   },
   {
     "sku": "38623516280",
-    "name": "4 Gang Scene Switch",
+    "name": "Interface Scene",
     "slug": "4-gang-scene-switch",
     "brand": "Smartify",
     "category": [
@@ -355,7 +355,7 @@
   },
   {
     "sku": "38618602731",
-    "name": "4\" Touch Control Panel",
+    "name": "Interface 4",
     "slug": "4-touch-control-panel",
     "brand": "Smartify",
     "category": [
@@ -405,7 +405,7 @@
   },
   {
     "sku": "38637323117",
-    "name": "Analog 0-10V Zigbee Dimmer",
+    "name": "Layer Dimmer Analog",
     "slug": "analog-0-10v-zigbee-dimmer",
     "brand": "Smartify",
     "category": [
@@ -504,7 +504,7 @@
   },
   {
     "sku": "38614020398",
-    "name": "IR Blaster w/ Analog Screen, Temp & Humidity Sensor (WiFi)",
+    "name": "Reach IR Pro",
     "slug": "ir-blaster-w--analog-screen-temp-and-humidity-sensor-wifi",
     "brand": "Smartify",
     "category": [
@@ -553,7 +553,7 @@
   },
   {
     "sku": "38668925286",
-    "name": "IR Blaster (WiFi)",
+    "name": "Reach IR",
     "slug": "ir-blaster-wifi",
     "brand": "Smartify",
     "category": [
@@ -603,7 +603,7 @@
   },
   {
     "sku": "38635939814",
-    "name": "IR+RF Blaster (WiFi)",
+    "name": "Reach IR+",
     "slug": "irplusrf-blaster-wifi",
     "brand": "Smartify",
     "category": [
@@ -653,7 +653,7 @@
   },
   {
     "sku": "38671782652",
-    "name": "LED Controller (CC-CCT)",
+    "name": "Lume CC-CCT",
     "slug": "led-controller-cc-cct",
     "brand": "Smartify",
     "category": [
@@ -703,7 +703,7 @@
   },
   {
     "sku": "38673300629",
-    "name": "LED Controller (CV-DIMMER)",
+    "name": "Lume CV Dim",
     "slug": "led-controller-cv-dimmer",
     "brand": "Smartify",
     "category": [
@@ -753,7 +753,7 @@
   },
   {
     "sku": "38619518575",
-    "name": "LED Controller (CV-RGB+CCT)",
+    "name": "Lume CV RGB+",
     "slug": "led-controller-cv-rgbpluscct",
     "brand": "Smartify",
     "category": [
@@ -1923,7 +1923,7 @@
   },
   {
     "sku": "38640080710",
-    "name": "Zigbee Contact Sensor",
+    "name": "Aware Contact",
     "slug": "zigbee-contact-sensor",
     "brand": "Smartify",
     "category": [
@@ -1973,7 +1973,7 @@
   },
   {
     "sku": "38620154019",
-    "name": "Zigbee DALI Gateway",
+    "name": "Core DALI",
     "slug": "zigbee-dali-gateway",
     "brand": "Smartify",
     "category": [
@@ -2023,7 +2023,7 @@
   },
   {
     "sku": "38623861651",
-    "name": "Zigbee Gateway (Matter)",
+    "name": "Core Matter",
     "slug": "zigbee-gateway-matter",
     "brand": "Smartify",
     "category": [
@@ -2072,7 +2072,7 @@
   },
   {
     "sku": "38678840105",
-    "name": "Zigbee Gateway (Wired)",
+    "name": "Core LAN",
     "slug": "zigbee-gateway-wired",
     "brand": "Smartify",
     "category": [
@@ -2121,7 +2121,7 @@
   },
   {
     "sku": "38678738240",
-    "name": "Zigbee mmWave Sensor (Ceiling Mounted)",
+    "name": "Aware Wave Pro",
     "slug": "zigbee-mmwave-sensor-ceiling-mounted",
     "brand": "Smartify",
     "category": [
@@ -2171,7 +2171,7 @@
   },
   {
     "sku": "38626055855",
-    "name": "Zigbee mmWave Sensor (USB)",
+    "name": "Aware Wave",
     "slug": "zigbee-mmwave-sensor-usb",
     "brand": "Smartify",
     "category": [
@@ -2221,7 +2221,7 @@
   },
   {
     "sku": "38687599521",
-    "name": "Zigbee Motion Sensor + LUX Sensor",
+    "name": "Aware Motion",
     "slug": "zigbee-motion-sensor-plus-lux-sensor",
     "brand": "Smartify",
     "category": [
@@ -2271,7 +2271,7 @@
   },
   {
     "sku": "38684154573",
-    "name": "Zigbee Shutter Module",
+    "name": "Layer Shutter",
     "slug": "zigbee-shutter-module",
     "brand": "Smartify",
     "category": [
@@ -2320,7 +2320,7 @@
   },
   {
     "sku": "3864587193",
-    "name": "Zigbee Vibration Sensor",
+    "name": "Aware Vibration",
     "slug": "zigbee-vibration-sensor",
     "brand": "Smartify",
     "category": [
@@ -2370,7 +2370,7 @@
   },
   {
     "sku": "38693737333",
-    "name": "Zigbee VRV Gateway",
+    "name": "Core VRV",
     "slug": "zigbee-vrv-gateway",
     "brand": "Smartify",
     "category": [

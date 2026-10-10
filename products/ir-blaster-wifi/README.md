@@ -1,6 +1,6 @@
-# IR Blaster (WiFi)
+# Reach IR
 
-![IR Blaster (WiFi)](../../images/placeholder-photography-pending.png)
+![Reach IR](../../images/placeholder-photography-pending.png)
 
 > Every remote. One app.
 

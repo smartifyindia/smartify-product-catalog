@@ -1,6 +1,6 @@
-# 4" Touch Control Panel
+# Interface 4
 
-![4" Touch Control Panel](../../images/4%20Inch%20Touch%20Control%20Panel.png)
+![Interface 4](../../images/4%20Inch%20Touch%20Control%20Panel.png)
 
 > Your whole home. Four inches of glass.
 

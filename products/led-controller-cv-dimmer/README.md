@@ -1,6 +1,6 @@
-# LED Controller (CV-DIMMER)
+# Lume CV Dim
 
-![LED Controller (CV-DIMMER)](../../images/LED%20Controller%20%28CCT%29.png)
+![Lume CV Dim](../../images/LED%20Controller%20%28CCT%29.png)
 
 > Simple. Smooth. Smart.
 

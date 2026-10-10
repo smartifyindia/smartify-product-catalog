@@ -1,6 +1,6 @@
-# Zigbee Vibration Sensor
+# Aware Vibration
 
-![Zigbee Vibration Sensor](../../images/Zigbee%20Vibration%20Sensor.png)
+![Aware Vibration](../../images/Zigbee%20Vibration%20Sensor.png)
 
 > If something moves, you'll know.
 

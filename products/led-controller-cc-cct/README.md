@@ -1,6 +1,6 @@
-# LED Controller (CC-CCT)
+# Lume CC-CCT
 
-![LED Controller (CC-CCT)](../../images/LED%20Controller%20%28CCT%29.png)
+![Lume CC-CCT](../../images/LED%20Controller%20%28CCT%29.png)
 
 > Warm in the evening. Crisp in the morning.
 
