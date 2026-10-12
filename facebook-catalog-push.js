@@ -19,6 +19,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const ACCESS_TOKEN = process.env.FB_ACCESS_TOKEN;
 const CATALOG_ID   = process.env.FB_CATALOG_ID;
+const GRAPH_VERSION = process.env.FB_GRAPH_VERSION || 'v26.0';
 const DRY_RUN      = process.argv.includes('--dry-run');
 
 const R2_BASE = 'https://pub-cb5e9b79d39046829fc7d2bc4443b347.r2.dev/products';
@@ -64,7 +65,10 @@ async function push(products) {
     data: p,
   }));
 
-  const url = `https://graph.facebook.com/v19.0/${CATALOG_ID}/items_batch`;
+  if (!/^v\d+\.\d+$/.test(GRAPH_VERSION)) {
+    throw new Error('FB_GRAPH_VERSION must look like v26.0');
+  }
+  const url = `https://graph.facebook.com/${GRAPH_VERSION}/${CATALOG_ID}/items_batch`;
   const body = {
     allow_upsert: true,
     requests: items,
