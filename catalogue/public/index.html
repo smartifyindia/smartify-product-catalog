@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smartify product catalogue | Download PDF</title>
+  <meta name="description" content="Explore Smartify smart home products. Download the mobile-friendly catalogue or choose the full-quality PDF.">
+  <meta name="theme-color" content="#0e1728">
+  <link rel="canonical" href="https://catalog.smartify.in/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Smartify product catalogue">
+  <meta property="og:description" content="{{PAGES}} pages of smart home products. Download the mobile-friendly PDF ({{MOBILE_SIZE}} MB), or choose full quality.">
+  <meta property="og:url" content="https://catalog.smartify.in/">
+  <meta property="og:image" content="https://catalog.smartify.in/images/catalogue-cover.webp">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header><a class="brand" href="https://smartify.in/" aria-label="Smartify home"><span class="brand-mark" aria-hidden="true"></span>SMARTIFY</a><span>Product catalogue</span></header>
+  <main>
+    <div class="cover"><img src="/images/catalogue-cover.webp" alt="Smartify product catalogue cover: Your home. Fully smart. India." width="1080" height="608" fetchpriority="high"></div>
+    <section aria-labelledby="title">
+      <h1>A smarter home,<br>page by page.</h1>
+      <p class="intro">Explore our switches, panels, sensors and more. Save the catalogue to your phone and browse whenever you like.</p>
+      <p class="edition">{{PAGES}} pages <span aria-hidden="true">·</span> Added <time datetime="{{VERSION}}">{{DATE}}</time></p>
+      <a class="download" href="{{MOBILE_URL}}?download=1" download="Smartify-Catalogue-Mobile.pdf">Download mobile PDF <span>{{MOBILE_SIZE}} MB</span></a>
+      <p class="hint">Recommended for your phone. Sharp text, smaller images.</p>
+      <a class="view" href="{{MOBILE_URL}}">View catalogue in your browser</a>
+      <div class="full-quality">
+        <div><h2>Prefer the original?</h2><p>Full-resolution images for a closer look.</p></div>
+        <a href="{{FULL_URL}}?download=1" download="Smartify-Catalogue-Full-Quality.pdf">Download full quality <span>{{FULL_SIZE}} MB</span></a>
+      </div>
+      <p class="update-note">Keep this link for future editions. Saved PDFs stay as downloaded; return here for the latest version.</p>
+    </section>
+  </main>
+  <footer><span>Smart homes, made simple.</span><a href="https://smartify.in/">Explore smartify.in</a></footer>
+</body>
+</html>

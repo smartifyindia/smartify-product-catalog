@@ -7,6 +7,16 @@
     "test": "node --test test/*.test.mjs",
     "build-catalog": "node scripts/build-catalog.mjs",
     "check-catalog": "node scripts/build-catalog.mjs --check",
-    "verify-catalog": "node scripts/verify-catalog.mjs"
+    "verify-catalog": "node scripts/verify-catalog.mjs",
+    "catalogue:test": "node --test catalogue/test/*.test.mjs",
+    "catalogue:build": "node catalogue/scripts/build.mjs",
+    "catalogue:bundle": "wrangler deploy --dry-run --config catalogue/wrangler.jsonc"
+  },
+  "devDependencies": {
+    "miniflare": "5.20261019.2-beta",
+    "wrangler": "4.152.0"
+  },
+  "overrides": {
+    "undici": "7.30.1"
   }
 }

@@ -1,0 +1,18 @@
+{
+  "version": "2026-10-26",
+  "pages": 60,
+  "files": {
+    "mobile": {
+      "source": "files/SmartifyB2C-mobile.pdf",
+      "sha256": "d5c66aec34f4eb8a13c804bff7ffe30b336c20440a3d011e607ad7b1d73458cd",
+      "bytes": 13294823,
+      "filename": "SmartifyB2C-mobile.pdf"
+    },
+    "full": {
+      "source": "files/SmartifyB2C-full-quality.pdf",
+      "sha256": "b0f1116a316987e29d97396dc33b34d38904c32a2060b88bf22476aa8ee07afc",
+      "bytes": 146882851,
+      "filename": "SmartifyB2C-full-quality.pdf"
+    }
+  }
+}
