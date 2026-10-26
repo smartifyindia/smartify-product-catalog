@@ -1,0 +1,12 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "smartify-catalogue",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-01",
+  "account_id": "b9f8db8151b55e4e33b0190fd0805f38",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "catalog.smartify.in", "custom_domain": true }],
+  "r2_buckets": [{ "binding": "CATALOGUE", "bucket_name": "smartify-catalogue-pdfs" }],
+  "assets": { "directory": "./dist", "binding": "ASSETS", "run_worker_first": true, "not_found_handling": "404-page" }
+}
