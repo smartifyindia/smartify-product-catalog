@@ -2,7 +2,11 @@
 
 Permanent URL: https://catalog.smartify.in/ (only live after the first successful approved pipeline run).
 
-The default download is the approved 13.3 MB mobile PDF. The 146.9 MB original is a separate option and is preserved byte-for-byte. PDF content is served only on request; the landing page has no JavaScript or external font requests.
+The default download is the approved 13.3 MB mobile PDF. The 146.9 MB original is a separate option and is preserved byte-for-byte. The official Smartify logo comes from the marketing website. A responsive, self-hosted PDF.js reader opens the mobile edition on the page; the original is downloaded only when selected. There are no third-party script, font, or analytics requests.
+
+The reader fetches PDF byte ranges on demand, renders visible pages plus one neighbour on each side, and releases offscreen canvases and page resources. Canvas resolution is capped at 4 million pixels per page. Page navigation, 150–300% zoom, selectable PDF text, keyboard scrolling, direct PDF fallback links and sticky download actions work at phone and desktop widths. The original landscape PDF layout is preserved, so small text on a phone may require zooming. The legacy PDF.js build supports older browsers; if the reader cannot start, download and native-viewer links remain available.
+
+`pdfjs-dist` is pinned in the lockfile. The build copies only the runtime, worker, fonts, text-layer CSS, character maps and image decoders into `dist/vendor/pdfjs/`, including its license. CSP permits same-origin scripts/workers and WebAssembly image decoders, with inline styles for PDF text positioning; arbitrary script evaluation and remote scripts remain blocked.
 
 ## Architecture
 

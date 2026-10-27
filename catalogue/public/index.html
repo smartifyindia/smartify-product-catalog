@@ -2,36 +2,55 @@
 <html lang="en-IN">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Smartify product catalogue | Download PDF</title>
-  <meta name="description" content="Explore Smartify smart home products. Download the mobile-friendly catalogue or choose the full-quality PDF.">
-  <meta name="theme-color" content="#0e1728">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Smartify product catalogue | Browse and download</title>
+  <meta name="description" content="Browse the Smartify catalogue on your phone. Scroll through smart home products, zoom in, or download a copy for offline reading.">
+  <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://catalog.smartify.in/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Smartify product catalogue">
-  <meta property="og:description" content="{{PAGES}} pages of smart home products. Download the mobile-friendly PDF ({{MOBILE_SIZE}} MB), or choose full quality.">
+  <meta property="og:description" content="Browse {{PAGES}} pages of smart home products. Save the mobile PDF ({{MOBILE_SIZE}} MB), or download the original.">
   <meta property="og:url" content="https://catalog.smartify.in/">
   <meta property="og:image" content="https://catalog.smartify.in/images/catalogue-cover.webp">
+  <link rel="icon" href="/images/smartify-logo.png" type="image/png">
   <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/reader.mjs"></script>
 </head>
 <body>
-  <header><a class="brand" href="https://smartify.in/" aria-label="Smartify home"><span class="brand-mark" aria-hidden="true"></span>SMARTIFY</a><span>Product catalogue</span></header>
+  <a class="skip-link" href="#catalogue">Skip to catalogue</a>
+  <header class="site-header">
+    <a class="brand" href="https://smartify.in/" aria-label="Smartify home"><img src="/images/smartify-logo.png" alt="Smartify" width="356" height="146"></a>
+    <a class="website-link" href="https://smartify.in/">Visit our website</a>
+  </header>
   <main>
-    <div class="cover"><img src="/images/catalogue-cover.webp" alt="Smartify product catalogue cover: Your home. Fully smart. India." width="1080" height="608" fetchpriority="high"></div>
-    <section aria-labelledby="title">
-      <h1>A smarter home,<br>page by page.</h1>
-      <p class="intro">Explore our switches, panels, sensors and more. Save the catalogue to your phone and browse whenever you like.</p>
-      <p class="edition">{{PAGES}} pages <span aria-hidden="true">·</span> Added <time datetime="{{VERSION}}">{{DATE}}</time></p>
-      <a class="download" href="{{MOBILE_URL}}?download=1" download="Smartify-Catalogue-Mobile.pdf">Download mobile PDF <span>{{MOBILE_SIZE}} MB</span></a>
-      <p class="hint">Recommended for your phone. Sharp text, smaller images.</p>
-      <a class="view" href="{{MOBILE_URL}}">View catalogue in your browser</a>
-      <div class="full-quality">
-        <div><h2>Prefer the original?</h2><p>Full-resolution images for a closer look.</p></div>
-        <a href="{{FULL_URL}}?download=1" download="Smartify-Catalogue-Full-Quality.pdf">Download full quality <span>{{FULL_SIZE}} MB</span></a>
-      </div>
-      <p class="update-note">Keep this link for future editions. Saved PDFs stay as downloaded; return here for the latest version.</p>
+    <section class="intro" aria-labelledby="title">
+      <div><h1>Product catalogue</h1><p>Scroll to explore. Zoom in for the details.</p></div>
+      <p class="edition">{{PAGES}} pages <span aria-hidden="true">/</span> Updated <time datetime="{{VERSION}}">{{DATE}}</time></p>
     </section>
+    <section class="reader" aria-label="Scrollable product catalogue" data-pdf="{{MOBILE_URL}}">
+      <div class="reader-toolbar">
+        <form id="page-form" class="page-control">
+          <label for="page-number">Page</label>
+          <input id="page-number" type="number" inputmode="numeric" min="1" max="{{PAGES}}" value="1" disabled>
+          <span>of {{PAGES}}</span><button id="page-go" type="submit" disabled>Go</button>
+        </form>
+        <label class="zoom-control" for="zoom"><span class="zoom-label">Zoom</span> <select id="zoom" aria-label="Zoom" disabled><option value="1">Fit width</option><option value="1.5">150%</option><option value="2">200%</option><option value="3">300%</option></select></label>
+      </div>
+      <div id="catalogue" class="reader-viewport" tabindex="0" aria-label="Catalogue pages. Scroll down to read, or use the page and zoom controls.">
+        <div id="pages" class="pages"></div>
+        <div id="reader-placeholder" class="reader-placeholder">
+          <img src="/images/catalogue-cover.webp" alt="Smartify product catalogue cover" width="1080" height="608" fetchpriority="high">
+          <p>Read the catalogue here, or <a href="{{MOBILE_URL}}">open the PDF</a>.</p>
+        </div>
+      </div>
+      <div class="reader-caption"><p id="reader-status" role="status" aria-live="polite">The mobile edition, ready to browse.</p><a href="{{MOBILE_URL}}" target="_blank" rel="noopener">Open PDF separately</a></div>
+    </section>
+    <section class="downloads" aria-label="Save the catalogue">
+      <a class="download-primary" href="{{MOBILE_URL}}?download=1" download="Smartify-Catalogue-Mobile.pdf"><span>Download mobile PDF</span><span class="file-size">{{MOBILE_SIZE}} MB</span></a>
+      <a class="download-original" href="{{FULL_URL}}?download=1" download="Smartify-Catalogue-Full-Quality.pdf">Download original <span>{{FULL_SIZE}} MB</span></a>
+    </section>
+    <p class="save-note">Save a copy for offline reading. The original keeps the full-resolution images.</p>
   </main>
-  <footer><span>Smart homes, made simple.</span><a href="https://smartify.in/">Explore smartify.in</a></footer>
+  <footer><p>Share this link for the latest catalogue.</p><span>Smart homes, made simple.</span></footer>
 </body>
 </html>
