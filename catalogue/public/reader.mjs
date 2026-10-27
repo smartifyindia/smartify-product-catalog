@@ -155,7 +155,6 @@ stage.addEventListener('pointerdown', event => {
   if (!ready || event.target.closest('button')) return;
   stage.setPointerCapture(event.pointerId);
   pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
-  hideHint();
   if (pointers.size === 2) {
     const [a, b] = [...pointers.values()];
     const middle = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
@@ -268,19 +267,21 @@ if (document.fullscreenEnabled) {
 }
 
 // Share the permanent link, never the PDF, so an updated catalogue reaches everyone.
-const shareButton = $('#share');
-shareButton.addEventListener('click', async () => {
+const toast = $('#toast');
+let toastTimer = 0;
+function say(message) {
+  toast.textContent = message; toast.hidden = false;
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => { toast.hidden = true; }, 2400);
+}
+$('#share').addEventListener('click', async () => {
   const text = 'Smartify product catalogue';
-  const original = shareButton.textContent;
   try {
     if (navigator.share) { await navigator.share({ title: text, text, url: PAGE_URL }); return; }
     await navigator.clipboard.writeText(PAGE_URL);
-    shareButton.textContent = 'Link copied';
+    say('Link copied');
   } catch (error) {
-    if (error?.name === 'AbortError') return;
-    shareButton.textContent = 'catalog.smartify.in';
+    if (error?.name !== 'AbortError') say('Share catalog.smartify.in');
   }
-  setTimeout(() => { shareButton.textContent = original; }, 2400);
 });
 
 // ---- Dialogs ----------------------------------------------------------------
@@ -342,27 +343,6 @@ addEventListener('hashchange', () => {
   if (wanted !== index) show(wanted);
 });
 
-// ---- First-visit hint -------------------------------------------------------
-
-const hint = $('#hint');
-function hideHint() {
-  if (hint.hidden) return;
-  hint.hidden = true;
-  try { sessionStorage.setItem('catalogue-hint', '1'); } catch { /* private mode */ }
-}
-hint.addEventListener('click', hideHint);
-function maybeShowHint() {
-  let seen = false;
-  try { seen = sessionStorage.getItem('catalogue-hint') === '1'; } catch { /* private mode */ }
-  if (seen || !matchMedia('(pointer: coarse)').matches) return;
-  const upright = matchMedia('(orientation: portrait)').matches;
-  hint.firstChild.textContent = upright
-    ? 'Turn your phone sideways for a bigger page. Swipe to turn pages, double-tap to zoom. '
-    : 'Swipe to turn pages. Double-tap to zoom. ';
-  hint.hidden = false;
-  setTimeout(hideHint, 7000);
-}
-
 // ---- Start ------------------------------------------------------------------
 
 async function start() {
@@ -382,7 +362,6 @@ async function start() {
     for (const control of [buttons.prev, buttons.next, counter]) control.disabled = false;
     const wanted = pageFromHash(location.hash, pdf.numPages);
     await show(wanted);
-    maybeShowHint();
   } catch (error) {
     fail();
   }
