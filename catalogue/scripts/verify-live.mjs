@@ -9,7 +9,8 @@ const get = (path, options = {}) => fetch(`${origin}${path}`, { ...options, sign
 let ready = false;
 for (let attempt = 0; attempt < 30; attempt++) {
   try {
-    const r = await get(`/release.json?revision=${expected}`);
+    // A fresh query per attempt: the edge caches release.json by URL, so a stale answer would otherwise stick.
+    const r = await get(`/release.json?revision=${expected}&attempt=${attempt}-${Date.now()}`, { headers: { 'Cache-Control': 'no-cache' } });
     if (r.ok && (await r.json()).commit === expected) { ready = true; break; }
   } catch { /* DNS/certificate propagation can be briefly delayed on the first release. */ }
   await new Promise(resolve => setTimeout(resolve, 10000));
