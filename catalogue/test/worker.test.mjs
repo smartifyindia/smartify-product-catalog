@@ -73,3 +73,11 @@ test('page responses revalidate and include security headers', async () => {
   assert.equal(r.headers.get('X-Content-Type-Options'), 'nosniff');
   assert.match(r.headers.get('Content-Security-Policy'), /frame-ancestors 'none'/);
 });
+test('reader can load same-origin modules and its PDF worker without allowing remote scripts', async () => {
+  const policy = (await get('/')).headers.get('Content-Security-Policy');
+  const directives = Object.fromEntries(policy.split(';').map(part => part.trim().split(/\s+/)).map(([key, ...values]) => [key, values]));
+  assert.ok(directives['script-src'].includes("'self'"));
+  assert.ok(directives['worker-src'].includes("'self'"));
+  assert.ok(!directives['script-src'].includes("'unsafe-eval'"));
+  assert.ok(!directives['script-src'].includes('*'));
+});
