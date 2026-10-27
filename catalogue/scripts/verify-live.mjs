@@ -6,16 +6,19 @@ const release = JSON.parse(await readFile(new URL('../dist/release.json', import
 const expected = process.env.GITHUB_SHA;
 if (!expected || release.commit !== expected) throw new Error('Expected workflow revision is required');
 const get = (path, options = {}) => fetch(`${origin}${path}`, { ...options, signal: AbortSignal.timeout(180000) });
-let ready = false;
+let ready = false, last = 'no response';
 for (let attempt = 0; attempt < 30; attempt++) {
   try {
     // A fresh query per attempt: the edge caches release.json by URL, so a stale answer would otherwise stick.
     const r = await get(`/release.json?revision=${expected}&attempt=${attempt}-${Date.now()}`, { headers: { 'Cache-Control': 'no-cache' } });
-    if (r.ok && (await r.json()).commit === expected) { ready = true; break; }
-  } catch { /* DNS/certificate propagation can be briefly delayed on the first release. */ }
+    const body = r.ok ? await r.json() : null;
+    last = `HTTP ${r.status}, cache ${r.headers.get('cf-cache-status')}, ray ${r.headers.get('cf-ray')}, commit ${body?.commit}`;
+    if (body?.commit === expected) { ready = true; break; }
+  } catch (error) { last = `fetch failed: ${error.cause?.code || error.message}`; /* DNS/certificate propagation can be briefly delayed on the first release. */ }
+  if (attempt % 5 === 0) console.log(`Waiting for ${expected.slice(0, 7)}: ${last}`);
   await new Promise(resolve => setTimeout(resolve, 10000));
 }
-if (!ready) throw new Error('Live revision did not become ready. Inspect CI/Cloudflare; do not deploy manually.');
+if (!ready) throw new Error(`Live revision did not become ready (last answer: ${last}). Inspect CI/Cloudflare; do not deploy manually.`);
 const landing = await get('/');
 if (!landing.ok || !landing.headers.get('Content-Type')?.includes('text/html')) throw new Error('Landing page not available');
 const html = await landing.text();
