@@ -35,7 +35,7 @@ jobs:
       - run: npm run catalogue:bundle
 
   deploy:
-    name: Publish approved catalogue
+    name: Publish catalogue
     needs: validate
     if: github.repository == 'smartifyindia/smartify-product-catalog' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     environment:
