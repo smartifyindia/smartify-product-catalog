@@ -24,15 +24,6 @@
 </head>
 <body>
   <div class="app">
-    <header class="topbar">
-      <a class="brand" href="https://smartify.in/" aria-label="Smartify home"><img src="/images/smartify-logo.png" alt="Smartify" width="356" height="146"></a>
-      <h1>Product catalogue</h1>
-      <p class="edition">{{PAGES}} pages <span aria-hidden="true">&middot;</span> Updated <time datetime="{{VERSION}}">{{DATE}}</time></p>
-      <a class="website-link" href="https://smartify.in/">smartify.in</a>
-      <button type="button" class="button" id="open-save">Download</button>
-      <button type="button" class="button primary" id="share">Share</button>
-    </header>
-
     <section class="viewer" id="viewer" aria-label="Catalogue" data-pdf="{{MOBILE_URL}}" data-pages="{{PAGES}}">
       <div class="stage" id="stage" tabindex="0" role="group" aria-roledescription="page viewer" aria-label="Catalogue pages. Use the arrow keys to turn pages, plus and minus to zoom.">
         <div class="sheet" id="sheet">
@@ -41,7 +32,6 @@
         </div>
         <button type="button" class="turn prev" id="prev-edge" aria-label="Previous page" tabindex="-1">&#8249;</button>
         <button type="button" class="turn next" id="next-edge" aria-label="Next page" tabindex="-1">&#8250;</button>
-        <button type="button" class="hint" id="hint" hidden>Swipe to turn pages. Double-tap to zoom. <span>Got it</span></button>
         <div id="notice" class="notice" hidden>
           <p>The page viewer could not load.</p>
           <p><a href="{{MOBILE_URL}}">Open the PDF</a> or <a href="{{MOBILE_URL}}?download=1" download="Smartify-Catalogue-Mobile.pdf">download it</a>.</p>
@@ -49,7 +39,7 @@
       </div>
       <div class="controls" role="toolbar" aria-label="Page controls">
         <button type="button" class="icon-button" id="prev" aria-label="Previous page" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
-        <button type="button" class="counter" id="counter" aria-haspopup="dialog" disabled><span id="current">1</span> of {{PAGES}}<small>All pages</small></button>
+        <button type="button" class="counter" id="counter" aria-haspopup="dialog" aria-label="All pages" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg><span><span id="current">1</span> / {{PAGES}}</span></button>
         <button type="button" class="icon-button" id="next" aria-label="Next page" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
         <span class="spacer"></span>
         <div class="zoom" role="group" aria-label="Zoom">
@@ -57,9 +47,12 @@
           <button type="button" class="zoom-level" id="zoom-level" aria-label="Reset zoom" disabled>100%</button>
           <button type="button" class="icon-button" id="zoom-in" aria-label="Zoom in" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
         </div>
+        <button type="button" class="icon-button" id="share" aria-label="Share link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M8 7l4-4 4 4M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg></button>
+        <button type="button" class="icon-button" id="open-save" aria-label="Download PDF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg></button>
         <button type="button" class="icon-button" id="fullscreen" aria-label="Full screen" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button>
       </div>
       <p id="status" class="visually-hidden" role="status" aria-live="polite"></p>
+      <p id="toast" class="toast" hidden></p>
     </section>
   </div>
 
