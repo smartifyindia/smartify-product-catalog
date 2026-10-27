@@ -4,53 +4,87 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Smartify product catalogue | Browse and download</title>
-  <meta name="description" content="Browse the Smartify catalogue on your phone. Scroll through smart home products, zoom in, or download a copy for offline reading.">
+  <meta name="description" content="Flip through the Smartify catalogue on your phone. Swipe to turn pages, double-tap to zoom, or download the PDF.">
   <meta name="theme-color" content="#ffffff">
   <link rel="canonical" href="https://catalog.smartify.in/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Smartify product catalogue">
-  <meta property="og:description" content="Browse {{PAGES}} pages of smart home products. Save the mobile PDF ({{MOBILE_SIZE}} MB), or download the original.">
+  <meta property="og:description" content="Flip through {{PAGES}} pages of smart home products. Save the mobile PDF ({{MOBILE_SIZE}} MB), or download the original.">
   <meta property="og:url" content="https://catalog.smartify.in/">
-  <meta property="og:image" content="https://catalog.smartify.in/images/catalogue-cover.webp">
+  <meta property="og:image" content="https://catalog.smartify.in/images/og-catalogue.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Smartify product catalogue cover">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/images/smartify-logo.png" type="image/png">
   <link rel="stylesheet" href="/style.css">
+  <link rel="modulepreload" href="/vendor/pdfjs/pdf.min.mjs">
   <script type="module" src="/reader.mjs"></script>
 </head>
 <body>
-  <a class="skip-link" href="#catalogue">Skip to catalogue</a>
-  <header class="site-header">
-    <a class="brand" href="https://smartify.in/" aria-label="Smartify home"><img src="/images/smartify-logo.png" alt="Smartify" width="356" height="146"></a>
-    <a class="website-link" href="https://smartify.in/">Visit our website</a>
-  </header>
-  <main>
-    <section class="intro" aria-labelledby="title">
-      <div><h1>Product catalogue</h1><p>Scroll to explore. Zoom in for the details.</p></div>
-      <p class="edition">{{PAGES}} pages <span aria-hidden="true">/</span> Updated <time datetime="{{VERSION}}">{{DATE}}</time></p>
-    </section>
-    <section class="reader" aria-label="Scrollable product catalogue" data-pdf="{{MOBILE_URL}}">
-      <div class="reader-toolbar">
-        <form id="page-form" class="page-control">
-          <label for="page-number">Page</label>
-          <input id="page-number" type="number" inputmode="numeric" min="1" max="{{PAGES}}" value="1" disabled>
-          <span>of {{PAGES}}</span><button id="page-go" type="submit" disabled>Go</button>
-        </form>
-        <label class="zoom-control" for="zoom"><span class="zoom-label">Zoom</span> <select id="zoom" aria-label="Zoom" disabled><option value="1">Fit width</option><option value="1.5">150%</option><option value="2">200%</option><option value="3">300%</option></select></label>
-      </div>
-      <div id="catalogue" class="reader-viewport" tabindex="0" aria-label="Catalogue pages. Scroll down to read, or use the page and zoom controls.">
-        <div id="pages" class="pages"></div>
-        <div id="reader-placeholder" class="reader-placeholder">
-          <img src="/images/catalogue-cover.webp" alt="Smartify product catalogue cover" width="1080" height="608" fetchpriority="high">
-          <p>Read the catalogue here, or <a href="{{MOBILE_URL}}">open the PDF</a>.</p>
+  <div class="app">
+    <header class="topbar">
+      <a class="brand" href="https://smartify.in/" aria-label="Smartify home"><img src="/images/smartify-logo.png" alt="Smartify" width="356" height="146"></a>
+      <h1>Product catalogue</h1>
+      <p class="edition">{{PAGES}} pages <span aria-hidden="true">&middot;</span> Updated <time datetime="{{VERSION}}">{{DATE}}</time></p>
+      <a class="website-link" href="https://smartify.in/">smartify.in</a>
+      <button type="button" class="button" id="open-save">Download</button>
+      <button type="button" class="button primary" id="share">Share</button>
+    </header>
+
+    <section class="viewer" id="viewer" aria-label="Catalogue" data-pdf="{{MOBILE_URL}}" data-pages="{{PAGES}}">
+      <div class="stage" id="stage" tabindex="0" role="group" aria-roledescription="page viewer" aria-label="Catalogue pages. Use the arrow keys to turn pages, plus and minus to zoom.">
+        <div class="sheet" id="sheet">
+          <img id="cover" class="cover" src="/images/catalogue-cover.webp" alt="Smartify product catalogue cover" width="1080" height="608" fetchpriority="high" draggable="false">
+          <div id="loading" class="loading" hidden><span>Loading page <b id="loading-page">1</b></span></div>
+        </div>
+        <button type="button" class="turn prev" id="prev-edge" aria-label="Previous page" tabindex="-1">&#8249;</button>
+        <button type="button" class="turn next" id="next-edge" aria-label="Next page" tabindex="-1">&#8250;</button>
+        <button type="button" class="hint" id="hint" hidden>Swipe to turn pages. Double-tap to zoom. <span>Got it</span></button>
+        <div id="notice" class="notice" hidden>
+          <p>The page viewer could not load.</p>
+          <p><a href="{{MOBILE_URL}}">Open the PDF</a> or <a href="{{MOBILE_URL}}?download=1" download="Smartify-Catalogue-Mobile.pdf">download it</a>.</p>
         </div>
       </div>
-      <div class="reader-caption"><p id="reader-status" role="status" aria-live="polite">The mobile edition, ready to browse.</p><a href="{{MOBILE_URL}}" target="_blank" rel="noopener">Open PDF separately</a></div>
+      <div class="controls" role="toolbar" aria-label="Page controls">
+        <button type="button" class="icon-button" id="prev" aria-label="Previous page" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+        <button type="button" class="counter" id="counter" aria-haspopup="dialog" disabled><span id="current">1</span> of {{PAGES}}<small>All pages</small></button>
+        <button type="button" class="icon-button" id="next" aria-label="Next page" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+        <span class="spacer"></span>
+        <div class="zoom" role="group" aria-label="Zoom">
+          <button type="button" class="icon-button" id="zoom-out" aria-label="Zoom out" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+          <button type="button" class="zoom-level" id="zoom-level" aria-label="Reset zoom" disabled>100%</button>
+          <button type="button" class="icon-button" id="zoom-in" aria-label="Zoom in" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+        </div>
+        <button type="button" class="icon-button" id="fullscreen" aria-label="Full screen" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg></button>
+      </div>
+      <p id="status" class="visually-hidden" role="status" aria-live="polite"></p>
     </section>
-    <section class="downloads" aria-label="Save the catalogue">
-      <a class="download-primary" href="{{MOBILE_URL}}?download=1" download="Smartify-Catalogue-Mobile.pdf"><span>Download mobile PDF</span><span class="file-size">{{MOBILE_SIZE}} MB</span></a>
-      <a class="download-original" href="{{FULL_URL}}?download=1" download="Smartify-Catalogue-Full-Quality.pdf">Download original <span>{{FULL_SIZE}} MB</span></a>
-    </section>
-    <p class="save-note">Save a copy for offline reading. The original keeps the full-resolution images.</p>
-  </main>
-  <footer><p>Share this link for the latest catalogue.</p><span>Smart homes, made simple.</span></footer>
+  </div>
+
+  <dialog id="overview" class="panel" aria-labelledby="overview-title">
+    <div class="panel-head"><h2 id="overview-title">All {{PAGES}} pages</h2><button type="button" class="button" data-close>Close</button></div>
+    <ol id="tiles" class="tiles"></ol>
+  </dialog>
+
+  <dialog id="save" class="panel small" aria-labelledby="save-title">
+    <div class="panel-head"><h2 id="save-title">Download the catalogue</h2><button type="button" class="button" data-close>Close</button></div>
+    <div class="save-body">
+      <a class="save-option primary" href="{{MOBILE_URL}}?download=1" download="Smartify-Catalogue-Mobile.pdf">
+        <strong>Download PDF <span>{{MOBILE_SIZE}} MB</span></strong>
+        <small>Quick to download. Best for phones and tablets.</small>
+      </a>
+      <a class="save-option" href="{{FULL_URL}}?download=1" download="Smartify-Catalogue-Full-Quality.pdf">
+        <strong>Original quality <span>{{FULL_SIZE}} MB</span></strong>
+        <small>Full-resolution images. Best for printing.</small>
+      </a>
+      <p class="save-links"><a href="{{MOBILE_URL}}" target="_blank" rel="noopener">Open the PDF in your browser</a> <span aria-hidden="true">&middot;</span> <a href="https://smartify.in/">Visit smartify.in</a></p>
+      <p class="save-meta">{{PAGES}} pages. Updated {{DATE}}.</p>
+      <p class="save-tip"><strong>Sharing with someone?</strong> Send them the link to this page, <span class="select-all">catalog.smartify.in</span>, not the PDF. It always opens the latest catalogue.</p>
+    </div>
+  </dialog>
+
+  <noscript><p class="noscript">Turn on JavaScript to flip through the catalogue here, or <a href="{{MOBILE_URL}}">open the PDF</a>.</p></noscript>
 </body>
 </html>
