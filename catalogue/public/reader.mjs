@@ -1,11 +1,13 @@
-import { MAX_ZOOM, clamp, clampView, fitSize, pageFromHash, renderZoom, stepZoom, swipeDirection, zoomAt } from './viewer-math.mjs';
+import { MAX_ZOOM, clamp, clampView, fitSize, pageFromPath, pathForPage, renderZoom, startPage, stepZoom, swipeDirection, titleForPage, zoomAt } from './viewer-math.mjs';
 
 const $ = selector => document.querySelector(selector);
 const viewer = $('#viewer'), stage = $('#stage'), sheet = $('#sheet'), cover = $('#cover'), loading = $('#loading');
 const counter = $('#counter'), currentLabel = $('#current'), status = $('#status'), notice = $('#notice');
 const overview = $('#overview'), tiles = $('#tiles'), save = $('#save');
 const buttons = { prev: $('#prev'), next: $('#next'), zoomIn: $('#zoom-in'), zoomOut: $('#zoom-out'), zoomLevel: $('#zoom-level') };
-const PAGE_URL = 'https://catalog.smartify.in/';
+const SITE = 'https://catalog.smartify.in';
+const links = JSON.parse(viewer.dataset.links || '[]');   // [[page, slug, title], ...]
+const placeholderIndex = pageFromPath(location.pathname, links, Number(viewer.dataset.pages));   // the page the HTML's placeholder image shows
 
 const count = Number(viewer.dataset.pages);
 let pdf, pdfjs, ready = false;
@@ -95,12 +97,12 @@ async function show(target, { keepView = false } = {}) {
   buttons.prev.disabled = $('#prev-edge').disabled = index === 0;
   buttons.next.disabled = $('#next-edge').disabled = index === count - 1;
   status.textContent = `Page ${index + 1} of ${count}`;
-  history.replaceState(null, '', index === 0 ? location.pathname : `#page=${index + 1}`);
+  history.replaceState(null, '', pathForPage(index, links));
   const hit = cache.get(index);
   if (fresh(hit)) attach(hit);
   else {
     $('#loading-page').textContent = index + 1;
-    if (index !== 0 || shown) loading.hidden = false;   // the first visit keeps the cover image in view
+    if (index !== placeholderIndex || shown) loading.hidden = false;   // the first visit keeps the page's own placeholder image in view
     try {
       const entry = await load(index);
       if (mine !== generation) return;
@@ -266,7 +268,7 @@ if (document.fullscreenEnabled) {
   fullscreen.addEventListener('click', () => document.fullscreenElement ? document.exitFullscreen() : viewer.requestFullscreen());
 }
 
-// Share the permanent link, never the PDF, so an updated catalogue reaches everyone.
+// Share the permanent link for the page on screen, never the PDF, so an updated catalogue reaches everyone.
 const toast = $('#toast');
 let toastTimer = 0;
 function say(message) {
@@ -274,13 +276,15 @@ function say(message) {
   clearTimeout(toastTimer); toastTimer = setTimeout(() => { toast.hidden = true; }, 2400);
 }
 $('#share').addEventListener('click', async () => {
-  const text = 'Smartify product catalogue';
+  const url = SITE + pathForPage(index, links);
+  const title = titleForPage(index, links);
+  const text = index === 0 ? 'Smartify product catalogue' : `${title} | Smartify catalogue`;
   try {
-    if (navigator.share) { await navigator.share({ title: text, text, url: PAGE_URL }); return; }
-    await navigator.clipboard.writeText(PAGE_URL);
-    say('Link copied');
+    if (navigator.share) { await navigator.share({ title: text, text, url }); return; }
+    await navigator.clipboard.writeText(url);
+    say(index === 0 ? 'Link copied' : `Link to ${title} copied`);
   } catch (error) {
-    if (error?.name !== 'AbortError') say('Share catalog.smartify.in');
+    if (error?.name !== 'AbortError') say(`Copy this link: ${url.replace('https://', '')}`);
   }
 });
 
@@ -339,7 +343,7 @@ tiles.addEventListener('click', event => {
 // A page link pasted into an already open tab should move the viewer too.
 addEventListener('hashchange', () => {
   if (!ready) return;
-  const wanted = pageFromHash(location.hash, count);
+  const wanted = startPage(location.hash, location.pathname, links, count);
   if (wanted !== index) show(wanted);
 });
 
@@ -360,7 +364,7 @@ async function start() {
     layout();
     ready = true;
     for (const control of [buttons.prev, buttons.next, counter]) control.disabled = false;
-    const wanted = pageFromHash(location.hash, pdf.numPages);
+    const wanted = startPage(location.hash, location.pathname, links, pdf.numPages);
     await show(wanted);
   } catch (error) {
     fail();

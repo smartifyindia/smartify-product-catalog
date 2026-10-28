@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Smartify product catalogue | Browse and download</title>
-  <meta name="description" content="Flip through the Smartify catalogue on your phone. Swipe to turn pages, double-tap to zoom, or download the PDF.">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
   <meta name="theme-color" content="#ffffff">
-  <link rel="canonical" href="https://catalog.smartify.in/">
+  <link rel="canonical" href="{{CANONICAL}}">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Smartify product catalogue">
-  <meta property="og:description" content="Flip through {{PAGES}} pages of smart home products. Save the mobile PDF ({{MOBILE_SIZE}} MB), or download the original.">
-  <meta property="og:url" content="https://catalog.smartify.in/">
-  <meta property="og:image" content="https://catalog.smartify.in/images/og-catalogue.jpg">
+  <meta property="og:title" content="{{OG_TITLE}}">
+  <meta property="og:description" content="{{OG_DESCRIPTION}}">
+  <meta property="og:url" content="{{CANONICAL}}">
+  <meta property="og:image" content="{{OG_IMAGE}}">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Smartify product catalogue cover">
+  <meta property="og:image:alt" content="{{OG_IMAGE_ALT}}">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{OG_IMAGE}}">
   <link rel="icon" href="/images/smartify-logo.png" type="image/png">
   <link rel="stylesheet" href="/style.css">
   <link rel="modulepreload" href="/vendor/pdfjs/pdf.min.mjs">
@@ -24,10 +25,10 @@
 </head>
 <body>
   <div class="app">
-    <section class="viewer" id="viewer" aria-label="Catalogue" data-pdf="{{MOBILE_URL}}" data-pages="{{PAGES}}">
+    <section class="viewer" id="viewer" aria-label="Catalogue" data-pdf="{{MOBILE_URL}}" data-pages="{{PAGES}}" data-links="{{LINKS}}">
       <div class="stage" id="stage" tabindex="0" role="group" aria-roledescription="page viewer" aria-label="Catalogue pages. Use the arrow keys to turn pages, plus and minus to zoom.">
         <div class="sheet" id="sheet">
-          <img id="cover" class="cover" src="/images/catalogue-cover.webp" alt="Smartify product catalogue cover" width="1080" height="608" fetchpriority="high" draggable="false">
+          <img id="cover" class="cover" src="{{COVER}}" alt="{{OG_IMAGE_ALT}}" width="1200" height="630" fetchpriority="high" draggable="false">
           <div id="loading" class="loading" hidden><span>Loading page <b id="loading-page">1</b></span></div>
         </div>
         <button type="button" class="turn prev" id="prev-edge" aria-label="Previous page" tabindex="-1">&#8249;</button>

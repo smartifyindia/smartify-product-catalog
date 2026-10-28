@@ -1,0 +1,359 @@
+{
+ "pdfSha256": "d5c66aec34f4eb8a13c804bff7ffe30b336c20440a3d011e607ad7b1d73458cd",
+ "pages": [
+  {
+   "page": 2,
+   "slug": "contents",
+   "title": "Contents",
+   "blurb": "Find what you need: a quick tour of the range"
+  },
+  {
+   "page": 3,
+   "slug": "about-smartify",
+   "title": "About Smartify",
+   "blurb": "Who we are and how we work"
+  },
+  {
+   "page": 4,
+   "slug": "compatibility",
+   "title": "Compatibility",
+   "blurb": "The smart home platforms Smartify works with"
+  },
+  {
+   "page": 5,
+   "slug": "tac",
+   "title": "TAC",
+   "blurb": "Tactile Zigbee smart switches"
+  },
+  {
+   "page": 6,
+   "slug": "tac-1",
+   "title": "TAC 1",
+   "blurb": "Single-button Zigbee smart switch"
+  },
+  {
+   "page": 7,
+   "slug": "tac-2",
+   "title": "TAC 2",
+   "blurb": "2-button Zigbee smart switch"
+  },
+  {
+   "page": 8,
+   "slug": "tac-3",
+   "title": "TAC 3",
+   "blurb": "3-button Zigbee smart switch"
+  },
+  {
+   "page": 9,
+   "slug": "tac-4",
+   "title": "TAC 4",
+   "blurb": "4-button Zigbee smart switch"
+  },
+  {
+   "page": 10,
+   "slug": "tac-6",
+   "title": "TAC 6",
+   "blurb": "6-button scene controller, no relay"
+  },
+  {
+   "page": 11,
+   "slug": "tac-hl",
+   "title": "TAC HL",
+   "blurb": "Heavy-load Zigbee switch"
+  },
+  {
+   "page": 12,
+   "slug": "tac-sh",
+   "title": "TAC SH",
+   "blurb": "3-button shutter and curtain switch"
+  },
+  {
+   "page": 13,
+   "slug": "tac-6-plus",
+   "title": "TAC 6+",
+   "blurb": "4 load buttons plus 2 scene buttons"
+  },
+  {
+   "page": 14,
+   "slug": "tac-ss",
+   "title": "TAC SS",
+   "blurb": "Battery-powered wireless scene switch"
+  },
+  {
+   "page": 15,
+   "slug": "tac-s",
+   "title": "TAC S",
+   "blurb": "Modular power socket for the TAC system"
+  },
+  {
+   "page": 16,
+   "slug": "tac-f",
+   "title": "TAC F",
+   "blurb": "Dedicated fan control switch"
+  },
+  {
+   "page": 17,
+   "slug": "toq",
+   "title": "TOQ",
+   "blurb": "Glass touch panels for switching, dimming and power"
+  },
+  {
+   "page": 18,
+   "slug": "toq-4t",
+   "title": "TOQ 4T",
+   "blurb": "4-button capacitive touch panel"
+  },
+  {
+   "page": 19,
+   "slug": "toq-4t-plus-1s",
+   "title": "TOQ 4T+1S",
+   "blurb": "4-button touch panel with socket"
+  },
+  {
+   "page": 20,
+   "slug": "toq-8t",
+   "title": "TOQ 8T",
+   "blurb": "8-button capacitive touch panel"
+  },
+  {
+   "page": 21,
+   "slug": "toq-10t",
+   "title": "TOQ 10T",
+   "blurb": "10-button capacitive touch panel"
+  },
+  {
+   "page": 22,
+   "slug": "toq-4t-plus-2f",
+   "title": "TOQ 4T+2F",
+   "blurb": "4-button panel with dual fan control"
+  },
+  {
+   "page": 23,
+   "slug": "toq-8t-plus-1s",
+   "title": "TOQ 8T+1S",
+   "blurb": "8-button panel with power socket"
+  },
+  {
+   "page": 24,
+   "slug": "toq-4t-plus-2f-plus-1s",
+   "title": "TOQ 4T+2F+1S",
+   "blurb": "4-button panel, two fans, one socket"
+  },
+  {
+   "page": 25,
+   "slug": "toq-10t-plus-3s",
+   "title": "TOQ 10T+3S",
+   "blurb": "10 touch buttons plus 3 sockets"
+  },
+  {
+   "page": 26,
+   "slug": "interface",
+   "title": "Interface",
+   "blurb": "Touchscreen displays and dedicated scene controllers"
+  },
+  {
+   "page": 27,
+   "slug": "interface-4",
+   "title": "Interface 4",
+   "blurb": "4-inch wall touch panel"
+  },
+  {
+   "page": 28,
+   "slug": "interface-10",
+   "title": "Interface 10",
+   "blurb": "10-inch HD touchscreen panel"
+  },
+  {
+   "page": 29,
+   "slug": "interface-scene",
+   "title": "Interface Scene",
+   "blurb": "4-button battery scene switch"
+  },
+  {
+   "page": 30,
+   "slug": "layer",
+   "title": "Layer",
+   "blurb": "Relay, dimmer and shutter modules that fit inside your switchbox"
+  },
+  {
+   "page": 31,
+   "slug": "layer-relay-1",
+   "title": "Layer Relay 1",
+   "blurb": "1-channel switching relay"
+  },
+  {
+   "page": 32,
+   "slug": "layer-relay-2",
+   "title": "Layer Relay 2",
+   "blurb": "2-channel independent switching"
+  },
+  {
+   "page": 33,
+   "slug": "layer-relay-1-hl",
+   "title": "Layer Relay 1 HL",
+   "blurb": "1-channel heavy-duty relay"
+  },
+  {
+   "page": 34,
+   "slug": "layer-dimmer-1",
+   "title": "Layer Dimmer 1",
+   "blurb": "1-channel phase-cut dimmer"
+  },
+  {
+   "page": 35,
+   "slug": "layer-dimmer-2",
+   "title": "Layer Dimmer 2",
+   "blurb": "2-channel independent dimmer"
+  },
+  {
+   "page": 36,
+   "slug": "layer-shutter",
+   "title": "Layer Shutter",
+   "blurb": "Motorized curtain and blind control"
+  },
+  {
+   "page": 37,
+   "slug": "layer-dimmer-analog",
+   "title": "Layer Dimmer Analog",
+   "blurb": "0-10V analog dimmer output"
+  },
+  {
+   "page": 38,
+   "slug": "aware",
+   "title": "Aware",
+   "blurb": "Battery-powered sensors that report real-world state"
+  },
+  {
+   "page": 39,
+   "slug": "aware-contact",
+   "title": "Aware Contact",
+   "blurb": "Door and window contact sensor"
+  },
+  {
+   "page": 40,
+   "slug": "aware-motion",
+   "title": "Aware Motion",
+   "blurb": "PIR motion and lux sensor combined"
+  },
+  {
+   "page": 41,
+   "slug": "aware-vibration",
+   "title": "Aware Vibration",
+   "blurb": "Vibration and tamper detection"
+  },
+  {
+   "page": 42,
+   "slug": "aware-wave",
+   "title": "Aware Wave",
+   "blurb": "USB-powered mmWave presence sensor"
+  },
+  {
+   "page": 43,
+   "slug": "aware-wave-pro",
+   "title": "Aware Wave Pro",
+   "blurb": "Ceiling-mounted mmWave presence sensor"
+  },
+  {
+   "page": 44,
+   "slug": "core",
+   "title": "Core",
+   "blurb": "Gateways that connect every device on site"
+  },
+  {
+   "page": 45,
+   "slug": "core-lan",
+   "title": "Core LAN",
+   "blurb": "Wired Zigbee coordinator"
+  },
+  {
+   "page": 46,
+   "slug": "core-matter",
+   "title": "Core Matter",
+   "blurb": "Zigbee and Matter bridge gateway"
+  },
+  {
+   "page": 47,
+   "slug": "convergia",
+   "title": "Convergia",
+   "blurb": "Locally hosted automation gateway for KNX, Zigbee, Wi-Fi and Matter"
+  },
+  {
+   "page": 48,
+   "slug": "core-vrv",
+   "title": "Core VRV",
+   "blurb": "VRV/VRF HVAC integration gateway"
+  },
+  {
+   "page": 49,
+   "slug": "core-dali",
+   "title": "Core DALI",
+   "blurb": "Zigbee to DALI protocol bridge"
+  },
+  {
+   "page": 50,
+   "slug": "lume",
+   "title": "Lume",
+   "blurb": "Zigbee control for any LED strip or fixture"
+  },
+  {
+   "page": 51,
+   "slug": "lume-cv-rgb-plus",
+   "title": "Lume CV RGB+",
+   "blurb": "5-channel RGB+CCT LED controller"
+  },
+  {
+   "page": 52,
+   "slug": "lume-cv-dim",
+   "title": "Lume CV Dim",
+   "blurb": "Single-channel CV LED dimmer"
+  },
+  {
+   "page": 53,
+   "slug": "lume-cc-cct",
+   "title": "Lume CC-CCT",
+   "blurb": "Constant current CCT controller"
+  },
+  {
+   "page": 54,
+   "slug": "reach",
+   "title": "Reach",
+   "blurb": "Brings IR and RF appliances into your automation"
+  },
+  {
+   "page": 55,
+   "slug": "reach-ir",
+   "title": "Reach IR",
+   "blurb": "Wi-Fi IR blaster"
+  },
+  {
+   "page": 56,
+   "slug": "reach-ir-plus",
+   "title": "Reach IR+",
+   "blurb": "Wi-Fi IR and RF blaster"
+  },
+  {
+   "page": 57,
+   "slug": "reach-ir-pro",
+   "title": "Reach IR Pro",
+   "blurb": "IR blaster with temperature and humidity sensor"
+  },
+  {
+   "page": 58,
+   "slug": "warranty-and-support",
+   "title": "Warranty and support",
+   "blurb": "Warranty terms and how to get support"
+  },
+  {
+   "page": 59,
+   "slug": "master-price-list",
+   "title": "Master price list",
+   "blurb": "Prices for the full range"
+  },
+  {
+   "page": 60,
+   "slug": "get-started",
+   "title": "Get started",
+   "blurb": "Start the conversation about your home"
+  }
+ ]
+}

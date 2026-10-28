@@ -53,3 +53,26 @@ export function pageFromHash(hash, count) {
   const match = /^#page=(\d{1,4})$/.exec(hash);
   return match ? clamp(Number(match[1]) - 1, 0, count - 1) : 0;
 }
+
+// ---- Page links ---------------------------------------------------------------
+// links: [[page, slug, title], ...] with 1-based pages. /p/<slug> opens that page; page 1 is the root.
+
+export function pageFromPath(pathname, links, count) {
+  const match = /^\/p\/([a-z0-9-]+)\/?$/.exec(pathname);
+  const link = match && links.find(item => item[1] === match[1]);
+  return link ? clamp(link[0] - 1, 0, count - 1) : 0;
+}
+
+// An explicit #page=N wins (older shared links), then the product path, then the cover.
+export function startPage(hash, pathname, links, count) {
+  return /^#page=/.test(hash) ? pageFromHash(hash, count) : pageFromPath(pathname, links, count);
+}
+
+export function pathForPage(index, links) {
+  const link = links.find(item => item[0] === index + 1);
+  return index === 0 ? '/' : link ? `/p/${link[1]}` : `/#page=${index + 1}`;
+}
+
+export function titleForPage(index, links) {
+  return links.find(item => item[0] === index + 1)?.[2] || 'Smartify product catalogue';
+}

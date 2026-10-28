@@ -3,6 +3,8 @@ import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 import { verifyFile } from './guards.mjs';
+import { fillTemplate, linkData, pageValues, rootValues, validateLinks } from './links.mjs';
+import { renderPreviews } from './previews.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const manifest = JSON.parse(await readFile(join(root, 'manifest.json')));
@@ -26,16 +28,20 @@ for (const name of ['cmaps', 'standard_fonts', 'wasm', 'iccs', 'LICENSE']) {
   await cp(join(pdfjs, name), join(vendor, name), { recursive: true });
 }
 await cp(join(pdfjs, 'web/pdf_viewer.css'), join(vendor, 'pdf_viewer.css'));
-const tokens = { VERSION: manifest.version, DATE: new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${manifest.version}T00:00:00Z`)), PAGES: String(manifest.pages) };
+const links = validateLinks(JSON.parse(await readFile(join(root, 'pages.json'))), manifest);
+const tokens = { VERSION: manifest.version, DATE: new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${manifest.version}T00:00:00Z`)), PAGES: String(manifest.pages), LINKS: JSON.stringify(linkData(links)) };
 for (const [variant, prefix] of [['mobile', 'MOBILE'], ['full', 'FULL']]) {
   const item = manifest.files[variant];
   tokens[`${prefix}_URL`] = `/files/${item.sha256}/${item.filename}`;
   tokens[`${prefix}_SIZE`] = (item.bytes / 1e6).toFixed(1);
 }
-let html = await readFile(join(out, 'index.html'), 'utf8');
-for (const [key, value] of Object.entries(tokens)) html = html.replaceAll(`{{${key}}}`, value);
-if (/\{\{/.test(html)) throw new Error('Unresolved page placeholder');
-await writeFile(join(out, 'index.html'), html);
+// One HTML file per page link, so crawlers that never run JavaScript (WhatsApp) read that page's own tags.
+const template = await readFile(join(out, 'index.html'), 'utf8');
+await writeFile(join(out, 'index.html'), fillTemplate(template, { ...tokens, ...rootValues(manifest) }));
+await mkdir(join(out, 'p'), { recursive: true });
+for (const entry of links) await writeFile(join(out, 'p', `${entry.slug}.html`), fillTemplate(template, { ...tokens, ...pageValues(entry) }));
+await renderPreviews({ pdfPath: join(root, manifest.files.mobile.source), pdfjsDir: pdfjs, entries: links, outDir: join(out, 'previews') });
+await cp(join(root, 'pages.json'), join(out, 'pages.json'));
 const commit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim();
 await writeFile(join(out, 'release.json'), JSON.stringify({ commit, version: manifest.version, files: manifest.files }, null, 2) + '\n');
 console.log(`Catalogue built for ${commit}; both PDF checksums verified. PDFs remain outside static assets.`);
