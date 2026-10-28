@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { MAX_ZOOM, clampView, fitSize, pageFromHash, renderZoom, stepZoom, swipeDirection, zoomAt } from '../public/viewer-math.mjs';
+import { MAX_ZOOM, clampView, fitSize, pageFromHash, pageFromPath, pathForPage, renderZoom, startPage, stepZoom, swipeDirection, titleForPage, zoomAt } from '../public/viewer-math.mjs';
 
 const geometry = { stageWidth: 400, stageHeight: 300, width: 400, height: 225 };
 
@@ -67,4 +67,25 @@ test('page links parse safely and stay inside the document', () => {
   assert.equal(pageFromHash('#page=999', 60), 59);
   assert.equal(pageFromHash('#page=0', 60), 0);
   for (const bad of ['', '#', '#page=', '#page=-3', '#page=1e3', '#other', '#page=1&x=2']) assert.equal(pageFromHash(bad, 60), 0);
+});
+
+const links = [[47, 'convergia', 'Convergia'], [13, 'tac-6-plus', 'TAC 6+']];
+test('a product path opens that page, and unknown paths open the cover', () => {
+  assert.equal(pageFromPath('/p/convergia', links, 60), 46);
+  assert.equal(pageFromPath('/p/convergia/', links, 60), 46);
+  assert.equal(pageFromPath('/p/tac-6-plus', links, 60), 12);
+  for (const path of ['/', '/p/', '/p/nope', '/p/convergia/x', '/q/convergia', '/p/Convergia']) assert.equal(pageFromPath(path, links, 60), 0);
+});
+test('an explicit #page wins over the path', () => {
+  assert.equal(startPage('#page=5', '/p/convergia', links, 60), 4);
+  assert.equal(startPage('', '/p/convergia', links, 60), 46);
+  assert.equal(startPage('#junk', '/p/convergia', links, 60), 46);
+  assert.equal(startPage('', '/', links, 60), 0);
+});
+test('each page maps back to its shareable path and title', () => {
+  assert.equal(pathForPage(0, links), '/');
+  assert.equal(pathForPage(46, links), '/p/convergia');
+  assert.equal(pathForPage(20, links), '/#page=21');
+  assert.equal(titleForPage(46, links), 'Convergia');
+  assert.equal(titleForPage(20, links), 'Smartify product catalogue');
 });

@@ -17,6 +17,12 @@ The catalogue is a 60-slide, 16:9 landscape deck, so the page is a fixed full-sc
 - `public/` is the page source; `dist/` is generated. PDFs are never bundled as Worker static assets.
 - A changed PDF gets a new digest URL. Previously published objects are not deleted, so older shared PDF links remain usable. The landing page and `/release.json` revalidate on every visit.
 
+## Page links
+
+Every page except the cover has a short link, `https://catalog.smartify.in/p/<name>`, for example `/p/convergia`, `/p/tac-sh`, `/p/core-matter`. It opens the viewer on that page, and the Share button copies the link for the page on screen. Names are lower-case and in `catalogue/pages.json` (slug, page, title, one-line blurb); `+` becomes `-plus`, so TAC 6+ is `/p/tac-6-plus`. A mistyped or retired name opens the catalogue instead of an error, and `#page=N` links keep working.
+
+WhatsApp and other link previews never run JavaScript, so the build writes one HTML file per link (`dist/p/<name>.html`) with that page's own title, description and a 1200x630 preview image of the page (`dist/previews/<name>.jpg`, rendered from the mobile PDF). Names are public and shared, so do not rename one. When the catalogue PDF is re-exported, pages can move: the build refuses to run until you check each page number in `pages.json` against the new PDF and update its `pdfSha256`.
+
 ## Release pipeline
 
 `.github/workflows/catalogue-site.yml` validates PRs without production secrets. A matching push to `main`, or an explicit dispatch from `main`, runs validation and then deploys automatically, with no manual approval step. The `catalogue-production` GitHub environment holds the Cloudflare secret and allows only the `main` branch. The script still refuses to deploy from anywhere else, or from a run whose revision is no longer the latest `main`.

@@ -8,7 +8,11 @@ let mf;
 before(async () => {
   mf = new Miniflare(convertV4MiniflareOptions({ modules: true, scriptPath: fileURLToPath(new URL('../worker.mjs', import.meta.url)),
     compatibilityDate: '2026-10-01', r2Buckets: ['CATALOGUE'],
-    serviceBindings: { ASSETS: () => new Response('<html>Catalogue</html>', { headers: { 'Content-Type': 'text/html' } }) } }));
+    serviceBindings: { ASSETS: request => {
+      const path = new URL(request.url).pathname;
+      if (path === '/p/missing') return new Response('Not found', { status: 404 });
+      return new Response(path === '/p/convergia' ? '<html>Convergia</html>' : '<html>Catalogue</html>', { headers: { 'Content-Type': 'text/html' } });
+    } } }));
   const bucket = await mf.getR2Bucket('CATALOGUE');
   await bucket.put(key, '%PDF-1.7\n0123456789');
 });
@@ -80,4 +84,21 @@ test('reader can load same-origin modules and its PDF worker without allowing re
   assert.ok(directives['worker-src'].includes("'self'"));
   assert.ok(!directives['script-src'].includes("'unsafe-eval'"));
   assert.ok(!directives['script-src'].includes('*'));
+});
+
+test('serves a product link as its own page with the security headers', async () => {
+  const r = await get('/p/convergia');
+  assert.equal(r.status, 200);
+  assert.equal(await r.text(), '<html>Convergia</html>');
+  assert.match(r.headers.get('Content-Security-Policy'), /default-src 'self'/);
+});
+test('a retired or mistyped product link opens the catalogue instead of a 404', async () => {
+  const r = await get('/p/missing');
+  assert.equal(r.status, 200);
+  assert.equal(await r.text(), '<html>Catalogue</html>');
+});
+test('product links are lower-case, so a capitalised link redirects', async () => {
+  const r = await get('/p/Convergia', { redirect: 'manual' });
+  assert.equal(r.status, 301);
+  assert.equal(r.headers.get('Location'), 'https://catalog.smartify.in/p/convergia');
 });
