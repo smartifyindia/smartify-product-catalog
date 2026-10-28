@@ -27,8 +27,14 @@ export default {
     if (!['GET', 'HEAD'].includes(request.method)) {
       return new Response('Method not allowed', { status: 405, headers: { ...SECURITY, Allow: 'GET, HEAD', 'Cache-Control': 'no-store' } });
     }
+    if (url.pathname.startsWith('/p/') && url.pathname !== url.pathname.toLowerCase()) {
+      url.pathname = url.pathname.toLowerCase();
+      return new Response(null, { status: 301, headers: { ...SECURITY, Location: url.toString(), 'Cache-Control': 'no-cache' } });
+    }
     if (!url.pathname.startsWith('/files/')) {
-      const response = await env.ASSETS.fetch(request);
+      let response = await env.ASSETS.fetch(request);
+      // A mistyped or retired /p/<name> link still opens the catalogue instead of a dead page.
+      if (response.status === 404 && /^\/p\/[^/]+\/?$/.test(url.pathname)) response = await env.ASSETS.fetch(new Request(new URL('/', url), request));
       const headers = new Headers(response.headers);
       for (const [key, value] of Object.entries(SECURITY)) headers.set(key, value);
       headers.set('Cache-Control', 'no-cache');

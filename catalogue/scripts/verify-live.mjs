@@ -41,4 +41,13 @@ for (const item of Object.values(release.files)) {
   if (bytes !== item.bytes || hash.digest('hex') !== item.sha256) throw new Error('Live PDF checksum mismatch');
   console.log(`Verified live ${item.filename}: ${bytes} bytes`);
 }
+// A page link must be its own HTML page whose preview image is that page, since WhatsApp never runs the viewer.
+const { pages } = JSON.parse(await readFile(new URL('../dist/pages.json', import.meta.url)));
+const sample = pages.find(entry => entry.slug === 'convergia') || pages[0];
+const linked = await get(`/p/${sample.slug}`);
+const linkedHtml = await linked.text();
+if (!linked.ok || !linkedHtml.includes(`property="og:image" content="https://catalog.smartify.in/previews/${sample.slug}.jpg"`)) throw new Error(`Page link /p/${sample.slug} is missing its own preview tags`);
+const preview = await get(`/previews/${sample.slug}.jpg`);
+if (!preview.ok || preview.headers.get('Content-Type') !== 'image/jpeg' || (await preview.arrayBuffer()).byteLength < 5000) throw new Error('Page preview image is not a JPEG');
+console.log(`Verified live page link /p/${sample.slug}`);
 console.log(`Verified live catalogue revision ${expected}`);

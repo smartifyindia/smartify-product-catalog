@@ -13,8 +13,10 @@
     "catalogue:bundle": "wrangler deploy --dry-run --config catalogue/wrangler.jsonc"
   },
   "devDependencies": {
+    "@napi-rs/canvas": "1.0.13",
     "miniflare": "5.20261019.2-beta",
     "pdfjs-dist": "6.4.299",
+    "sharp": "0.35.5",
     "wrangler": "4.152.0"
   },
   "overrides": {
