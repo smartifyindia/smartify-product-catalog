@@ -14,7 +14,7 @@ permissions:
 jobs:
   validate:
     name: Validate catalogue website
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON((github.event.pull_request.head.repo.fork && '"ubuntu-latest"') || vars.CI_RUNNER || '"ubuntu-latest"') }}
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
