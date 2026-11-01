@@ -102,3 +102,15 @@ test('product links are lower-case, so a capitalised link redirects', async () =
   assert.equal(r.status, 301);
   assert.equal(r.headers.get('Location'), 'https://catalog.smartify.in/p/convergia');
 });
+test('plain-text errors carry the security headers; PDF 200 gets only referrer and nosniff', async () => {
+  for (const r of [await get('/files/private.txt'), await get(undefined, { headers: { Range: 'bytes=500-600' } })]) {
+    assert.ok([404, 416].includes(r.status));
+    assert.match(r.headers.get('Content-Security-Policy'), /frame-ancestors 'none'/);
+    assert.equal(r.headers.get('X-Content-Type-Options'), 'nosniff');
+  }
+  const ok = await get();
+  assert.equal(ok.status, 200);
+  assert.equal(ok.headers.get('Referrer-Policy'), 'strict-origin-when-cross-origin');
+  assert.equal(ok.headers.get('X-Content-Type-Options'), 'nosniff');
+  assert.equal(ok.headers.get('Content-Security-Policy'), null);
+});

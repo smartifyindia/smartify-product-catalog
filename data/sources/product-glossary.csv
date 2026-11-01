@@ -1,7 +1,7 @@
-﻿Product Name,Channels,Compatibility,Consumer Description,Dealer Price,Dependencies,Device Type,GST Rate %,HSN,Image URL,Installation,Item Code,JSON,Limitations / Exclusions,Max Switching Capacity,Protocol,Recommended Load,Suggested Retail Price,Tech Specs,Technical Description (Installer)
+﻿Product Name,Channels,Compatibility,Consumer Description,Dependencies,Device Type,GST Rate %,HSN,Image URL,Installation,Item Code,JSON,Limitations / Exclusions,Max Switching Capacity,Protocol,Recommended Load,Suggested Retail Price,Tech Specs,Technical Description (Installer)
 1 Channel Zigbee Retrofit Relay,1,"Home Assistant (native), Matter & Apple HomeKit (via hub)","Your switch. Smarter.
 
-The Retrofit Relay fits quietly behind your existing wall switch and gives it a new intelligence — responding to your schedule, your voice, or your app. Nothing on your wall changes. Everything about how it works does.",1200,Zigbee coordinator or hub,Switching Relay,18,85365090,https://drive.google.com/file/d/1Zuji3Ioj-cSIyDDdRJ2u6tQeTFwqGBRi/view?usp=drive_link,Flush box or DIN rail,38632117962,"{
+The Retrofit Relay fits quietly behind your existing wall switch and gives it a new intelligence — responding to your schedule, your voice, or your app. Nothing on your wall changes. Everything about how it works does.",Zigbee coordinator or hub,Switching Relay,18,85365090,https://drive.google.com/file/d/1Zuji3Ioj-cSIyDDdRJ2u6tQeTFwqGBRi/view?usp=drive_link,Flush box or DIN rail,38632117962,"{
   ""product"": {
     ""SKU"": ""38632117962"",
     ""ProductName"": ""1 Channel Zigbee Retrofit Relay"",
@@ -18,7 +18,6 @@ The Retrofit Relay fits quietly behind your existing wall switch and gives it a 
     ],
     ""Description"": ""Your switch. Smarter.\n\nThe Retrofit Relay fits quietly behind your existing wall switch and gives it a new intelligence — responding to your schedule, your voice, or your app. Nothing on your wall changes. Everything about how it works does."",
     ""SRP"": 3000,
-    ""DP"": 1200,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -42,7 +41,7 @@ Key Specifications
 ⚠ For loads above 4A, an external relay, SSR, or contactor is required."
 1 Channel Zigbee Retrofit Relay (40A),1,"Home Assistant (native), Matter & Apple HomeKit (via hub)","Heavy loads. Light control.
 
-The 40A Relay brings your high-power appliances — water heaters, pumps, heavy equipment — into your smart home without compromise. Schedule them, automate them, monitor them. The same effortless control, built for serious loads.",2000,Zigbee coordinator or hub,Heavy-Duty Switching Relay,18,85365090,,Flush box or DIN rail,38632117965,"{
+The 40A Relay brings your high-power appliances — water heaters, pumps, heavy equipment — into your smart home without compromise. Schedule them, automate them, monitor them. The same effortless control, built for serious loads.",Zigbee coordinator or hub,Heavy-Duty Switching Relay,18,85365090,,Flush box or DIN rail,38632117965,"{
   ""product"": {
     ""SKU"": ""38632117965"",
     ""ProductName"": ""1 Channel Zigbee Retrofit Relay (40A)"",
@@ -59,7 +58,6 @@ The 40A Relay brings your high-power appliances — water heaters, pumps, heavy 
     ],
     ""Description"": ""Heavy loads. Light control.\n\nThe 40A Relay brings your high-power appliances — water heaters, pumps, heavy equipment — into your smart home without compromise. Schedule them, automate them, monitor them. The same effortless control, built for serious loads."",
     ""SRP"": 5000,
-    ""DP"": 2000,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -82,7 +80,7 @@ Key Specifications
 ⚠ High-current installation. Proper cable sizing, circuit protection, and qualified installation are required."
 2 Channel Zigbee Retrofit Relay,2 (independent),"Home Assistant (native), Matter & Apple HomeKit (via hub)","Two switches. One module. Zero effort.
 
-Control two circuits from a single module hidden behind your existing switches. Lights in two rooms, a fan and a light — whatever the combination, each channel responds independently. Your walls stay the same. Your home gets smarter.",1300,Zigbee coordinator or hub,Switching Relay,18,85365090,https://drive.google.com/file/d/1Zuji3Ioj-cSIyDDdRJ2u6tQeTFwqGBRi/view?usp=drive_link,Flush box or DIN rail,38659529195,"{
+Control two circuits from a single module hidden behind your existing switches. Lights in two rooms, a fan and a light — whatever the combination, each channel responds independently. Your walls stay the same. Your home gets smarter.",Zigbee coordinator or hub,Switching Relay,18,85365090,https://drive.google.com/file/d/1Zuji3Ioj-cSIyDDdRJ2u6tQeTFwqGBRi/view?usp=drive_link,Flush box or DIN rail,38659529195,"{
   ""product"": {
     ""SKU"": ""38659529195"",
     ""ProductName"": ""2 Channel Zigbee Retrofit Relay"",
@@ -99,7 +97,6 @@ Control two circuits from a single module hidden behind your existing switches. 
     ],
     ""Description"": ""Two switches. One module. Zero effort.\n\nControl two circuits from a single module hidden behind your existing switches. Lights in two rooms, a fan and a light — whatever the combination, each channel responds independently. Your walls stay the same. Your home gets smarter."",
     ""SRP"": 3250,
-    ""DP"": 1300,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -123,7 +120,7 @@ Key Specifications
 ⚠ Direct load switching only — not a dry contact output and not a dimmer."
 1 Channel Zigbee Retrofit Dimmer,1,"Home Assistant (native), Matter & Apple HomeKit (via hub)","The right light. Always.
 
-Bright for the morning. Warm for the evening. The Dimmer learns when you want a room to feel different — and adjusts without you asking. Fits behind your existing switch. Works with your existing lights.",1200,Zigbee coordinator or hub. Dimmable fixtures or drivers required.,Phase-Cut Dimmer,18,85365090,https://drive.google.com/file/d/1NyhF4UDxVbpkvQxP6_MgzKRawuNwdWDh/view?usp=sharing,Flush box or DIN rail,38632957173,"{
+Bright for the morning. Warm for the evening. The Dimmer learns when you want a room to feel different — and adjusts without you asking. Fits behind your existing switch. Works with your existing lights.",Zigbee coordinator or hub. Dimmable fixtures or drivers required.,Phase-Cut Dimmer,18,85365090,https://drive.google.com/file/d/1NyhF4UDxVbpkvQxP6_MgzKRawuNwdWDh/view?usp=sharing,Flush box or DIN rail,38632957173,"{
   ""product"": {
     ""SKU"": ""38632957173"",
     ""ProductName"": ""1 Channel Zigbee Retrofit Dimmer"",
@@ -140,7 +137,6 @@ Bright for the morning. Warm for the evening. The Dimmer learns when you want a 
     ],
     ""Description"": ""The right light. Always.\n\nBright for the morning. Warm for the evening. The Dimmer learns when you want a room to feel different — and adjusts without you asking. Fits behind your existing switch. Works with your existing lights."",
     ""SRP"": 3000,
-    ""DP"": 1200,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -164,7 +160,7 @@ Key Specifications
 ⚠ For use with dimmable fixtures and drivers only. Not a 0-10V controller and cannot function as a plain on/off relay."
 2 Channel Zigbee Retrofit Dimmer,2 (independent),"Home Assistant (native), Matter & Apple HomeKit (via hub)","Two circuits. One mood.
 
-Set the scene across two lighting circuits from a single module. The 2-Channel Dimmer sits invisibly behind your existing switches, independently managing the brightness of each circuit — responding to schedules, scenes, or a quiet tap.",1300,Zigbee coordinator or hub. Dimmable fixtures or drivers required.,Phase-Cut Dimmer,18,85365090,https://drive.google.com/file/d/1NyhF4UDxVbpkvQxP6_MgzKRawuNwdWDh/view?usp=sharing,Flush box or DIN rail,38625458903,"{
+Set the scene across two lighting circuits from a single module. The 2-Channel Dimmer sits invisibly behind your existing switches, independently managing the brightness of each circuit — responding to schedules, scenes, or a quiet tap.",Zigbee coordinator or hub. Dimmable fixtures or drivers required.,Phase-Cut Dimmer,18,85365090,https://drive.google.com/file/d/1NyhF4UDxVbpkvQxP6_MgzKRawuNwdWDh/view?usp=sharing,Flush box or DIN rail,38625458903,"{
   ""product"": {
     ""SKU"": ""38625458903"",
     ""ProductName"": ""2 Channel Zigbee Retrofit Dimmer"",
@@ -181,7 +177,6 @@ Set the scene across two lighting circuits from a single module. The 2-Channel D
     ],
     ""Description"": ""Two circuits. One mood.\n\nSet the scene across two lighting circuits from a single module. The 2-Channel Dimmer sits invisibly behind your existing switches, independently managing the brightness of each circuit — responding to schedules, scenes, or a quiet tap."",
     ""SRP"": 3250,
-    ""DP"": 1300,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -205,7 +200,7 @@ Key Specifications
 ⚠ For use with dimmable fixtures and drivers only. Not a 0-10V controller and cannot function as a plain on/off relay."
 Zigbee Shutter Module,1 motor channel,"Home Assistant (native), Matter & Apple HomeKit (via hub)","Your blinds open with the morning. They close before the afternoon heat sets in. You didn't touch them.
 
-The Shutter Controller brings your motorized curtains, roller blinds, and shutters into your smart home — responding to schedules, conditions, or a single tap. One device, quietly managing the light and privacy of your space. Fits behind your current wall switch. Disappears into your home.",1200,Zigbee coordinator or hub,Shutter / Curtain Motor Controller,18,85365090,,Flush box or DIN rail,38684154573,"{
+The Shutter Controller brings your motorized curtains, roller blinds, and shutters into your smart home — responding to schedules, conditions, or a single tap. One device, quietly managing the light and privacy of your space. Fits behind your current wall switch. Disappears into your home.",Zigbee coordinator or hub,Shutter / Curtain Motor Controller,18,85365090,,Flush box or DIN rail,38684154573,"{
   ""product"": {
     ""SKU"": ""38684154573"",
     ""ProductName"": ""Zigbee Shutter Module"",
@@ -221,7 +216,6 @@ The Shutter Controller brings your motorized curtains, roller blinds, and shutte
     ],
     ""Description"": ""Your blinds open with the morning. They close before the afternoon heat sets in. You didn't touch them.\n\nThe Shutter Controller brings your motorized curtains, roller blinds, and shutters into your smart home — responding to schedules, conditions, or a single tap. One device, quietly managing the light and privacy of your space. Fits behind your current wall switch. Disappears into your home."",
     ""SRP"": 3000,
-    ""DP"": 1200,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -245,7 +239,7 @@ Key Specifications
 ⚠ Designed exclusively for AC motor loads. Not suitable for DC motors or use as a lighting relay."
 Analog 0-10V Zigbee Dimmer,1,"Home Assistant (native), Matter & Apple HomeKit (via hub)","Professional lighting. Smart control.
 
-The 0-10V Dimmer bridges commercial-grade LED lighting systems with your smart home — giving you smooth, precise brightness control through the same interface as every other device. Simple to automate. Invisible once installed.",1700,Zigbee coordinator or hub. Compatible 0-10V LED drivers required.,0-10V Analog Dimmer Controller,18,85365090,,DIN rail / electrical panel,38637323117,"{
+The 0-10V Dimmer bridges commercial-grade LED lighting systems with your smart home — giving you smooth, precise brightness control through the same interface as every other device. Simple to automate. Invisible once installed.",Zigbee coordinator or hub. Compatible 0-10V LED drivers required.,0-10V Analog Dimmer Controller,18,85365090,,DIN rail / electrical panel,38637323117,"{
   ""product"": {
     ""SKU"": ""38637323117"",
     ""ProductName"": ""Analog 0-10V Zigbee Dimmer"",
@@ -262,7 +256,6 @@ The 0-10V Dimmer bridges commercial-grade LED lighting systems with your smart h
     ],
     ""Description"": ""Professional lighting. Smart control.\n\nThe 0-10V Dimmer bridges commercial-grade LED lighting systems with your smart home — giving you smooth, precise brightness control through the same interface as every other device. Simple to automate. Invisible once installed."",
     ""SRP"": 4250,
-    ""DP"": 1700,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -285,7 +278,7 @@ Key Specifications
 ⚠ Control signal output only — does not switch or dim high-voltage loads directly. Compatible 0-10V LED drivers required."
 Zigbee Gateway (Wired),,Home Assistant and compatible Zigbee automation platforms,"The hub your home thinks through.
 
-Everything connects to this. The Zigbee Gateway sits quietly on your network — wired for stability — and gives your entire smart home a reliable brain. Pair it once. Trust it always.",2500,Wired Ethernet router connection,Zigbee Coordinator / Gateway,18,85176290,https://drive.google.com/file/d/13MQNeRxxL-p_wDpVL-M71GUnyfEIT2Tf/view?usp=drive_link,"Indoor, fixed wired LAN connection",38678840105,"{
+Everything connects to this. The Zigbee Gateway sits quietly on your network — wired for stability — and gives your entire smart home a reliable brain. Pair it once. Trust it always.",Wired Ethernet router connection,Zigbee Coordinator / Gateway,18,85176290,https://drive.google.com/file/d/13MQNeRxxL-p_wDpVL-M71GUnyfEIT2Tf/view?usp=drive_link,"Indoor, fixed wired LAN connection",38678840105,"{
   ""product"": {
     ""SKU"": ""38678840105"",
     ""ProductName"": ""Zigbee Gateway (Wired)"",
@@ -301,7 +294,6 @@ Everything connects to this. The Zigbee Gateway sits quietly on your network —
     ],
     ""Description"": ""The hub your home thinks through.\n\nEverything connects to this. The Zigbee Gateway sits quietly on your network — wired for stability — and gives your entire smart home a reliable brain. Pair it once. Trust it always."",
     ""SRP"": 6250,
-    ""DP"": 2500,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -324,7 +316,7 @@ Key Specifications
 ⚠ Does not control electrical loads. A stable wired Ethernet connection is required for reliable operation."
 Zigbee Gateway (Matter),,"Matter-enabled apps, Apple HomeKit (via Matter), supported automation platforms","One home. Every ecosystem.
 
-Zigbee devices. Matter devices. Apple HomeKit. The Matter Gateway connects them all — no friction, no switching between apps. Your home speaks one language, even when your devices don't.",6100,Wired Ethernet router connection,Smart Home Gateway / Bridge,18,85176290,https://drive.google.com/file/d/17hIUCm7c5LlklenolZj9id97cxkfs_5y/view?usp=drive_link,"Indoor, fixed wired LAN connection",38623861651,"{
+Zigbee devices. Matter devices. Apple HomeKit. The Matter Gateway connects them all — no friction, no switching between apps. Your home speaks one language, even when your devices don't.",Wired Ethernet router connection,Smart Home Gateway / Bridge,18,85176290,https://drive.google.com/file/d/17hIUCm7c5LlklenolZj9id97cxkfs_5y/view?usp=drive_link,"Indoor, fixed wired LAN connection",38623861651,"{
   ""product"": {
     ""SKU"": ""38623861651"",
     ""ProductName"": ""Zigbee Gateway (Matter)"",
@@ -342,7 +334,6 @@ Zigbee devices. Matter devices. Apple HomeKit. The Matter Gateway connects them 
     ],
     ""Description"": ""One home. Every ecosystem.\n\nZigbee devices. Matter devices. Apple HomeKit. The Matter Gateway connects them all — no friction, no switching between apps. Your home speaks one language, even when your devices don't."",
     ""SRP"": 15250,
-    ""DP"": 6100,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -365,7 +356,7 @@ Key Specifications
 ⚠ Does not control electrical loads. Acts as a communication and bridging layer only."
 Convergia,,"KNX, Zigbee, Wi-Fi, Matter, LAN/IP, AV systems, IP cameras","Your home. Fully understood.
 
-Convergia doesn't automate your home — it understands it. Every light, every climate system, every scene runs through a single platform that thinks locally, responds instantly, and never depends on a cloud server to keep your life running.",35000,Qualified integrator installation recommended,Local Smart Automation Gateway,18,84713010,https://drive.google.com/file/d/13V5QZjSY4jw20KzVq7TDwl63i1r6WqeJ/view?usp=drive_link,Pre-configured Intel NUC-based hardware appliance,38616756936,"{
+Convergia doesn't automate your home — it understands it. Every light, every climate system, every scene runs through a single platform that thinks locally, responds instantly, and never depends on a cloud server to keep your life running.",Qualified integrator installation recommended,Local Smart Automation Gateway,18,84713010,https://drive.google.com/file/d/13V5QZjSY4jw20KzVq7TDwl63i1r6WqeJ/view?usp=drive_link,Pre-configured Intel NUC-based hardware appliance,38616756936,"{
   ""product"": {
     ""SKU"": ""38616756936"",
     ""ProductName"": ""Convergia"",
@@ -384,7 +375,6 @@ Convergia doesn't automate your home — it understands it. Every light, every c
     ],
     ""Description"": ""Your home. Fully understood.\n\nConvergia doesn't automate your home — it understands it. Every light, every climate system, every scene runs through a single platform that thinks locally, responds instantly, and never depends on a cloud server to keep your life running."",
     ""SRP"": 87500,
-    ""DP"": 35000,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -409,7 +399,7 @@ Key Specifications
 ⚠ Does not switch electrical loads. Functions as the central intelligence layer for the entire automation system. Qualified integrator installation recommended."
 IR Blaster (WiFi),,Compatible smart home apps and automation platforms,"Every remote. One app.
 
-Your AC, TV, and set-top box — all the devices that came with their own remotes — now respond to . No rewiring. Just point, configure, and let your home handle the rest.",850,2.4 GHz Wi-Fi network,Wi-Fi IR Blaster / IR Controller,18,85437099,,"Indoor, line-of-sight to IR devices",38668925286,"{
+Your AC, TV, and set-top box — all the devices that came with their own remotes — now respond to . No rewiring. Just point, configure, and let your home handle the rest.",2.4 GHz Wi-Fi network,Wi-Fi IR Blaster / IR Controller,18,85437099,,"Indoor, line-of-sight to IR devices",38668925286,"{
   ""product"": {
     ""SKU"": ""38668925286"",
     ""ProductName"": ""IR Blaster (WiFi)"",
@@ -425,7 +415,6 @@ Your AC, TV, and set-top box — all the devices that came with their own remote
     ],
     ""Description"": ""Every remote. One app.\n\nYour AC, TV, and set-top box — all the devices that came with their own remotes — now respond to . No rewiring. Just point, configure, and let your home handle the rest."",
     ""SRP"": 2125,
-    ""DP"": 850,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -446,7 +435,7 @@ Key Specifications
 ⚠ IR line-of-sight to target devices is required. Does not switch electrical loads. RF devices not supported — see IR+RF Blaster."
 IR+RF Blaster (WiFi),,Compatible smart home apps and automation platforms,"IR and RF. Nothing left out.
 
-Some devices use IR. Some use RF. The IR+RF Blaster covers both — motorized curtains, fans, projectors, air conditioners, and more — unified in a single device and a single app.",1200,2.4 GHz Wi-Fi network,Wi-Fi IR + RF Blaster / Universal Remote Controller,18,85437099,,"Indoor, within signal range of target devices",38635939814,"{
+Some devices use IR. Some use RF. The IR+RF Blaster covers both — motorized curtains, fans, projectors, air conditioners, and more — unified in a single device and a single app.",2.4 GHz Wi-Fi network,Wi-Fi IR + RF Blaster / Universal Remote Controller,18,85437099,,"Indoor, within signal range of target devices",38635939814,"{
   ""product"": {
     ""SKU"": ""38635939814"",
     ""ProductName"": ""IR+RF Blaster (WiFi)"",
@@ -462,7 +451,6 @@ Some devices use IR. Some use RF. The IR+RF Blaster covers both — motorized cu
     ],
     ""Description"": ""IR and RF. Nothing left out.\n\nSome devices use IR. Some use RF. The IR+RF Blaster covers both — motorized curtains, fans, projectors, air conditioners, and more — unified in a single device and a single app."",
     ""SRP"": 3000,
-    ""DP"": 1200,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -483,7 +471,7 @@ Key Specifications
 ⚠ Does not switch electrical loads. IR requires line-of-sight to target devices; RF does not."
 "IR Blaster w/ Analog Screen, Temp & Humidity Sensor (WiFi)",,Compatible smart home apps and automation platforms,"It senses. It responds. You don't have to.
 
-When the room gets warm, the air conditioner turns on. You didn't schedule it — read the room. The IR Blaster with sensors watches your environment and acts on it, quietly and precisely.",1900,2.4 GHz Wi-Fi network,Wi-Fi IR Blaster with Environmental Sensor,18,85437099,https://drive.google.com/file/d/1n0WiprtRizhf-ZaUTOsbJD-AMRzoVsJn/view?usp=drive_link,"Indoor, line-of-sight to IR devices",38614020398,"{
+When the room gets warm, the air conditioner turns on. You didn't schedule it — read the room. The IR Blaster with sensors watches your environment and acts on it, quietly and precisely.",2.4 GHz Wi-Fi network,Wi-Fi IR Blaster with Environmental Sensor,18,85437099,https://drive.google.com/file/d/1n0WiprtRizhf-ZaUTOsbJD-AMRzoVsJn/view?usp=drive_link,"Indoor, line-of-sight to IR devices",38614020398,"{
   ""product"": {
     ""SKU"": ""38614020398"",
     ""ProductName"": ""IR Blaster w/ Analog Screen, Temp & Humidity Sensor (WiFi)"",
@@ -499,7 +487,6 @@ When the room gets warm, the air conditioner turns on. You didn't schedule it �
     ],
     ""Description"": ""It senses. It responds. You don't have to.\n\nWhen the room gets warm, the air conditioner turns on. You didn't schedule it — read the room. The IR Blaster with sensors watches your environment and acts on it, quietly and precisely."",
     ""SRP"": 4750,
-    ""DP"": 1900,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -522,7 +509,7 @@ Key Specifications
 ⚠ IR line-of-sight to target devices is required. Does not switch electrical loads."
 Zigbee VRV Gateway,,Zigbee automation platforms,"Your entire HVAC system. One tap.
 
-Commercial-grade air conditioning, brought into your smart home. The VRV Gateway connects your VRV/VRF system to — so every unit, every zone, responds to your preferences without requiring a separate app or remote.",22000,Zigbee coordinator or hub. Compatible VRV/VRF system required.,VRV/VRF to Zigbee Integration Gateway,28,84159000,https://drive.google.com/file/d/15LuBc_OSoLCsmOPDDH0mluoHsOnA_oX2/view?usp=drive_link,"Indoor, wired LAN connection to outdoor unit",38693737333,"{
+Commercial-grade air conditioning, brought into your smart home. The VRV Gateway connects your VRV/VRF system to — so every unit, every zone, responds to your preferences without requiring a separate app or remote.",Zigbee coordinator or hub. Compatible VRV/VRF system required.,VRV/VRF to Zigbee Integration Gateway,28,84159000,https://drive.google.com/file/d/15LuBc_OSoLCsmOPDDH0mluoHsOnA_oX2/view?usp=drive_link,"Indoor, wired LAN connection to outdoor unit",38693737333,"{
   ""product"": {
     ""SKU"": ""38693737333"",
     ""ProductName"": ""Zigbee VRV Gateway"",
@@ -539,7 +526,6 @@ Commercial-grade air conditioning, brought into your smart home. The VRV Gateway
     ],
     ""Description"": ""Your entire HVAC system. One tap.\n\nCommercial-grade air conditioning, brought into your smart home. The VRV Gateway connects your VRV/VRF system to — so every unit, every zone, responds to your preferences without requiring a separate app or remote."",
     ""SRP"": 55000,
-    ""DP"": 22000,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -561,7 +547,7 @@ Key Specifications
 ⚠ Communication bridge only — does not switch electrical loads. VRV/VRF system compatibility must be confirmed before installation."
 Zigbee DALI Gateway,Up to 64 DALI nodes,Zigbee automation platforms,"Architectural lighting. Smart precision.
 
-DALI lighting systems were built for professional environments — precise, flexible, professional-grade. The DALI Gateway brings that precision into your smart ecosystem, giving you scene control, tunable white, and RGBW automation through the same interface as everything else.",40000,Zigbee coordinator or hub. Existing DALI bus installation.,Zigbee to DALI Protocol Gateway,18,85371010,https://drive.google.com/drive/folders/1MulX_KctIFXJcBVC5U0hjCabwTNFVe0e?usp=drive_link,DIN rail or panel-mounted,38620154019,"{
+DALI lighting systems were built for professional environments — precise, flexible, professional-grade. The DALI Gateway brings that precision into your smart ecosystem, giving you scene control, tunable white, and RGBW automation through the same interface as everything else.",Zigbee coordinator or hub. Existing DALI bus installation.,Zigbee to DALI Protocol Gateway,18,85371010,https://drive.google.com/drive/folders/1MulX_KctIFXJcBVC5U0hjCabwTNFVe0e?usp=drive_link,DIN rail or panel-mounted,38620154019,"{
   ""product"": {
     ""SKU"": ""38620154019"",
     ""ProductName"": ""Zigbee DALI Gateway"",
@@ -579,7 +565,6 @@ DALI lighting systems were built for professional environments — precise, flex
     ],
     ""Description"": ""Architectural lighting. Smart precision.\n\nDALI lighting systems were built for professional environments — precise, flexible, professional-grade. The DALI Gateway brings that precision into your smart ecosystem, giving you scene control, tunable white, and RGBW automation through the same interface as everything else."",
     ""SRP"": 100000,
-    ""DP"": 40000,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -602,7 +587,7 @@ Key Specifications
 ⚠ Does not power lighting loads directly. Communicates with DALI drivers over the bus. Existing DALI installation required."
 LED Controller (CV-RGB+CCT),"5 (R, G, B, CW, WW)",Compatible smart lighting ecosystems,"Every colour. Every white. One controller.
 
-From vibrant RGB to tunable warm-to-cool white — the CV RGB+CCT Controller gives your LED strips full range. Set the mood for every moment, every room, automatically.",3699,Compatible CV DC power supply (12V or 24V) required,Constant Voltage LED Controller,18,85371010,https://drive.google.com/file/d/1zgl2_aMFqy91JYvudjwMLSgL21dFsPyE/view?usp=drive_link,Indoor panel or concealed installation,38619518575,"{
+From vibrant RGB to tunable warm-to-cool white — the CV RGB+CCT Controller gives your LED strips full range. Set the mood for every moment, every room, automatically.",Compatible CV DC power supply (12V or 24V) required,Constant Voltage LED Controller,18,85371010,https://drive.google.com/file/d/1zgl2_aMFqy91JYvudjwMLSgL21dFsPyE/view?usp=drive_link,Indoor panel or concealed installation,38619518575,"{
   ""product"": {
     ""SKU"": ""38619518575"",
     ""ProductName"": ""LED Controller (CV-RGB+CCT)"",
@@ -619,7 +604,6 @@ From vibrant RGB to tunable warm-to-cool white — the CV RGB+CCT Controller giv
     ],
     ""Description"": ""Every colour. Every white. One controller.\n\nFrom vibrant RGB to tunable warm-to-cool white — the CV RGB+CCT Controller gives your LED strips full range. Set the mood for every moment, every room, automatically."",
     ""SRP"": 9247,
-    ""DP"": 3699,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -641,7 +625,7 @@ Key Specifications
 ⚠ Requires an appropriate CV DC power supply (12V/24V). Does not power LED strips directly from mains voltage."
 LED Controller (CV-DIMMER),1,Compatible smart lighting ecosystems,"Simple. Smooth. Smart.
 
-Clean, continuous dimming for single-color LED strips — from full brightness to a gentle glow. The CV Dimmer handles the detail so your lighting always feels exactly right.",3299,Compatible CV DC power supply (12V or 24V) required,Constant Voltage LED Dimmer Controller,18,85371010,,Indoor panel or concealed installation,38673300629,"{
+Clean, continuous dimming for single-color LED strips — from full brightness to a gentle glow. The CV Dimmer handles the detail so your lighting always feels exactly right.",Compatible CV DC power supply (12V or 24V) required,Constant Voltage LED Dimmer Controller,18,85371010,,Indoor panel or concealed installation,38673300629,"{
   ""product"": {
     ""SKU"": ""38673300629"",
     ""ProductName"": ""LED Controller (CV-DIMMER)"",
@@ -658,7 +642,6 @@ Clean, continuous dimming for single-color LED strips — from full brightness t
     ],
     ""Description"": ""Simple. Smooth. Smart.\n\nClean, continuous dimming for single-color LED strips — from full brightness to a gentle glow. The CV Dimmer handles the detail so your lighting always feels exactly right."",
     ""SRP"": 8247,
-    ""DP"": 3299,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -681,7 +664,7 @@ Key Specifications
 ⚠ Requires an appropriate CV DC power supply (12V/24V). Does not power LED strips directly from mains voltage."
 LED Controller (CC-CCT),2 (WW + CW),Compatible smart lighting ecosystems,"Warm in the evening. Crisp in the morning.
 
-Tunable white lighting that adjusts to the time of day — and to you. The CC-CCT Controller manages both warmth and brightness automatically, making every room feel right without you thinking about it.",3299,Constant current LED loads matched to controller rated output current,Constant Current LED Controller,18,85371010,,Indoor panel or fixture-integrated,38671782652,"{
+Tunable white lighting that adjusts to the time of day — and to you. The CC-CCT Controller manages both warmth and brightness automatically, making every room feel right without you thinking about it.",Constant current LED loads matched to controller rated output current,Constant Current LED Controller,18,85371010,,Indoor panel or fixture-integrated,38671782652,"{
   ""product"": {
     ""SKU"": ""38671782652"",
     ""ProductName"": ""LED Controller (CC-CCT)"",
@@ -698,7 +681,6 @@ Tunable white lighting that adjusts to the time of day — and to you. The CC-CC
     ],
     ""Description"": ""Warm in the evening. Crisp in the morning.\n\nTunable white lighting that adjusts to the time of day — and to you. The CC-CCT Controller manages both warmth and brightness automatically, making every room feel right without you thinking about it."",
     ""SRP"": 8247,
-    ""DP"": 3299,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -721,7 +703,7 @@ Key Specifications
 ⚠ For constant current LED loads only. Not compatible with constant voltage LED strips."
 Zigbee Contact Sensor,,Compatible Zigbee gateways and automation platforms,"Open. Closed. Your home knows.
 
-When a door opens, the lights turn on. When a window is left open, you get a notification. The Contact Sensor is small, invisible, and always paying attention — so you don't have to.",929,Zigbee coordinator or hub,Door/Window Contact Sensor,18,85319000,https://drive.google.com/file/d/10XmZou7gK6XvDoacBVoxbBOz485kd_nq/view?usp=drive_link,Surface mount (adhesive or screws),38640080710,"{
+When a door opens, the lights turn on. When a window is left open, you get a notification. The Contact Sensor is small, invisible, and always paying attention — so you don't have to.",Zigbee coordinator or hub,Door/Window Contact Sensor,18,85319000,https://drive.google.com/file/d/10XmZou7gK6XvDoacBVoxbBOz485kd_nq/view?usp=drive_link,Surface mount (adhesive or screws),38640080710,"{
   ""product"": {
     ""SKU"": ""38640080710"",
     ""ProductName"": ""Zigbee Contact Sensor"",
@@ -738,7 +720,6 @@ When a door opens, the lights turn on. When a window is left open, you get a not
     ],
     ""Description"": ""Open. Closed. Your home knows.\n\nWhen a door opens, the lights turn on. When a window is left open, you get a notification. The Contact Sensor is small, invisible, and always paying attention — so you don't have to."",
     ""SRP"": 2322,
-    ""DP"": 929,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -760,7 +741,7 @@ Key Specifications
 ⚠ Status sensor only — does not control electrical loads."
 Zigbee Motion Sensor + LUX Sensor,,Compatible Zigbee gateways and automation platforms,"The lights come on when you enter. Not when the sun is still up.
 
-The Motion + LUX Sensor reads both movement and light — so automations happen only when they should. It's the difference between a smart home that reacts and one that actually understands.",1700,Zigbee coordinator or hub,Motion + Ambient Light (LUX) Sensor,18,85319000,https://drive.google.com/file/d/1i-PAkP3oC8F3HYBE_fI3UB3XT8cP-RZr/view?usp=drive_link,Wall or ceiling (adhesive or screws),38687599521,"{
+The Motion + LUX Sensor reads both movement and light — so automations happen only when they should. It's the difference between a smart home that reacts and one that actually understands.",Zigbee coordinator or hub,Motion + Ambient Light (LUX) Sensor,18,85319000,https://drive.google.com/file/d/1i-PAkP3oC8F3HYBE_fI3UB3XT8cP-RZr/view?usp=drive_link,Wall or ceiling (adhesive or screws),38687599521,"{
   ""product"": {
     ""SKU"": ""38687599521"",
     ""ProductName"": ""Zigbee Motion Sensor + LUX Sensor"",
@@ -777,7 +758,6 @@ The Motion + LUX Sensor reads both movement and light — so automations happen 
     ],
     ""Description"": ""The lights come on when you enter. Not when the sun is still up.\n\nThe Motion + LUX Sensor reads both movement and light — so automations happen only when they should. It's the difference between a smart home that reacts and one that actually understands."",
     ""SRP"": 4250,
-    ""DP"": 1700,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -799,7 +779,7 @@ Key Specifications
 ⚠ Does not control electrical loads. Provides sensor data for automation triggers."
 Zigbee Vibration Sensor,,Compatible Zigbee gateways and automation platforms,"If something moves, you'll know.
 
-A knock on the safe. A window forced open. A cabinet disturbed. The Vibration Sensor catches what cameras miss — and tells you instantly, before anything else happens.",1500,Zigbee coordinator or hub,Vibration Detection Sensor,18,85319000,https://drive.google.com/file/d/13lLHbScqz8mtf0b9SfjaL3g43ALC4MG-/view?usp=drive_link,Surface mount (adhesive or screws),3864587193,"{
+A knock on the safe. A window forced open. A cabinet disturbed. The Vibration Sensor catches what cameras miss — and tells you instantly, before anything else happens.",Zigbee coordinator or hub,Vibration Detection Sensor,18,85319000,https://drive.google.com/file/d/13lLHbScqz8mtf0b9SfjaL3g43ALC4MG-/view?usp=drive_link,Surface mount (adhesive or screws),3864587193,"{
   ""product"": {
     ""SKU"": ""3864587193"",
     ""ProductName"": ""Zigbee Vibration Sensor"",
@@ -816,7 +796,6 @@ A knock on the safe. A window forced open. A cabinet disturbed. The Vibration Se
     ],
     ""Description"": ""If something moves, you'll know.\n\nA knock on the safe. A window forced open. A cabinet disturbed. The Vibration Sensor catches what cameras miss — and tells you instantly, before anything else happens."",
     ""SRP"": 3750,
-    ""DP"": 1500,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -838,7 +817,7 @@ Key Specifications
 ⚠ Event notification only — does not control electrical loads."
 Zigbee mmWave Sensor (USB),,Compatible Zigbee gateways and automation platforms,"It knows you're there. Even when you're still.
 
-Traditional motion sensors miss you the moment you stop moving. The mmWave Sensor doesn't. It detects presence — not just movement — so your lights stay on, your climate stays comfortable, and your home keeps responding.",2800,USB power adapter or USB power source. Zigbee coordinator or hub.,mmWave Motion / Presence Sensor,18,85319000,https://drive.google.com/drive/folders/1HJCabIqemu4phpd-Ekups704d0dAahCT?usp=drive_link,"Flexible (surface, ceiling, or wall)",38626055855,"{
+Traditional motion sensors miss you the moment you stop moving. The mmWave Sensor doesn't. It detects presence — not just movement — so your lights stay on, your climate stays comfortable, and your home keeps responding.",USB power adapter or USB power source. Zigbee coordinator or hub.,mmWave Motion / Presence Sensor,18,85319000,https://drive.google.com/drive/folders/1HJCabIqemu4phpd-Ekups704d0dAahCT?usp=drive_link,"Flexible (surface, ceiling, or wall)",38626055855,"{
   ""product"": {
     ""SKU"": ""38626055855"",
     ""ProductName"": ""Zigbee mmWave Sensor (USB)"",
@@ -855,7 +834,6 @@ Traditional motion sensors miss you the moment you stop moving. The mmWave Senso
     ],
     ""Description"": ""It knows you're there. Even when you're still.\n\nTraditional motion sensors miss you the moment you stop moving. The mmWave Sensor doesn't. It detects presence — not just movement — so your lights stay on, your climate stays comfortable, and your home keeps responding."",
     ""SRP"": 7000,
-    ""DP"": 2800,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -877,7 +855,7 @@ Key Specifications
 ⚠ Does not control electrical loads. Provides presence/motion data for automation triggers."
 Zigbee mmWave Sensor (Ceiling Mounted),,Compatible Zigbee gateways and automation platforms,"A room that knows when it's occupied.
 
-The Ceiling mmWave Sensor watches the whole room — not a narrow cone. It detects presence, not just motion, so every automation responds to whether someone is actually there. Not whether they waved.",4150,Mains wiring at ceiling mount point. Zigbee coordinator or hub.,mmWave Motion / Presence Sensor,18,85319000,https://drive.google.com/file/d/1rlLGtV2vJ4EBOdk3x0zdh1rLqqVF5x6e/view?usp=drive_link,Ceiling mount (mains powered),38678738240,"{
+The Ceiling mmWave Sensor watches the whole room — not a narrow cone. It detects presence, not just motion, so every automation responds to whether someone is actually there. Not whether they waved.",Mains wiring at ceiling mount point. Zigbee coordinator or hub.,mmWave Motion / Presence Sensor,18,85319000,https://drive.google.com/file/d/1rlLGtV2vJ4EBOdk3x0zdh1rLqqVF5x6e/view?usp=drive_link,Ceiling mount (mains powered),38678738240,"{
   ""product"": {
     ""SKU"": ""38678738240"",
     ""ProductName"": ""Zigbee mmWave Sensor (Ceiling Mounted)"",
@@ -894,7 +872,6 @@ The Ceiling mmWave Sensor watches the whole room — not a narrow cone. It detec
     ],
     ""Description"": ""A room that knows when it's occupied.\n\nThe Ceiling mmWave Sensor watches the whole room — not a narrow cone. It detects presence, not just motion, so every automation responds to whether someone is actually there. Not whether they waved."",
     ""SRP"": 10375,
-    ""DP"": 4150,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -916,7 +893,7 @@ Key Specifications
 ⚠ Does not control electrical loads. Provides presence/motion data for automation triggers."
 TOQ 4T,4,Zigbee automation platforms,"Four touches. Your whole room.
 
-The TOQ 4T is a panel that disappears into your wall and lets your home respond at a touch. Four buttons. Any scene. Any load. Finished in glass, in the colour that suits your space.",4372,Zigbee coordinator or hub,Zigbee Touch Control Panel,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38676610441,"{
+The TOQ 4T is a panel that disappears into your wall and lets your home respond at a touch. Four buttons. Any scene. Any load. Finished in glass, in the colour that suits your space.",Zigbee coordinator or hub,Zigbee Touch Control Panel,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38676610441,"{
   ""product"": {
     ""SKU"": ""38676610441"",
     ""ProductName"": ""TOQ 4T"",
@@ -933,7 +910,6 @@ The TOQ 4T is a panel that disappears into your wall and lets your home respond 
     ],
     ""Description"": ""Four touches. Your whole room.\n\nThe TOQ 4T is a panel that disappears into your wall and lets your home respond at a touch. Four buttons. Any scene. Any load. Finished in glass, in the colour that suits your space."",
     ""SRP"": 10930,
-    ""DP"": 4372,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -958,7 +934,7 @@ Key Specifications
 ⚠ For loads above 4A, use an external SSR or contactor for safe operation and longer relay life."
 TOQ 4T+1S,4,Zigbee automation platforms,"Control your room. Charge your devices. One panel.
 
-The TOQ 4T+1S combines smart control with everyday utility — four touch buttons for your home automation, a power socket, and USB charging, all in a single elegant wall panel.",5753,Zigbee coordinator or hub,Zigbee Touch Control Panel with Integrated Socket,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38639614871,"{
+The TOQ 4T+1S combines smart control with everyday utility — four touch buttons for your home automation, a power socket, and USB charging, all in a single elegant wall panel.",Zigbee coordinator or hub,Zigbee Touch Control Panel with Integrated Socket,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38639614871,"{
   ""product"": {
     ""SKU"": ""38639614871"",
     ""ProductName"": ""TOQ 4T+1S"",
@@ -975,7 +951,6 @@ The TOQ 4T+1S combines smart control with everyday utility — four touch button
     ],
     ""Description"": ""Control your room. Charge your devices. One panel.\n\nThe TOQ 4T+1S combines smart control with everyday utility — four touch buttons for your home automation, a power socket, and USB charging, all in a single elegant wall panel."",
     ""SRP"": 14382,
-    ""DP"": 5753,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1000,7 +975,7 @@ Key Specifications
 ⚠ For loads above 4A use an external SSR or contactor. Socket rated at 6A maximum."
 TOQ 8T,8,Zigbee automation platforms,"Eight circuits. One surface.
 
-A full room — or an entire floor — controlled from a single panel. The TOQ 8T gives you eight independent touch points, finished in glass, responding to the lightest touch.",5522,Zigbee coordinator or hub,Zigbee Touch Control Panel,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38687106141,"{
+A full room — or an entire floor — controlled from a single panel. The TOQ 8T gives you eight independent touch points, finished in glass, responding to the lightest touch.",Zigbee coordinator or hub,Zigbee Touch Control Panel,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38687106141,"{
   ""product"": {
     ""SKU"": ""38687106141"",
     ""ProductName"": ""TOQ 8T"",
@@ -1017,7 +992,6 @@ A full room — or an entire floor — controlled from a single panel. The TOQ 8
     ],
     ""Description"": ""Eight circuits. One surface.\n\nA full room — or an entire floor — controlled from a single panel. The TOQ 8T gives you eight independent touch points, finished in glass, responding to the lightest touch."",
     ""SRP"": 13805,
-    ""DP"": 5522,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1041,7 +1015,7 @@ Key Specifications
 ⚠ For loads above 4A, use an external SSR or contactor."
 TOQ 10T,10,Zigbee automation platforms,"Ten touches. Every light, every scene.
 
-The TOQ 10T is for rooms and homes that demand complete control from a single point. Ten independent buttons. Finished in glass. Nothing out of reach.",7823,Zigbee coordinator or hub,Zigbee Touch Control Panel,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38617579105,"{
+The TOQ 10T is for rooms and homes that demand complete control from a single point. Ten independent buttons. Finished in glass. Nothing out of reach.",Zigbee coordinator or hub,Zigbee Touch Control Panel,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38617579105,"{
   ""product"": {
     ""SKU"": ""38617579105"",
     ""ProductName"": ""TOQ 10T"",
@@ -1058,7 +1032,6 @@ The TOQ 10T is for rooms and homes that demand complete control from a single po
     ],
     ""Description"": ""Ten touches. Every light, every scene.\n\nThe TOQ 10T is for rooms and homes that demand complete control from a single point. Ten independent buttons. Finished in glass. Nothing out of reach."",
     ""SRP"": 19557,
-    ""DP"": 7823,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1082,7 +1055,7 @@ Key Specifications
 ⚠ For loads above 4A, use an external SSR or contactor."
 TOQ 8T+1F,8 + 1 fan,Zigbee automation platforms,"Lights and fans. One elegant panel.
 
-Eight touch points for your lighting and scenes, plus a dedicated fan control — all in one glass panel. The TOQ 8T+1F handles the full room without compromise.",8584,Zigbee coordinator or hub,Zigbee Touch Control Panel with Fan Control,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38648381854,"{
+Eight touch points for your lighting and scenes, plus a dedicated fan control — all in one glass panel. The TOQ 8T+1F handles the full room without compromise.",Zigbee coordinator or hub,Zigbee Touch Control Panel with Fan Control,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38648381854,"{
   ""product"": {
     ""SKU"": ""38648381854"",
     ""ProductName"": ""TOQ 8T+1F"",
@@ -1099,7 +1072,6 @@ Eight touch points for your lighting and scenes, plus a dedicated fan control �
     ],
     ""Description"": ""Lights and fans. One elegant panel.\n\nEight touch points for your lighting and scenes, plus a dedicated fan control — all in one glass panel. The TOQ 8T+1F handles the full room without compromise."",
     ""SRP"": 21460,
-    ""DP"": 8584,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1123,7 +1095,7 @@ Key Specifications
 ⚠ For loads above 4A on button channels, use an external SSR or contactor."
 TOQ 4T+2F,4 + 2 fan,Zigbee automation platforms,"Four circuits, two fans. One surface.
 
-Perfect for bedrooms, living spaces, or any room that needs both lighting control and ceiling fan management. The TOQ 4T+2F covers it all from a single glass panel.",5983,Zigbee coordinator or hub,Zigbee Touch Control Panel with Fan Control,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38638793830,"{
+Perfect for bedrooms, living spaces, or any room that needs both lighting control and ceiling fan management. The TOQ 4T+2F covers it all from a single glass panel.",Zigbee coordinator or hub,Zigbee Touch Control Panel with Fan Control,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38638793830,"{
   ""product"": {
     ""SKU"": ""38638793830"",
     ""ProductName"": ""TOQ 4T+2F"",
@@ -1140,7 +1112,6 @@ Perfect for bedrooms, living spaces, or any room that needs both lighting contro
     ],
     ""Description"": ""Four circuits, two fans. One surface.\n\nPerfect for bedrooms, living spaces, or any room that needs both lighting control and ceiling fan management. The TOQ 4T+2F covers it all from a single glass panel."",
     ""SRP"": 14957,
-    ""DP"": 5983,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1164,7 +1135,7 @@ Key Specifications
 ⚠ For loads above 4A on button channels, use an external SSR or contactor."
 TOQ 8T+1S,8,Zigbee automation platforms,"Eight circuits, a power outlet. Nothing missing.
 
-The TOQ 8T+1S gives you full room control plus a socket for everyday use — all in a single, clean glass panel.",7593,Zigbee coordinator or hub,Zigbee Touch Control Panel with Integrated Socket,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,3863826889,"{
+The TOQ 8T+1S gives you full room control plus a socket for everyday use — all in a single, clean glass panel.",Zigbee coordinator or hub,Zigbee Touch Control Panel with Integrated Socket,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,3863826889,"{
   ""product"": {
     ""SKU"": ""3863826889"",
     ""ProductName"": ""TOQ 8T+1S"",
@@ -1181,7 +1152,6 @@ The TOQ 8T+1S gives you full room control plus a socket for everyday use — all
     ],
     ""Description"": ""Eight circuits, a power outlet. Nothing missing.\n\nThe TOQ 8T+1S gives you full room control plus a socket for everyday use — all in a single, clean glass panel."",
     ""SRP"": 18982,
-    ""DP"": 7593,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1205,7 +1175,7 @@ Key Specifications
 ⚠ For loads above 4A, use an external SSR or contactor. Socket rated at 6A."
 TOQ 4T+2F+1S,4 + 2 fan,Zigbee automation platforms,"Everything a room needs. One panel.
 
-Lighting control, two ceiling fans, and a power socket — all from a single wall panel. The TOQ 4T+2F+1S is built for the rooms where you need it all.",8054,Zigbee coordinator or hub,Zigbee Touch Control Panel with Fan and Socket,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38612926801,"{
+Lighting control, two ceiling fans, and a power socket — all from a single wall panel. The TOQ 4T+2F+1S is built for the rooms where you need it all.",Zigbee coordinator or hub,Zigbee Touch Control Panel with Fan and Socket,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38612926801,"{
   ""product"": {
     ""SKU"": ""38612926801"",
     ""ProductName"": ""TOQ 4T+2F+1S"",
@@ -1222,7 +1192,6 @@ Lighting control, two ceiling fans, and a power socket — all from a single wal
     ],
     ""Description"": ""Everything a room needs. One panel.\n\nLighting control, two ceiling fans, and a power socket — all from a single wall panel. The TOQ 4T+2F+1S is built for the rooms where you need it all."",
     ""SRP"": 20135,
-    ""DP"": 8054,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1246,7 +1215,7 @@ Key Specifications
 ⚠ For loads above 4A, use an external SSR or contactor. Socket rated at 6A."
 TOQ 10T+2S,10,Zigbee automation platforms,"Ten circuits, two sockets. Total control.
 
-The TOQ 10T+2S is the most complete single-panel solution in the range — ten touch points, two power outlets, and a finish that belongs on any wall.",11275,Zigbee coordinator or hub,Zigbee Touch Control Panel with Integrated Sockets,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38676065011,"{
+The TOQ 10T+2S is the most complete single-panel solution in the range — ten touch points, two power outlets, and a finish that belongs on any wall.",Zigbee coordinator or hub,Zigbee Touch Control Panel with Integrated Sockets,18,85369090,https://drive.google.com/drive/folders/11lZUaJuuYrBFU0dp6oLYHvNrxOpnC3Up?usp=drive_link,Wall-mounted,38676065011,"{
   ""product"": {
     ""SKU"": ""38676065011"",
     ""ProductName"": ""TOQ 10T+2S"",
@@ -1263,7 +1232,6 @@ The TOQ 10T+2S is the most complete single-panel solution in the range — ten t
     ],
     ""Description"": ""Ten circuits, two sockets. Total control.\n\nThe TOQ 10T+2S is the most complete single-panel solution in the range — ten touch points, two power outlets, and a finish that belongs on any wall."",
     ""SRP"": 28187,
-    ""DP"": 11275,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1287,7 +1255,7 @@ Key Specifications
 ⚠ For loads above 4A, use an external SSR or contactor. Each socket rated at 6A."
 TAC 1,1,Zigbee automation platforms,"One touch. The right response.
 
-The TAC 1 is a single button with complete intention. Load control or scene trigger — available in glass or polypropylene, in the finish that suits your space.",7000,Zigbee coordinator or hub,Zigbee Smart Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38627276917,"{
+The TAC 1 is a single button with complete intention. Load control or scene trigger — available in glass or polypropylene, in the finish that suits your space.",Zigbee coordinator or hub,Zigbee Smart Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38627276917,"{
   ""product"": {
     ""SKU"": ""38627276917"",
     ""ProductName"": ""TAC 1"",
@@ -1303,7 +1271,6 @@ The TAC 1 is a single button with complete intention. Load control or scene trig
     ],
     ""Description"": ""One touch. The right response.\n\nThe TAC 1 is a single button with complete intention. Load control or scene trigger — available in glass or polypropylene, in the finish that suits your space."",
     ""SRP"": 17500,
-    ""DP"": 7000,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1328,7 +1295,7 @@ Key Specifications
 ⚠ For loads above 4A, use an external SSR or contactor."
 TAC 2,2,Zigbee automation platforms,"Two circuits. One switch.
 
-The TAC 2 controls two loads from a single elegant switch face — light and fan, two rooms, or two scenes. Available in glass or polypropylene in the finish you prefer.",7100,Zigbee coordinator or hub,Zigbee Smart Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38698147296,"{
+The TAC 2 controls two loads from a single elegant switch face — light and fan, two rooms, or two scenes. Available in glass or polypropylene in the finish you prefer.",Zigbee coordinator or hub,Zigbee Smart Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38698147296,"{
   ""product"": {
     ""SKU"": ""38698147296"",
     ""ProductName"": ""TAC 2"",
@@ -1344,7 +1311,6 @@ The TAC 2 controls two loads from a single elegant switch face — light and fan
     ],
     ""Description"": ""Two circuits. One switch.\n\nThe TAC 2 controls two loads from a single elegant switch face — light and fan, two rooms, or two scenes. Available in glass or polypropylene in the finish you prefer."",
     ""SRP"": 17750,
-    ""DP"": 7100,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1366,7 +1332,7 @@ Key Specifications
 ⚠ 10A total shared relay capacity. For loads above 4A use an external SSR or contactor."
 TAC 3,3,Zigbee automation platforms,"Three loads. One clean face.
 
-The TAC 3 manages three circuits from a single switch — lighting zones, fans, or scenes — in a finish that makes the hardware disappear into your interior.",7800,Zigbee coordinator or hub,Zigbee Smart Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38677515791,"{
+The TAC 3 manages three circuits from a single switch — lighting zones, fans, or scenes — in a finish that makes the hardware disappear into your interior.",Zigbee coordinator or hub,Zigbee Smart Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38677515791,"{
   ""product"": {
     ""SKU"": ""38677515791"",
     ""ProductName"": ""TAC 3"",
@@ -1382,7 +1348,6 @@ The TAC 3 manages three circuits from a single switch — lighting zones, fans, 
     ],
     ""Description"": ""Three loads. One clean face.\n\nThe TAC 3 manages three circuits from a single switch — lighting zones, fans, or scenes — in a finish that makes the hardware disappear into your interior."",
     ""SRP"": 19500,
-    ""DP"": 7800,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1404,7 +1369,7 @@ Key Specifications
 ⚠ 10A total shared relay capacity. For loads above 3A use an external SSR or contactor."
 TAC 4,4,Zigbee automation platforms,"Four circuits. Seamless control.
 
-The TAC 4 gives you four independent control points on a single switch face — for rooms where every circuit matters and every detail is considered.",8000,Zigbee coordinator or hub,Zigbee Smart Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38697240638,"{
+The TAC 4 gives you four independent control points on a single switch face — for rooms where every circuit matters and every detail is considered.",Zigbee coordinator or hub,Zigbee Smart Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38697240638,"{
   ""product"": {
     ""SKU"": ""38697240638"",
     ""ProductName"": ""TAC 4"",
@@ -1420,7 +1385,6 @@ The TAC 4 gives you four independent control points on a single switch face — 
     ],
     ""Description"": ""Four circuits. Seamless control.\n\nThe TAC 4 gives you four independent control points on a single switch face — for rooms where every circuit matters and every detail is considered."",
     ""SRP"": 20000,
-    ""DP"": 8000,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1442,7 +1406,7 @@ Key Specifications
 ⚠ 10A total shared relay capacity. For loads above 2A use an external SSR or contactor."
 TAC 6,0 (no relay),Zigbee automation platforms,"Six scenes. One wall.
 
-The TAC 6 is a scene controller — not a switch. Press once and an entire room responds. Morning scene, evening scene, away, welcome. Six possibilities on a single, elegant surface.",8500,Zigbee coordinator or hub,Zigbee Scene Control Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38683759132,"{
+The TAC 6 is a scene controller — not a switch. Press once and an entire room responds. Morning scene, evening scene, away, welcome. Six possibilities on a single, elegant surface.",Zigbee coordinator or hub,Zigbee Scene Control Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38683759132,"{
   ""product"": {
     ""SKU"": ""38683759132"",
     ""ProductName"": ""TAC 6"",
@@ -1459,7 +1423,6 @@ The TAC 6 is a scene controller — not a switch. Press once and an entire room 
     ],
     ""Description"": ""Six scenes. One wall.\n\nThe TAC 6 is a scene controller — not a switch. Press once and an entire room responds. Morning scene, evening scene, away, welcome. Six possibilities on a single, elegant surface."",
     ""SRP"": 21250,
-    ""DP"": 8500,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1483,7 +1446,7 @@ Key Specifications
 ⚠ No relay — does not switch electrical loads. Scene control only."
 TAC HL,1,Zigbee automation platforms,"Your geyser. On your schedule.
 
-The TAC HL puts your heavy appliances — water heater, pump, high-power loads — on a smart switch rated for the job. Set schedules, automate by presence, or control remotely. Same simplicity, for serious loads.",7200,Zigbee coordinator or hub,Zigbee Smart Switch (Heavy Load),18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38649421973,"{
+The TAC HL puts your heavy appliances — water heater, pump, high-power loads — on a smart switch rated for the job. Set schedules, automate by presence, or control remotely. Same simplicity, for serious loads.",Zigbee coordinator or hub,Zigbee Smart Switch (Heavy Load),18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38649421973,"{
   ""product"": {
     ""SKU"": ""38649421973"",
     ""ProductName"": ""TAC HL"",
@@ -1499,7 +1462,6 @@ The TAC HL puts your heavy appliances — water heater, pump, high-power loads �
     ],
     ""Description"": ""Your geyser. On your schedule.\n\nThe TAC HL puts your heavy appliances — water heater, pump, high-power loads — on a smart switch rated for the job. Set schedules, automate by presence, or control remotely. Same simplicity, for serious loads."",
     ""SRP"": 18000,
-    ""DP"": 7200,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1524,7 +1486,7 @@ Key Specifications
 ⚠ Heavy load application. Proper cable sizing, circuit protection, and qualified installation are required."
 TAC SH,1 (Open / Close / Stop),Zigbee automation platforms,"Open. Close. Stop. That's all you need.
 
-The TAC SH gives your motorized blinds and curtains a dedicated, physical control — three buttons, completely intuitive, available in the finish that suits your space.",7100,Zigbee coordinator or hub,Zigbee Shutter / Curtain Control Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38622224396,"{
+The TAC SH gives your motorized blinds and curtains a dedicated, physical control — three buttons, completely intuitive, available in the finish that suits your space.",Zigbee coordinator or hub,Zigbee Shutter / Curtain Control Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38622224396,"{
   ""product"": {
     ""SKU"": ""38622224396"",
     ""ProductName"": ""TAC SH"",
@@ -1540,7 +1502,6 @@ The TAC SH gives your motorized blinds and curtains a dedicated, physical contro
     ],
     ""Description"": ""Open. Close. Stop. That's all you need.\n\nThe TAC SH gives your motorized blinds and curtains a dedicated, physical control — three buttons, completely intuitive, available in the finish that suits your space."",
     ""SRP"": 17750,
-    ""DP"": 7100,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1564,7 +1525,7 @@ Key Specifications
 ⚠ AC motor loads only. Not suitable for use as a standard lighting switch."
 TAC 6+,4 load + 2 scene,Zigbee automation platforms,"Load control and scenes. One switch.
 
-The TAC 6+ combines the practical with the experiential — four buttons that control circuits, two that set the scene. Everything your room needs, on a single surface.",8500,Zigbee coordinator or hub,Zigbee Smart Switch with Scene Control,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,3861317782,"{
+The TAC 6+ combines the practical with the experiential — four buttons that control circuits, two that set the scene. Everything your room needs, on a single surface.",Zigbee coordinator or hub,Zigbee Smart Switch with Scene Control,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,3861317782,"{
   ""product"": {
     ""SKU"": ""3861317782"",
     ""ProductName"": ""TAC 6+"",
@@ -1581,7 +1542,6 @@ The TAC 6+ combines the practical with the experiential — four buttons that co
     ],
     ""Description"": ""Load control and scenes. One switch.\n\nThe TAC 6+ combines the practical with the experiential — four buttons that control circuits, two that set the scene. Everything your room needs, on a single surface."",
     ""SRP"": 21250,
-    ""DP"": 8500,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1606,7 +1566,7 @@ Key Specifications
 ⚠ 10A total shared relay capacity across load buttons. For loads above 2A use external SSR or contactor."
 TAC SS,0 (no relay),Zigbee automation platforms,"Any wall. Any location. No wiring.
 
-The TAC SS goes anywhere — no electrician required. Stick it by the bed, at the entrance, on a kitchen island. Six scenes at your fingertips, wherever it makes sense.",8500,Zigbee coordinator or hub,Zigbee Scene Control Switch (Battery),18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,"Wall-mounted or surface-mounted (wireless, no wiring required)",38686106442,"{
+The TAC SS goes anywhere — no electrician required. Stick it by the bed, at the entrance, on a kitchen island. Six scenes at your fingertips, wherever it makes sense.",Zigbee coordinator or hub,Zigbee Scene Control Switch (Battery),18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,"Wall-mounted or surface-mounted (wireless, no wiring required)",38686106442,"{
   ""product"": {
     ""SKU"": ""38686106442"",
     ""ProductName"": ""TAC SS"",
@@ -1623,7 +1583,6 @@ The TAC SS goes anywhere — no electrician required. Stick it by the bed, at th
     ],
     ""Description"": ""Any wall. Any location. No wiring.\n\nThe TAC SS goes anywhere — no electrician required. Stick it by the bed, at the entrance, on a kitchen island. Six scenes at your fingertips, wherever it makes sense."",
     ""SRP"": 21250,
-    ""DP"": 8500,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1648,7 +1607,7 @@ Key Specifications
 ⚠ No relay — does not switch electrical loads. Battery-powered scene control only."
 TAC S,,TAC smart switch system or retrofit relay module,"A socket that fits the system.
 
-The TAC S is a power socket built for the TAC ecosystem — matching your switches in finish and material, and smart when it needs to be.",6100,TAC load channel or compatible retrofit relay for smart control,Modular Power Socket,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted modular,38676256320,"{
+The TAC S is a power socket built for the TAC ecosystem — matching your switches in finish and material, and smart when it needs to be.",TAC load channel or compatible retrofit relay for smart control,Modular Power Socket,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted modular,38676256320,"{
   ""product"": {
     ""SKU"": ""38676256320"",
     ""ProductName"": ""TAC S"",
@@ -1664,7 +1623,6 @@ The TAC S is a power socket built for the TAC ecosystem — matching your switch
     ],
     ""Description"": ""A socket that fits the system.\n\nThe TAC S is a power socket built for the TAC ecosystem — matching your switches in finish and material, and smart when it needs to be."",
     ""SRP"": 15250,
-    ""DP"": 6100,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1684,7 +1642,7 @@ Key Specifications
 ⚠ Not smart by itself. Smart control requires a TAC load channel or compatible retrofit relay module."
 TAC F,1 fan channel,Zigbee automation platforms,"Your fan. Fully in control.
 
-Speed, on, off — from the wall or from anywhere. The TAC F gives your ceiling fan the same smart control as every other device in your home.",2500,Zigbee coordinator or hub,Zigbee Fan Control Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38688864221,"{
+Speed, on, off — from the wall or from anywhere. The TAC F gives your ceiling fan the same smart control as every other device in your home.",Zigbee coordinator or hub,Zigbee Fan Control Switch,18,85369090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38688864221,"{
   ""product"": {
     ""SKU"": ""38688864221"",
     ""ProductName"": ""TAC F"",
@@ -1701,7 +1659,6 @@ Speed, on, off — from the wall or from anywhere. The TAC F gives your ceiling 
     ],
     ""Description"": ""Your fan. Fully in control.\n\nSpeed, on, off — from the wall or from anywhere. The TAC F gives your ceiling fan the same smart control as every other device in your home."",
     ""SRP"": 6250,
-    ""DP"": 2500,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1725,7 +1682,7 @@ Key Specifications
 ⚠ For ceiling fans within rated load (150W) only."
 TAC K,Up to 3 lights or 3 lighting groups,Zigbee automation platforms,"Turn to dim. Push to switch. That's it.
 
-The TAC K makes lighting control physical again — but smarter. A single rotary dial that adjusts brightness, shifts colour temperature, and switches between rooms or groups. No screen. No menu. Just touch.",17500,Zigbee coordinator or hub,Zigbee Rotary Control Dial,18,85365090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38647971307,"{
+The TAC K makes lighting control physical again — but smarter. A single rotary dial that adjusts brightness, shifts colour temperature, and switches between rooms or groups. No screen. No menu. Just touch.",Zigbee coordinator or hub,Zigbee Rotary Control Dial,18,85365090,https://drive.google.com/drive/folders/1OXZwkIVV8mAw_jzQerwYtHcDtQhsizS_?usp=drive_link,Wall-mounted,38647971307,"{
   ""product"": {
     ""SKU"": ""38647971307"",
     ""ProductName"": ""TAC K"",
@@ -1741,7 +1698,6 @@ The TAC K makes lighting control physical again — but smarter. A single rotary
     ],
     ""Description"": ""Turn to dim. Push to switch. That's it.\n\nThe TAC K makes lighting control physical again — but smarter. A single rotary dial that adjusts brightness, shifts colour temperature, and switches between rooms or groups. No screen. No menu. Just touch."",
     ""SRP"": 34000,
-    ""DP"": 17500,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1764,7 +1720,7 @@ Key Specifications
 ⚠ Does not switch electrical loads directly. Smart control interface only."
 "4"" Touch Control Panel",,"Zigbee devices, Alexa voice control","Your whole home. Four inches of glass.
 
-Touch a scene. Ask Alexa. Check a device. The 4"" panel is a control centre that mounts on your wall and brings your entire home into one place — simple, immediate, and always responsive.",13200,Wi-Fi network,Smart Home Touch Control Panel,18,85371000,https://drive.google.com/file/d/1oGopgFNufr1OqQM7IKtwfmKmh0w9MyUz/view?usp=drive_link,Wall-mounted,38618602731,"{
+Touch a scene. Ask Alexa. Check a device. The 4"" panel is a control centre that mounts on your wall and brings your entire home into one place — simple, immediate, and always responsive.",Wi-Fi network,Smart Home Touch Control Panel,18,85371000,https://drive.google.com/file/d/1oGopgFNufr1OqQM7IKtwfmKmh0w9MyUz/view?usp=drive_link,Wall-mounted,38618602731,"{
   ""product"": {
     ""SKU"": ""38618602731"",
     ""ProductName"": ""4\"" Touch Control Panel"",
@@ -1782,7 +1738,6 @@ Touch a scene. Ask Alexa. Check a device. The 4"" panel is a control centre that
     ],
     ""Description"": ""Your whole home. Four inches of glass.\n\nTouch a scene. Ask Alexa. Check a device. The 4\"" panel is a control centre that mounts on your wall and brings your entire home into one place — simple, immediate, and always responsive."",
     ""SRP"": 33000,
-    ""DP"": 13200,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1806,7 +1761,7 @@ Key Specifications
 ⚠ Does not switch electrical loads. Control interface and Zigbee coordinator only."
 4 Gang Scene Switch,0 (no relay),Compatible Zigbee gateways and automation platforms,"Four buttons. Twelve possibilities. Zero wiring.
 
-Place it anywhere. Stick it to a wall, put it on a nightstand, keep it in a pocket. The 4 Gang Scene Switch gives you up to 12 scenes from four buttons — no installation, no electrician, no limits on where it goes.",3499,Zigbee coordinator or hub. CR2430 battery.,Zigbee Scene Control Switch (Battery),18,85365090,,Wireless (adhesive mount or portable),38623516280,"{
+Place it anywhere. Stick it to a wall, put it on a nightstand, keep it in a pocket. The 4 Gang Scene Switch gives you up to 12 scenes from four buttons — no installation, no electrician, no limits on where it goes.",Zigbee coordinator or hub. CR2430 battery.,Zigbee Scene Control Switch (Battery),18,85365090,,Wireless (adhesive mount or portable),38623516280,"{
   ""product"": {
     ""SKU"": ""38623516280"",
     ""ProductName"": ""4 Gang Scene Switch"",
@@ -1823,7 +1778,6 @@ Place it anywhere. Stick it to a wall, put it on a nightstand, keep it in a pock
     ],
     ""Description"": ""Four buttons. Twelve possibilities. Zero wiring.\n\nPlace it anywhere. Stick it to a wall, put it on a nightstand, keep it in a pocket. The 4 Gang Scene Switch gives you up to 12 scenes from four buttons — no installation, no electrician, no limits on where it goes."",
     ""SRP"": 8747,
-    ""DP"": 3499,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
@@ -1847,7 +1801,7 @@ Key Specifications
 ⚠ No relay — does not switch loads. Scene and automation triggers only."
 "10"" Touch Control Panel",,"Zigbee (128+ devices), Bluetooth/BLE/Sigmesh (128+ devices)","Your home has a face.
 
-The 10"" panel is the centrepiece of a smart home — a full control surface that manages every light, every scene, and every device, while also serving as your front door intercom. Proximity-aware. Always on. Always ready.",45000,Wi-Fi network. Live/neutral wiring or USB-C power.,Smart Home Touch Control Panel,18,85371000,https://drive.google.com/drive/folders/1pVAJ0nz7aS39hoMXSDOskOrrgnrc_xJv?usp=drive_link,Wall-mounted (live/neutral or USB-C powered),38694583069,"{
+The 10"" panel is the centrepiece of a smart home — a full control surface that manages every light, every scene, and every device, while also serving as your front door intercom. Proximity-aware. Always on. Always ready.",Wi-Fi network. Live/neutral wiring or USB-C power.,Smart Home Touch Control Panel,18,85371000,https://drive.google.com/drive/folders/1pVAJ0nz7aS39hoMXSDOskOrrgnrc_xJv?usp=drive_link,Wall-mounted (live/neutral or USB-C powered),38694583069,"{
   ""product"": {
     ""SKU"": ""38694583069"",
     ""ProductName"": ""10\"" Touch Control Panel"",
@@ -1866,7 +1820,6 @@ The 10"" panel is the centrepiece of a smart home — a full control surface tha
     ],
     ""Description"": ""Your home has a face.\n\nThe 10\"" panel is the centrepiece of a smart home — a full control surface that manages every light, every scene, and every device, while also serving as your front door intercom. Proximity-aware. Always on. Always ready."",
     ""SRP"": 112500,
-    ""DP"": 45000,
     ""Assistants"": [
       ""Amazon Alexa"",
       ""Google Home"",
