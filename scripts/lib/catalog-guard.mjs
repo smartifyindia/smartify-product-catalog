@@ -33,6 +33,7 @@ export function diffCatalogs(previous, next) {
   const nextBySlug = new Map(next.map((r) => [r.slug, r]));
   const removedSlugs = [];
   const emptiedFields = [];
+  const changedSkus = [];
 
   for (const before of previous) {
     const after = nextBySlug.get(before.slug);
@@ -45,12 +46,22 @@ export function diffCatalogs(previous, next) {
         emptiedFields.push({ slug: before.slug, field });
       }
     }
+    // A price that goes null/missing inside a pricing object that still has
+    // other keys would slip past the recursive check above.
+    if (!isEmpty(before.pricing?.srp_inr) && isEmpty(after.pricing?.srp_inr)) {
+      const already = emptiedFields.some((f) => f.slug === before.slug && f.field === 'pricing');
+      if (!already) emptiedFields.push({ slug: before.slug, field: 'pricing.srp_inr' });
+    }
+    if (before.sku !== after.sku && !isEmpty(before.sku) && !isEmpty(after.sku)) {
+      changedSkus.push({ slug: before.slug, from: before.sku, to: after.sku });
+    }
   }
 
   return {
     removedSlugs,
     countDelta: next.length - previous.length,
     emptiedFields,
+    changedSkus,
   };
 }
 
@@ -79,6 +90,15 @@ export function assertNoDataLoss(previous, next, { allowRemovals = false } = {})
     problems.push(
       `${details.emptiedFields.length} ${noun} would be emptied: ` +
         details.emptiedFields.map((f) => `${f.slug}.${f.field}`).join(', ')
+    );
+  }
+  // Like emptiedFields, a changed SKU on a surviving slug is never covered by
+  // --allow-removals: it silently re-keys the product in downstream feeds.
+  if (details.changedSkus.length > 0) {
+    const noun = details.changedSkus.length === 1 ? 'SKU' : 'SKUs';
+    problems.push(
+      `${details.changedSkus.length} ${noun} would change: ` +
+        details.changedSkus.map((c) => `${c.slug} (${c.from} → ${c.to})`).join(', ')
     );
   }
 

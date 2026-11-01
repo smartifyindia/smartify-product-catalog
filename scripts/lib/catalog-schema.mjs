@@ -14,6 +14,13 @@ export const REQUIRED_FIELDS = [
   'images',
 ];
 
+// The only keys allowed under `pricing`. Anything else is rejected, so a new
+// price tier cannot be published by accident.
+export const ALLOWED_PRICING_KEYS = ['srp_inr', 'gst_rate', 'hsn'];
+
+// Key names that indicate B2B pricing, matched anywhere in a record.
+const FORBIDDEN_KEY_PATTERN = /dealer|^dp$|wholesale|cost_price|margin/i;
+
 export class CatalogSchemaError extends Error {
   constructor(problems) {
     super(`Catalog failed validation:\n  - ${problems.join('\n  - ')}`);
@@ -42,9 +49,8 @@ function collectImageUrls(images) {
 }
 
 // Same walker shape as collectImageUrls above, but collecting object keys
-// instead of string leaves: pricing has been restructured before (nesting,
-// renaming), and a flat 'dealer_price_inr' in record.pricing check would
-// miss it if it ever moves under a nested object like pricing.tiers.
+// instead of string leaves: the record is scanned recursively so a dealer key
+// cannot hide under a nested object like pricing.tiers.
 function collectKeys(value) {
   const keys = [];
   const visit = (v) => {
@@ -107,16 +113,34 @@ export function validateCatalog(records) {
     }
 
     // This catalog is published to a public repo and to the Facebook and Google
-    // Merchant feeds. Dealer pricing was removed from the data in 1207bbf but
-    // the generator kept emitting it; this rule is what makes that removal
-    // permanent instead of a thing someone re-breaks by regenerating. Walk the
-    // whole pricing value (mirroring collectImageUrls above) rather than
-    // checking only the top level, so a nested or restructured pricing object
-    // (e.g. pricing.tiers.dealer_price_inr) can't smuggle it through.
-    if (record?.pricing && collectKeys(record.pricing).includes('dealer_price_inr')) {
-      problems.push(
-        `${label}: pricing.dealer_price_inr must not appear in the public catalog`
-      );
+    // Merchant feeds, so dealer (B2B) pricing must never appear in it. Dealer
+    // pricing was removed from the data in 1207bbf but the generator kept
+    // emitting it; these rules make that removal permanent. Two layers: pricing
+    // is an allowlist (any unknown key is rejected), and the whole record is
+    // scanned recursively for dealer-like key names wherever they are nested.
+    const pricing = record?.pricing;
+    if (pricing !== undefined && pricing !== null) {
+      if (typeof pricing !== 'object' || Array.isArray(pricing)) {
+        problems.push(`${label}: pricing must be an object`);
+      } else {
+        for (const key of Object.keys(pricing)) {
+          if (!ALLOWED_PRICING_KEYS.includes(key)) {
+            problems.push(
+              `${label}: pricing.${key} is not an allowed pricing key ` +
+                `(allowed: ${ALLOWED_PRICING_KEYS.join(', ')})`
+            );
+          }
+        }
+        const srp = pricing.srp_inr;
+        if (typeof srp !== 'number' || !Number.isFinite(srp) || srp <= 0) {
+          problems.push(`${label}: pricing.srp_inr must be a positive finite number`);
+        }
+      }
+    }
+    for (const key of new Set(collectKeys(record))) {
+      if (FORBIDDEN_KEY_PATTERN.test(key)) {
+        problems.push(`${label}: key "${key}" must not appear in the public catalog`);
+      }
     }
   }
 
