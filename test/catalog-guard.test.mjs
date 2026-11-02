@@ -143,3 +143,25 @@ test('--allow-removals does not suppress srp or sku checks', () => {
     /SKU/
   );
 });
+
+test('--allow-sku-changes permits a deliberate SKU change but nothing else', () => {
+  const before = [record('one'), record('two')];
+  const skuChanged = [record('one', { sku: 'NEW' }), record('two')];
+  assert.doesNotThrow(() => assertNoDataLoss(before, skuChanged, { allowSkuChanges: true }));
+  const skuChangedAndRemoved = [record('one', { sku: 'NEW' })];
+  assert.throws(
+    () => assertNoDataLoss(before, skuChangedAndRemoved, { allowSkuChanges: true }),
+    /would disappear/
+  );
+  const skuChangedAndSrpGone = [record('one', { sku: 'NEW', pricing: { srp_inr: null } }), record('two')];
+  assert.throws(
+    () => assertNoDataLoss(before, skuChangedAndSrpGone, { allowSkuChanges: true }),
+    /pricing/
+  );
+});
+
+test('a blocked SKU change names the --allow-sku-changes flag', () => {
+  const before = [record('one')];
+  const after = [record('one', { sku: 'NEW' })];
+  assert.throws(() => assertNoDataLoss(before, after), /--allow-sku-changes/);
+});
