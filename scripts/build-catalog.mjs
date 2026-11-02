@@ -11,6 +11,10 @@
  * and exits non-zero if they differ, which is how CI catches someone editing
  * products/<slug>/product.json without rebuilding.
  *
+ * --allow-sku-changes lets a deliberate SKU change on an existing product
+ * through the delta gate. SKUs key the product in the Facebook and Google
+ * feeds, so this is separate from --allow-removals and covers nothing else.
+ *
  * --root <dir> overrides which directory is treated as the repo root (default:
  * the real repo this script lives in). It exists so tests can point the whole
  * pipeline at a disposable fixture tree instead of the real catalog.
@@ -40,7 +44,7 @@ function diffSlugs(committedRecords, stagedRecords) {
   return differing.sort();
 }
 
-export function runBuild({ root, allowRemovals = false, checkOnly = false } = {}) {
+export function runBuild({ root, allowRemovals = false, allowSkuChanges = false, checkOnly = false } = {}) {
   const ROOT = root ?? resolve(dirname(fileURLToPath(import.meta.url)), '..');
   const COMMITTED = join(ROOT, 'products.json');
 
@@ -59,7 +63,7 @@ export function runBuild({ root, allowRemovals = false, checkOnly = false } = {}
 
     if (existsSync(COMMITTED)) {
       const previous = readJson(COMMITTED);
-      assertNoDataLoss(previous, next, { allowRemovals });
+      assertNoDataLoss(previous, next, { allowRemovals, allowSkuChanges });
       console.log(`Delta gate passed (${previous.length} → ${next.length} records).`);
     } else {
       console.log('No committed catalog yet — skipping delta gate.');
@@ -113,9 +117,10 @@ const isMain = process.argv[1] === fileURLToPath(import.meta.url);
 if (isMain) {
   const argv = process.argv.slice(2);
   const allowRemovals = argv.includes('--allow-removals');
+  const allowSkuChanges = argv.includes('--allow-sku-changes');
   const checkOnly = argv.includes('--check');
   const rootIndex = argv.indexOf('--root');
   const root = rootIndex !== -1 ? resolve(argv[rootIndex + 1]) : undefined;
 
-  runBuild({ root, allowRemovals, checkOnly });
+  runBuild({ root, allowRemovals, allowSkuChanges, checkOnly });
 }

@@ -65,7 +65,7 @@ export function diffCatalogs(previous, next) {
   };
 }
 
-export function assertNoDataLoss(previous, next, { allowRemovals = false } = {}) {
+export function assertNoDataLoss(previous, next, { allowRemovals = false, allowSkuChanges = false } = {}) {
   const details = diffCatalogs(previous, next);
   const problems = [];
 
@@ -92,9 +92,10 @@ export function assertNoDataLoss(previous, next, { allowRemovals = false } = {})
         details.emptiedFields.map((f) => `${f.slug}.${f.field}`).join(', ')
     );
   }
-  // Like emptiedFields, a changed SKU on a surviving slug is never covered by
-  // --allow-removals: it silently re-keys the product in downstream feeds.
-  if (details.changedSkus.length > 0) {
+  // A changed SKU on a surviving slug re-keys the product in downstream feeds
+  // (retailer_id / g:id), so it needs its own deliberate opt-in:
+  // --allow-sku-changes. --allow-removals does not cover it.
+  if (!allowSkuChanges && details.changedSkus.length > 0) {
     const noun = details.changedSkus.length === 1 ? 'SKU' : 'SKUs';
     problems.push(
       `${details.changedSkus.length} ${noun} would change: ` +
@@ -105,7 +106,10 @@ export function assertNoDataLoss(previous, next, { allowRemovals = false } = {})
   if (problems.length > 0) {
     throw new CatalogDataLossError(
       `Refusing to write: this would lose data.\n  - ${problems.join('\n  - ')}\n` +
-        `If this removal is intentional, re-run with --allow-removals.`,
+        `If this removal is intentional, re-run with --allow-removals.` +
+        (!allowSkuChanges && details.changedSkus.length > 0
+          ? `\nIf the SKU change is intentional, re-run with --allow-sku-changes.`
+          : ''),
       details
     );
   }
