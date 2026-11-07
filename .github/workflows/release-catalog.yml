@@ -11,10 +11,22 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
           node-version: '22'
+
+      - name: Require tagged commit to be on main
+        # fetch-depth: 0 above already brings origin/main; no extra fetch, so this
+        # works without persisted credentials.
+        run: |
+          if ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
+            echo "::error::Tagged commit $GITHUB_SHA is not reachable from main; refusing to release."
+            exit 1
+          fi
 
       - name: Run tests
         run: npm test
@@ -22,11 +34,14 @@ jobs:
       - name: Verify the committed catalog
         run: npm run verify-catalog
 
+      - name: Check products.json is in sync with products/
+        run: npm run check-catalog
+
       - name: Write checksums
         run: node scripts/write-checksums.mjs
 
       - name: Publish release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2.6.2
         with:
           files: |
             products.json

@@ -21,6 +21,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { assertCatalogHealthy } from './scripts/verify-catalog.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -85,6 +86,10 @@ function googleCategory(categories) {
 }
 
 function productToItem(p) {
+  const v = p.pricing?.srp_inr;
+  if (typeof v !== 'number' || !Number.isFinite(v) || v <= 0) {
+    throw new Error(`Invalid pricing.srp_inr for product "${p.slug}": ${JSON.stringify(v)} (must be a positive finite number)`);
+  }
   const desc = truncate(p.description?.consumer || p.description?.technical || p.name);
   const imgUrl = p.images?.hero ? imageUrl(p.images.hero) : null;
 
@@ -133,6 +138,7 @@ ${itemsXml}
 }
 
 function main() {
+  assertCatalogHealthy(INPUT_PATH);
   const raw      = fs.readFileSync(INPUT_PATH, 'utf8');
   const products = JSON.parse(raw).filter(p => p.enabled);
 
@@ -158,4 +164,9 @@ function main() {
   console.log(`✓ Wrote ${items.length} products → ${OUT_PATH}`);
 }
 
-main();
+try {
+  main();
+} catch (err) {
+  console.error(`\n${err.message}\n`);
+  process.exit(1);
+}

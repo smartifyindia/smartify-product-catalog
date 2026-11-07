@@ -53,8 +53,11 @@ export function pageValues(entry) {
 }
 
 export function fillTemplate(template, values) {
-  let html = template;
-  for (const [key, value] of Object.entries(values)) html = html.replaceAll(`{{${key}}}`, () => escapeHtml(value));
-  if (/\{\{/.test(html)) throw new Error('Unresolved page placeholder');
-  return html;
+  // Single pass: substituted values are never rescanned, so a value containing {{KEY}} stays literal.
+  const placeholder = /\{\{([A-Z0-9_]+)\}\}/g;
+  if (template.replace(placeholder, '').includes('{{')) throw new Error('Unresolved page placeholder: malformed {{ in template');
+  return template.replace(placeholder, (_, key) => {
+    if (!Object.hasOwn(values, key)) throw new Error(`Unresolved page placeholder: unknown key ${key}`);
+    return escapeHtml(values[key]);
+  });
 }

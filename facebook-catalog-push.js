@@ -14,6 +14,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { assertCatalogHealthy } from './scripts/verify-catalog.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -40,7 +41,15 @@ function truncate(str, max = 5000) {
   return str?.length > max ? str.slice(0, max - 1) + '…' : str;
 }
 
+function assertValidPrice(p) {
+  const v = p.pricing?.srp_inr;
+  if (typeof v !== 'number' || !Number.isFinite(v) || v <= 0) {
+    throw new Error(`Invalid pricing.srp_inr for product "${p.slug}": ${JSON.stringify(v)} (must be a positive finite number)`);
+  }
+}
+
 function mapProduct(p) {
+  assertValidPrice(p);
   return {
     retailer_id: p.sku,
     name: p.name,
@@ -63,6 +72,11 @@ async function push(products) {
     retailer_id: p.retailer_id,
     data: p,
   }));
+
+  if (!/^\d+$/.test(CATALOG_ID || '')) {
+    console.error('Error: FB_CATALOG_ID must be numeric digits only.');
+    process.exit(1);
+  }
 
   const url = `https://graph.facebook.com/v19.0/${CATALOG_ID}/items_batch`;
   const body = {
@@ -92,7 +106,9 @@ async function push(products) {
 }
 
 async function main() {
-  const raw = fs.readFileSync(path.join(__dirname, 'products.json'), 'utf8');
+  const productsPath = path.join(__dirname, 'products.json');
+  assertCatalogHealthy(productsPath);
+  const raw = fs.readFileSync(productsPath, 'utf8');
   const allProducts = JSON.parse(raw);
   const enabled = allProducts.filter(p => p.enabled);
 
@@ -118,4 +134,7 @@ async function main() {
   console.log('Success:', JSON.stringify(result, null, 2));
 }
 
-main();
+main().catch(err => {
+  console.error(`\n${err.message}\n`);
+  process.exit(1);
+});

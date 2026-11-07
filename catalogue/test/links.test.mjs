@@ -45,3 +45,12 @@ test('the root page keeps the catalogue cover as its preview', () => {
   assert.equal(rootValues(manifest).OG_IMAGE, 'https://catalog.smartify.in/images/og-catalogue.jpg');
   assert.throws(() => fillTemplate('{{MISSING}}', {}), /Unresolved/);
 });
+test('a value containing a placeholder is emitted literally and not re-expanded', () => {
+  const html = fillTemplate('<a>{{FIRST}}</a><b>{{OTHER}}</b>', { FIRST: 'x {{OTHER}} y', OTHER: 'real' });
+  assert.equal(html, '<a>x {{OTHER}} y</a><b>real</b>');
+  assert.equal(fillTemplate('{{OTHER}}{{FIRST}}', { OTHER: 'real', FIRST: '{{OTHER}}' }), 'real{{OTHER}}');
+});
+test('an unknown placeholder throws', () => {
+  assert.throws(() => fillTemplate('{{KNOWN}} {{UNKNOWN}}', { KNOWN: 'a' }), /Unresolved page placeholder: unknown key UNKNOWN/);
+  assert.throws(() => fillTemplate('{{KNOWN}} {{oops}}', { KNOWN: 'a' }), /Unresolved/);
+});

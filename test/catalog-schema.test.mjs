@@ -89,3 +89,29 @@ test('an empty description object counts as a missing required field', () => {
   assert.ok(error instanceof CatalogSchemaError);
   assert.match(error.problems.join(' '), /zigbee-relay.*description/);
 });
+
+test('unknown pricing keys are rejected (allowlist)', () => {
+  const error = captureThrow(() =>
+    validateCatalog([valid({ pricing: { srp_inr: 100, mrp_inr: 120 } })])
+  );
+  assert.ok(error instanceof CatalogSchemaError);
+  assert.match(error.problems.join(' '), /pricing\.mrp_inr/);
+});
+
+test('dealer-like keys are rejected anywhere in the record', () => {
+  for (const key of ['Dealer', 'DP', 'dp', 'wholesale_price', 'cost_price_inr', 'Margin_pct']) {
+    const error = captureThrow(() =>
+      validateCatalog([valid({ specs: { nested: [{ [key]: 1 }] } })])
+    );
+    assert.ok(error instanceof CatalogSchemaError, key);
+    assert.match(error.problems.join(' '), new RegExp(`"${key}"`));
+  }
+});
+
+test('pricing.srp_inr must be a positive finite number', () => {
+  for (const srp of [0, -5, NaN, Infinity, '100', null, undefined]) {
+    const error = captureThrow(() => validateCatalog([valid({ pricing: { srp_inr: srp } })]));
+    assert.match(error.problems.join(' '), /srp_inr must be a positive finite number/);
+  }
+  assert.doesNotThrow(() => validateCatalog([valid({ pricing: { srp_inr: 0.5 } })]));
+});

@@ -21,6 +21,7 @@ test('identical catalogs report no loss', () => {
     removedSlugs: [],
     countDelta: 0,
     emptiedFields: [],
+    changedSkus: [],
   });
   assert.doesNotThrow(() => assertNoDataLoss(a, a));
 });
@@ -106,4 +107,61 @@ test('allowRemovals permits a deliberate removal', () => {
   const before = [record('one'), record('two')];
   const after = [record('one')];
   assert.doesNotThrow(() => assertNoDataLoss(before, after, { allowRemovals: true }));
+});
+
+test('pricing.srp_inr going null counts as emptied, even with other keys left', () => {
+  const before = [record('one', { pricing: { srp_inr: 100, gst_rate: '18' } })];
+  for (const srp of [null, '', undefined]) {
+    const after = [record('one', { pricing: { srp_inr: srp, gst_rate: '18' } })];
+    assert.deepEqual(diffCatalogs(before, after).emptiedFields, [
+      { slug: 'one', field: 'pricing.srp_inr' },
+    ]);
+  }
+  const missing = [record('one', { pricing: { gst_rate: '18' } })];
+  assert.equal(diffCatalogs(before, missing).emptiedFields.length, 1);
+});
+
+test('a changed sku on an existing slug is reported and blocks the write', () => {
+  const before = [record('one')];
+  const after = [record('one', { sku: 'SKU-other' })];
+  assert.deepEqual(diffCatalogs(before, after).changedSkus, [
+    { slug: 'one', from: 'SKU-one', to: 'SKU-other' },
+  ]);
+  assert.throws(() => assertNoDataLoss(before, after), CatalogDataLossError);
+});
+
+test('--allow-removals does not suppress srp or sku checks', () => {
+  const before = [record('one'), record('two')];
+  const srpGone = [record('one', { pricing: { srp_inr: null } })];
+  assert.throws(
+    () => assertNoDataLoss(before, srpGone, { allowRemovals: true }),
+    /pricing/
+  );
+  const skuChanged = [record('one', { sku: 'NEW' }), record('two')];
+  assert.throws(
+    () => assertNoDataLoss(before, skuChanged, { allowRemovals: true }),
+    /SKU/
+  );
+});
+
+test('--allow-sku-changes permits a deliberate SKU change but nothing else', () => {
+  const before = [record('one'), record('two')];
+  const skuChanged = [record('one', { sku: 'NEW' }), record('two')];
+  assert.doesNotThrow(() => assertNoDataLoss(before, skuChanged, { allowSkuChanges: true }));
+  const skuChangedAndRemoved = [record('one', { sku: 'NEW' })];
+  assert.throws(
+    () => assertNoDataLoss(before, skuChangedAndRemoved, { allowSkuChanges: true }),
+    /would disappear/
+  );
+  const skuChangedAndSrpGone = [record('one', { sku: 'NEW', pricing: { srp_inr: null } }), record('two')];
+  assert.throws(
+    () => assertNoDataLoss(before, skuChangedAndSrpGone, { allowSkuChanges: true }),
+    /pricing/
+  );
+});
+
+test('a blocked SKU change names the --allow-sku-changes flag', () => {
+  const before = [record('one')];
+  const after = [record('one', { sku: 'NEW' })];
+  assert.throws(() => assertNoDataLoss(before, after), /--allow-sku-changes/);
 });

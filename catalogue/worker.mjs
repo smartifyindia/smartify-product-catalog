@@ -40,11 +40,11 @@ export default {
       headers.set('Cache-Control', 'no-cache');
       return new Response(response.body, { status: response.status, headers });
     }
-    if (!PDF_PATH.test(url.pathname)) return new Response('Not found', { status: 404, headers: { 'Cache-Control': 'no-store' } });
+    if (!PDF_PATH.test(url.pathname)) return new Response('Not found', { status: 404, headers: { ...SECURITY, 'Cache-Control': 'no-store' } });
     try {
       const key = url.pathname.slice(1);
       const object = await env.CATALOGUE.head(key);
-      if (!object) return new Response('Not found', { status: 404, headers: { 'Cache-Control': 'no-store' } });
+      if (!object) return new Response('Not found', { status: 404, headers: { ...SECURITY, 'Cache-Control': 'no-store' } });
       const filename = key.split('/').at(-1);
       const headers = new Headers({
         'Content-Type': 'application/pdf',
@@ -52,7 +52,9 @@ export default {
         'Accept-Ranges': 'bytes',
         ETag: object.httpEtag,
         'Cache-Control': 'public, max-age=31536000, immutable',
-        'X-Content-Type-Options': 'nosniff',
+        // PDFs get only these two: a CSP/frame-ancestors on a PDF can break browsers' built-in PDF viewers.
+        'X-Content-Type-Options': SECURITY['X-Content-Type-Options'],
+        'Referrer-Policy': SECURITY['Referrer-Policy'],
         'Content-Disposition': `${url.searchParams.get('download') === '1' ? 'attachment' : 'inline'}; filename="${filename}"`,
       });
       const condition = request.headers.get('If-None-Match');
@@ -66,15 +68,15 @@ export default {
       const ifRange = request.headers.get('If-Range');
       if (requestedRange && (!ifRange || ifRange === object.httpEtag)) {
         range = rangeFor(requestedRange, object.size);
-        if (!range) return new Response(null, { status: 416, headers: { 'Content-Range': `bytes */${object.size}`, 'Cache-Control': 'no-store' } });
+        if (!range) return new Response(null, { status: 416, headers: { ...SECURITY, 'Content-Range': `bytes */${object.size}`, 'Cache-Control': 'no-store' } });
         headers.set('Content-Range', `bytes ${range.offset}-${range.offset + range.length - 1}/${object.size}`);
         headers.set('Content-Length', String(range.length));
       }
       const result = await env.CATALOGUE.get(key, range ? { range } : undefined);
-      if (!result) return new Response('Not found', { status: 404, headers: { 'Cache-Control': 'no-store' } });
+      if (!result) return new Response('Not found', { status: 404, headers: { ...SECURITY, 'Cache-Control': 'no-store' } });
       return new Response(result.body, { status: range ? 206 : 200, headers });
     } catch {
-      return new Response('Catalogue temporarily unavailable. Please try again.', { status: 503, headers: { 'Cache-Control': 'no-store', 'Retry-After': '60' } });
+      return new Response('Catalogue temporarily unavailable. Please try again.', { status: 503, headers: { ...SECURITY, 'Cache-Control': 'no-store', 'Retry-After': '60' } });
     }
   },
 };
