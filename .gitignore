@@ -16,3 +16,4 @@ checksums.txt
 # Generated catalogue site bundle and local verification outputs
 catalogue/dist/
 catalogue/.verify/
+dist/
