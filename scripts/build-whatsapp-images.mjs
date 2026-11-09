@@ -8,7 +8,7 @@ import { existsSync, mkdirSync, readFileSync, statSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
-import { buildFeed } from './lib/whatsapp-feed.mjs';
+import { buildFeed, IMAGE_SOURCES } from './lib/whatsapp-feed.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'dist', 'whatsapp-images');
@@ -20,8 +20,13 @@ mkdirSync(OUT, { recursive: true });
 
 let done = 0;
 for (const p of products.filter((x) => included.has(String(x.sku)))) {
-  const src = resolve(ROOT, 'products', p.slug, p.images.hero);
-  if (!existsSync(src)) throw new Error(`SKU ${p.sku}: hero image missing at ${src}`);
+  const remote = IMAGE_SOURCES[p.sku];
+  let src = resolve(ROOT, 'products', p.slug, p.images.hero);
+  if (remote) {
+    const res = await fetch(remote);
+    if (!res.ok) throw new Error(`SKU ${p.sku}: could not download ${remote} (${res.status})`);
+    src = Buffer.from(await res.arrayBuffer());
+  } else if (!existsSync(src)) throw new Error(`SKU ${p.sku}: hero image missing at ${src}`);
   const dest = join(OUT, `${p.sku}.jpg`);
   await sharp(src)
     .resize(SIZE, SIZE, { fit: 'contain', background: '#ffffff' })
