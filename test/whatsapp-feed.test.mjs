@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { buildFeed, toCsv, priceOf, COLUMNS } from '../scripts/lib/whatsapp-feed.mjs';
+import { buildFeed, toCsv, priceOf, COLUMNS, IMAGE_SOURCES } from '../scripts/lib/whatsapp-feed.mjs';
 
 const product = (over = {}) => ({
   sku: '1001', slug: 'tac-1', name: 'TAC 1', brand: 'Smartify', enabled: true,
@@ -66,5 +66,16 @@ test('the committed catalog yields a feed: every row valid, SKUs unique, no plac
     assert.match(r.image_link, /^https:\/\/.+\/\d+\.jpg$/);
     assert.ok(r.title.length <= 150 && r.description.length <= 5000);
   }
-  assert.ok(skipped.every((s) => /photography pending/.test(s.reason)), JSON.stringify(skipped));
+  assert.equal(skipped.length, 0, JSON.stringify(skipped));
+});
+
+test('a placeholder-photo product with a live smartify.in photo is included; one without stays out', () => {
+  const placeholder = { hero: '../../images/placeholder-photography-pending.png' };
+  const sku = Object.keys(IMAGE_SOURCES)[0];
+  const { rows, skipped } = buildFeed([
+    product({ sku, images: placeholder }),
+    product({ sku: 'no-photo', slug: 'no-photo', images: placeholder }),
+  ]);
+  assert.deepEqual(rows.map((r) => r.id), [sku]);
+  assert.deepEqual(skipped.map((s) => s.sku), ['no-photo']);
 });

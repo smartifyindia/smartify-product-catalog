@@ -10,7 +10,7 @@ node scripts/build-whatsapp-images.mjs        # dist/whatsapp-images/<sku>.jpg, 
 node scripts/build-whatsapp-feed.mjs          # dist/whatsapp-catalog-feed.csv
 ```
 
-What goes in: enabled products with an SRP and a real photo (45 of 47 on 2026-11-07; Reach IR and Reach IR+ wait for photography).
+What goes in: enabled products with an SRP and a real photo (47 of 47; Reach IR and Reach IR+ use their smartify.in photos via IMAGE_SOURCES).
 Price is the SRP, which is GST-inclusive. `id` is the SKU, which is what an order message returns as `product_retailer_id`.
 The build stops on a supplier name or "made to order" wording. Availability is always "in stock".
 

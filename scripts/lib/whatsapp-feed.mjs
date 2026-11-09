@@ -15,6 +15,13 @@ export const SITE_BASE = 'https://smartify.in/product';
 export const DEFAULT_IMAGE_BASE = 'https://pub-cb5e9b79d39046829fc7d2bc4443b347.r2.dev/whatsapp';
 export const PLACEHOLDER_IMAGE = 'placeholder-photography-pending.png';
 
+// Products whose products.json hero is still the placeholder but whose real photo is already live on smartify.in (cleaned copies in R2).
+// The image builder downloads these; the feed includes them. Remove an entry once products.json carries a real hero.
+export const IMAGE_SOURCES = {
+  38668925286: 'https://pub-cb5e9b79d39046829fc7d2bc4443b347.r2.dev/products/business/38668925286-d3026c4544.webp', // Reach IR
+  38635939814: 'https://pub-cb5e9b79d39046829fc7d2bc4443b347.r2.dev/products/business/38635939814-9bda47fac7.webp', // Reach IR+
+};
+
 export const COLUMNS = [
   'id', 'title', 'description', 'availability', 'condition', 'price',
   'link', 'image_link', 'brand', 'product_type',
@@ -57,7 +64,7 @@ export function buildFeed(products, { imageBase = DEFAULT_IMAGE_BASE } = {}) {
     if (!price) { skip('no SRP'); continue; }
     const hero = p.images?.hero;
     if (!hero) { skip('no hero image'); continue; }
-    if (path.basename(hero) === PLACEHOLDER_IMAGE) { skip('placeholder photo (photography pending)'); continue; }
+    if (path.basename(hero) === PLACEHOLDER_IMAGE && !IMAGE_SOURCES[p.sku]) { skip('placeholder photo (photography pending)'); continue; }
     if (seen.has(p.sku)) throw new Error(`duplicate SKU ${p.sku}`);
     seen.add(p.sku);
     const row = {
