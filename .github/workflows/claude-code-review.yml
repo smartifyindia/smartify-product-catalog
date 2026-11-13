@@ -1,0 +1,106 @@
+name: Claude Code Review
+
+# Reviews every non-draft PR and posts one comment with the findings.
+# The job fails when no review comment was posted, so a green check always means a review exists.
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+
+concurrency:
+  group: claude-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  claude-review:
+    if: github.event.pull_request.draft == false
+    runs-on: ${{ fromJSON((github.event.pull_request.head.repo.fork && '"ubuntu-latest"') || vars.CI_RUNNER || '"ubuntu-latest"') }}
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+
+    steps:
+      # Skip with a warning, instead of failing every PR, when the token secret is missing (also true on fork PRs).
+      - name: Check for the Claude token
+        id: token
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+        run: |
+          if [ -n "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::warning title=Claude review skipped::CLAUDE_CODE_OAUTH_TOKEN is not set for this repository. Create one with 'claude setup-token', then run 'gh secret set CLAUDE_CODE_OAUTH_TOKEN -R ${{ github.repository }}'."
+          fi
+
+      - name: Checkout repository
+        if: steps.token.outputs.present == 'true'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # Self-hosted runners may not have the GitHub CLI; the review reads the diff and posts with it.
+      - name: Ensure the GitHub CLI is installed
+        if: steps.token.outputs.present == 'true'
+        run: |
+          if command -v gh >/dev/null 2>&1; then gh --version | head -1; exit 0; fi
+          case "$(uname -m)" in x86_64) arch=amd64 ;; aarch64|arm64) arch=arm64 ;; *) echo "unsupported arch $(uname -m)"; exit 1 ;; esac
+          v=2.62.0
+          curl -fsSL "https://github.com/cli/cli/releases/download/v${v}/gh_${v}_linux_${arch}.tar.gz" -o "$RUNNER_TEMP/gh.tgz"
+          tar -xzf "$RUNNER_TEMP/gh.tgz" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/gh_${v}_linux_${arch}/bin" >> "$GITHUB_PATH"
+
+      - name: Record start time
+        if: steps.token.outputs.present == 'true'
+        id: start
+        run: echo "at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
+
+      - name: Run Claude Code Review
+        if: steps.token.outputs.present == 'true'
+        id: claude-review
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          # The workflow's own token posts the comment (as github-actions[bot]), so the review needs no Claude
+          # GitHub App install and works on the PR that adds or changes this file.
+          github_token: ${{ github.token }}
+          allowed_bots: 'claude'
+          # Without this the action failed every run in ~3 s with is_error and zero cost (found 2026-11-02 on
+          # smartify-pro-backend). Output is still masked for secrets by Actions.
+          show_full_output: true
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+            HEAD SHA: ${{ github.event.pull_request.head.sha }}
+
+            Review this pull request. Read it with `gh pr view` and `gh pr diff`, and read any file in the
+            checkout you need for context. Follow the CLAUDE.md files in this repository.
+
+            Look for, in order: correctness bugs, security problems (secrets, auth and tenant isolation,
+            injection, customer data in logs), data loss or unsafe migrations, and CLAUDE.md violations.
+            Report only findings you are confident are real, each with file:line, what goes wrong and
+            when. Skip style nits and anything a linter or type checker would catch.
+
+            You MUST finish by posting exactly one comment with `gh pr comment ${{ github.event.pull_request.number }} --body-file <file>`.
+            Start it with the line `## Claude review of ${{ github.event.pull_request.head.sha }}`.
+            If you found nothing, say so in one line under that heading. Do not post anything else.
+          claude_args: |
+            --allowedTools "Read,Grep,Glob,Write,Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*),Bash(git log:*),Bash(git diff:*),Bash(git show:*)"
+
+      # Fails the check when the action finished without posting the review comment.
+      - name: Verify a review was posted
+        if: steps.token.outputs.present == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SINCE: ${{ steps.start.outputs.at }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          n=$(gh api "repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/comments?since=$SINCE&per_page=100" \
+            --jq "[.[] | select(.body | startswith(\"## Claude review of $SHA\"))] | length")
+          if [ "${n:-0}" -lt 1 ]; then
+            echo "::error title=No Claude review posted::The review ran but posted no comment for $SHA. Read the 'Run Claude Code Review' log."
+            exit 1
+          fi
+          echo "Review comment found ($n)."
