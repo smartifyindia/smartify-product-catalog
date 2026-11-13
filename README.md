@@ -65,7 +65,7 @@ Large-format Zigbee touch panels with capacitive buttons, premium finishes, and 
 | <img src="images/TOQ%20Dual%20Fan%20Control%20with%20Socket%20-%20Black%20Gold.png" width="70" /> | [TOQ 8T+1F](products/toq-8tplus1f/README.md) | 8 | 1 | — |
 | <img src="images/TOQ%20Fan%20Control%20with%20Socket%20-%20White.png" width="70" /> | [TOQ 8T+1S](products/toq-8tplus1s/README.md) | 8 | — | 1 |
 | <img src="images/TOQ%2010%20Button%20Panel%20-%20Black.png" width="70" /> | [TOQ 10T](products/toq-10t/README.md) | 10 | — | — |
-| <img src="images/TOQ%2010%20Button%20Panel%20-%20Black.png" width="70" /> | [TOQ 10T+2S](products/toq-10tplus2s/README.md) | 10 | — | 2 |
+| <img src="images/TOQ%2010%20Button%20Panel%20-%20Black.png" width="70" /> | [TOQ 10T+3S](products/toq-10tplus2s/README.md) | 10 | — | 2 |
 
 ---
 

@@ -1,6 +1,6 @@
-# TOQ 10T+2S
+# TOQ 10T+3S
 
-![TOQ 10T+2S](../../images/TOQ%2010%20Button%20Panel%20-%20Black.png)
+![TOQ 10T+3S](../../images/TOQ%2010%20Button%20Panel%20-%20Black.png)
 
 > Ten circuits, two sockets. Total control.
 
@@ -12,7 +12,7 @@
 
 Ten circuits, two sockets. Total control.
 
-The TOQ 10T+2S is the most complete single-panel solution in the range — ten touch points, two power outlets, and a finish that belongs on any wall.
+The TOQ 10T+3S is the most complete single-panel solution in the range — ten touch points, two power outlets, and a finish that belongs on any wall.
 
 ---
 
