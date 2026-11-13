@@ -106,7 +106,7 @@ IMAGE_MAP = {
     "TOQ 4T+2F":    ["TOQ Fan Light Control with Socket - Black Gold"],
     "TOQ 8T+1S":    ["TOQ Fan Control with Socket - White"],
     "TOQ 4T+2F+1S": ["TOQ Fan Light Control with Socket - Black Gold"],
-    "TOQ 10T+2S":   ["TOQ 10 Button Panel - Black"],
+    "TOQ 10T+3S":   ["TOQ 10 Button Panel - Black"],
 
     # TAC Series
     "TAC 1":  ["TAC 1 Gang - White", "TAC 1 Gang - Grey", "TAC 1 Gang - Gold", "TAC Overview - White", "TAC Overview - Grey", "TAC Overview - Gold", "TAC D1 Series Overview"],
